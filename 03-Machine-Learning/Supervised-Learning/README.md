@@ -350,32 +350,341 @@ graph TD
     style G fill:#c8e6c9
 ```
 
-### Loss Function
+### Linear Regression Assumptions (Critical!)
+
+> [!red] ⚠️ **The Gauss-Markov Assumptions**
+> Linear regression is BLUE (Best Linear Unbiased Estimator) only when these assumptions hold!
+
+**1. Linearity - Relationship is Linear**
+```
+Assumption: E[y|X] = Xw + b
+
+Check: Residual plot
+Residuals vs Fitted Values
+
+Residuals
+    │ ● ●  ●  ● ●     GOOD: Random scatter
+    │●   ●● ● ●  ●    No pattern
+  0 ├─────────────────────
+    │ ●  ● ●●  ● ●
+    │  ● ●   ●  ●
+    └──────────────── Fitted Values
+
+Residuals
+    │     ●●●●●●       BAD: Curved pattern
+    │   ●        ●     Non-linear relationship
+  0 ├●─────────────●──
+    │ ●          ●
+    │   ●●●●●●●
+    └──────────────── Fitted Values
+
+Violation fixes:
+- Add polynomial features: x, x², x³
+- Transform target: log(y), √y
+- Use non-linear model (trees, neural nets)
+```
+
+**2. Independence - Observations are Independent**
+```
+Assumption: Errors εᵢ and εⱼ are uncorrelated for i ≠ j
+            Cov(εᵢ, εⱼ) = 0
+
+Check: 
+- Durbin-Watson test (time series)
+- Correlation of residuals
+- Domain knowledge (is data sequential?)
+
+Violations occur in:
+- Time series data (autocorrelation)
+- Clustered data (observations within same group)
+- Spatial data (nearby observations)
+
+Residual ACF (Autocorrelation):
+Lag │
+1   │ ●●●●●         BAD: High autocorrelation
+2   │ ●●●●
+3   │ ●●
+    └─────────
+
+Lag │
+1   │ ●             GOOD: No pattern
+2   │  ●
+3   │●
+    └─────────
+
+Violation fixes:
+- Use time series models (ARIMA, VAR)
+- Add lagged features
+- Use mixed-effects models for clustered data
+```
+
+**3. Homoscedasticity - Constant Variance**
+```
+Assumption: Var(ε|X) = σ² (constant)
+
+Check: Scale-Location plot
+√|Residuals| vs Fitted
+
+√|Residuals|
+    │ ● ●●  ●  ●      GOOD: Horizontal band
+    │●   ● ●● ●  ●    Constant spread
+    ├─────────────────────
+    │ ●  ● ●●  ● ●
+    └──────────────── Fitted Values
+
+√|Residuals|
+    │           ●●●●  BAD: Funnel shape
+    │        ●●●      Variance increases
+    ├──●●●──────────────
+    │●●
+    └──────────────── Fitted Values
+
+Violation (Heteroscedasticity) causes:
+- Inefficient estimates (not minimal variance)
+- Biased standard errors → invalid confidence intervals
+- Unreliable hypothesis tests
+
+Fixes:
+- Log transform target: log(y)
+- Weighted Least Squares (WLS)
+- Robust standard errors
+- Use Huber regression
+```
+
+**4. Normality of Residuals**
+```
+Assumption: ε ~ N(0, σ²) 
+           Errors follow normal distribution
+
+Check: Q-Q plot (Quantile-Quantile)
+Sample Quantiles
+    │          ●●●    GOOD: Points on line
+    │       ●●●
+    │    ●●●
+    │ ●●●
+    └──────────────── Theoretical Quantiles
+
+Sample Quantiles
+    │          ●      BAD: Heavy tails
+    │         ●●●     Not normal
+    │  ●●●●●●
+    │ ●
+    └──────────────── Theoretical Quantiles
+
+Tests:
+- Shapiro-Wilk test (small samples)
+- Kolmogorov-Smirnov test
+- Anderson-Darling test
+
+Why it matters:
+- Needed for confidence intervals
+- Needed for hypothesis tests
+- Not needed for point predictions!
+
+Violation fixes:
+- Transform target (Box-Cox, log)
+- Use robust regression
+- Bootstrap confidence intervals
+- Generalized Linear Models (GLM)
+```
+
+**5. No Multicollinearity**
+```
+Assumption: Features are not highly correlated
+            No perfect linear dependence
+
+Check: 
+- Correlation matrix heatmap
+- Variance Inflation Factor (VIF)
+
+VIF = 1 / (1 - R²ⱼ)
+Where R²ⱼ = R² from regressing feature j on all others
+
+VIF Interpretation:
+VIF < 5  : No concern
+VIF 5-10 : Moderate correlation
+VIF > 10 : High multicollinearity (problem!)
+
+Example correlation matrix:
+        x₁   x₂   x₃
+    x₁  1.0  0.9  0.2    ← x₁ and x₂ highly correlated!
+    x₂  0.9  1.0  0.3
+    x₃  0.2  0.3  1.0
+
+Problems caused:
+- Unstable coefficients (high variance)
+- Coefficients change drastically with small data changes
+- Difficult to interpret individual effects
+- Reduced statistical power
+
+Fixes:
+- Remove one of correlated features
+- Combine correlated features (PCA)
+- Ridge regression (L2 penalty)
+- Collect more data
+```
+
+### Diagnostic Plots - Visual Model Checking
 
 ```
-Mean Squared Error (MSE):
+Four Essential Plots:
 
-MSE = (1/n) Σ(actual - predicted)²
+1. Residuals vs Fitted
+   Purpose: Check linearity and homoscedasticity
+   Look for: Random scatter around zero
 
-Why square?
-✅ Makes all errors positive
-✅ Penalizes large errors more
-✅ Smooth for optimization
+2. Q-Q Plot
+   Purpose: Check normality of residuals
+   Look for: Points on diagonal line
 
-Example:
-Errors: [-2, 3, -1]
-MSE = (4 + 9 + 1) / 3 = 4.67
+3. Scale-Location Plot  
+   Purpose: Check homoscedasticity
+   Look for: Horizontal line
+
+4. Residuals vs Leverage
+   Purpose: Identify influential points
+   Look for: Points outside Cook's distance contours
+
+Cook's Distance Interpretation:
+D > 1: Influential point (investigate!)
+D > 4/n: Potentially influential
 ```
 
-> [!yellow] 💡 **When to Use**
+### Real-World Applications
 
-| Use Linear Regression | Don't Use Linear Regression |
-|----------------------|---------------------------|
-| ✅ Linear relationships | ❌ Non-linear patterns |
-| ✅ Continuous output | ❌ Classification (use logistic) |
-| ✅ Fast baseline model | ❌ Many outliers present |
-| ✅ Interpretability needed | ❌ Complex interactions |
-| ✅ Small datasets OK | ❌ High-dimensional without regularization |
+> [!green] ✅ **Where Linear Regression Excels**
+
+**1. Price Prediction**
+```
+Real Estate:
+Price = 150(sqft) + 50000(bedrooms) - 2000(age) + 100000
+
+Example house:
+- 2000 sq ft
+- 3 bedrooms  
+- 10 years old
+→ Price = 150(2000) + 50000(3) - 2000(10) + 100000
+        = 300000 + 150000 - 20000 + 100000
+        = $530,000
+
+Interpretation:
+- Each sq ft adds $150
+- Each bedroom adds $50,000
+- Each year reduces price by $2,000
+- Base price (intercept) is $100,000
+```
+
+**2. Sales Forecasting**
+```
+Business: Predict quarterly sales
+Sales = w₁(marketing) + w₂(season) + w₃(prev_sales) + b
+
+Use cases:
+- Inventory planning
+- Resource allocation
+- Budget forecasting
+- Trend analysis
+```
+
+**3. Risk Assessment**
+```
+Finance: Credit risk scoring
+Risk = w₁(income) + w₂(debt) + w₃(credit_history) + b
+
+Medical: Disease progression
+Progression = w₁(age) + w₂(biomarker1) + w₃(biomarker2) + b
+```
+
+**4. A/B Testing Analysis**
+```
+Measure treatment effect:
+Outcome = w₁(treatment) + w₂(baseline) + controls + b
+
+w₁ = causal effect of treatment
+Confidence interval tells if effect is significant
+```
+
+### Model Evaluation Metrics
+
+**Regression Metrics:**
+```
+1. R² (R-squared) - Coefficient of Determination
+   R² = 1 - (SS_res / SS_tot)
+   
+   Range: [0, 1] (can be negative for bad models)
+   Interpretation:
+   - 0.0: Model explains 0% of variance
+   - 0.5: Model explains 50% of variance  
+   - 1.0: Perfect predictions
+   
+   Typical values:
+   - Social sciences: R² > 0.3 is good
+   - Physical sciences: R² > 0.9 expected
+   - Finance/Economics: R² > 0.5 is good
+
+2. Adjusted R²
+   R²_adj = 1 - (1-R²)(n-1)/(n-p-1)
+   
+   Penalizes adding features
+   Use for comparing models with different # of features
+
+3. Mean Absolute Error (MAE)
+   MAE = (1/n) Σ|yᵢ - ŷᵢ|
+   
+   Same units as target
+   Less sensitive to outliers than MSE
+   Example: MAE = $5,000 means average error of $5K
+
+4. Root Mean Squared Error (RMSE)  
+   RMSE = √(MSE) = √((1/n) Σ(yᵢ - ŷᵢ)²)
+   
+   Same units as target
+   Penalizes large errors more
+   Most commonly used
+
+5. Mean Absolute Percentage Error (MAPE)
+   MAPE = (100/n) Σ|(yᵢ - ŷᵢ)/yᵢ|
+   
+   Unitless (percentage)
+   Good for comparing across different scales
+   Example: MAPE = 5% means 5% average error
+   ⚠️ Undefined when yᵢ = 0
+```
+
+### Feature Engineering for Linear Models
+
+```
+Transform non-linear → linear:
+
+1. Polynomial Features
+   Original: y = w₁x + b
+   Add x²: y = w₁x + w₂x² + b
+   
+   Captures curved relationships
+   Degree 2-3 usually sufficient
+   Higher degrees → overfitting
+
+2. Interaction Terms
+   y = w₁x₁ + w₂x₂ + w₃(x₁×x₂) + b
+   
+   Captures combined effects
+   Example: income × age
+
+3. Log Transform
+   log(y) = w₁x + b
+   
+   For exponential relationships
+   For skewed distributions
+   For multiplicative effects
+
+4. Binning (Discretization)
+   Convert continuous → categorical
+   age → [0-18], [19-35], [36-50], [51+]
+   
+   Captures non-linear patterns
+   Loss of information
+   Creates steps in predictions
+```
 
 ### Common Problems & Solutions
 
@@ -397,19 +706,220 @@ graph TD
     style E fill:#ffcdd2
 ```
 
-### Regularization
+### Regularization - Preventing Overfitting
+
+> [!blue] 💙 **Regularization Adds Penalty for Model Complexity**
+> Constrains model weights to prevent overfitting, especially with many features or small datasets.
+
+**Why Regularization?**
+```
+Problem: Overfitting with many features
+
+Without regularization:
+Train error: 0.01 (very low)
+Test error: 0.50 (high)
+→ Model memorized training data
+
+With regularization:
+Train error: 0.10 (slightly higher)
+Test error: 0.12 (much better!)
+→ Model generalizes well
+```
+
+**1. Ridge Regression (L2 Regularization)**
 
 ```
-Ridge (L2):          Lasso (L1):
-Penalty = λΣw²      Penalty = λΣ|w|
+Loss function:
+L_ridge = MSE + λ Σⱼ₌₁ⁿ wⱼ²
+        = (1/m) Σᵢ(yᵢ - ŷᵢ)² + λ Σⱼ wⱼ²
 
-Ridge:               Lasso:
-- Shrinks weights    - Can zero out weights
-- Keeps all features - Feature selection
-- Better with many   - Better with few
-  correlated features  important features
+Components:
+- MSE: Data fitting term (accuracy)
+- λ Σwⱼ²: Regularization term (simplicity)
+- λ: Hyperparameter controlling trade-off
 
-Elastic Net = Ridge + Lasso (best of both!)
+Effect on weights:
+- Shrinks ALL weights toward zero
+- Weights never become exactly zero
+- Larger λ → more shrinkage
+- λ = 0 → regular linear regression
+
+Geometric interpretation:
+Minimize MSE subject to: Σwⱼ² ≤ t
+
+    w₂
+    │
+    │    ●  ← Optimal without constraint
+    │   /|
+    │  / │
+    │ /  ●  ← Ridge solution
+    │/  (on circle boundary)
+  ──●────────── w₁
+    │   
+    └─ Circle: w₁² + w₂² = t
+
+Closed-form solution:
+w_ridge = (X^T X + λI)^(-1) X^T y
+
+Where I = identity matrix
+→ Always invertible (even if X^T X is singular!)
+
+When to use Ridge:
+✓ Many correlated features
+✓ All features potentially useful
+✓ Multicollinearity present
+✓ Want smooth weight distribution
+
+Choosing λ (cross-validation):
+λ = 0.001: Minimal regularization
+λ = 0.1: Moderate
+λ = 1.0: Strong
+λ = 10.0: Very strong (underfitting risk)
+```
+
+**2. Lasso Regression (L1 Regularization)**
+
+```
+Loss function:
+L_lasso = MSE + λ Σⱼ₌₁ⁿ |wⱼ|
+        = (1/m) Σᵢ(yᵢ - ŷᵢ)² + λ Σⱼ |wⱼ|
+
+Key difference from Ridge: |wⱼ| instead of wⱼ²
+
+Effect on weights:
+- Shrinks weights AND sets some exactly to zero
+- Performs automatic feature selection
+- Sparse solution (many zeros)
+- Larger λ → more zeros
+
+Geometric interpretation:
+Minimize MSE subject to: Σ|wⱼ| ≤ t
+
+    w₂
+    │
+    │   ╱●╲ ← Optimal without constraint
+    │  ╱ │ ╲
+    │ ╱  ●  ╲ ← Lasso solution
+    │╱  (diamond corner)
+  ──●────────── w₁
+    │   
+    └─ Diamond: |w₁| + |w₂| = t
+
+Why zeros at corners:
+MSE contours likely hit diamond at corners
+→ One coordinate becomes exactly zero
+
+No closed-form solution:
+Must use iterative optimization:
+- Coordinate descent
+- LARS (Least Angle Regression)
+- Proximal gradient descent
+
+When to use Lasso:
+✓ Many features, few important
+✓ Want interpretable model (few features)
+✓ Feature selection needed
+✓ Sparse representation desired
+
+Feature selection example:
+Original: 1000 features
+After Lasso: 50 non-zero features
+→ 95% reduction, easier interpretation
+```
+
+**3. Elastic Net (L1 + L2)**
+
+```
+Loss function:
+L_elastic = MSE + λ₁ Σⱼ|wⱼ| + λ₂ Σⱼwⱼ²
+          = MSE + α λ Σⱼ|wⱼ| + (1-α) λ/2 Σⱼwⱼ²
+
+Parameters:
+- λ: Overall regularization strength
+- α ∈ [0,1]: Mix ratio
+  α = 0: Pure Ridge
+  α = 1: Pure Lasso
+  α = 0.5: Equal mix
+
+Advantages:
+✓ Combines benefits of both
+✓ Can select groups of correlated features
+✓ More stable than Lasso
+✓ Works well in practice
+
+When to use Elastic Net:
+✓ Many correlated features (Ridge helps)
+✓ Also need feature selection (Lasso helps)
+✓ Default choice when unsure
+✓ p > n (more features than samples)
+
+Typical values:
+α = 0.5, λ = 0.1 (try this first)
+Then tune with cross-validation
+```
+
+**Comparison Table:**
+
+```
+Property          | Ridge (L2) | Lasso (L1) | Elastic Net
+──────────────────|────────────|────────────|─────────────
+Penalty           | Σw²        | Σ|w|       | Σ|w| + Σw²
+Feature selection | No         | Yes        | Yes
+Weights          | Shrink all | Some zero  | Some zero
+Correlated vars  | Keeps all  | Picks one  | Keeps group
+Computation      | Closed-form| Iterative  | Iterative
+Sparsity         | No         | Yes        | Yes
+Stability        | High       | Medium     | High
+Interpretability | Medium     | High       | High
+
+Visualization of weight distributions:
+
+No Regularization:
+|w₁| |w₂| |w₃| |w₄| |w₅|
+ ███  ██  ████  ██   █
+
+Ridge (L2):
+|w₁| |w₂| |w₃| |w₄| |w₅|
+ ██   █   ███   █    ▓  (all shrunk)
+
+Lasso (L1):
+|w₁| |w₂| |w₃| |w₄| |w₅|
+ ███  ░   ████  ░    ░  (some zero)
+
+Elastic Net:
+|w₁| |w₂| |w₃| |w₄| |w₅|
+ ███  ░   ███   █    ░  (mixed)
+```
+
+**Choosing Regularization Strength (λ)**
+
+```
+Cross-Validation Curve:
+
+Error
+ │
+ │ ╲                    ← Training error
+ │  ╲╲                 (decreases with less reg)
+ │   ╲╲___
+ │        ╲___
+ │            ╲___      ← Validation error
+ │   ____        ╲     (U-shape)
+ │ ╱     ╲____    ╲
+ │╱           ╲____╲___
+ └────────────────────── log(λ)
+ High reg  ← Optimal → Low reg
+(Underfit)            (Overfit)
+
+Optimal λ: Minimum validation error
+
+Algorithm:
+1. Try range: λ ∈ [0.0001, 0.001, 0.01, 0.1, 1, 10]
+2. For each λ:
+   - Train on training set
+   - Evaluate on validation set
+3. Pick λ with lowest validation error
+4. Retrain on training + validation
+5. Test on hold-out test set
 ```
 
 > [!red] ⚠️ **Common Mistakes**
