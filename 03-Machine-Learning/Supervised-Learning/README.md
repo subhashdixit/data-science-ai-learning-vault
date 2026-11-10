@@ -1314,6 +1314,510 @@ L = -1/m Σᵢ₌₁ᵐ Σₖ₌₁ᴷ y_ik log(P(y=k|xᵢ))
 
 Where y_ik = 1 if xᵢ belongs to class k, 0 otherwise
 ```
+
+### Classification Evaluation Metrics
+
+> [!blue] 💙 **Beyond Accuracy - Understanding Model Performance**
+> Classification requires multiple metrics because accuracy alone can be misleading, especially with imbalanced datasets.
+
+**Confusion Matrix - Foundation of All Metrics**
+
+```
+Binary Classification Confusion Matrix:
+
+                    Predicted
+                 Positive  Negative
+              ┌───────────┬─────────┐
+    Actual    │    TP     │   FN    │ Positive
+   Positive   │ (Correct) │(Missed) │
+              ├───────────┼─────────┤
+    Actual    │    FP     │   TN    │ Negative
+   Negative   │ (False    │(Correct)│
+              │  Alarm)   │         │
+              └───────────┴─────────┘
+
+TP (True Positive): Correctly predicted positive
+TN (True Negative): Correctly predicted negative
+FP (False Positive): Incorrectly predicted positive (Type I Error)
+FN (False Negative): Incorrectly predicted negative (Type II Error)
+
+Medical Example (Disease Detection):
+                Predicted
+              Disease  Healthy
+         ┌──────────┬─────────┐
+Disease  │    45    │   5     │ Actual: 50 sick
+         ├──────────┼─────────┤
+Healthy  │    10    │   940   │ Actual: 950 healthy
+         └──────────┴─────────┘
+         Predicted: Predicted:
+         55 sick    945 healthy
+
+TP = 45 (correctly identified sick)
+TN = 940 (correctly identified healthy)
+FP = 10 (false alarm - healthy called sick)
+FN = 5 (missed - sick called healthy)
+```
+
+**Derived Metrics:**
+
+```
+1. Accuracy
+   = (TP + TN) / (TP + TN + FP + FN)
+   = Correct predictions / Total predictions
+   
+   Example: (45 + 940) / 1000 = 0.985 = 98.5%
+   
+   Problem with imbalanced data:
+   If 99% are negative, predicting "always negative" gives 99% accuracy!
+   → Misleading for rare events
+
+2. Precision (Positive Predictive Value)
+   = TP / (TP + FP)
+   = True Positives / Predicted Positives
+   
+   "Of all positive predictions, how many were correct?"
+   
+   Example: 45 / (45 + 10) = 0.818 = 81.8%
+   
+   High precision: Few false alarms
+   Use when: Cost of FP is high (spam detection)
+
+3. Recall (Sensitivity, True Positive Rate)
+   = TP / (TP + FN)
+   = True Positives / Actual Positives
+   
+   "Of all actual positives, how many did we catch?"
+   
+   Example: 45 / (45 + 5) = 0.900 = 90.0%
+   
+   High recall: Few missed cases
+   Use when: Cost of FN is high (disease detection)
+
+4. Specificity (True Negative Rate)
+   = TN / (TN + FP)
+   = True Negatives / Actual Negatives
+   
+   "Of all actual negatives, how many did we correctly identify?"
+   
+   Example: 940 / (940 + 10) = 0.989 = 98.9%
+   
+   High specificity: Few false alarms among negatives
+
+5. F1-Score (Harmonic Mean of Precision and Recall)
+   = 2 × (Precision × Recall) / (Precision + Recall)
+   
+   Example: 2 × (0.818 × 0.900) / (0.818 + 0.900) = 0.857
+   
+   Balances precision and recall
+   Single metric for imbalanced data
+   Ranges from 0 to 1 (higher is better)
+   
+   Harmonic mean penalizes extreme values:
+   Precision=1.0, Recall=0.1 → F1=0.18 (not good!)
+   Precision=0.9, Recall=0.9 → F1=0.90 (good!)
+
+6. F-beta Score (Weighted F-Score)
+   F_β = (1 + β²) × (Precision × Recall) / (β² × Precision + Recall)
+   
+   β < 1: Favor precision
+   β = 1: F1-score (balanced)
+   β > 1: Favor recall
+   
+   F2: Weights recall 2x more than precision
+   F0.5: Weights precision 2x more than recall
+```
+
+**Precision-Recall Trade-off:**
+
+```
+Threshold impact on predictions:
+
+Threshold = 0.3 (Low):
+More positive predictions
+→ High Recall (catch more positives)
+→ Low Precision (more false alarms)
+
+Threshold = 0.7 (High):
+Fewer positive predictions
+→ High Precision (fewer false alarms)
+→ Low Recall (miss more positives)
+
+Visual:
+Precision
+    │
+1.0 │●
+    │ ●
+    │  ●●
+0.5 │    ●●●
+    │       ●●●
+    │          ●●●
+0.0 └──────────────●── Recall
+    0.0          1.0
+
+Can't maximize both simultaneously!
+Choose based on problem:
+
+Spam Detection: Favor Precision
+- Missing spam OK
+- False alarm (good email marked spam) BAD
+
+Disease Detection: Favor Recall
+- Missing disease BAD
+- False alarm (extra test) OK
+```
+
+**ROC Curve (Receiver Operating Characteristic)**
+
+```
+Plot True Positive Rate vs False Positive Rate
+at different threshold values
+
+TPR (Recall) = TP / (TP + FN)
+FPR = FP / (FP + TN) = 1 - Specificity
+
+ROC Curve:
+TPR
+1.0 │    ╱────────  Perfect classifier
+    │   ╱│
+    │  ╱ │
+0.5 │ ╱  │ ← Actual model
+    │╱   │
+    │    │
+    │╱╱╱╱  ← Random classifier (diagonal)
+0.0 └────────────── FPR
+    0.0          1.0
+
+Key points:
+(0,0): Predict everything negative
+(1,1): Predict everything positive
+(0,1): Perfect classifier
+Diagonal: Random guessing
+
+AUC-ROC (Area Under Curve):
+- AUC = 1.0: Perfect classifier
+- AUC = 0.9-1.0: Excellent
+- AUC = 0.8-0.9: Good
+- AUC = 0.7-0.8: Fair
+- AUC = 0.5: Random (no better than coin flip)
+- AUC < 0.5: Worse than random (flip predictions!)
+
+Advantages:
+✓ Threshold-independent
+✓ Works for imbalanced data
+✓ Single number summary
+✓ Compare different models
+
+Limitations:
+✗ Can be optimistic for severe imbalance
+✗ Doesn't show precision-recall trade-off
+✗ Treats FP and FN equally (may not match business cost)
+```
+
+**Precision-Recall Curve (Better for Imbalanced Data)**
+
+```
+Plot Precision vs Recall at different thresholds
+
+PR Curve:
+Precision
+1.0 │●
+    │ ●●
+    │   ●●
+0.5 │     ●●●
+    │        ●●●
+    │           ●●●
+0.0 └──────────────●── Recall
+    0.0          1.0
+
+Average Precision (AP) = Area under PR curve
+- Better metric for imbalanced datasets than ROC-AUC
+- Focuses on positive class performance
+
+When to use PR vs ROC:
+- Balanced data: ROC-AUC
+- Imbalanced data (rare positive class): PR-AUC
+- Care about positive class: PR-AUC
+- Care about both classes: ROC-AUC
+```
+
+**Log Loss (Logistic Loss)**
+
+```
+Measures confidence of predictions:
+
+Log Loss = -1/m Σᵢ₌₁ᵐ [yᵢ log(pᵢ) + (1-yᵢ) log(1-pᵢ)]
+
+Where pᵢ = predicted probability for sample i
+
+Example predictions:
+Sample 1: Actual=1, Predicted=0.9 → Loss = -log(0.9) = 0.105
+Sample 2: Actual=1, Predicted=0.6 → Loss = -log(0.6) = 0.511
+Sample 3: Actual=0, Predicted=0.1 → Loss = -log(0.9) = 0.105
+Sample 4: Actual=1, Predicted=0.1 → Loss = -log(0.1) = 2.303
+
+Average Log Loss = (0.105 + 0.511 + 0.105 + 2.303) / 4 = 0.756
+
+Properties:
+- Range: [0, ∞]
+- Lower is better
+- Penalizes confident wrong predictions heavily
+- Rewards confident correct predictions
+- Used as training loss
+
+Comparison with accuracy:
+Model A: 90% accuracy, Log Loss = 0.3 (confident)
+Model B: 90% accuracy, Log Loss = 0.6 (uncertain)
+→ Model A is better (more calibrated probabilities)
+```
+
+**Choosing the Right Metric:**
+
+```
+Decision Tree:
+
+Start: What's your problem?
+│
+├─ Balanced classes?
+│  ├─ Yes → Use Accuracy + ROC-AUC
+│  └─ No → Imbalanced data ↓
+│
+├─ Imbalanced data:
+│  ├─ Care about positive class → F1-Score + PR-AUC
+│  ├─ Different costs for errors → Cost-sensitive metric
+│  └─ Need probability calibration → Log Loss
+│
+├─ Business context:
+│  ├─ False Positives expensive → Maximize Precision
+│  ├─ False Negatives expensive → Maximize Recall
+│  └─ Both important → F1-Score
+│
+└─ Multiple metrics → Report them all!
+
+Example scenarios:
+
+1. Spam Detection:
+   Primary: Precision (avoid blocking good emails)
+   Secondary: Recall, F1
+
+2. Cancer Detection:
+   Primary: Recall (catch all cases)
+   Secondary: F1, Precision
+
+3. Credit Default:
+   Primary: F1 (balance both errors)
+   Secondary: Precision, Recall, ROC-AUC
+
+4. Fraud Detection:
+   Primary: Recall (catch frauds)
+   Secondary: Precision@K (top predictions), PR-AUC
+```
+
+### Regularization for Logistic Regression
+
+**Preventing Overfitting in Classification**
+
+```
+L1 (Lasso) Logistic Regression:
+L = -1/m Σᵢ[yᵢ log(σᵢ) + (1-yᵢ) log(1-σᵢ)] + λ Σⱼ|wⱼ|
+
+Effect:
+- Sparse solutions (some weights = 0)
+- Feature selection
+- Interpretable models
+
+L2 (Ridge) Logistic Regression:
+L = -1/m Σᵢ[yᵢ log(σᵢ) + (1-yᵢ) log(1-σᵢ)] + λ Σⱼwⱼ²
+
+Effect:
+- Shrinks all weights
+- Handles collinearity
+- Smoother decision boundary
+
+C parameter in scikit-learn:
+- C = inverse of λ (smaller C = more regularization)
+- C → ∞: No regularization
+- C → 0: Maximum regularization
+- Default: C = 1.0
+- Try: C ∈ [0.001, 0.01, 0.1, 1, 10, 100]
+```
+
+### Real-World Applications
+
+> [!green] ✅ **Where Logistic Regression Shines**
+
+**1. Medical Diagnosis**
+```
+Problem: Predict disease presence
+Features: Age, symptoms, biomarkers, family history
+Output: P(disease) ∈ [0, 1]
+
+Example - Heart Disease:
+P(disease) = σ(0.05×age + 0.3×cholesterol + 0.2×BP + ...)
+
+Advantages:
+✓ Interpretable (doctors understand odds ratios)
+✓ Calibrated probabilities (useful for treatment decisions)
+✓ Can explain why patient is high risk
+
+Interpretation:
+OR_age = e^0.05 = 1.051
+→ Each year of age increases odds by 5.1%
+```
+
+**2. Credit Risk Scoring**
+```
+Problem: Will customer default on loan?
+Features: Income, debt, credit history, employment
+Output: P(default)
+
+Risk bands:
+P(default) < 0.1: Low risk (approve)
+0.1 ≤ P(default) < 0.3: Medium risk (manual review)
+P(default) ≥ 0.3: High risk (reject)
+
+Interpretable for regulators:
+- Must explain rejections
+- Weights show factor importance
+- Odds ratios quantify risk
+```
+
+**3. Marketing Response Prediction**
+```
+Problem: Will customer respond to campaign?
+Features: Demographics, past purchases, engagement
+Output: P(response)
+
+Use cases:
+- Email targeting (send to P(response) > 0.3)
+- Discount allocation (high P but didn't convert)
+- Churn prediction (P(churn) and intervene)
+
+ROI optimization:
+Expected value = P(response) × profit - cost
+Send email only if EV > 0
+```
+
+**4. Click-Through Rate (CTR) Prediction**
+```
+Problem: Will user click on ad?
+Features: User profile, ad content, context, time
+Output: P(click)
+
+Online advertising:
+- Billions of predictions per day
+- Logistic regression is fast
+- Can be updated online (SGD)
+- Interpretable for advertisers
+
+Expected revenue = P(click) × P(convert|click) × value
+Bid based on expected revenue
+```
+
+**5. Fraud Detection**
+```
+Problem: Is transaction fraudulent?
+Features: Amount, location, time, merchant, patterns
+Output: P(fraud)
+
+Decision rules:
+P(fraud) > 0.9: Block transaction
+0.5 < P(fraud) ≤ 0.9: Request verification
+P(fraud) ≤ 0.5: Allow
+
+Imbalanced data (fraud is rare):
+- Use class weights
+- Oversample fraud cases
+- Focus on recall and precision@K
+```
+
+### Common Pitfalls and Solutions
+
+> [!red] ⚠️ **Mistakes to Avoid**
+
+```
+1. Not Scaling Features
+   Problem: Different scales → slow convergence
+   
+   Age: 20-80
+   Income: 20000-200000
+   → Income dominates due to large values
+   
+   Solution: Standardize features
+   x_scaled = (x - mean) / std
+   
+2. Multicollinearity
+   Problem: Correlated features → unstable weights
+   
+   Example: height_cm and height_inches
+   → One small data change → large weight changes
+   
+   Solution:
+   - Remove correlated features
+   - Use L2 regularization
+   - PCA for dimension reduction
+
+3. Class Imbalance
+   Problem: 99% negative, 1% positive
+   → Model predicts all negative (99% accuracy!)
+   
+   Solutions:
+   - Use class_weight='balanced'
+   - Oversample minority (SMOTE)
+   - Undersample majority
+   - Use F1, PR-AUC instead of accuracy
+   - Adjust threshold based on costs
+
+4. Outliers
+   Problem: Extreme values influence decision boundary
+   
+   Solution:
+   - Remove or cap outliers
+   - Use robust scaling
+   - Consider robust classifiers (SVM)
+
+5. Non-linear Boundaries
+   Problem: Classes not linearly separable
+   
+   Solutions:
+   - Add polynomial features
+   - Try kernel SVM
+   - Use tree-based models
+   - Neural networks
+
+6. Assuming Threshold = 0.5
+   Problem: Suboptimal for imbalanced or cost-sensitive problems
+   
+   Solution:
+   - Tune threshold on validation set
+   - Maximize F1 or business metric
+   - Use different thresholds for different use cases
+```
+
+**Model Interpretation:**
+
+```
+Coefficient interpretation (after standardization):
+
+w₁ = 0.5 (Positive, large)
+→ Feature 1 strongly increases P(y=1)
+
+w₂ = -0.3 (Negative, medium)  
+→ Feature 2 moderately decreases P(y=1)
+
+w₃ = 0.01 (Close to zero)
+→ Feature 3 has little effect
+
+Odds ratio interpretation:
+OR = e^(wⱼ)
+
+w_income = 0.693
+OR = e^0.693 ≈ 2.0
+→ One std increase in income doubles odds of positive class
+
+Practical example:
+If odds were 1:3 (25% probability)
+After increase: odds become 2:3 (40% probability)
+```
 graph TD
     A[Logistic Regression] --> B[Binary<br/>2 Classes]
     A --> C[Multi-Class<br/>3+ Classes]
