@@ -1,0 +1,18 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "attachments",
+  "defaultViewMode": "source",
+  "readableLineLength": false,
+  "theme": "obsidian",
+  "cssTheme": "",
+  "vimMode": false,
+  "showLineNumber": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showFrontmatter": false,
+  "showInlineTitle": true,
+  "newFileLocation": "current"
+}

@@ -1,0 +1,20 @@
+# Obsidian
+.obsidian/workspace*
+.obsidian/cache
+.obsidian/plugins/
+.obsidian/themes/
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Temporary
+*.tmp
+*.temp
+drafts/
+
+# Private notes
+private/
+personal/

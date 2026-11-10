@@ -1,0 +1,147 @@
+/* 🎨 Handwritten-Style Colorful Notes */
+
+/* Callout boxes with colors (Obsidian syntax: > [!color]) */
+
+/* Blue - Concepts & Definitions */
+.callout[data-callout="blue"] {
+    --callout-color: 100, 149, 237;
+    --callout-icon: lucide-book-open;
+    background: linear-gradient(135deg, rgba(100, 149, 237, 0.1) 0%, rgba(100, 149, 237, 0.05) 100%);
+    border-left: 4px solid rgb(100, 149, 237);
+}
+
+/* Green - Examples & Working Code */
+.callout[data-callout="green"] {
+    --callout-color: 52, 211, 153;
+    --callout-icon: lucide-check-circle;
+    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+    border-left: 4px solid rgb(52, 211, 153);
+}
+
+/* Red - Warnings & Bugs */
+.callout[data-callout="red"] {
+    --callout-color: 239, 68, 68;
+    --callout-icon: lucide-alert-triangle;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+    border-left: 4px solid rgb(239, 68, 68);
+}
+
+/* Yellow - Important & Tips */
+.callout[data-callout="yellow"] {
+    --callout-color: 251, 191, 36;
+    --callout-icon: lucide-lightbulb;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
+    border-left: 4px solid rgb(251, 191, 36);
+}
+
+/* Purple - Advanced & Deep Dives */
+.callout[data-callout="purple"] {
+    --callout-color: 168, 85, 247;
+    --callout-icon: lucide-sparkles;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+    border-left: 4px solid rgb(168, 85, 247);
+}
+
+/* Inline highlights with HTML comments */
+/* Usage: ==highlighted text==<!--blue--> */
+mark:has(+ comment:contains("blue")) {
+    background: rgba(100, 149, 237, 0.3);
+    color: #a8c5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+mark:has(+ comment:contains("green")) {
+    background: rgba(52, 211, 153, 0.3);
+    color: #7fffd4;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+mark:has(+ comment:contains("red")) {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ff9999;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+mark:has(+ comment:contains("yellow")) {
+    background: rgba(251, 191, 36, 0.3);
+    color: #ffd966;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+mark:has(+ comment:contains("purple")) {
+    background: rgba(168, 85, 247, 0.3);
+    color: #d4a5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Headers with colored underlines */
+.markdown-preview-view h1 {
+    color: rgb(156, 188, 226);
+    border-bottom: 3px solid rgb(100, 149, 237);
+    padding-bottom: 8px;
+}
+
+.markdown-preview-view h2 {
+    color: rgb(168, 208, 141);
+    border-left: 5px solid rgb(52, 211, 153);
+    padding-left: 12px;
+}
+
+.markdown-preview-view h3 {
+    color: rgb(249, 199, 79);
+    text-decoration: underline;
+    text-decoration-color: rgb(251, 191, 36);
+    text-decoration-thickness: 2px;
+}
+
+/* Tags with gradient */
+.tag {
+    background: linear-gradient(120deg, rgba(168, 85, 247, 0.2), rgba(251, 191, 36, 0.2));
+    color: rgb(255, 217, 102);
+    border-radius: 12px;
+    padding: 3px 10px;
+}
+
+/* Code blocks with colored border */
+.markdown-preview-view pre {
+    border-left: 3px solid rgb(52, 211, 153);
+}
+
+/* Links colored */
+.markdown-preview-view .internal-link {
+    color: rgb(156, 188, 226);
+    text-decoration: underline;
+    text-decoration-color: rgba(156, 188, 226, 0.4);
+}
+
+/* Checkboxes */
+input[type="checkbox"]:checked {
+    background-color: rgb(52, 211, 153);
+    border-color: rgb(52, 211, 153);
+}
+
+/* Blockquotes */
+.markdown-preview-view blockquote {
+    border-left: 5px solid rgb(168, 85, 247);
+    background: rgba(168, 85, 247, 0.1);
+    color: rgb(230, 213, 255);
+    font-style: italic;
+}
+
+/* Tables with alternating colors */
+.markdown-preview-view table tr:nth-child(even) {
+    background: rgba(100, 149, 237, 0.05);
+}
+
+.markdown-preview-view table tr:nth-child(odd) {
+    background: rgba(52, 211, 153, 0.05);
+}
+
+.markdown-preview-view table th {
+    background: linear-gradient(120deg, rgba(100, 149, 237, 0.3), rgba(52, 211, 153, 0.3));
+}
