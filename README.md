@@ -49,8 +49,8 @@ Classical ML algorithms with complete mathematical treatment
 |-----------|--------|----------|------|
 | **Linear Regression** | ✅ Complete | Gradient descent, Normal equation, Regularization (L1/L2) | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#1-linear-regression) |
 | **Logistic Regression** | ✅ Complete | Sigmoid, Cross-entropy, Multi-class, ROC/PR curves | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#2-logistic-regression) |
-| **Decision Trees** | 🔄 50% | Gini, Entropy, Information Gain, Pruning | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#3-decision-trees) |
-| **Random Forest** | ⏳ Planned | Ensemble, Bagging, Feature importance | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+| **Decision Trees** | ✅ Complete | Gini, Entropy, Pruning, Hyperparameters, Applications | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#3-decision-trees) |
+| **Random Forest** | ✅ Complete | Bagging, OOB score, Feature importance, Production | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#4-random-forest) |
 | **Gradient Boosting** | ⏳ Planned | XGBoost, LightGBM, CatBoost | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
 | **SVM** | ⏳ Planned | Kernels, Support vectors, Margin | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
 | **K-Nearest Neighbors** | ⏳ Planned | Distance metrics, KD-trees | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
@@ -204,7 +204,7 @@ data-science-ai-learning-vault/
 │   └── Time-Series/
 │
 ├── 📂 03-Machine-Learning/         # Classical ML algorithms
-│   ├── Supervised-Learning/        # ✅ 2/8 algorithms complete
+│   ├── Supervised-Learning/        # ✅ 4/8 algorithms complete
 │   │   ├── Linear Regression       # ✅ Complete
 │   │   ├── Logistic Regression     # ✅ Complete
 │   │   ├── Decision Trees          # 🔄 50% done
@@ -362,4 +362,5 @@ If you find this repository helpful, please consider giving it a star ⭐
 ---
 
 **Last Updated:** November 11, 2024  
-**Total Content:** 27,000+ lines | 44 files | 12 commits
+**Total Content:** 30,000+ lines | 44 files | 15 commits  
+**ML Algorithms:** 4/8 complete (Linear/Logistic Regression, Decision Trees, Random Forest)
