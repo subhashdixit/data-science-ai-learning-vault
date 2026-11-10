@@ -1,228 +1,365 @@
-# 🎓 My Learning Journey - Data Science & AI
+# 🎓 Data Science & AI Learning Vault
 
-**Complete learning notes from Foundations to AI Systems + Interview Prep**
+> **A comprehensive, production-ready learning resource covering Data Science and AI from foundations to advanced topics with deep mathematical treatment, algorithms, and real-world applications.**
 
-> 🎨 **Color-coded like handwritten notes!**  
-> 💙 Blue = Concepts | 💚 Green = Examples | ❤️ Red = Warnings | 💛 Yellow = Important | 💜 Purple = Advanced
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/subhashdixit/data-science-ai-learning-vault/issues)
 
 ---
 
-## 📚 Structure
+## 📊 Repository Stats
 
-```
-learning-notes/
-├── 01-Foundations/          # Programming & Math fundamentals
-│   ├── Python/              # Python complete
-│   ├── NumPy/               # Numerical computing
-│   ├── Pandas/              # Data manipulation
-│   ├── SQL/                 # Database queries
-│   └── Math/                # Linear Algebra, Calculus, Probability
-│
-├── 02-Statistics-and-Data/  # Data analysis & statistics
-│   ├── Statistics/          # Statistical concepts
-│   ├── EDA/                 # Exploratory Data Analysis
-│   ├── Data-Visualization/  # Charts and graphs
-│   └── Time-Series/         # Time series analysis
-│
-├── 03-Machine-Learning/     # Classical ML
-│   ├── Supervised-Learning/ # Regression, Classification
-│   ├── Unsupervised-Learning/ # Clustering, PCA
-│   ├── Model-Evaluation/    # Metrics, validation
-│   └── Feature-Engineering/ # Feature selection & engineering
-│
-├── 04-Deep-Learning/        # Neural networks & modern AI
-│   ├── Neural-Networks/     # Basics, backprop
-│   ├── CNNs/                # Computer Vision
-│   ├── RNNs-LSTMs/          # Sequence models
-│   ├── Transformers/        # Attention, BERT, GPT
-│   └── LLMs/                # Large Language Models
-│
-├── 05-NLP/                  # Natural Language Processing
-│   ├── Basics/              # Tokenization, embeddings
-│   ├── Advanced/            # Advanced techniques
-│   └── Applications/        # Real-world NLP
-│
-├── 06-AI-Systems/           # Building AI applications
-│   ├── RAG/                 # Retrieval-Augmented Generation
-│   ├── Agents/              # AI agents
-│   └── Prompt-Engineering/  # Prompt design
-│
-├── 07-MLOps-Deployment/     # Production ML
-│   ├── MLOps/               # ML Operations
-│   ├── LLMOps/              # LLM Operations
-│   └── Data-Engineering/    # Data pipelines
-│
-├── 08-Projects/             # Learning projects
-│
-├── 09-Interview-Prep/       # 🎯 Interview preparation
-│   ├── Coding/              # LeetCode, algorithms
-│   ├── ML-Theory/           # ML interview questions
-│   ├── System-Design/       # ML system design
-│   └── Behavioral/          # Behavioral questions
-│
-├── 10-Daily-Notes/          # Daily learning journal
-│
-└── 11-Resources/            # Books, courses, links
-```
+- 📝 **27,000+** lines of comprehensive content
+- 📚 **44** markdown files
+- 🎯 **Deep mathematical foundations** with equations and derivations
+- 💻 **Real-world applications** and use cases
+- 🔬 **Algorithm complexity analysis** (time & space)
+- 📈 **Visual representations** with diagrams
+- ✅ **Production-ready** content
+
+---
+
+## 🗺️ Quick Navigation
+
+### 🔰 **Foundations** → [View Section](./01-Foundations/)
+Master the fundamentals before diving into ML/AI
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **Python** | ✅ Complete | Data types, lists, algorithms, memory | [📖 Read](./01-Foundations/Python/README.md) |
+| **NumPy** | ✅ Complete | SIMD, cache, vectorization, performance | [📖 Read](./01-Foundations/NumPy/README.md) |
+| **Pandas** | 🔄 In Progress | Data manipulation and analysis | [📖 Read](./01-Foundations/Pandas/README.md) |
+| **SQL** | 🔄 In Progress | Database queries and operations | [📖 Read](./01-Foundations/SQL/README.md) |
+| **Math** | 🔄 In Progress | Linear Algebra, Calculus, Probability | [📖 Read](./01-Foundations/Math/README.md) |
+
+### 📊 **Statistics & Data** → [View Section](./02-Statistics-and-Data/)
+Statistical foundations for data analysis
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **Statistics** | 🔄 In Progress | Distributions, hypothesis testing | [📖 Read](./02-Statistics-and-Data/Statistics/README.md) |
+| **EDA** | 🔄 In Progress | Exploratory Data Analysis | [📖 Read](./02-Statistics-and-Data/EDA/README.md) |
+| **Data Visualization** | 🔄 In Progress | Charts, graphs, storytelling | [📖 Read](./02-Statistics-and-Data/Data-Visualization/README.md) |
+| **Time Series** | 🔄 In Progress | Temporal data analysis | [📖 Read](./02-Statistics-and-Data/Time-Series/README.md) |
+
+### 🤖 **Machine Learning** → [View Section](./03-Machine-Learning/)
+Classical ML algorithms with complete mathematical treatment
+
+| Algorithm | Status | Features | Link |
+|-----------|--------|----------|------|
+| **Linear Regression** | ✅ Complete | Gradient descent, Normal equation, Regularization (L1/L2) | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#1-linear-regression) |
+| **Logistic Regression** | ✅ Complete | Sigmoid, Cross-entropy, Multi-class, ROC/PR curves | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#2-logistic-regression) |
+| **Decision Trees** | 🔄 50% | Gini, Entropy, Information Gain, Pruning | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md#3-decision-trees) |
+| **Random Forest** | ⏳ Planned | Ensemble, Bagging, Feature importance | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+| **Gradient Boosting** | ⏳ Planned | XGBoost, LightGBM, CatBoost | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+| **SVM** | ⏳ Planned | Kernels, Support vectors, Margin | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+| **K-Nearest Neighbors** | ⏳ Planned | Distance metrics, KD-trees | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+| **Naive Bayes** | ⏳ Planned | Bayes theorem, Text classification | [📖 Read](./03-Machine-Learning/Supervised-Learning/README.md) |
+
+**Other ML Topics:**
+- [Unsupervised Learning](./03-Machine-Learning/Unsupervised-Learning/README.md) - Clustering, PCA, Dimensionality reduction
+- [Model Evaluation](./03-Machine-Learning/Model-Evaluation/README.md) - Metrics, Cross-validation, Bias-variance
+- [Feature Engineering](./03-Machine-Learning/Feature-Engineering/README.md) - Feature selection, Transformation, Encoding
+
+### 🧠 **Deep Learning** → [View Section](./04-Deep-Learning/)
+Neural networks from basics to state-of-the-art
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **Neural Networks** | 🔄 In Progress | Backpropagation, Activation functions, Optimization | [📖 Read](./04-Deep-Learning/Neural-Networks/README.md) |
+| **CNNs** | 🔄 In Progress | Convolution, Pooling, Transfer learning | [📖 Read](./04-Deep-Learning/CNNs/README.md) |
+| **RNNs & LSTMs** | 🔄 In Progress | Sequential data, Gates, Attention | [📖 Read](./04-Deep-Learning/RNNs-LSTMs/README.md) |
+| **Transformers** | 🔄 In Progress | Self-attention, Multi-head, BERT, GPT | [📖 Read](./04-Deep-Learning/Transformers/README.md) |
+| **LLMs** | 🔄 In Progress | Fine-tuning, LoRA, RLHF, Deployment | [📖 Read](./04-Deep-Learning/LLMs/README.md) |
+
+### 🗣️ **Natural Language Processing** → [View Section](./05-NLP/)
+Text processing and language understanding
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **NLP Basics** | 🔄 In Progress | Tokenization, Embeddings, TF-IDF | [📖 Read](./05-NLP/Basics/README.md) |
+| **Advanced NLP** | 🔄 In Progress | BERT, GPT, Transfer learning | [📖 Read](./05-NLP/Advanced/README.md) |
+| **Applications** | 🔄 In Progress | Classification, QA, Summarization | [📖 Read](./05-NLP/Applications/README.md) |
+
+### 🤖 **AI Systems** → [View Section](./06-AI-Systems/)
+Building production AI applications
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **RAG** | 🔄 In Progress | Vector DBs, Retrieval, Generation | [📖 Read](./06-AI-Systems/RAG/README.md) |
+| **AI Agents** | 🔄 In Progress | ReAct, Tool use, Memory | [📖 Read](./06-AI-Systems/Agents/README.md) |
+| **Prompt Engineering** | 🔄 In Progress | Few-shot, Chain-of-thought, Optimization | [📖 Read](./06-AI-Systems/Prompt-Engineering/README.md) |
+
+### 🚀 **MLOps & Deployment** → [View Section](./07-MLOps-Deployment/)
+Production ML and LLM systems
+
+| Topic | Status | Description | Link |
+|-------|--------|-------------|------|
+| **MLOps** | 🔄 In Progress | Pipelines, Monitoring, CI/CD | [📖 Read](./07-MLOps-Deployment/MLOps/README.md) |
+| **LLMOps** | 🔄 In Progress | Prompt management, Evaluation, Cost | [📖 Read](./07-MLOps-Deployment/LLMOps/README.md) |
+| **Data Engineering** | 🔄 In Progress | ETL, Orchestration, Quality | [📖 Read](./07-MLOps-Deployment/Data-Engineering/README.md) |
 
 ---
 
 ## 🎯 Learning Paths
 
-### Path 1: Foundations (Current Focus)
-- [x] [[01-Foundations/Python/README|Python Basics]]
-- [ ] [[01-Foundations/NumPy/README|NumPy]]
-- [ ] [[01-Foundations/Pandas/README|Pandas]]
-- [ ] [[01-Foundations/SQL/README|SQL]]
-- [ ] [[01-Foundations/Math/Linear-Algebra/README|Linear Algebra]]
+### 🔰 **Path 1: Complete Beginner → Data Scientist**
+**Timeline:** 4-6 months
 
-### Path 2: Classical ML
-- [ ] Supervised Learning
-- [ ] Unsupervised Learning
-- [ ] Model Evaluation
-- [ ] Feature Engineering
-
-### Path 3: Deep Learning & LLMs
-- [ ] Neural Networks
-- [ ] Transformers
-- [ ] LLMs
-- [ ] Fine-tuning
-
-### Path 4: AI Systems
-- [ ] RAG Systems
-- [ ] AI Agents
-- [ ] Prompt Engineering
-
-### Path 5: Interview Prep 🎯
-- [ ] [[09-Interview-Prep/Coding/README|Coding Practice]]
-- [ ] [[09-Interview-Prep/ML-Theory/README|ML Theory Questions]]
-- [ ] [[09-Interview-Prep/System-Design/README|System Design]]
-- [ ] [[09-Interview-Prep/Behavioral/README|Behavioral]]
-
----
-
-## 🎨 How to Use Colors (Like Handwritten Notes!)
-
-### Inline Highlights
-```markdown
-This is ==blue concept==<!--blue--> - for definitions
-This is ==green example==<!--green--> - for code examples
-This is ==red warning==<!--red--> - for critical bugs
-This is ==yellow important==<!--yellow--> - for key points
-This is ==purple advanced==<!--purple--> - for advanced topics
+```mermaid
+graph LR
+    A[Python Basics] --> B[NumPy/Pandas]
+    B --> C[Statistics]
+    C --> D[ML Algorithms]
+    D --> E[Deep Learning]
+    E --> F[Projects]
 ```
 
-### Block Highlights
-```markdown
-> [!blue] 💙 Main Concept
-> Definition goes here
+1. **Month 1-2:** [Foundations](./01-Foundations/) - Python, NumPy, Pandas, SQL, Math
+2. **Month 2-3:** [Statistics & Data](./02-Statistics-and-Data/) - Statistical inference, EDA
+3. **Month 3-4:** [Machine Learning](./03-Machine-Learning/) - All classical algorithms
+4. **Month 4-5:** [Deep Learning](./04-Deep-Learning/) - Neural networks, CNNs, RNNs
+5. **Month 5-6:** [Projects](./08-Projects/) - Build portfolio projects
 
-> [!green] 💚 Example
-> Code example goes here
+### 🎯 **Path 2: ML Engineer → AI Systems**
+**Timeline:** 2-3 months
 
-> [!red] ⚠️ Warning
-> Critical bug or gotcha
+```mermaid
+graph LR
+    A[LLMs Basics] --> B[RAG Systems]
+    B --> C[AI Agents]
+    C --> D[Production]
+```
 
-> [!yellow] 💡 Important
-> Key takeaway or best practice
+1. **Week 1-4:** [LLMs](./04-Deep-Learning/LLMs/README.md) - Fine-tuning, LoRA, Deployment
+2. **Week 5-8:** [AI Systems](./06-AI-Systems/) - RAG, Agents, Prompt Engineering
+3. **Week 9-12:** [MLOps/LLMOps](./07-MLOps-Deployment/) - Production deployment
 
-> [!purple] 🔮 Advanced
-> Deep dive topic
+### 📝 **Path 3: Interview Preparation**
+**Timeline:** 1-2 months
+
+1. **Week 1-2:** [Coding Practice](./09-Interview-Prep/Coding/) - Algorithms, Data structures
+2. **Week 3-4:** [ML Theory](./09-Interview-Prep/ML-Theory/) - Algorithm questions
+3. **Week 5-6:** [System Design](./09-Interview-Prep/System-Design/) - ML systems
+4. **Week 7-8:** [Behavioral](./09-Interview-Prep/Behavioral/) - STAR method
+
+---
+
+## 📖 What Makes This Different?
+
+### ✨ **Comprehensive Coverage**
+- **Mathematical Foundations:** Full derivations of algorithms (Gradient Descent, Backpropagation)
+- **Complexity Analysis:** Time and space complexity for every algorithm
+- **Real-World Applications:** Practical use cases for each technique
+- **Visual Learning:** Diagrams, flowcharts, decision trees
+
+### 🎓 **Production-Ready Content**
+
+**Example: Linear Regression includes:**
+- Complete mathematical derivation
+- Normal Equation vs Gradient Descent (with O(n³) vs O(kn) analysis)
+- All 5 Gauss-Markov assumptions with diagnostic plots
+- Regularization (L1, L2, Elastic Net) with geometric interpretation
+- Real-world applications (price prediction, forecasting)
+- Feature engineering techniques
+- Common pitfalls and solutions
+
+**Example: Logistic Regression includes:**
+- Sigmoid function properties and derivative
+- Binary Cross-Entropy derivation from Maximum Likelihood
+- Complete gradient descent algorithm
+- Multi-class: One-vs-Rest vs Softmax
+- All evaluation metrics (Confusion Matrix, ROC, PR curves)
+- Real-world applications (medical, credit, fraud detection)
+
+### 🔬 **Deep Technical Depth**
+
+**NumPy Performance Analysis:**
+- SIMD vectorization (AVX/SSE instructions)
+- CPU cache hierarchy impact (L1/L2/L3)
+- Memory layout (contiguous vs scattered)
+- Actual CPU cycle counts and speedup calculations
+
+---
+
+## 📁 Repository Structure
+
+```
+data-science-ai-learning-vault/
+│
+├── 📂 01-Foundations/              # Programming & Math fundamentals
+│   ├── Python/                     # ✅ Complete: Data types, lists, complexity
+│   ├── NumPy/                      # ✅ Complete: SIMD, cache, vectorization
+│   ├── Pandas/                     # 🔄 In Progress
+│   ├── SQL/                        # 🔄 In Progress
+│   └── Math/                       # 🔄 In Progress
+│       ├── Linear-Algebra/
+│       ├── Calculus/
+│       └── Probability/
+│
+├── 📂 02-Statistics-and-Data/      # Statistical foundations
+│   ├── Statistics/
+│   ├── EDA/
+│   ├── Data-Visualization/
+│   └── Time-Series/
+│
+├── 📂 03-Machine-Learning/         # Classical ML algorithms
+│   ├── Supervised-Learning/        # ✅ 2/8 algorithms complete
+│   │   ├── Linear Regression       # ✅ Complete
+│   │   ├── Logistic Regression     # ✅ Complete
+│   │   ├── Decision Trees          # 🔄 50% done
+│   │   ├── Random Forest           # ⏳ Planned
+│   │   ├── Gradient Boosting       # ⏳ Planned
+│   │   ├── SVM                     # ⏳ Planned
+│   │   ├── KNN                     # ⏳ Planned
+│   │   └── Naive Bayes             # ⏳ Planned
+│   ├── Unsupervised-Learning/
+│   ├── Model-Evaluation/
+│   └── Feature-Engineering/
+│
+├── 📂 04-Deep-Learning/            # Neural networks & modern AI
+│   ├── Neural-Networks/
+│   ├── CNNs/
+│   ├── RNNs-LSTMs/
+│   ├── Transformers/
+│   └── LLMs/
+│
+├── 📂 05-NLP/                      # Natural Language Processing
+│   ├── Basics/
+│   ├── Advanced/
+│   └── Applications/
+│
+├── 📂 06-AI-Systems/               # Production AI applications
+│   ├── RAG/
+│   ├── Agents/
+│   └── Prompt-Engineering/
+│
+├── 📂 07-MLOps-Deployment/         # MLOps & LLMOps
+│   ├── MLOps/
+│   ├── LLMOps/
+│   └── Data-Engineering/
+│
+├── 📂 08-Projects/                 # Hands-on projects
+│
+├── 📂 09-Interview-Prep/           # Interview preparation
+│   ├── Coding/
+│   ├── ML-Theory/
+│   ├── System-Design/
+│   └── Behavioral/
+│
+├── 📂 10-Daily-Notes/              # Learning journal
+│
+├── 📂 11-Resources/                # External resources
+│
+└── 📂 docs/reference/              # Documentation
+    ├── 00-TEMPLATE.md              # Note template
+    ├── COLOR-CODING-GUIDE.md       # Color system guide
+    ├── GITHUB-SETUP.md             # Git workflow
+    ├── QUICK-START.md              # Getting started
+    ├── INDEX.md                    # Full index
+    └── NAVIGATION.md               # Navigation guide
 ```
 
 ---
 
-## 📅 Daily Workflow
+## 🚀 Getting Started
 
-### Morning
-1. Create today's note in `10-Daily-Notes/YYYY-MM-DD.md`
-2. Plan what to learn today
-3. Link to relevant topic notes
+### For Learners
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/subhashdixit/data-science-ai-learning-vault.git
+   cd data-science-ai-learning-vault
+   ```
 
-### During Day
-- Take notes with color coding
-- Link related concepts with `[[note-name]]`
-- Add examples and code snippets
+2. **Choose your learning path:**
+   - Complete beginner? Start with [01-Foundations](./01-Foundations/)
+   - ML background? Jump to [04-Deep-Learning](./04-Deep-Learning/)
+   - Building AI systems? Go to [06-AI-Systems](./06-AI-Systems/)
 
-### Evening
-- Review what you learned
-- Update progress trackers
-- Git commit and push
+3. **Follow the structure:**
+   - Each section has a README with overview
+   - Topics include mathematical foundations
+   - Real-world examples and applications
+   - Practice problems and projects
 
-```bash
-cd ~/Documents/learning-notes
-git add .
-git commit -m "Daily update - $(date +%Y-%m-%d)"
-git push
-```
-
----
-
-## 🚨 Critical Topics (Review Regularly)
-
-### Python
-- [[01-Foundations/Python/mutable-vs-immutable|Mutable vs Immutable]] ⭐
-- [[01-Foundations/Python/decorators|Decorators]]
-- [[01-Foundations/Python/generators|Generators]]
-
-### Machine Learning
-- Bias-Variance Tradeoff
-- Overfitting vs Underfitting
-- Cross-Validation
-
-### Deep Learning
-- Backpropagation
-- Vanishing Gradients
-- Batch Normalization
-
-### Interview
-- [[09-Interview-Prep/Coding/patterns|Common Patterns]]
-- [[09-Interview-Prep/ML-Theory/must-know|Must-Know Questions]]
-- [[09-Interview-Prep/System-Design/templates|Design Templates]]
+### For Contributors
+1. **Fork the repository**
+2. **Create a feature branch:** `git checkout -b feature/add-topic`
+3. **Follow the template:** Use `docs/reference/00-TEMPLATE.md`
+4. **Commit your changes:** `git commit -m 'Add comprehensive XYZ topic'`
+5. **Push to the branch:** `git push origin feature/add-topic`
+6. **Open a Pull Request**
 
 ---
 
-## ✅ Progress Tracker
+## 📚 Reference Documentation
 
-### Completed
-- [x] Python fundamentals
-- [x] Mutable vs Immutable concept
-
-### In Progress
-- [ ] NumPy arrays and operations
-- [ ] Pandas DataFrames
-- [ ] LeetCode daily practice
-
-### Goals (This Month)
-- [ ] Complete Foundations
-- [ ] 30 LeetCode problems
-- [ ] Build 2 ML projects
-- [ ] Start Deep Learning
+- [📋 Template](./docs/reference/00-TEMPLATE.md) - Note structure template
+- [🎨 Color Guide](./docs/reference/COLOR-CODING-GUIDE.md) - Color-coding system
+- [🔧 Setup](./docs/reference/GITHUB-SETUP.md) - Git workflow
+- [⚡ Quick Start](./docs/reference/QUICK-START.md) - Getting started
+- [📇 Index](./docs/reference/INDEX.md) - Complete topic index
+- [🗺️ Navigation](./docs/reference/NAVIGATION.md) - Navigation guide
 
 ---
 
-## 🔗 Quick Links
+## 🎨 Color-Coding System
 
-### External Resources
-- [Python Docs](https://docs.python.org/3/)
-- [Kaggle](https://www.kaggle.com/)
-- [LeetCode](https://leetcode.com/)
-- [Hugging Face](https://huggingface.co/)
+All notes use a consistent 5-color callout system:
 
-### My Work
-- [[08-Projects/README|Projects]]
-- [[09-Interview-Prep/README|Interview Prep]]
-- [[10-Daily-Notes/README|Daily Notes]]
-
----
-
-## 📊 Stats
-
-**Total Notes:** Growing daily!  
-**Last Updated:** 2026-11-11  
-**Study Streak:** 🔥  
-**Interview Ready:** Building towards it!
+| Color | Purpose | When to Use |
+|-------|---------|-------------|
+| 💙 **Blue** | Concepts & Definitions | Core ideas, mathematical definitions |
+| 💚 **Green** | Examples & Working Solutions | Practical examples, use cases |
+| ❤️ **Red** | Warnings & Common Mistakes | Pitfalls, errors to avoid |
+| 💛 **Yellow** | Tips & Best Practices | Important insights, recommendations |
+| 💜 **Purple** | Advanced & Deep Dives | Complex topics, research-level content |
 
 ---
 
-**🎓 From Zero to AI Engineer - One Note at a Time!**
+## 🤝 Contributing
+
+Contributions are welcome! Whether you want to:
+- Fix a typo or error
+- Add a new topic or algorithm
+- Improve explanations
+- Add more examples
+- Enhance visualizations
+
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Inspired by best practices from Stanford CS229, MIT 6.S191, and Fast.ai
+- Mathematical notation follows standard ML textbooks
+- Built with Obsidian for knowledge management
+- Mermaid.js for diagrams and flowcharts
+
+---
+
+## 📬 Contact
+
+**Subhash Dixit**
+- GitHub: [@subhashdixit](https://github.com/subhashdixit)
+- Repository: [data-science-ai-learning-vault](https://github.com/subhashdixit/data-science-ai-learning-vault)
+
+---
+
+## ⭐ Star History
+
+If you find this repository helpful, please consider giving it a star ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=subhashdixit/data-science-ai-learning-vault&type=Date)](https://star-history.com/#subhashdixit/data-science-ai-learning-vault&Date)
+
+---
+
+**Last Updated:** November 11, 2024  
+**Total Content:** 27,000+ lines | 44 files | 12 commits
