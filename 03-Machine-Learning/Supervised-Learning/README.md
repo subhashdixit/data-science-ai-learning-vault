@@ -47,21 +47,95 @@ graph LR
 
 ## 1. LINEAR REGRESSION
 
-> [!blue] 💙 **Core Concept**
-> Finds the best-fitting straight line through data points to predict continuous values.
+> [!blue] 💙 **Linear Regression - The Foundation of Supervised Learning**
+> Models the relationship between input features and continuous output as a linear combination. Despite its simplicity, it's incredibly powerful and forms the basis for understanding more complex models.
 
-### The Equation
+**Mathematical Definition:**
+Linear regression assumes the target variable y can be approximated as a linear function of input features X.
+
+### The Mathematical Framework
+
+**Simple Linear Regression (1 feature):**
+```
+Hypothesis function:
+ŷ = wx + b
+
+Where:
+ŷ (y-hat) = predicted value
+w = weight (slope, coefficient)
+x = input feature
+b = bias (intercept)
+
+Geometric interpretation:
+- w controls steepness (how much y changes per unit of x)
+- b shifts line up/down (value when x=0)
+```
+
+**Multiple Linear Regression (n features):**
+```
+Vector notation:
+ŷ = w₁x₁ + w₂x₂ + ... + wₙxₙ + b
+  = w^T x + b
+  
+Matrix notation (for m samples):
+Ŷ = X W + b
+
+Where:
+X ∈ ℝ^(m×n) = feature matrix (m samples, n features)
+W ∈ ℝ^(n×1) = weight vector
+b ∈ ℝ = bias (scalar)
+Ŷ ∈ ℝ^(m×1) = predictions
+
+Example with 3 features:
+ŷ = w₁(square_feet) + w₂(bedrooms) + w₃(age) + b
+  = 150(2000) + 50000(3) + (-2000)(10) + 100000
+  = 300000 + 150000 - 20000 + 100000
+  = $530,000
+```
+
+### Loss Function - Mean Squared Error (MSE)
+
+**Definition:**
+The cost function measures how wrong our predictions are.
 
 ```
-y = mx + b
+MSE Loss Function:
+L(w, b) = (1/m) Σᵢ₌₁ᵐ (yᵢ - ŷᵢ)²
+        = (1/m) Σᵢ₌₁ᵐ (yᵢ - (w^T xᵢ + b))²
 
-y = predicted value
-m = slope (coefficient)
-x = input feature
-b = intercept (bias)
+Components:
+- yᵢ = actual value for sample i
+- ŷᵢ = predicted value for sample i
+- (yᵢ - ŷᵢ) = error (residual)
+- (yᵢ - ŷᵢ)² = squared error
+- (1/m) Σ = average over all samples
 
-Multi-variable:
-y = b₀ + b₁x₁ + b₂x₂ + ... + bₙxₙ
+Why squared error?
+1. Makes errors positive (avoid cancellation)
+2. Penalizes large errors more (quadratic)
+3. Differentiable (enables gradient descent)
+4. Has nice statistical properties (MLE under Gaussian noise)
+
+Geometric meaning:
+MSE = Average of squared vertical distances from points to line
+```
+
+**Visual Understanding:**
+```
+Actual vs Predicted:
+
+   y
+   │     ●  ← actual (y=5)
+   │    /|
+   │   / | error = 2
+   │  /  ●  ← prediction (ŷ=3)
+   │ /  
+   │/__________  x
+
+Squared Error = (5-3)² = 4
+
+Total MSE = (1/m) × sum of all squared errors
+Goal: Find w and b that minimize MSE
 ```
 
 ### Visual Understanding
@@ -84,19 +158,196 @@ Price ($)
 Prediction: Price = 150 × Size + 50,000
 ```
 
-### How It Works
+### Optimization Algorithms
+
+**Method 1: Normal Equation (Closed-Form Solution)**
+
+```
+Analytical solution - finds optimal weights directly:
+
+w = (X^T X)^(-1) X^T y
+
+Derivation:
+1. Start with loss: L = ||Xw - y||²
+2. Take derivative: ∂L/∂w = 2X^T(Xw - y)
+3. Set to zero: 2X^T(Xw - y) = 0
+4. Solve: X^TXw = X^Ty
+5. Result: w = (X^TX)^(-1)X^Ty
+
+Advantages:
+✓ Exact solution (one computation)
+✓ No hyperparameters (no learning rate)
+✓ No iterations needed
+
+Disadvantages:
+✗ Requires matrix inversion: O(n³) complexity
+✗ Needs X^TX to be invertible
+✗ Impractical for n > 10,000 features
+✗ Doesn't work for large datasets (memory)
+
+When to use:
+- Small datasets (m < 10,000)
+- Few features (n < 10,000)
+- Need exact solution
+```
+
+**Method 2: Gradient Descent (Iterative Optimization)**
+
+```
+Algorithm:
+1. Initialize: w ← random values, b ← 0
+2. Repeat until convergence:
+   a. Compute predictions: ŷ = Xw + b
+   b. Compute gradients:
+      ∂L/∂w = (1/m) X^T (ŷ - y)
+      ∂L/∂b = (1/m) Σ(ŷᵢ - yᵢ)
+   c. Update parameters:
+      w ← w - α(∂L/∂w)
+      b ← b - α(∂L/∂b)
+3. Return w, b
+
+Where α = learning rate (step size)
+
+Gradient Intuition:
+- Gradient points in direction of steepest ascent
+- Negative gradient points toward minimum
+- Update: move in opposite direction of gradient
+- Learning rate controls step size
+
+Visual representation of one update:
+       Loss
+        │
+        │    ╱
+        │   ╱  Current position
+        │  ●
+        │   ╲
+        │    ╲_
+        │      ╲   ← Gradient direction
+        │       ╲
+        └────────●─── Next position
+                w
+```
+
+**Gradient Descent Variants:**
+
+```
+1. Batch Gradient Descent (BGD):
+   - Uses ALL training samples per update
+   - Gradient: (1/m) Σᵢ₌₁ᵐ ∇Lᵢ
+   - Pros: Stable, converges to minimum
+   - Cons: Slow for large datasets
+   - Update frequency: Once per epoch
+
+2. Stochastic Gradient Descent (SGD):
+   - Uses ONE random sample per update
+   - Gradient: ∇Lᵢ (for random i)
+   - Pros: Fast, works for large data
+   - Cons: Noisy updates, oscillates
+   - Update frequency: m times per epoch
+
+3. Mini-Batch Gradient Descent:
+   - Uses small batch (32-256 samples)
+   - Gradient: (1/b) Σᵢ∈batch ∇Lᵢ
+   - Pros: Balance of speed and stability
+   - Cons: Hyperparameter (batch size)
+   - Update frequency: m/b times per epoch
+   - **Most commonly used in practice**
+
+Comparison:
+┌────────────────────────────────────────┐
+│           ●                            │ BGD: Smooth path
+│          /                             │
+│         /   ◌ ◌                        │ SGD: Noisy
+│        /   ◌   ◌                       │
+│       /  ◌       ●                     │ Mini-batch: 
+│      / ◌           ●                   │ Middle ground
+│     ●               ●                  │
+│   Start           Minimum              │
+└────────────────────────────────────────┘
+```
+
+**Learning Rate Selection:**
+
+```
+Effect of learning rate α:
+
+α too small (0.001):
+Iteration│Loss
+1        │ ●
+2        │  ●
+3        │   ●
+4        │    ●
+100      │         ● ← Very slow convergence
+
+α optimal (0.01):
+Iteration│Loss
+1        │ ●
+2        │   ●
+3        │     ●
+4        │       ●
+10       │          ● ← Good convergence
+
+α too large (0.5):
+Iteration│Loss
+1        │   ●
+2        │ ●   ●
+3        │       ●
+4        │ ●         ● ← Diverges/oscillates
+Never converges!
+
+Adaptive learning rates:
+- Start large, decay over time
+- α(t) = α₀ / (1 + decay_rate × t)
+- Learning rate scheduling
+- Adam optimizer (adaptive per parameter)
+```
+
+**Convergence Analysis:**
+
+```
+Stopping criteria:
+1. Maximum iterations reached
+2. Loss change < threshold: |L(t) - L(t-1)| < ε
+3. Gradient norm small: ||∇L|| < ε
+4. Parameter change small: ||w(t) - w(t-1)|| < ε
+
+Typical convergence curve:
+Loss
+ │
+ │●
+ │ ●●
+ │   ●●●
+ │      ●●●●●
+ │          ●●●●●●________
+ │                        (plateau)
+ └──────────────────────────── Iterations
+ 0  10   50   100   500
+
+Phases:
+1. Rapid descent (0-100 iter)
+2. Slower improvement (100-500)
+3. Plateau (500+) - stop here
+
+Typical iterations needed:
+- Simple data: 100-1000
+- Complex data: 1000-10000
+- Deep learning: 10000-100000+
+```
+
+### Algorithm Workflow
 
 ```mermaid
 graph TD
-    A[Start: Random line] --> B[Calculate errors<br/>actual - predicted]
-    B --> C[Compute loss<br/>Mean Squared Error]
-    C --> D[Adjust slope & intercept<br/>using gradients]
-    D --> E{Loss small<br/>enough?}
-    E -->|No| B
-    E -->|Yes| F[✓ Best fit found!]
+    A[Initialize: w=random, b=0] --> B[Forward Pass<br/>ŷ = Xw + b]
+    B --> C[Compute Loss<br/>MSE = mean((y-ŷ)²)]
+    C --> D[Backward Pass<br/>∂L/∂w, ∂L/∂b]
+    D --> E[Update Parameters<br/>w -= α·∂L/∂w<br/>b -= α·∂L/∂b]
+    E --> F{Converged?<br/>Loss < ε or<br/>max_iter reached}
+    F -->|No| B
+    F -->|Yes| G[Return w, b]
     
     style A fill:#e1f5fe
-    style F fill:#ffd700
+    style G fill:#c8e6c9
 ```
 
 ### Loss Function
