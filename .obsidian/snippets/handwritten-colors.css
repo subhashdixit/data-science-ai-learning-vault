@@ -1,147 +1,480 @@
-/* 🎨 Handwritten-Style Colorful Notes */
+/* 🎨 HANDWRITTEN-STYLE COLORFUL NOTES - ENHANCED VERSION */
+/* Just like using highlighters on paper! 🖍️ */
 
-/* Callout boxes with colors (Obsidian syntax: > [!color]) */
+/* ═══════════════════════════════════════════════════════════════
+   PRIMARY COLOR CALLOUTS - The Main 5 Colors
+   ═══════════════════════════════════════════════════════════════ */
 
-/* Blue - Concepts & Definitions */
+/* 💙 Blue - Concepts & Definitions */
 .callout[data-callout="blue"] {
     --callout-color: 100, 149, 237;
     --callout-icon: lucide-book-open;
-    background: linear-gradient(135deg, rgba(100, 149, 237, 0.1) 0%, rgba(100, 149, 237, 0.05) 100%);
-    border-left: 4px solid rgb(100, 149, 237);
+    background: linear-gradient(135deg,
+        rgba(100, 149, 237, 0.15) 0%,
+        rgba(135, 206, 250, 0.1) 50%,
+        rgba(100, 149, 237, 0.05) 100%);
+    border-left: 5px solid rgb(100, 149, 237);
+    box-shadow: 0 2px 8px rgba(100, 149, 237, 0.2);
+    border-radius: 6px;
+    padding: 14px 18px;
 }
 
-/* Green - Examples & Working Code */
+/* 💚 Green - Examples & Working Code */
 .callout[data-callout="green"] {
     --callout-color: 52, 211, 153;
     --callout-icon: lucide-check-circle;
-    background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
-    border-left: 4px solid rgb(52, 211, 153);
+    background: linear-gradient(135deg,
+        rgba(52, 211, 153, 0.15) 0%,
+        rgba(16, 185, 129, 0.1) 50%,
+        rgba(52, 211, 153, 0.05) 100%);
+    border-left: 5px solid rgb(52, 211, 153);
+    box-shadow: 0 2px 8px rgba(52, 211, 153, 0.25);
+    border-radius: 6px;
+    padding: 14px 18px;
 }
 
-/* Red - Warnings & Bugs */
+/* ❤️ Red - Warnings & Bugs */
 .callout[data-callout="red"] {
     --callout-color: 239, 68, 68;
     --callout-icon: lucide-alert-triangle;
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
-    border-left: 4px solid rgb(239, 68, 68);
+    background: linear-gradient(135deg,
+        rgba(239, 68, 68, 0.15) 0%,
+        rgba(220, 38, 38, 0.1) 50%,
+        rgba(239, 68, 68, 0.05) 100%);
+    border-left: 5px solid rgb(239, 68, 68);
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+    border-radius: 6px;
+    padding: 14px 18px;
 }
 
-/* Yellow - Important & Tips */
+/* 💛 Yellow - Important & Tips */
 .callout[data-callout="yellow"] {
     --callout-color: 251, 191, 36;
     --callout-icon: lucide-lightbulb;
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
-    border-left: 4px solid rgb(251, 191, 36);
+    background: linear-gradient(135deg,
+        rgba(251, 191, 36, 0.15) 0%,
+        rgba(245, 158, 11, 0.1) 50%,
+        rgba(251, 191, 36, 0.05) 100%);
+    border-left: 5px solid rgb(251, 191, 36);
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+    border-radius: 6px;
+    padding: 14px 18px;
 }
 
-/* Purple - Advanced & Deep Dives */
+/* 💜 Purple - Advanced & Deep Dives */
 .callout[data-callout="purple"] {
     --callout-color: 168, 85, 247;
     --callout-icon: lucide-sparkles;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
-    border-left: 4px solid rgb(168, 85, 247);
+    background: linear-gradient(135deg,
+        rgba(168, 85, 247, 0.15) 0%,
+        rgba(147, 51, 234, 0.1) 50%,
+        rgba(168, 85, 247, 0.05) 100%);
+    border-left: 5px solid rgb(168, 85, 247);
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.25);
+    border-radius: 6px;
+    padding: 14px 18px;
 }
 
-/* Inline highlights with HTML comments */
+/* ═══════════════════════════════════════════════════════════════
+   BONUS COLORS - Additional Variations
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 🧡 Orange - Context & Background */
+.callout[data-callout="orange"] {
+    --callout-color: 249, 115, 22;
+    --callout-icon: lucide-info;
+    background: linear-gradient(135deg,
+        rgba(249, 115, 22, 0.15) 0%,
+        rgba(251, 146, 60, 0.1) 50%,
+        rgba(249, 115, 22, 0.05) 100%);
+    border-left: 5px solid rgb(249, 115, 22);
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.25);
+    border-radius: 6px;
+    padding: 14px 18px;
+}
+
+/* 💗 Pink - Key Insights & Aha Moments */
+.callout[data-callout="pink"] {
+    --callout-color: 236, 72, 153;
+    --callout-icon: lucide-heart;
+    background: linear-gradient(135deg,
+        rgba(236, 72, 153, 0.15) 0%,
+        rgba(219, 39, 119, 0.1) 50%,
+        rgba(236, 72, 153, 0.05) 100%);
+    border-left: 5px solid rgb(236, 72, 153);
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+    border-radius: 6px;
+    padding: 14px 18px;
+}
+
+/* 🩵 Cyan - Quick Reference */
+.callout[data-callout="cyan"] {
+    --callout-color: 6, 182, 212;
+    --callout-icon: lucide-bookmark;
+    background: linear-gradient(135deg,
+        rgba(6, 182, 212, 0.15) 0%,
+        rgba(14, 165, 233, 0.1) 50%,
+        rgba(6, 182, 212, 0.05) 100%);
+    border-left: 5px solid rgb(6, 182, 212);
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.25);
+    border-radius: 6px;
+    padding: 14px 18px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INLINE HIGHLIGHTS - Like highlighter markers on text
+   ═══════════════════════════════════════════════════════════════ */
 /* Usage: ==highlighted text==<!--blue--> */
+
+/* 💙 Blue highlight */
 mark:has(+ comment:contains("blue")) {
-    background: rgba(100, 149, 237, 0.3);
-    color: #a8c5ff;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: linear-gradient(120deg,
+        rgba(100, 149, 237, 0.4) 0%,
+        rgba(135, 206, 250, 0.35) 100%);
+    color: #b8d4ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(100, 149, 237, 0.2);
 }
 
+/* 💚 Green highlight */
 mark:has(+ comment:contains("green")) {
-    background: rgba(52, 211, 153, 0.3);
-    color: #7fffd4;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: linear-gradient(120deg,
+        rgba(52, 211, 153, 0.4) 0%,
+        rgba(16, 185, 129, 0.35) 100%);
+    color: #9effd9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(52, 211, 153, 0.25);
 }
 
+/* ❤️ Red highlight */
 mark:has(+ comment:contains("red")) {
-    background: rgba(239, 68, 68, 0.3);
-    color: #ff9999;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: linear-gradient(120deg,
+        rgba(239, 68, 68, 0.4) 0%,
+        rgba(220, 38, 38, 0.35) 100%);
+    color: #ffb3b3;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(239, 68, 68, 0.3);
 }
 
+/* 💛 Yellow highlight */
 mark:has(+ comment:contains("yellow")) {
-    background: rgba(251, 191, 36, 0.3);
-    color: #ffd966;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: linear-gradient(120deg,
+        rgba(251, 191, 36, 0.4) 0%,
+        rgba(245, 158, 11, 0.35) 100%);
+    color: #ffe699;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(251, 191, 36, 0.3);
 }
 
+/* 💜 Purple highlight */
 mark:has(+ comment:contains("purple")) {
-    background: rgba(168, 85, 247, 0.3);
-    color: #d4a5ff;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background: linear-gradient(120deg,
+        rgba(168, 85, 247, 0.4) 0%,
+        rgba(147, 51, 234, 0.35) 100%);
+    color: #e5c1ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(168, 85, 247, 0.25);
 }
 
-/* Headers with colored underlines */
+/* 🧡 Orange highlight */
+mark:has(+ comment:contains("orange")) {
+    background: linear-gradient(120deg,
+        rgba(249, 115, 22, 0.4) 0%,
+        rgba(251, 146, 60, 0.35) 100%);
+    color: #ffcc99;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(249, 115, 22, 0.25);
+}
+
+/* 💗 Pink highlight */
+mark:has(+ comment:contains("pink")) {
+    background: linear-gradient(120deg,
+        rgba(236, 72, 153, 0.4) 0%,
+        rgba(219, 39, 119, 0.35) 100%);
+    color: #ffb3d9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(236, 72, 153, 0.3);
+}
+
+/* 🩵 Cyan highlight */
+mark:has(+ comment:contains("cyan")) {
+    background: linear-gradient(120deg,
+        rgba(6, 182, 212, 0.4) 0%,
+        rgba(14, 165, 233, 0.35) 100%);
+    color: #99e6ff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(6, 182, 212, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   COLORFUL HEADERS - Make titles stand out!
+   ═══════════════════════════════════════════════════════════════ */
+
+/* H1 - Big title with blue gradient underline */
 .markdown-preview-view h1 {
-    color: rgb(156, 188, 226);
-    border-bottom: 3px solid rgb(100, 149, 237);
-    padding-bottom: 8px;
+    background: linear-gradient(120deg,
+        rgb(156, 188, 226) 0%,
+        rgb(100, 149, 237) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg,
+        rgb(100, 149, 237) 0%,
+        rgb(168, 85, 247) 100%) 1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
+/* H2 - Green left border with glow */
 .markdown-preview-view h2 {
     color: rgb(168, 208, 141);
-    border-left: 5px solid rgb(52, 211, 153);
-    padding-left: 12px;
+    border-left: 6px solid rgb(52, 211, 153);
+    padding-left: 15px;
+    background: linear-gradient(90deg,
+        rgba(52, 211, 153, 0.1) 0%,
+        transparent 100%);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    box-shadow: -3px 0 8px rgba(52, 211, 153, 0.3);
 }
 
+/* H3 - Yellow underline with shadow */
 .markdown-preview-view h3 {
-    color: rgb(249, 199, 79);
+    background: linear-gradient(120deg,
+        rgb(249, 199, 79) 0%,
+        rgb(251, 191, 36) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: underline;
     text-decoration-color: rgb(251, 191, 36);
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(251, 191, 36, 0.3);
 }
 
-/* Tags with gradient */
+/* H4 - Purple with glow */
+.markdown-preview-view h4 {
+    color: rgb(200, 162, 255);
+    font-weight: 600;
+    border-left: 3px solid rgb(168, 85, 247);
+    padding-left: 10px;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+/* H5 - Pink accent */
+.markdown-preview-view h5 {
+    color: rgb(255, 153, 204);
+    font-weight: 600;
+    border-bottom: 2px dotted rgb(236, 72, 153);
+    padding-bottom: 4px;
+}
+
+/* H6 - Cyan small header */
+.markdown-preview-view h6 {
+    color: rgb(153, 230, 255);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TAGS - Colorful badge-style tags
+   ═══════════════════════════════════════════════════════════════ */
 .tag {
-    background: linear-gradient(120deg, rgba(168, 85, 247, 0.2), rgba(251, 191, 36, 0.2));
-    color: rgb(255, 217, 102);
-    border-radius: 12px;
-    padding: 3px 10px;
+    background: linear-gradient(135deg,
+        rgba(168, 85, 247, 0.3) 0%,
+        rgba(236, 72, 153, 0.25) 50%,
+        rgba(251, 191, 36, 0.3) 100%);
+    color: rgb(255, 230, 153);
+    border-radius: 14px;
+    padding: 4px 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(168, 85, 247, 0.3);
+    border: 1px solid rgba(168, 85, 247, 0.4);
 }
 
-/* Code blocks with colored border */
+.tag:hover {
+    box-shadow: 0 3px 10px rgba(168, 85, 247, 0.5);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CODE BLOCKS - Green accent for working code
+   ═══════════════════════════════════════════════════════════════ */
 .markdown-preview-view pre {
-    border-left: 3px solid rgb(52, 211, 153);
+    border-left: 4px solid rgb(52, 211, 153);
+    background: rgba(52, 211, 153, 0.05);
+    box-shadow: 0 2px 8px rgba(52, 211, 153, 0.15);
+    border-radius: 6px;
+    padding: 14px;
 }
 
-/* Links colored */
+/* Inline code */
+.markdown-preview-view code {
+    background: rgba(100, 149, 237, 0.15);
+    color: rgb(156, 188, 226);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid rgba(100, 149, 237, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LINKS - Bright blue with glow effect
+   ═══════════════════════════════════════════════════════════════ */
 .markdown-preview-view .internal-link {
     color: rgb(156, 188, 226);
     text-decoration: underline;
-    text-decoration-color: rgba(156, 188, 226, 0.4);
+    text-decoration-color: rgba(156, 188, 226, 0.5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
 }
 
-/* Checkboxes */
+.markdown-preview-view .internal-link:hover {
+    color: rgb(135, 206, 250);
+    text-shadow: 0 0 8px rgba(135, 206, 250, 0.6);
+    text-decoration-color: rgb(135, 206, 250);
+}
+
+.markdown-preview-view .external-link {
+    color: rgb(6, 182, 212);
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 182, 212, 0.5);
+}
+
+.markdown-preview-view .external-link:hover {
+    color: rgb(14, 165, 233);
+    text-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHECKBOXES - Green checkmarks!
+   ═══════════════════════════════════════════════════════════════ */
 input[type="checkbox"]:checked {
     background-color: rgb(52, 211, 153);
     border-color: rgb(52, 211, 153);
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
 }
 
-/* Blockquotes */
+input[type="checkbox"] {
+    border: 2px solid rgb(100, 149, 237);
+    border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BLOCKQUOTES - Purple inspiration quotes
+   ═══════════════════════════════════════════════════════════════ */
 .markdown-preview-view blockquote {
-    border-left: 5px solid rgb(168, 85, 247);
-    background: rgba(168, 85, 247, 0.1);
+    border-left: 6px solid rgb(168, 85, 247);
+    background: linear-gradient(90deg,
+        rgba(168, 85, 247, 0.15) 0%,
+        rgba(168, 85, 247, 0.05) 100%);
     color: rgb(230, 213, 255);
     font-style: italic;
+    padding: 12px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(168, 85, 247, 0.2);
 }
 
-/* Tables with alternating colors */
+/* ═══════════════════════════════════════════════════════════════
+   TABLES - Colorful alternating rows
+   ═══════════════════════════════════════════════════════════════ */
+.markdown-preview-view table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .markdown-preview-view table tr:nth-child(even) {
-    background: rgba(100, 149, 237, 0.05);
+    background: rgba(100, 149, 237, 0.08);
 }
 
 .markdown-preview-view table tr:nth-child(odd) {
-    background: rgba(52, 211, 153, 0.05);
+    background: rgba(52, 211, 153, 0.08);
 }
 
 .markdown-preview-view table th {
-    background: linear-gradient(120deg, rgba(100, 149, 237, 0.3), rgba(52, 211, 153, 0.3));
+    background: linear-gradient(135deg,
+        rgba(100, 149, 237, 0.4) 0%,
+        rgba(52, 211, 153, 0.4) 100%);
+    color: rgb(200, 220, 255);
+    font-weight: 600;
+    padding: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid rgba(100, 149, 237, 0.6);
+}
+
+.markdown-preview-view table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(100, 149, 237, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HORIZONTAL RULES - Rainbow divider
+   ═══════════════════════════════════════════════════════════════ */
+.markdown-preview-view hr {
+    height: 3px;
+    border: none;
+    background: linear-gradient(90deg,
+        rgb(100, 149, 237) 0%,
+        rgb(52, 211, 153) 25%,
+        rgb(251, 191, 36) 50%,
+        rgb(236, 72, 153) 75%,
+        rgb(168, 85, 247) 100%);
+    margin: 25px 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 5px rgba(168, 85, 247, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LISTS - Colorful bullets
+   ═══════════════════════════════════════════════════════════════ */
+.markdown-preview-view ul > li::marker {
+    color: rgb(52, 211, 153);
+    font-size: 1.2em;
+}
+
+.markdown-preview-view ol > li::marker {
+    color: rgb(100, 149, 237);
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOLD & ITALIC - Enhanced emphasis
+   ═══════════════════════════════════════════════════════════════ */
+.markdown-preview-view strong {
+    color: rgb(251, 191, 36);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.3);
+}
+
+.markdown-preview-view em {
+    color: rgb(236, 72, 153);
+    font-style: italic;
 }
