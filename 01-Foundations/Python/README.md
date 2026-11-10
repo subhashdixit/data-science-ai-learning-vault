@@ -48,56 +48,209 @@ graph LR
 
 ## 1. DATA TYPES
 
-> [!blue] 💙 **Four Core Types**
+> [!blue] 💙 **Python's Type System**
+> Python is dynamically typed - variable types are determined at runtime. Understanding types is crucial for data manipulation and algorithm implementation.
 
-### The Big Four
+### Core Data Types Hierarchy
 
 ```mermaid
 graph TD
-    A[Python Types] --> B[int<br/>Integers]
-    A --> C[float<br/>Decimals]
-    A --> D[str<br/>Text]
-    A --> E[bool<br/>True/False]
+    A[Python Built-in Types] --> B[Numeric Types]
+    A --> C[Sequence Types]
+    A --> D[Mapping Types]
+    A --> E[Set Types]
+    A --> F[Boolean Type]
     
-    B --> F[42, -10, 0<br/>Whole numbers]
-    C --> G[3.14, -0.5, 2.0<br/>Numbers with decimals]
-    D --> H['hello', "data"<br/>Text in quotes]
-    E --> I[True, False<br/>Only 2 values]
+    B --> B1[int - Integers]
+    B --> B2[float - Floating Point]
+    B --> B3[complex - Complex Numbers]
     
-    style A fill:#bbdefb
+    C --> C1[str - String]
+    C --> C2[list - Mutable Sequence]
+    C --> C3[tuple - Immutable Sequence]
+    
+    D --> D1[dict - Key-Value Mapping]
+    
+    E --> E1[set - Mutable Unique]
+    E --> E2[frozenset - Immutable Unique]
+    
+    F --> F1[bool - True/False]
 ```
 
-### Visual Examples
+### 1.1 Numeric Types - Deep Dive
 
+> [!blue] 💙 **Integer (int)**
+> Whole numbers with unlimited precision in Python 3. No overflow - can be arbitrarily large.
+
+**Properties:**
+- **Range:** Unlimited (unlike C/Java with 32/64-bit limits)
+- **Memory:** Variable size - grows as needed
+- **Operations:** +, -, *, //, %, **
+
+**Real-World Usage:**
+- Counting items: `num_customers = 1500`
+- Array indexing: `data[42]`
+- Loop iterations: `for i in range(1000000)`
+- Categorical encoding: `category_id = 3`
+
+**Integer Division vs Float Division:**
 ```
-Integer (int):
-42, -17, 0, 1000000
-→ Whole numbers only
-→ No decimal point
-→ Can be positive, negative, or zero
+Regular division (always returns float):
+10 / 3 = 3.3333333...
 
-Float:
-3.14, -0.5, 2.0, 1.23e5
-→ Numbers with decimal points
-→ Can use scientific notation (1e5 = 100000)
+Floor division (returns int, rounds down):
+10 // 3 = 3
+-10 // 3 = -4  (rounds toward negative infinity)
 
-String (str):
-"Hello", 'Data Science', """Multi-line text"""
-→ Text in quotes (single or double)
-→ Can contain letters, numbers, symbols
-→ Immutable (can't change individual characters)
-
-Boolean (bool):
-True, False
-→ Only two values
-→ Result of comparisons
-→ Used in conditions
+Modulo (remainder):
+10 % 3 = 1  (10 = 3*3 + 1)
 ```
 
-### Type Checking
+> [!yellow] 💡 **When to Use Integers**
+> - Discrete quantities (counts, IDs)
+> - Array indices
+> - Iteration counters
+> - Categorical variables
 
+---
+
+> [!blue] 💙 **Float (float)**
+> Double-precision floating point numbers (64-bit). Approximates real numbers.
+
+**Properties:**
+- **Precision:** ~15-17 decimal digits
+- **Range:** ~10^-308 to 10^308
+- **Special values:** `inf`, `-inf`, `nan` (not a number)
+
+**Floating Point Representation:**
 ```
-Check type:
+IEEE 754 Standard:
+Sign bit (1) | Exponent (11) | Mantissa (52)
+
+Example: 3.14
+= Sign: 0 (positive)
+× Mantissa: 1.57 (stored as fraction)  
+× Exponent: 2^1
+
+Limitation - Cannot represent some decimals exactly:
+0.1 + 0.2 = 0.30000000000000004  ⚠️
+```
+
+**Real-World Usage:**
+- Measurements: `temperature = 98.6`
+- Probabilities: `confidence = 0.95`
+- Model weights: `learning_rate = 0.001`
+- Financial calculations: `price = 19.99`
+
+> [!red] ⚠️ **Float Precision Warning**
+> Never compare floats with `==`! Use tolerance:
+> ```
+> Instead of: x == 0.3
+> Use: abs(x - 0.3) < 1e-9
+> Or: math.isclose(x, 0.3)
+> ```
+
+---
+
+> [!blue] 💙 **String (str)**
+> Immutable sequence of Unicode characters. Foundation for text processing and NLP.
+
+**Properties:**
+- **Encoding:** Unicode (UTF-8) - supports all languages
+- **Immutable:** Cannot change characters in place
+- **Indexing:** Zero-based, supports negative indices
+- **Slicing:** `s[start:end:step]`
+
+**String Operations:**
+```
+Concatenation:
+"Hello" + " " + "World" → "Hello World"
+
+Repetition:
+"Ha" * 3 → "HaHaHa"
+
+Membership:
+"data" in "data science" → True
+
+Length:
+len("Hello") → 5
+
+Indexing:
+s = "Python"
+s[0] → 'P'  (first character)
+s[-1] → 'n'  (last character)
+s[1:4] → 'yth'  (slice from index 1 to 3)
+```
+
+**Real-World Usage:**
+- Text data: `review = "Great product!"`
+- File paths: `path = "/data/train.csv"`
+- SQL queries: `query = "SELECT * FROM users"`
+- Tokenization input: `text = "Natural language processing"`
+
+> [!yellow] 💡 **String Methods to Master**
+> - `.split()` - Tokenization for NLP
+> - `.strip()` - Remove whitespace
+> - `.lower()/.upper()` - Case normalization
+> - `.replace()` - Text cleaning
+> - `.join()` - Combine tokens
+> - `.format()` / f-strings - String interpolation
+
+---
+
+> [!blue] 💙 **Boolean (bool)**
+> Logical type with two values: `True` and `False`. Subclass of int (True=1, False=0).
+
+**Boolean Algebra:**
+```
+AND (both must be True):
+True and True → True
+True and False → False
+
+OR (at least one True):
+True or False → True
+False or False → False
+
+NOT (negation):
+not True → False
+not False → True
+
+XOR (exactly one True):
+True ^ False → True  (bitwise)
+True ^ True → False
+```
+
+**Truthiness in Python:**
+```
+Falsy values (evaluate to False):
+- False
+- None
+- 0, 0.0
+- "", [], {}, set()  (empty collections)
+
+Truthy values (evaluate to True):
+- Everything else!
+- True
+- Non-zero numbers
+- Non-empty collections
+```
+
+**Real-World Usage:**
+- Feature flags: `is_premium_user = True`
+- Validation: `data_is_valid = not df.isnull().any()`
+- Control flow: `if model_trained:`
+- Masking: `mask = (age > 18) & (income > 50000)`
+
+> [!purple] 🔮 **Advanced: Short-Circuit Evaluation**
+> Boolean operators stop as soon as result is known:
+> ```
+> False and expensive_function()  # expensive_function never runs
+> True or expensive_function()     # expensive_function never runs
+> ```
+
+### Type Checking & Conversion
+
+**Check Type:**
 type(42) → <class 'int'>
 type(3.14) → <class 'float'>
 type("hello") → <class 'str'>
@@ -329,27 +482,176 @@ graph TD
 
 ## 4. LISTS
 
-> [!blue] 💙 **Ordered Collections**
+> [!blue] 💙 **Dynamic Array - The Workhorse Data Structure**
+> Lists are Python's implementation of dynamic arrays - mutable, ordered sequences that can hold any type of object. Essential for data science workflows.
 
-### List Concept
+### List Fundamentals
+
+**Definition:**
+A list is a mutable, ordered collection of objects that:
+- Can contain mixed types
+- Supports indexing and slicing
+- Dynamically resizes
+- Implemented as dynamic arrays (C arrays behind the scenes)
+
+**Internal Structure:**
+```
+Python List Memory Layout:
+
+List Object          Array of Pointers          Actual Objects
+┌──────────┐        ┌──────┐                   ┌────────┐
+│ size: 5  │------->│ ptr  │------------------>│  1     │
+│ capacity │        ├──────┤                   ├────────┤
+│ *array   │        │ ptr  │------------------>│  2     │
+└──────────┘        ├──────┤                   ├────────┤
+                    │ ptr  │------------------>│  3     │
+                    ├──────┤                   ├────────┤
+                    │ ptr  │------------------>│  4     │
+                    ├──────┤                   ├────────┤
+                    │ ptr  │------------------>│  5     │
+                    └──────┘                   └────────┘
+
+When list grows beyond capacity:
+1. Allocate new larger array (typically 2x size)
+2. Copy all pointers
+3. Free old array
+→ Amortized O(1) append time
+```
+
+### Indexing & Slicing - Algorithm Deep Dive
+
+**Indexing:**
+```
+numbers = [10, 20, 30, 40, 50]
+
+Positive indexing (left to right):
+Index:     0   1   2   3   4
+         ┌────┬────┬────┬────┬────┐
+numbers: │ 10 │ 20 │ 30 │ 40 │ 50 │
+         └────┴────┴────┴────┴────┘
+Negative: -5  -4  -3  -2  -1
+          (from end)
+
+Access: O(1) time complexity
+numbers[0]  → 10  (first element)
+numbers[-1] → 50  (last element)
+numbers[2]  → 30  (third element)
+numbers[-2] → 40  (second from end)
+
+Why O(1)? 
+Memory address = base_address + (index * pointer_size)
+Direct computation, no iteration needed
+```
+
+**Slicing - Creating Sub-sequences:**
+```
+Syntax: list[start:stop:step]
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Basic slicing:
+numbers[2:5]    → [2, 3, 4]     # indices 2,3,4 (stop is exclusive)
+numbers[:3]     → [0, 1, 2]     # from beginning to index 2
+numbers[7:]     → [7, 8, 9]     # from index 7 to end
+numbers[:]      → [0,1,2,...,9] # entire list (creates copy)
+
+Step parameter:
+numbers[::2]    → [0, 2, 4, 6, 8]     # every 2nd element
+numbers[1::2]   → [1, 3, 5, 7, 9]     # every 2nd, starting at 1
+numbers[::3]    → [0, 3, 6, 9]        # every 3rd element
+
+Negative step (reverse):
+numbers[::-1]   → [9, 8, 7, ..., 0]   # reverse entire list
+numbers[8:2:-1] → [8, 7, 6, 5, 4, 3]  # reverse from 8 to 3
+
+Negative indices in slicing:
+numbers[-3:]    → [7, 8, 9]           # last 3 elements
+numbers[:-3]    → [0, 1, ..., 6]      # all except last 3
+numbers[-5:-2]  → [5, 6, 7]           # indices -5 to -3
+
+Slicing Algorithm:
+1. Normalize indices (negative → positive)
+2. Clamp to list bounds
+3. Create new list with stride
+Time Complexity: O(k) where k = slice length
+Space Complexity: O(k) - new list created
+```
+
+**Real-World Slicing Applications:**
+```
+Time series windowing:
+data[i:i+window_size]  # Moving window for features
+
+Train-test split:
+train = data[:int(0.8*len(data))]
+test = data[int(0.8*len(data)):]
+
+Remove first/last n items:
+data[n:]   # Remove first n
+data[:-n]  # Remove last n
+
+Reverse data:
+data[::-1]  # Efficient reversal
+
+Downsample:
+data[::10]  # Take every 10th sample
+
+Palindrome check:
+s == s[::-1]  # Check if sequence reads same forwards/backwards
+```
+
+> [!yellow] 💡 **Slicing Creates Copies**
+> - Slicing always creates a new list (shallow copy)
+> - Modifying slice doesn't affect original
+> - For large lists, consider views (NumPy arrays) instead
+> - Assignment to slice can modify original: `lst[1:3] = [10, 20]`
+
+### List Operations - Complexity Analysis
 
 ```
-List = Ordered collection of items
+Operation                 Time Complexity    Explanation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Access lst[i]            O(1)               Direct memory access
+Append lst.append(x)     O(1) amortized     May trigger resize
+Insert lst.insert(i, x)  O(n)               Shift all elements after i
+Pop last lst.pop()       O(1)               Remove from end
+Pop middle lst.pop(i)    O(n)               Shift elements after i
+Remove lst.remove(x)     O(n)               Search + shift
+Search x in lst          O(n)               Linear scan
+Sort lst.sort()          O(n log n)         Timsort algorithm
+Reverse lst.reverse()    O(n)               Swap elements
+Slice lst[a:b]          O(k)               k = slice length
+Copy lst.copy()          O(n)               Copy all elements
+Extend lst.extend(L)     O(k)               k = len(L)
+Min/Max min(lst)         O(n)               Scan all elements
+Count lst.count(x)       O(n)               Count occurrences
 
-numbers = [1, 2, 3, 4, 5]
-
-Index:     0  1  2  3  4
-         ┌──┬──┬──┬──┬──┐
-numbers: │1 │2 │3 │4 │5 │
-         └──┴──┴──┴──┴──┘
-Negative: -5 -4 -3 -2 -1
-
-Lists:
-✅ Ordered (maintains position)
-✅ Indexed (access by position)
-✅ Mutable (can change)
-✅ Allow duplicates
+Memory:
+Space used: O(n) where n = number of elements
+Extra space during resize: O(n) temporarily
 ```
+
+> [!red] ⚠️ **Performance Pitfalls**
+> ```
+> ❌ BAD: Repeatedly insert at beginning (O(n²))
+> for item in items:
+>     result.insert(0, item)
+> 
+> ✅ GOOD: Append and reverse (O(n))
+> for item in items:
+>     result.append(item)
+> result.reverse()
+> 
+> ❌ BAD: Growing list with concatenation (O(n²))
+> result = []
+> for item in items:
+>     result = result + [item]  # Creates new list each time!
+> 
+> ✅ GOOD: Use append (O(n))
+> result = []
+> for item in items:
+>     result.append(item)
+> ```
 
 ### List Operations
 
