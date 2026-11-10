@@ -935,68 +935,385 @@ Algorithm:
 
 ## 2. LOGISTIC REGRESSION
 
-> [!blue] 💙 **Core Concept**
-> Despite the name, it's for CLASSIFICATION! Predicts probability that an example belongs to a class.
+> [!blue] 💙 **Logistic Regression - The Classification Workhorse**
+> Despite its name, Logistic Regression is a CLASSIFICATION algorithm, not regression! It models the probability that an instance belongs to a particular class using the logistic (sigmoid) function.
 
-### The Sigmoid Function
-
+**Why Not Linear Regression for Classification?**
 ```
-Sigmoid: σ(z) = 1 / (1 + e^(-z))
+Problem with Linear Regression for binary classification:
 
-Maps any value to probability (0 to 1)
+Predictions can be < 0 or > 1 (invalid probabilities!)
 
-    1.0 │        ___________
-        │       /
-    0.5 │      /
-        │     /
-    0.0 │___/
-        └─────────────── z
-       -∞  -3  0  3  +∞
+   y
+1.5│     ●       ← Prediction > 1 (nonsense!)
+   │    /●
+1.0│   /  ●  ← Class 1
+   │  /
+0.5│ /
+   │/   ○○ ← Class 0
+0.0├──────────
+   │ ○  ← Prediction < 0 (nonsense!)
+-0.5│
+   └───────────── x
 
-Decision boundary: If σ(z) ≥ 0.5 → Class 1
-                   If σ(z) < 0.5  → Class 0
-```
-
-### How It Works
-
-```mermaid
-graph LR
-    A[Input Features] --> B[Linear Combination<br/>z = w₁x₁ + w₂x₂ + b]
-    B --> C[Sigmoid Function<br/>σz = 1/1+e^-z]
-    C --> D[Probability<br/>0 to 1]
-    D --> E{Threshold<br/>0.5}
-    E -->|≥0.5| F[Class 1]
-    E -->|<0.5| G[Class 0]
-    
-    style A fill:#e1f5fe
-    style C fill:#fff9c4
-    style F fill:#c8e6c9
-    style G fill:#c8e6c9
+Solution: Map linear combination to [0, 1] using sigmoid!
 ```
 
-### Decision Boundary
+### The Sigmoid (Logistic) Function
+
+**Mathematical Definition:**
+```
+σ(z) = 1 / (1 + e^(-z))
+
+Properties:
+1. Domain: z ∈ (-∞, +∞) (any real number)
+2. Range: σ(z) ∈ (0, 1) (valid probability)
+3. Monotonic: Always increasing
+4. Smooth and differentiable everywhere
+5. Symmetric: σ(-z) = 1 - σ(z)
+
+Key values:
+σ(0) = 0.5
+σ(+∞) = 1
+σ(-∞) = 0
+σ(5) ≈ 0.993 (very confident Class 1)
+σ(-5) ≈ 0.007 (very confident Class 0)
+
+Visual shape:
+Probability
+    │
+1.0 │           _______________
+    │          /
+0.9 │         /
+    │        /
+0.5 │      /     ← Decision boundary (z=0)
+    │     /
+0.1 │    /
+    │   /
+0.0 │__/
+    └────────────────────── z
+    -6  -3   0   3   6
+
+Interpretation as probability:
+- z large & positive → σ(z) ≈ 1 → Strong confidence Class 1
+- z ≈ 0 → σ(z) ≈ 0.5 → Uncertain
+- z large & negative → σ(z) ≈ 0 → Strong confidence Class 0
+```
+
+**Derivative (Needed for Gradient Descent):**
+```
+∂σ/∂z = σ(z)(1 - σ(z))
+
+Beautiful property: Derivative in terms of function itself!
+
+Proof:
+σ(z) = 1/(1 + e^(-z))
+∂σ/∂z = -1/(1 + e^(-z))² × (-e^(-z))
+      = e^(-z)/(1 + e^(-z))²
+      = 1/(1 + e^(-z)) × e^(-z)/(1 + e^(-z))
+      = σ(z) × (1 - σ(z))
+
+Maximum derivative at z=0:
+∂σ/∂z|_{z=0} = 0.5 × 0.5 = 0.25
+
+Gradient vanishes at extremes:
+∂σ/∂z|_{z=±∞} ≈ 0 (saturation problem)
+```
+
+### Logistic Regression Model
+
+**Full Model Definition:**
+```
+1. Linear combination (logit):
+   z = w^T x + b = w₁x₁ + w₂x₂ + ... + wₙxₙ + b
+
+2. Apply sigmoid:
+   P(y=1|x) = σ(z) = 1/(1 + e^(-z))
+
+3. Prediction rule:
+   ŷ = { 1  if P(y=1|x) ≥ threshold
+       { 0  otherwise
+   
+   Default threshold = 0.5
+
+Example with 2 features:
+Features: x₁=income ($50K), x₂=age (30)
+Weights: w₁=0.001, w₂=0.02, b=-2
+
+Step 1: z = 0.001(50000) + 0.02(30) - 2
+          = 50 + 0.6 - 2  
+          = 48.6
+
+Step 2: P(y=1) = 1/(1 + e^(-48.6))
+               ≈ 1 (essentially 100%)
+
+Step 3: Since 1 > 0.5, predict Class 1
+```
+
+**Interpreting as Odds and Log-Odds:**
+```
+Odds = P(y=1) / P(y=0) = P(y=1) / (1-P(y=1))
+
+Log-odds (logit):
+log(P(y=1)/(1-P(y=1))) = z = w^T x + b
+
+This is LINEAR in features!
+→ Called "logit" or "log-odds"
+
+Example:
+P(y=1) = 0.8
+Odds = 0.8/0.2 = 4:1 (4 times more likely Class 1)
+Log-odds = log(4) ≈ 1.39
+
+Interpretation of weights:
+- wⱼ > 0: Feature j increases log-odds (increases P(y=1))
+- wⱼ < 0: Feature j decreases log-odds (decreases P(y=1))
+- |wⱼ| large: Feature j has strong effect
+
+Odds ratio for unit increase in xⱼ:
+OR = e^(wⱼ)
+
+Example: w_income = 0.001
+OR = e^(0.001) ≈ 1.001
+Interpretation: $1K income increase → 0.1% increase in odds
+```
+
+### Loss Function - Binary Cross-Entropy
+
+**Derivation from Maximum Likelihood:**
+```
+Assume: y ∈ {0, 1}
+
+Likelihood for single example:
+P(y|x) = { P(y=1|x)     if y=1
+         { P(y=0|x)     if y=0
+       = { σ(z)         if y=1
+         { 1-σ(z)       if y=0
+
+Compact form:
+P(y|x) = σ(z)^y × (1-σ(z))^(1-y)
+
+Log-likelihood for all m examples:
+ℓ(w,b) = Σᵢ₌₁ᵐ [yᵢ log σ(zᵢ) + (1-yᵢ) log(1-σ(zᵢ))]
+
+Maximum Likelihood Estimation (MLE):
+Maximize log-likelihood = Minimize negative log-likelihood
+
+Binary Cross-Entropy Loss:
+L(w,b) = -1/m Σᵢ₌₁ᵐ [yᵢ log σ(zᵢ) + (1-yᵢ) log(1-σ(zᵢ))]
+
+Why this loss?
+1. Derived from probabilistic principles (MLE)
+2. Convex optimization problem (unique global minimum)
+3. Penalizes wrong predictions appropriately
+4. Smooth gradients for optimization
+```
+
+**Loss Function Intuition:**
+```
+For single example:
+
+If y = 1 (actual class is 1):
+Loss = -log(σ(z))
+
+σ(z)→1: Loss→0 (correct, confident)
+σ(z)→0: Loss→∞ (wrong, confident - high penalty!)
+
+If y = 0 (actual class is 0):
+Loss = -log(1-σ(z))
+
+σ(z)→0: Loss→0 (correct, confident)
+σ(z)→1: Loss→∞ (wrong, confident - high penalty!)
+
+Visual:
+Loss
+  │
+10│     ╱
+  │    ╱
+  │   ╱
+ 5│  ╱
+  │ ╱
+  │╱____________
+0 └──────────── σ(z)
+  0   0.5  1.0
+
+Penalizes confident wrong predictions heavily!
+```
+
+### Gradient Descent for Logistic Regression
+
+**Gradients:**
+```
+∂L/∂w = 1/m Σᵢ₌₁ᵐ (σ(zᵢ) - yᵢ) xᵢ
+∂L/∂b = 1/m Σᵢ₌₁ᵐ (σ(zᵢ) - yᵢ)
+
+Remarkably similar to linear regression!
+Difference: σ(zᵢ) instead of zᵢ
+
+Derivation:
+∂L/∂w = ∂L/∂σ × ∂σ/∂z × ∂z/∂w
+
+∂L/∂σ = -y/σ + (1-y)/(1-σ)
+∂σ/∂z = σ(1-σ)  (nice property!)
+∂z/∂w = x
+
+Combine:
+∂L/∂w = [-y/σ + (1-y)/(1-σ)] × σ(1-σ) × x
+      = [-y(1-σ) + (1-y)σ] × x
+      = (σ - y) × x
+
+Vectorized:
+∂L/∂w = 1/m X^T (σ(Xw+b) - y)
+```
+
+**Algorithm:**
+```
+Initialize: w ← small random, b ← 0
+Learning rate: α (e.g., 0.01)
+
+Repeat until convergence:
+  1. Forward pass:
+     z = Xw + b
+     predictions = σ(z)
+  
+  2. Compute loss:
+     L = -1/m Σ[y log(σ) + (1-y) log(1-σ)]
+  
+  3. Backward pass (gradients):
+     ∂L/∂w = 1/m X^T (predictions - y)
+     ∂L/∂b = 1/m Σ(predictions - y)
+  
+  4. Update parameters:
+     w ← w - α (∂L/∂w)
+     b ← b - α (∂L/∂b)
+
+Convergence check:
+- Loss change < ε
+- Gradient norm < ε
+- Max iterations reached
+```
+
+### Decision Boundary Geometry
 
 ```
-Linear Decision Boundary:
+Decision boundary: Points where P(y=1) = 0.5
+                   ⟺ σ(z) = 0.5
+                   ⟺ z = 0
+                   ⟺ w^T x + b = 0
 
-Class 1 (●)          Class 0 (○)
-     ●●●          ○○○
-     ●●●    |     ○○○
-     ●●●    |     ○○○
-            |
-    Decision boundary
+2D example (2 features):
+w₁x₁ + w₂x₂ + b = 0
+→ x₂ = -(w₁/w₂)x₁ - b/w₂
 
-Non-linear (with polynomial features):
-     ●●●
-    ●●●●●    )
-     ●●●   /  ○○○
-          (   ○○○
-           )  ○○○
+This is a straight line!
+- Slope: -w₁/w₂
+- Intercept: -b/w₂
+
+Visual (2D case):
+    x₂
+     │        Class 1 (●)
+     │    ●●●
+     │   ●●●●
+     │  ●●●●●
+     │ ────────── Decision boundary (w^Tx+b=0)
+     │    ○○○
+     │     ○○○
+     │      ○○○  Class 0 (○)
+     └──────────────── x₁
+
+3D example (3 features):
+w₁x₁ + w₂x₂ + w₃x₃ + b = 0
+→ Decision boundary is a plane
+
+n features:
+→ Decision boundary is a hyperplane (n-1 dimensional)
+
+Non-linear boundaries:
+Add polynomial features: x₁², x₁x₂, x₂², etc.
+Decision boundary becomes curved (still linear in transformed space)
 ```
 
 ### Binary vs Multi-Class
 
 ```mermaid
+graph TD
+    A[Logistic Regression] --> B[Binary Classification]
+    A --> C[Multi-Class Classification]
+    
+    B --> D[Single sigmoid output<br/>P y=1 | x]
+    
+    C --> E[One-vs-Rest OvR]
+    C --> F[Softmax Multinomial]
+    
+    E --> G[Train K binary classifiers<br/>Pick highest probability]
+    F --> H[Single model with softmax<br/>K outputs, sum to 1]
+    
+    style B fill:#c8e6c9
+    style C fill:#fff9c4
+```
+
+**One-vs-Rest (OvR):**
+```
+For K classes: Train K binary classifiers
+
+Classifier 1: Class 1 vs (Class 2,3,...,K)
+Classifier 2: Class 2 vs (Class 1,3,...,K)
+...
+Classifier K: Class K vs (Class 1,2,...,K-1)
+
+Prediction:
+1. Get probabilities from all K classifiers
+2. Pick class with highest probability
+
+Example (3 classes):
+Classifier 1: P(1|x) = 0.7
+Classifier 2: P(2|x) = 0.2
+Classifier 3: P(3|x) = 0.4
+→ Predict Class 1 (highest)
+
+Limitations:
+- Probabilities don't sum to 1
+- Imbalanced training (1 vs many)
+- Need to train K models
+```
+
+**Softmax (Multinomial Logistic Regression):**
+```
+Single model with K outputs
+
+Softmax function:
+P(y=k|x) = e^(z_k) / Σⱼ₌₁ᴷ e^(z_j)
+
+Where z_k = w_k^T x + b_k for each class k
+
+Properties:
+✓ All probabilities positive
+✓ Sum to 1: Σ P(y=k|x) = 1
+✓ Valid probability distribution
+✓ Generalization of sigmoid (K=2 reduces to sigmoid)
+
+Example (3 classes):
+z₁ = 2.0, z₂ = 1.0, z₃ = 0.1
+
+e^(z₁) = e^2.0 ≈ 7.39
+e^(z₂) = e^1.0 ≈ 2.72
+e^(z₃) = e^0.1 ≈ 1.11
+
+Sum = 7.39 + 2.72 + 1.11 = 11.22
+
+P(y=1|x) = 7.39/11.22 = 0.659
+P(y=2|x) = 2.72/11.22 = 0.242
+P(y=3|x) = 1.11/11.22 = 0.099
+                        ─────
+                Sum = 1.000 ✓
+
+Prediction: Class 1 (highest probability)
+
+Loss function (Cross-Entropy):
+L = -1/m Σᵢ₌₁ᵐ Σₖ₌₁ᴷ y_ik log(P(y=k|xᵢ))
+
+Where y_ik = 1 if xᵢ belongs to class k, 0 otherwise
+```
 graph TD
     A[Logistic Regression] --> B[Binary<br/>2 Classes]
     A --> C[Multi-Class<br/>3+ Classes]
