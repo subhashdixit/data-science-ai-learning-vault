@@ -1864,45 +1864,346 @@ graph TD
 
 ## 3. DECISION TREES
 
-> [!blue] 💙 **Core Concept**
-> Makes decisions by asking a series of questions, splitting data at each node.
+> [!blue] 💙 **Decision Trees - Interpretable Non-Linear Models**
+> A tree-like model that makes decisions by recursively partitioning the feature space based on if-then-else rules. One of the most interpretable machine learning algorithms that can handle complex non-linear relationships.
 
-### Tree Structure
+**Core Idea:**
+```
+Instead of finding a global model (like linear regression),
+divide the space into rectangular regions, each with its own prediction.
 
-```mermaid
-graph TD
-    A[Age > 30?] -->|Yes| B[Income > 50K?]
-    A -->|No| C[Student?]
-    B -->|Yes| D[✓ Approve Loan]
-    B -->|No| E[✗ Reject]
-    C -->|Yes| F[✓ Approve]
-    C -->|No| G[✗ Reject]
+Feature Space Partitioning:
+     x₂
+      │
+    5 │────────────┬────────── Region 1: Predict A
+      │            │
+      │   Region   │ Region
+    3 │     2      │    3
+      │  Pred B    │ Pred C
+      │            │
+    0 └────────────┴──────────── x₁
+      0            4         8
+
+Decision Rules:
+- If x₁ ≤ 4: Predict B
+- If x₁ > 4 and x₂ > 5: Predict A
+- If x₁ > 4 and x₂ ≤ 5: Predict C
+```
+
+### Tree Structure and Terminology
+
+```
+Anatomy of a Decision Tree:
+
+                    [Root Node]  ← Entire dataset
+                    Age > 30?
+                    /         \
+                   /           \
+        [Internal Node]    [Internal Node]
+         Income > 50K?      Student?
+          /         \        /       \
+         /           \      /         \
+    [Leaf]      [Leaf]  [Leaf]    [Leaf]  ← Terminal nodes
+   Approve    Reject   Approve   Reject      (predictions)
+
+Components:
+1. Root Node: Starting point (all data)
+2. Internal Nodes: Decision points (feature + threshold)
+3. Branches: Outcomes of decisions (Yes/No, Left/Right)
+4. Leaf Nodes: Final predictions (class or value)
+
+Terminology:
+- Depth: Length of longest path from root to leaf
+- Height: Same as depth
+- Parent Node: Node that splits
+- Child Nodes: Nodes created by split
+- Siblings: Nodes from same parent
+- Subtree: Tree rooted at any node
+
+Example tree properties:
+Root: "Age > 30?"
+Depth: 2 levels
+Leaves: 4 predictions
+Decision Rules: 4 paths from root to leaves
+```
+
+### Tree Building Algorithm (CART - Classification and Regression Trees)
+
+**High-Level Algorithm:**
+```
+function BuildTree(data, depth):
+    // Base cases (stopping criteria)
+    if depth >= max_depth:
+        return LeafNode(prediction)
+    if num_samples < min_samples_split:
+        return LeafNode(prediction)
+    if all_same_class(data):
+        return LeafNode(prediction)
+    if no_information_gain_possible:
+        return LeafNode(prediction)
     
-    style D fill:#c8e6c9
-    style E fill:#ffcdd2
-    style F fill:#c8e6c9
-    style G fill:#ffcdd2
+    // Recursive case
+    best_split = find_best_split(data)
+    
+    if best_split is None:
+        return LeafNode(prediction)
+    
+    left_data = data where feature <= threshold
+    right_data = data where feature > threshold
+    
+    node = InternalNode(feature, threshold)
+    node.left = BuildTree(left_data, depth + 1)
+    node.right = BuildTree(right_data, depth + 1)
+    
+    return node
+
+Time Complexity:
+- Finding best split: O(n × d × log n)
+  n = samples, d = features
+- Building tree: O(depth × n × d × log n)
+- Typical: O(n × d × log n) for balanced tree
+
+Space Complexity:
+- Tree storage: O(num_leaves)
+- Worst case: O(n) if each sample gets own leaf
+- Typical: O(log n) leaves for balanced tree
 ```
 
-### How Splitting Works
+**Finding Best Split - The Core Challenge:**
 
 ```
-Choose best split using:
+function find_best_split(data):
+    best_gain = -∞
+    best_split = None
+    
+    // Try every feature
+    for feature in features:
+        // Sort data by this feature (O(n log n))
+        sorted_data = sort(data, by=feature)
+        
+        // Try every possible threshold
+        for i in 1 to n-1:
+            threshold = (sorted_data[i] + sorted_data[i+1]) / 2
+            
+            left_data = data where feature <= threshold
+            right_data = data where feature > threshold
+            
+            // Calculate information gain
+            gain = InformationGain(data, left_data, right_data)
+            
+            if gain > best_gain:
+                best_gain = gain
+                best_split = (feature, threshold)
+    
+    return best_split
 
-1. GINI IMPURITY (Classification)
-   Gini = 1 - Σ(pᵢ)²
-   0 = Pure (all same class)
-   0.5 = Impure (mixed)
+Note: This is the greedy approach - finds local optimum
+Finding global optimum is NP-complete!
+```
 
-2. ENTROPY (Classification)
-   Entropy = -Σ(pᵢ × log₂(pᵢ))
-   0 = Pure
-   1 = Maximum impurity
+### Impurity Measures - Quantifying Node Homogeneity
 
-3. VARIANCE (Regression)
-   Choose split that minimizes variance
+> [!blue] 💙 **Impurity = Measure of how mixed a node is**
+> 0 = Pure (all samples same class/value)
+> Maximum = Most mixed
 
-Goal: Create purest possible subsets
+**1. Gini Impurity (Classification) - CART Default**
+
+```
+Mathematical Definition:
+Gini(node) = 1 - Σᵢ₌₁ᴷ pᵢ²
+
+Where:
+- K = number of classes
+- pᵢ = proportion of class i in node
+- pᵢ = (samples of class i) / (total samples in node)
+
+Intuition: Probability of misclassifying a random sample
+if we randomly assign a label based on class distribution
+
+Properties:
+- Range: [0, 0.5] for binary classification
+- Range: [0, 1 - 1/K] for K classes
+- 0 = Pure node (all same class)
+- Maximum when all classes equally likely
+
+Binary Classification Example:
+Node with 100 samples: 70 Class A, 30 Class B
+
+p_A = 70/100 = 0.7
+p_B = 30/100 = 0.3
+
+Gini = 1 - (0.7² + 0.3²)
+     = 1 - (0.49 + 0.09)
+     = 1 - 0.58
+     = 0.42
+
+Interpretation: 42% chance of misclassification
+
+Special cases:
+All Class A (100, 0): Gini = 1 - 1² - 0² = 0 (pure)
+Half-half (50, 50): Gini = 1 - 0.5² - 0.5² = 0.5 (max)
+
+Multi-class Example (3 classes):
+Node with [40, 30, 30] samples
+
+Gini = 1 - (0.4² + 0.3² + 0.3²)
+     = 1 - (0.16 + 0.09 + 0.09)
+     = 1 - 0.34
+     = 0.66
+```
+
+**2. Entropy / Information Gain (Classification) - ID3, C4.5**
+
+```
+Entropy (Shannon Entropy):
+H(node) = -Σᵢ₌₁ᴷ pᵢ log₂(pᵢ)
+
+Convention: 0 log₂(0) = 0
+
+Properties:
+- Range: [0, log₂(K)]
+- 0 = Pure (certain outcome)
+- Maximum when all classes equally likely
+- Measured in "bits" of information
+
+Binary Classification Example:
+Node with [70, 30] samples
+
+H = -(0.7 log₂(0.7) + 0.3 log₂(0.3))
+  = -(0.7 × -0.515 + 0.3 × -1.737)
+  = -(-0.361 + -0.521)
+  = 0.88 bits
+
+Interpretation: Need 0.88 bits on average to specify class
+
+Special cases:
+All one class [100, 0]: H = 0 (no uncertainty)
+Half-half [50, 50]: H = 1 (maximum for binary)
+
+Information Gain:
+IG = H(parent) - Weighted_Average(H(children))
+
+Example split:
+Parent: [70, 30] → H = 0.88
+
+Split into:
+Left child: [60, 10] → H_left = 0.59
+Right child: [10, 20] → H_right = 0.92
+
+Weighted average:
+H_children = (70/100) × 0.59 + (30/100) × 0.92
+           = 0.413 + 0.276
+           = 0.689
+
+Information Gain:
+IG = 0.88 - 0.689 = 0.191 bits
+
+We reduced uncertainty by 0.191 bits!
+```
+
+**3. Variance Reduction (Regression Trees)**
+
+```
+For regression, minimize prediction variance:
+
+Variance(node) = (1/n) Σᵢ₌₁ⁿ (yᵢ - ȳ)²
+
+Where:
+- yᵢ = actual value of sample i
+- ȳ = mean of all values in node
+- Prediction for node = ȳ
+
+Example node with values [10, 20, 15, 25]:
+Mean ȳ = (10 + 20 + 15 + 25) / 4 = 17.5
+
+Variance = [(10-17.5)² + (20-17.5)² + (15-17.5)² + (25-17.5)²] / 4
+         = [56.25 + 6.25 + 6.25 + 56.25] / 4
+         = 125 / 4
+         = 31.25
+
+Variance Reduction:
+VR = Var(parent) - Weighted_Average(Var(children))
+
+Choose split that maximizes variance reduction
+= Choose split that minimizes weighted children variance
+```
+
+**Comparison of Splitting Criteria:**
+
+```
+Property        | Gini          | Entropy       | Variance
+────────────────|───────────────|───────────────|──────────
+Task            | Classification| Classification| Regression
+Range (binary)  | [0, 0.5]      | [0, 1]        | [0, ∞]
+Computation     | Fast (no log) | Slower (log)  | Fast
+Interpretation  | Misclass prob | Information   | Spread
+Pure node       | 0             | 0             | 0
+Most impure     | 0.5           | 1.0           | Large
+
+Which to use?
+- Gini: Faster, produces similar trees to Entropy
+- Entropy: More theoretically motivated (information theory)
+- Variance: Regression tasks only
+
+In practice: Gini and Entropy give very similar results
+Gini is default in scikit-learn (faster)
+```
+
+### Information Gain Calculation - Complete Example
+
+```
+Dataset: Predict if someone buys a product
+
+Age    Income  Owns_Car  Buys?
+────────────────────────────────
+25     Low     No        No
+30     Low     No        No
+35     High    No        Yes
+40     High    Yes       Yes
+45     High    Yes       Yes
+50     Low     Yes       No
+
+Parent node (all data): [3 Yes, 3 No]
+Gini_parent = 1 - (0.5² + 0.5²) = 0.5
+
+Try split: Age ≤ 35?
+
+Left (Age ≤ 35): [1 Yes, 2 No]
+Gini_left = 1 - (1/3)² - (2/3)² = 1 - 1/9 - 4/9 = 0.444
+
+Right (Age > 35): [2 Yes, 1 No]  
+Gini_right = 1 - (2/3)² - (1/3)² = 0.444
+
+Weighted Gini after split:
+Gini_split = (3/6) × 0.444 + (3/6) × 0.444 = 0.444
+
+Information Gain (Gini Gain):
+Gain = 0.5 - 0.444 = 0.056
+
+Try split: Income = High?
+
+Left (Income = High): [3 Yes, 0 No]
+Gini_left = 1 - 1² - 0² = 0 (pure!)
+
+Right (Income = Low): [0 Yes, 3 No]
+Gini_right = 1 - 0² - 1² = 0 (pure!)
+
+Weighted Gini:
+Gini_split = (3/6) × 0 + (3/6) × 0 = 0
+
+Information Gain:
+Gain = 0.5 - 0 = 0.5 (maximum!)
+
+Best split: Income = High (perfect separation!)
+
+Decision Tree:
+         Income = High?
+         /            \
+      Yes              No
+   (All Buy)     (None Buy)
+
+This is the greedy choice at this node.
 ```
 
 ### Splitting Example
