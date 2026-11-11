@@ -1,7 +1,7 @@
 # 🤖 AI Agents
 
-> [!blue] 💙 **Autonomous AI Systems**
-> Building LLM-powered agents that can reason, plan, use tools, and take actions autonomously. Learn agent architectures, tool use, memory systems, and multi-agent patterns.
+**💙 Autonomous AI Systems**
+Building LLM-powered agents that can reason, plan, use tools, and take actions autonomously. Learn agent architectures, tool use, memory systems, and multi-agent patterns.
 
 ---
 
@@ -34,8 +34,8 @@ By the end of this section, you should be able to:
 
 ### [[agent-architecture|Agent Architecture]]
 
-> [!blue] 💙 **Core Agent Components**
-> An AI agent consists of perception, reasoning, action, and memory components working together to achieve goals.
+**💙 Core Agent Components**
+An AI agent consists of perception, reasoning, action, and memory components working together to achieve goals.
 
 **Agent Loop:**
 ```mermaid
@@ -65,8 +65,8 @@ graph TD
 
 ### [[agent-patterns|Agent Patterns]]
 
-> [!blue] 💙 **Common Agent Architectures**
-> Different patterns for building agents, each with tradeoffs.
+**💙 Common Agent Architectures**
+Different patterns for building agents, each with tradeoffs.
 
 **ReAct (Reasoning + Acting):**
 ```mermaid
@@ -103,17 +103,17 @@ graph TD
 - Solve with all observations
 - More efficient, less flexible
 
-> [!yellow] 💡 **Pattern Selection**
-> - **ReAct:** General purpose, good for exploration
-> - **Plan-and-Execute:** Complex goals, multi-step tasks
-> - **ReWOO:** When tools can run in parallel
+**💡 Pattern Selection**
+- **ReAct:** General purpose, good for exploration
+- **Plan-and-Execute:** Complex goals, multi-step tasks
+- **ReWOO:** When tools can run in parallel
 
 ---
 
 ### [[tool-use|Tool Use & Function Calling]]
 
-> [!blue] 💙 **Extending Agent Capabilities**
-> Enable agents to use external tools (APIs, calculators, databases) to accomplish tasks beyond pure generation.
+**💙 Extending Agent Capabilities**
+Enable agents to use external tools (APIs, calculators, databases) to accomplish tasks beyond pure generation.
 
 **Tool Use Flow:**
 ```mermaid
@@ -141,18 +141,18 @@ graph TD
 - Execute tool, return result to LLM
 - LLM continues with observation
 
-> [!green] ✅ **Tool Design Best Practices**
-> - **Clear descriptions:** LLM needs to know when to use each tool
-> - **Typed parameters:** Use JSON schema for tool inputs
-> - **Error handling:** Return informative errors to agent
-> - **Idempotent:** Safe to retry failed tool calls
+**✅ Tool Design Best Practices**
+- **Clear descriptions:** LLM needs to know when to use each tool
+- **Typed parameters:** Use JSON schema for tool inputs
+- **Error handling:** Return informative errors to agent
+- **Idempotent:** Safe to retry failed tool calls
 
 ---
 
 ### [[agent-memory|Agent Memory Systems]]
 
-> [!blue] 💙 **Remembering Past Interactions**
-> Memory enables agents to learn from experience, maintain context, and personalize interactions.
+**💙 Remembering Past Interactions**
+Memory enables agents to learn from experience, maintain context, and personalize interactions.
 
 **Memory Types:**
 ```mermaid
@@ -190,18 +190,18 @@ graph TD
 - Long-term: Vector DB (ChromaDB, Pinecone)
 - Retrieval: Semantic search on query relevance
 
-> [!yellow] 💡 **Memory Strategy**
-> - Always use short-term for current conversation
-> - Add long-term for personalization, learning
-> - Retrieve selectively (don't overload context)
-> - Summarize old conversations periodically
+**💡 Memory Strategy**
+- Always use short-term for current conversation
+- Add long-term for personalization, learning
+- Retrieve selectively (don't overload context)
+- Summarize old conversations periodically
 
 ---
 
 ### [[multi-agent-systems|Multi-Agent Systems]]
 
-> [!blue] 💙 **Agent Collaboration**
-> Multiple specialized agents working together, each with different roles and capabilities.
+**💙 Agent Collaboration**
+Multiple specialized agents working together, each with different roles and capabilities.
 
 **Multi-Agent Patterns:**
 ```mermaid
@@ -238,8 +238,8 @@ graph TD
 - **Research:** Researcher + Fact-checker + Writer
 - **Customer support:** Classifier + Specialist + Escalation
 
-> [!red] ⚠️ **Multi-Agent Challenges**
-> - Coordination overhead
+**⚠️ Multi-Agent Challenges**
+- Coordination overhead
 - Communication clarity between agents
 > - Cost multiplies with agent count
 > - Debugging is harder
@@ -248,8 +248,8 @@ graph TD
 
 ### [[agent-planning|Planning & Reasoning]]
 
-> [!blue] 💙 **Goal Decomposition and Strategy**
-> Breaking down complex goals into executable steps through reasoning and planning.
+**💙 Goal Decomposition and Strategy**
+Breaking down complex goals into executable steps through reasoning and planning.
 
 **Planning Approaches:**
 
@@ -279,87 +279,87 @@ graph TD
 3. Execute each sub-goal
 4. Combine results
 
-> [!yellow] 💡 **When to Plan**
-> - **Simple tasks:** Direct ReAct, no planning
-> - **Multi-step:** Plan-and-Execute
-> - **Complex/Ambiguous:** Tree of Thoughts
-> - **Research tasks:** Iterative planning
+**💡 When to Plan**
+- **Simple tasks:** Direct ReAct, no planning
+- **Multi-step:** Plan-and-Execute
+- **Complex/Ambiguous:** Tree of Thoughts
+- **Research tasks:** Iterative planning
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Self-Reflection**
-> Agent critiques its own outputs:
-> - Generate answer
-> - Critique quality, identify issues
-> - Regenerate if needed
-> - Improves reliability
+**🔮 Self-Reflection**
+Agent critiques its own outputs:
+- Generate answer
+- Critique quality, identify issues
+- Regenerate if needed
+- Improves reliability
 
-> [!purple] 🔮 **Human-in-the-Loop**
-> Agent requests human input when uncertain:
-> - Confidence scoring
-> - Escalation to human
-> - Learn from human feedback
-> - Critical for high-stakes tasks
+**🔮 Human-in-the-Loop**
+Agent requests human input when uncertain:
+- Confidence scoring
+- Escalation to human
+- Learn from human feedback
+- Critical for high-stakes tasks
 
-> [!purple] 🔮 **Agent Training**
-> Improving agents through learning:
-> - **Prompt engineering:** Refine system prompts
-> - **Few-shot examples:** Add successful trajectories
-> - **Fine-tuning:** Train on agent traces
-> - **RLHF:** Reward good agent behavior
+**🔮 Agent Training**
+Improving agents through learning:
+- **Prompt engineering:** Refine system prompts
+- **Few-shot examples:** Add successful trajectories
+- **Fine-tuning:** Train on agent traces
+- **RLHF:** Reward good agent behavior
 
-> [!purple] 🔮 **Agentic RAG**
-> Agent decides when and what to retrieve:
-> - Query planning
-> - Multi-hop retrieval
-> - Information synthesis
-> - Better than static RAG
+**🔮 Agentic RAG**
+Agent decides when and what to retrieve:
+- Query planning
+- Multi-hop retrieval
+- Information synthesis
+- Better than static RAG
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Infinite Loops**
-> - **Problem:** Agent repeats same action indefinitely
-> - **Solution:** Max iterations limit, loop detection, varied prompts
+**⚠️ Infinite Loops**
+- **Problem:** Agent repeats same action indefinitely
+- **Solution:** Max iterations limit, loop detection, varied prompts
 
-> [!red] ⚠️ **Hallucinated Tool Calls**
-> - **Problem:** Agent invents non-existent tools or parameters
-> - **Solution:** Strict tool schemas, validation, few-shot examples
+**⚠️ Hallucinated Tool Calls**
+- **Problem:** Agent invents non-existent tools or parameters
+- **Solution:** Strict tool schemas, validation, few-shot examples
 
-> [!red] ⚠️ **Context Window Overflow**
-> - **Problem:** Long conversations exceed token limit
-> - **Solution:** Summarization, memory management, truncation strategy
+**⚠️ Context Window Overflow**
+- **Problem:** Long conversations exceed token limit
+- **Solution:** Summarization, memory management, truncation strategy
 
-> [!red] ⚠️ **Cost Explosion**
-> - **Problem:** Complex agents make many LLM calls
-> - **Solution:** Budget limits, caching, smaller models for simple steps
+**⚠️ Cost Explosion**
+- **Problem:** Complex agents make many LLM calls
+- **Solution:** Budget limits, caching, smaller models for simple steps
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Agent Development**
-> - **Start simple:** Single agent, few tools
-> - **Add tools incrementally:** Test each addition
-> - **Clear tool descriptions:** Critical for correct usage
-> - **Logging:** Log all agent actions and reasoning
-> - **Human oversight:** Review agent decisions initially
+**💡 Agent Development**
+- **Start simple:** Single agent, few tools
+- **Add tools incrementally:** Test each addition
+- **Clear tool descriptions:** Critical for correct usage
+- **Logging:** Log all agent actions and reasoning
+- **Human oversight:** Review agent decisions initially
 
-> [!yellow] 💡 **Safety & Reliability**
-> - **Confirmation for destructive actions:** Delete, send, pay
-> - **Rate limiting:** Prevent runaway agents
-> - **Sandboxing:** Isolate tool execution
-> - **Monitoring:** Track success rates, failures
-> - **Fallbacks:** Graceful degradation on errors
+**💡 Safety & Reliability**
+- **Confirmation for destructive actions:** Delete, send, pay
+- **Rate limiting:** Prevent runaway agents
+- **Sandboxing:** Isolate tool execution
+- **Monitoring:** Track success rates, failures
+- **Fallbacks:** Graceful degradation on errors
 
-> [!yellow] 💡 **Performance Optimization**
-> - **Caching:** Cache tool results, avoid redundant calls
-> - **Parallel execution:** Run independent tools together
-> - **Smaller models:** Use GPT-3.5 for simple steps
-> - **Early termination:** Stop when goal achieved
+**💡 Performance Optimization**
+- **Caching:** Cache tool results, avoid redundant calls
+- **Parallel execution:** Run independent tools together
+- **Smaller models:** Use GPT-3.5 for simple steps
+- **Early termination:** Stop when goal achieved
 
 ---
 

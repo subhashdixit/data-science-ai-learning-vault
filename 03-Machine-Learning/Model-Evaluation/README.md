@@ -1,13 +1,13 @@
 # 📊 MODEL EVALUATION & METRICS
 
-> [!yellow] ⭐ **HOW GOOD IS YOUR MODEL?**
-> "What gets measured gets improved." - Peter Drucker
-> 
-> Learn to properly evaluate and compare ML models!
-> 
-> **Time to Complete:** 1-2 weeks  
-> **Difficulty:** ⭐⭐⭐ Medium  
-> **Interview Weight:** ⭐⭐⭐⭐⭐ EXTREMELY HIGH!
+**⭐ HOW GOOD IS YOUR MODEL?**
+"What gets measured gets improved." - Peter Drucker
+
+Learn to properly evaluate and compare ML models!
+
+**Time to Complete:** 1-2 weeks  
+**Difficulty:** ⭐⭐⭐ Medium  
+**Interview Weight:** ⭐⭐⭐⭐⭐ EXTREMELY HIGH!
 
 ---
 
@@ -51,7 +51,7 @@ graph TD
 
 ## 1. CLASSIFICATION METRICS
 
-> [!blue] 💙 **The Big Four Metrics**
+**💙 The Big Four Metrics**
 
 ### Accuracy
 
@@ -66,7 +66,7 @@ FP = False Positives (Predicted YES, Actually NO) ← Type I Error
 FN = False Negatives (Predicted NO, Actually YES) ← Type II Error
 ```
 
-> [!red] ⚠️ **ACCURACY PARADOX - When Accuracy Lies!**
+**⚠️ ACCURACY PARADOX - When Accuracy Lies!**
 
 ```
 Example: Fraud Detection
@@ -117,7 +117,7 @@ Balance:
 - This is what we want!
 ```
 
-> [!yellow] 💡 **When to Optimize What?**
+**💡 When to Optimize What?**
 
 | Scenario | Optimize | Why |
 |----------|----------|-----|
@@ -176,7 +176,7 @@ Weighted F1 = (0.9×100 + 0.5×10 + 0.3×10) / 120 = 0.792
 
 ## 2. REGRESSION METRICS
 
-> [!blue] 💙 **Measuring Prediction Error**
+**💙 Measuring Prediction Error**
 
 ### Mean Squared Error (MSE)
 
@@ -264,25 +264,25 @@ graph LR
     style E fill:#ffcdd2
 ```
 
-> [!red] ⚠️ **R² Can Be Misleading!**
-> ```
-> Problems with R²:
-> ❌ Always increases with more features (even random ones!)
-> ❌ Doesn't tell if predictions are biased
-> ❌ Can't compare across different datasets
-> 
-> Solution: Use Adjusted R²
-> Adj R² = 1 - [(1-R²)(n-1) / (n-p-1)]
-> 
-> where n = samples, p = features
-> → Penalizes adding useless features
-> ```
+**⚠️ R² Can Be Misleading!**
+```
+Problems with R²:
+❌ Always increases with more features (even random ones!)
+❌ Doesn't tell if predictions are biased
+❌ Can't compare across different datasets
+
+Solution: Use Adjusted R²
+Adj R² = 1 - [(1-R²)(n-1) / (n-p-1)]
+
+where n = samples, p = features
+→ Penalizes adding useless features
+```
 
 ---
 
 ## 3. CONFUSION MATRIX
 
-> [!blue] 💙 **The Foundation of Classification Evaluation**
+**💙 The Foundation of Classification Evaluation**
 
 ### Binary Classification
 
@@ -357,7 +357,7 @@ Common Mistakes:
 
 ## 4. ROC CURVE AND AUC
 
-> [!blue] 💙 **Receiver Operating Characteristic Curve**
+**💙 Receiver Operating Characteristic Curve**
 
 ### What is ROC?
 
@@ -411,21 +411,21 @@ graph TD
     style G fill:#ffcdd2
 ```
 
-> [!yellow] 💡 **AUC Interpretation**
-> ```
-> AUC = Probability that model ranks
->       random positive example higher
->       than random negative example
-> 
-> AUC = 0.85 means:
-> "If I pick one positive and one negative example,
->  there's 85% chance model assigns higher
->  probability to the positive one"
-> 
-> Perfect model: AUC = 1.0
-> Random guess:   AUC = 0.5
-> Worst model:    AUC = 0.0 (invert predictions!)
-> ```
+**💡 AUC Interpretation**
+```
+AUC = Probability that model ranks
+      random positive example higher
+      than random negative example
+
+AUC = 0.85 means:
+"If I pick one positive and one negative example,
+ there's 85% chance model assigns higher
+ probability to the positive one"
+
+Perfect model: AUC = 1.0
+Random guess:   AUC = 0.5
+Worst model:    AUC = 0.0 (invert predictions!)
+```
 
 ### Precision-Recall Curve
 
@@ -450,28 +450,28 @@ AUC-PR = Area under PR curve
 Better for imbalanced datasets than ROC-AUC
 ```
 
-> [!red] ⚠️ **ROC vs PR Curve**
-> ```
-> Use ROC-AUC when:
-> ✅ Balanced dataset
-> ✅ Care about both classes equally
-> ✅ Want to compare models
-> 
-> Use PR Curve when:
-> ✅ Imbalanced dataset (fraud, disease, etc.)
-> ✅ Positive class is rare but important
-> ✅ Care more about precision
-> 
-> Example: Fraud (1% of data)
-> - ROC-AUC might look good (high TN dominates)
-> - PR curve reveals true performance on rare class
-> ```
+**⚠️ ROC vs PR Curve**
+```
+Use ROC-AUC when:
+✅ Balanced dataset
+✅ Care about both classes equally
+✅ Want to compare models
+
+Use PR Curve when:
+✅ Imbalanced dataset (fraud, disease, etc.)
+✅ Positive class is rare but important
+✅ Care more about precision
+
+Example: Fraud (1% of data)
+- ROC-AUC might look good (high TN dominates)
+- PR curve reveals true performance on rare class
+```
 
 ---
 
 ## 5. CROSS-VALIDATION
 
-> [!blue] 💙 **The Gold Standard for Model Evaluation**
+**💙 The Gold Standard for Model Evaluation**
 
 ### Why Cross-Validation?
 
@@ -546,26 +546,26 @@ graph TD
     style E fill:#fff9c4
 ```
 
-> [!yellow] ⭐ **Choosing K Value**
-> ```
-> K = 5:
-> ✅ Fast
-> ✅ Good for large datasets
-> ❌ Higher variance
-> 
-> K = 10:
-> ✅ Standard choice
-> ✅ Good bias-variance tradeoff
-> ✅ Most common in research
-> 
-> K = n (Leave-One-Out):
-> ✅ Maximum data usage
-> ✅ Lowest bias
-> ❌ Very slow
-> ❌ High variance
-> 
-> Rule of thumb: Use K=5 or K=10
-> ```
+**⭐ Choosing K Value**
+```
+K = 5:
+✅ Fast
+✅ Good for large datasets
+❌ Higher variance
+
+K = 10:
+✅ Standard choice
+✅ Good bias-variance tradeoff
+✅ Most common in research
+
+K = n (Leave-One-Out):
+✅ Maximum data usage
+✅ Lowest bias
+❌ Very slow
+❌ High variance
+
+Rule of thumb: Use K=5 or K=10
+```
 
 ### Stratified K-Fold
 
@@ -605,7 +605,7 @@ Always: Train on past, test on future!
 
 ## 6. BIAS-VARIANCE TRADEOFF
 
-> [!blue] 💙 **The Fundamental ML Tradeoff**
+**💙 The Fundamental ML Tradeoff**
 
 ### The Core Concept
 
@@ -677,7 +677,7 @@ Error
   Underfit    Optimal    Overfit
 ```
 
-> [!yellow] 💡 **Detecting and Fixing**
+**💡 Detecting and Fixing**
 
 | Problem | Symptoms | Solutions |
 |---------|----------|-----------|
@@ -689,95 +689,95 @@ Error
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: Precision vs Recall - explain with example**
-> 
-> **Perfect Answer:**
-> "Let me explain with a cancer detection example:
-> 
-> **Scenario:** Screening 1000 patients
-> - 50 actually have cancer
-> - Model predicts 60 have cancer
-> 
-> **Results:**
-> - 40 correct cancer predictions (TP)
-> - 20 false cancer predictions (FP)
-> - 10 missed cancers (FN)
-> 
-> **Precision = TP/(TP+FP) = 40/60 = 67%**
-> - Of people we told have cancer, 67% actually do
-> - 33% healthy people unnecessarily worried
-> 
-> **Recall = TP/(TP+FN) = 40/50 = 80%**
-> - We caught 80% of actual cancer cases
-> - Missed 20% (10 people) - very dangerous!
-> 
-> **Tradeoff:**
-> - Relax threshold → More predictions → Higher recall, lower precision
-> - Stricter threshold → Fewer predictions → Higher precision, lower recall
-> 
-> **For cancer:** Optimize Recall! (Can't afford to miss cases)
-> **For spam:** Optimize Precision! (Don't want good emails in spam)"
+**💎 Q: Precision vs Recall - explain with example**
 
-> [!yellow] 💎 **Q: When is accuracy not a good metric?**
-> 
-> **Perfect Answer:**
-> "Accuracy fails in imbalanced datasets. Example:
-> 
-> **Fraud Detection:**
-> - 99% legitimate transactions
-> - 1% fraudulent
-> 
-> **Dumb Model:** Always predict 'legitimate'
-> - Accuracy = 99% ✓ (looks great!)
-> - But catches 0% fraud ✗ (useless!)
-> 
-> **Why it fails:**
-> - Accuracy treats all classes equally
-> - Dominated by majority class
-> - Hides poor performance on minority class
-> 
-> **Better metrics for imbalanced data:**
-> 1. **F1-Score** - Balances precision & recall
-> 2. **AUC-ROC** - Threshold-independent
-> 3. **Precision-Recall Curve** - Focus on positive class
-> 4. **Matthews Correlation Coefficient** - Considers all confusion matrix values
-> 
-> **General Rule:**
-> If class imbalance >10:1, don't trust accuracy alone!"
+**Perfect Answer:**
+"Let me explain with a cancer detection example:
 
-> [!yellow] 💎 **Q: Explain overfitting and how to detect it**
-> 
-> **Perfect Answer:**
-> "Overfitting = Model memorizes training data instead of learning patterns
-> 
-> **Detection:**
-> 1. **Train vs Validation Performance**
->    - Train accuracy: 99%
->    - Validation accuracy: 65%
->    - Large gap → Overfitting!
-> 
-> 2. **Learning Curves**
->    - Train error keeps decreasing
->    - Validation error increases
->    - Curves diverge → Overfitting!
-> 
-> 3. **Model Complexity**
->    - Too many parameters relative to data
->    - Deep tree (depth > 10)
->    - High-degree polynomials
-> 
-> **Prevention:**
-> 1. **More data** - Best solution!
-> 2. **Regularization** - L1/L2 penalties
-> 3. **Simpler model** - Fewer features/layers
-> 4. **Cross-validation** - K-fold validation
-> 5. **Early stopping** - Stop before overfitting
-> 6. **Dropout** - Random neuron dropout (neural nets)
-> 7. **Data augmentation** - Synthetic examples
-> 
-> **Real example:**
-> Decision tree with max_depth=None overfits.
-> Solution: max_depth=5, min_samples_leaf=10"
+**Scenario:** Screening 1000 patients
+- 50 actually have cancer
+- Model predicts 60 have cancer
+
+**Results:**
+- 40 correct cancer predictions (TP)
+- 20 false cancer predictions (FP)
+- 10 missed cancers (FN)
+
+**Precision = TP/(TP+FP) = 40/60 = 67%**
+- Of people we told have cancer, 67% actually do
+- 33% healthy people unnecessarily worried
+
+**Recall = TP/(TP+FN) = 40/50 = 80%**
+- We caught 80% of actual cancer cases
+- Missed 20% (10 people) - very dangerous!
+
+**Tradeoff:**
+- Relax threshold → More predictions → Higher recall, lower precision
+- Stricter threshold → Fewer predictions → Higher precision, lower recall
+
+**For cancer:** Optimize Recall! (Can't afford to miss cases)
+**For spam:** Optimize Precision! (Don't want good emails in spam)"
+
+**💎 Q: When is accuracy not a good metric?**
+
+**Perfect Answer:**
+"Accuracy fails in imbalanced datasets. Example:
+
+**Fraud Detection:**
+- 99% legitimate transactions
+- 1% fraudulent
+
+**Dumb Model:** Always predict 'legitimate'
+- Accuracy = 99% ✓ (looks great!)
+- But catches 0% fraud ✗ (useless!)
+
+**Why it fails:**
+- Accuracy treats all classes equally
+- Dominated by majority class
+- Hides poor performance on minority class
+
+**Better metrics for imbalanced data:**
+1. **F1-Score** - Balances precision & recall
+2. **AUC-ROC** - Threshold-independent
+3. **Precision-Recall Curve** - Focus on positive class
+4. **Matthews Correlation Coefficient** - Considers all confusion matrix values
+
+**General Rule:**
+If class imbalance >10:1, don't trust accuracy alone!"
+
+**💎 Q: Explain overfitting and how to detect it**
+
+**Perfect Answer:**
+"Overfitting = Model memorizes training data instead of learning patterns
+
+**Detection:**
+1. **Train vs Validation Performance**
+   - Train accuracy: 99%
+   - Validation accuracy: 65%
+   - Large gap → Overfitting!
+
+2. **Learning Curves**
+   - Train error keeps decreasing
+   - Validation error increases
+   - Curves diverge → Overfitting!
+
+3. **Model Complexity**
+   - Too many parameters relative to data
+   - Deep tree (depth > 10)
+   - High-degree polynomials
+
+**Prevention:**
+1. **More data** - Best solution!
+2. **Regularization** - L1/L2 penalties
+3. **Simpler model** - Fewer features/layers
+4. **Cross-validation** - K-fold validation
+5. **Early stopping** - Stop before overfitting
+6. **Dropout** - Random neuron dropout (neural nets)
+7. **Data augmentation** - Synthetic examples
+
+**Real example:**
+Decision tree with max_depth=None overfits.
+Solution: max_depth=5, min_samples_leaf=10"
 
 ---
 

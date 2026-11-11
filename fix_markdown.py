@@ -57,8 +57,28 @@ def fix_markdown_file(filepath):
     print(f"✓ Fixed: {filepath}")
 
 if __name__ == '__main__':
-    # Fix the main supervised learning file
-    fix_markdown_file('03-Machine-Learning/Supervised-Learning/README.md')
-    print("\n✅ Markdown formatting fixed!")
+    import os
+    import glob
+
+    # Find all markdown files
+    md_files = []
+    for root, dirs, files in os.walk('.'):
+        # Skip hidden directories and node_modules
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d != 'node_modules']
+        for file in files:
+            if file.endswith('.md'):
+                md_files.append(os.path.join(root, file))
+
+    print(f"Found {len(md_files)} markdown files to fix...\n")
+
+    fixed_count = 0
+    for filepath in md_files:
+        try:
+            fix_markdown_file(filepath)
+            fixed_count += 1
+        except Exception as e:
+            print(f"✗ Error fixing {filepath}: {e}")
+
+    print(f"\n✅ Fixed {fixed_count}/{len(md_files)} markdown files!")
     print("All Obsidian callouts converted to standard markdown.")
     print("Will render properly on GitHub and VS Code.")

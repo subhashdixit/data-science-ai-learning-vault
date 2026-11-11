@@ -1,11 +1,11 @@
 # ➗ MATHEMATICS FOR MACHINE LEARNING
 
-> [!yellow] ⭐ **THE FOUNDATION OF AI/ML!**
-> You CAN'T truly understand ML without the math! This is what separates good from great ML engineers.
-> 
-> **Time to Complete:** 4-6 weeks  
-> **Difficulty:** ⭐⭐⭐ Medium-Hard  
-> **Interview Weight:** ⭐⭐⭐ CRITICAL for serious ML roles!
+**⭐ THE FOUNDATION OF AI/ML!**
+You CAN'T truly understand ML without the math! This is what separates good from great ML engineers.
+
+**Time to Complete:** 4-6 weeks  
+**Difficulty:** ⭐⭐⭐ Medium-Hard  
+**Interview Weight:** ⭐⭐⭐ CRITICAL for serious ML roles!
 
 ---
 
@@ -33,7 +33,7 @@ graph LR
 
 ## 📚 THE THREE PILLARS
 
-> [!blue] 💙 **Why Math Matters in ML**
+**💙 Why Math Matters in ML**
 
 ```mermaid
 graph TD
@@ -55,8 +55,8 @@ graph TD
 
 ## 1️⃣ LINEAR ALGEBRA
 
-> [!blue] 💙 **The Language of Data**
-> Everything in ML is vectors and matrices!
+**💙 The Language of Data**
+Everything in ML is vectors and matrices!
 
 ### What You'll Learn
 
@@ -69,32 +69,32 @@ graph TD
 | **Eigenvalues/Eigenvectors** | PCA, dimensionality reduction | [[Linear-Algebra/README#eigen\|Learn]] |
 | **Singular Value Decomposition** | Matrix factorization, compression | [[Linear-Algebra/README#svd\|Learn]] |
 
-> [!green] ✅ **Where You'll Use It**
-> - 🧠 **Neural Networks**: Matrix multiplications everywhere!
-> - 📊 **PCA**: Eigenvalues and eigenvectors
-> - 🖼️ **Computer Vision**: Image transformations
-> - 📝 **NLP**: Word embeddings are vectors
-> - 🎯 **Recommendation Systems**: Matrix factorization
+**✅ Where You'll Use It**
+- 🧠 **Neural Networks**: Matrix multiplications everywhere!
+- 📊 **PCA**: Eigenvalues and eigenvectors
+- 🖼️ **Computer Vision**: Image transformations
+- 📝 **NLP**: Word embeddings are vectors
+- 🎯 **Recommendation Systems**: Matrix factorization
 
-> [!yellow] ⭐ **Quick Example**
-> ```python
-> # Neural network layer = Matrix multiplication!
-> import numpy as np
-> 
-> # Input: 1 sample, 3 features
-> X = np.array([[1, 2, 3]])  # Shape: (1, 3)
-> 
-> # Weights: 3 inputs → 2 outputs
-> W = np.array([[0.1, 0.5],
->               [0.2, 0.6],
->               [0.3, 0.7]])  # Shape: (3, 2)
-> 
-> # Forward pass = Matrix multiplication
-> output = X @ W  # Shape: (1, 2)
-> # [[1.4, 2.6]]
-> 
-> # This is linear algebra in action!
-> ```
+**⭐ Quick Example**
+```python
+# Neural network layer = Matrix multiplication!
+import numpy as np
+
+# Input: 1 sample, 3 features
+X = np.array([[1, 2, 3]])  # Shape: (1, 3)
+
+# Weights: 3 inputs → 2 outputs
+W = np.array([[0.1, 0.5],
+              [0.2, 0.6],
+              [0.3, 0.7]])  # Shape: (3, 2)
+
+# Forward pass = Matrix multiplication
+output = X @ W  # Shape: (1, 2)
+# [[1.4, 2.6]]
+
+# This is linear algebra in action!
+```
 
 **→ [[Linear-Algebra/README|Start Linear Algebra]]**
 
@@ -102,8 +102,8 @@ graph TD
 
 ## 2️⃣ CALCULUS
 
-> [!blue] 💙 **How ML Learns**
-> Calculus powers optimization and training!
+**💙 How ML Learns**
+Calculus powers optimization and training!
 
 ### What You'll Learn
 
@@ -115,48 +115,48 @@ graph TD
 | **Chain Rule** | Backpropagation! | [[Calculus/README#chain-rule\|Learn]] |
 | **Gradient Descent** | How models learn | [[Calculus/README#gradient-descent\|Learn]] |
 
-> [!green] ✅ **Where You'll Use It**
-> - 🎯 **Training**: Gradient descent optimization
-> - 🔙 **Backpropagation**: Chain rule through layers
-> - 📉 **Loss Functions**: Minimizing error
-> - ⚙️ **Hyperparameter Tuning**: Understanding learning rates
-> - 🧠 **Deep Learning**: All optimization algorithms
+**✅ Where You'll Use It**
+- 🎯 **Training**: Gradient descent optimization
+- 🔙 **Backpropagation**: Chain rule through layers
+- 📉 **Loss Functions**: Minimizing error
+- ⚙️ **Hyperparameter Tuning**: Understanding learning rates
+- 🧠 **Deep Learning**: All optimization algorithms
 
-> [!yellow] ⭐ **Quick Example**
-> ```python
-> # Gradient Descent in action
-> import numpy as np
-> 
-> # Loss function: L = (y - prediction)²
-> # Goal: Minimize loss by adjusting weights
-> 
-> # Starting weight
-> w = 0.0
-> learning_rate = 0.1
-> 
-> # True value
-> y = 10
-> 
-> # Training loop
-> for epoch in range(100):
->     # Forward pass
->     prediction = w * 5  # Simple: y = w * x where x=5
->     
->     # Calculate loss
->     loss = (y - prediction) ** 2
->     
->     # Gradient (derivative of loss w.r.t. w)
->     # dL/dw = 2 * (y - prediction) * (-x)
->     gradient = 2 * (y - prediction) * (-5)
->     
->     # Update weight (move opposite to gradient)
->     w = w - learning_rate * gradient
->     
->     if epoch % 20 == 0:
->         print(f"Epoch {epoch}: w={w:.4f}, loss={loss:.4f}")
-> 
-> # This is calculus powering ML!
-> ```
+**⭐ Quick Example**
+```python
+# Gradient Descent in action
+import numpy as np
+
+# Loss function: L = (y - prediction)²
+# Goal: Minimize loss by adjusting weights
+
+# Starting weight
+w = 0.0
+learning_rate = 0.1
+
+# True value
+y = 10
+
+# Training loop
+for epoch in range(100):
+    # Forward pass
+    prediction = w * 5  # Simple: y = w * x where x=5
+    
+    # Calculate loss
+    loss = (y - prediction) ** 2
+    
+    # Gradient (derivative of loss w.r.t. w)
+    # dL/dw = 2 * (y - prediction) * (-x)
+    gradient = 2 * (y - prediction) * (-5)
+    
+    # Update weight (move opposite to gradient)
+    w = w - learning_rate * gradient
+    
+    if epoch % 20 == 0:
+        print(f"Epoch {epoch}: w={w:.4f}, loss={loss:.4f}")
+
+# This is calculus powering ML!
+```
 
 **→ [[Calculus/README|Start Calculus]]**
 
@@ -164,8 +164,8 @@ graph TD
 
 ## 3️⃣ PROBABILITY & STATISTICS
 
-> [!blue] 💙 **Dealing with Uncertainty**
-> ML is all about probabilities!
+**💙 Dealing with Uncertainty**
+ML is all about probabilities!
 
 ### What You'll Learn
 
@@ -177,39 +177,39 @@ graph TD
 | **Expectation & Variance** | Understanding data | [[Probability/README#expectation\|Learn]] |
 | **Maximum Likelihood** | Parameter estimation | [[Probability/README#mle\|Learn]] |
 
-> [!green] ✅ **Where You'll Use It**
-> - 🎲 **Predictions**: Output probabilities
-> - 📊 **Naive Bayes**: Direct application
-> - 🎯 **Logistic Regression**: Probability modeling
-> - 🔮 **Bayesian ML**: Prior and posterior
-> - 🎰 **Reinforcement Learning**: Probability distributions
+**✅ Where You'll Use It**
+- 🎲 **Predictions**: Output probabilities
+- 📊 **Naive Bayes**: Direct application
+- 🎯 **Logistic Regression**: Probability modeling
+- 🔮 **Bayesian ML**: Prior and posterior
+- 🎰 **Reinforcement Learning**: Probability distributions
 
-> [!yellow] ⭐ **Quick Example**
-> ```python
-> # Bayes' Theorem for classification
-> # P(Class|Features) = P(Features|Class) * P(Class) / P(Features)
-> 
-> # Email spam detection example
-> # Given: Email contains word "FREE"
-> # Find: Probability it's spam
-> 
-> # Known probabilities
-> P_spam = 0.3  # 30% of emails are spam
-> P_free_given_spam = 0.7  # 70% of spam contains "FREE"
-> P_free_given_not_spam = 0.05  # 5% of legit emails contain "FREE"
-> 
-> # Calculate P(FREE)
-> P_free = (P_free_given_spam * P_spam + 
->           P_free_given_not_spam * (1 - P_spam))
-> 
-> # Bayes' Theorem
-> P_spam_given_free = (P_free_given_spam * P_spam) / P_free
-> 
-> print(f"Probability email is spam: {P_spam_given_free:.2%}")
-> # Output: 87.50%
-> 
-> # This is probability in action!
-> ```
+**⭐ Quick Example**
+```python
+# Bayes' Theorem for classification
+# P(Class|Features) = P(Features|Class) * P(Class) / P(Features)
+
+# Email spam detection example
+# Given: Email contains word "FREE"
+# Find: Probability it's spam
+
+# Known probabilities
+P_spam = 0.3  # 30% of emails are spam
+P_free_given_spam = 0.7  # 70% of spam contains "FREE"
+P_free_given_not_spam = 0.05  # 5% of legit emails contain "FREE"
+
+# Calculate P(FREE)
+P_free = (P_free_given_spam * P_spam + 
+          P_free_given_not_spam * (1 - P_spam))
+
+# Bayes' Theorem
+P_spam_given_free = (P_free_given_spam * P_spam) / P_free
+
+print(f"Probability email is spam: {P_spam_given_free:.2%}")
+# Output: 87.50%
+
+# This is probability in action!
+```
 
 **→ [[Probability/README|Start Probability]]**
 
@@ -217,7 +217,7 @@ graph TD
 
 ## 🎯 LEARNING STRATEGY
 
-> [!yellow] 💡 **How to Master Math for ML**
+**💡 How to Master Math for ML**
 
 ### Recommended Order
 
@@ -239,210 +239,210 @@ graph TD
 
 ### Study Tips
 
-> [!green] ✅ **Effective Learning**
-> 
-> **1. Theory + Code Together**
-> ```
-> ❌ DON'T: Just memorize formulas
-> ✅ DO: Implement in Python/NumPy
-> 
-> Example: Learn matrix multiplication
-> → Understand the math
-> → Code it in NumPy
-> → See it in neural network
-> ```
-> 
-> **2. Visualize Everything**
-> ```
-> - Use matplotlib for plots
-> - Draw vectors and matrices
-> - Visualize gradients
-> - Plot probability distributions
-> ```
-> 
-> **3. Connect to ML**
-> ```
-> For each concept, ask:
-> "Where is this used in ML?"
-> 
-> Example:
-> Eigenvalues → PCA → Dimensionality Reduction
-> Gradients → Backprop → Training Neural Nets
-> Bayes → Naive Bayes → Text Classification
-> ```
+**✅ Effective Learning**
+
+**1. Theory + Code Together**
+```
+❌ DON'T: Just memorize formulas
+✅ DO: Implement in Python/NumPy
+
+Example: Learn matrix multiplication
+→ Understand the math
+→ Code it in NumPy
+→ See it in neural network
+```
+
+**2. Visualize Everything**
+```
+- Use matplotlib for plots
+- Draw vectors and matrices
+- Visualize gradients
+- Plot probability distributions
+```
+
+**3. Connect to ML**
+```
+For each concept, ask:
+"Where is this used in ML?"
+
+Example:
+Eigenvalues → PCA → Dimensionality Reduction
+Gradients → Backprop → Training Neural Nets
+Bayes → Naive Bayes → Text Classification
+```
 
 ---
 
 ## 🔥 WHAT YOU NEED FOR DIFFERENT ML ROLES
 
-> [!blue] 💙 **Math Requirements by Level**
+**💙 Math Requirements by Level**
 
 ### Entry Level Data Scientist
 
-> [!green] ✅ **Must Know (80% focus)**
-> - ✅ Basic linear algebra (vectors, matrices, dot product)
-> - ✅ Descriptive statistics
-> - ✅ Probability basics
-> - ✅ Basic calculus (derivatives)
-> 
-> **Focus:** Understanding concepts > Proofs
+**✅ Must Know (80% focus)**
+- ✅ Basic linear algebra (vectors, matrices, dot product)
+- ✅ Descriptive statistics
+- ✅ Probability basics
+- ✅ Basic calculus (derivatives)
+
+**Focus:** Understanding concepts > Proofs
 
 ### ML Engineer
 
-> [!yellow] ⭐ **Must Know (100% focus)**
-> - ✅ All linear algebra (including eigen, SVD)
-> - ✅ Calculus (gradients, chain rule)
-> - ✅ Probability (distributions, Bayes)
-> - ✅ Optimization basics
-> 
-> **Focus:** Implementation > Theory
+**⭐ Must Know (100% focus)**
+- ✅ All linear algebra (including eigen, SVD)
+- ✅ Calculus (gradients, chain rule)
+- ✅ Probability (distributions, Bayes)
+- ✅ Optimization basics
+
+**Focus:** Implementation > Theory
 
 ### Research / PhD Level
 
-> [!purple] 🔮 **Advanced (150% focus)**
-> - ✅ All above topics deeply
-> - ✅ Convex optimization
-> - ✅ Information theory
-> - ✅ Measure theory
-> - ✅ Functional analysis
-> 
-> **Focus:** Proofs + Theory + Novel Methods
+**🔮 Advanced (150% focus)**
+- ✅ All above topics deeply
+- ✅ Convex optimization
+- ✅ Information theory
+- ✅ Measure theory
+- ✅ Functional analysis
+
+**Focus:** Proofs + Theory + Novel Methods
 
 ---
 
 ## 💡 COMMON QUESTIONS
 
-> [!yellow] 💎 **"Do I really need math for ML?"**
-> 
-> **Short answer: YES, but...**
-> 
-> **Level 1 (User):** Use pre-built models
-> - Math needed: 20%
-> - Just understand inputs/outputs
-> 
-> **Level 2 (Practitioner):** Tune and apply models
-> - Math needed: 60%
-> - Understand what's happening inside
-> 
-> **Level 3 (Expert):** Build custom solutions
-> - Math needed: 90%
-> - Debug, optimize, create new methods
-> 
-> **Level 4 (Researcher):** Invent new algorithms
-> - Math needed: 100%
-> - Read papers, prove theorems
+**💎 "Do I really need math for ML?"**
 
-> [!yellow] 💎 **"Can I learn ML without strong math?"**
-> 
-> **Yes, BUT:**
-> ```
-> Without math, you can:
-> ✅ Use scikit-learn
-> ✅ Fine-tune models
-> ✅ Build basic applications
-> 
-> Without math, you CANNOT:
-> ❌ Understand why models fail
-> ❌ Debug complex issues
-> ❌ Read research papers
-> ❌ Create custom architectures
-> ❌ Optimize effectively
-> 
-> Think of it like driving:
-> - No math = Automatic car (limited control)
-> - With math = Manual car (full control)
-> ```
+**Short answer: YES, but...**
 
-> [!yellow] 💎 **"What math is most important?"**
-> 
-> **Priority ranking:**
-> ```
-> 1. Linear Algebra (40% importance)
->    - Used EVERYWHERE in ML
->    - Neural nets, PCA, SVD
->    
-> 2. Probability (30% importance)
->    - Understanding uncertainty
->    - All ML is probabilistic
->    
-> 3. Calculus (25% importance)
->    - Training and optimization
->    - Gradient descent
->    
-> 4. Statistics (5% importance)
->    - Covered separately
-> ```
+**Level 1 (User):** Use pre-built models
+- Math needed: 20%
+- Just understand inputs/outputs
+
+**Level 2 (Practitioner):** Tune and apply models
+- Math needed: 60%
+- Understand what's happening inside
+
+**Level 3 (Expert):** Build custom solutions
+- Math needed: 90%
+- Debug, optimize, create new methods
+
+**Level 4 (Researcher):** Invent new algorithms
+- Math needed: 100%
+- Read papers, prove theorems
+
+**💎 "Can I learn ML without strong math?"**
+
+**Yes, BUT:**
+```
+Without math, you can:
+✅ Use scikit-learn
+✅ Fine-tune models
+✅ Build basic applications
+
+Without math, you CANNOT:
+❌ Understand why models fail
+❌ Debug complex issues
+❌ Read research papers
+❌ Create custom architectures
+❌ Optimize effectively
+
+Think of it like driving:
+- No math = Automatic car (limited control)
+- With math = Manual car (full control)
+```
+
+**💎 "What math is most important?"**
+
+**Priority ranking:**
+```
+1. Linear Algebra (40% importance)
+   - Used EVERYWHERE in ML
+   - Neural nets, PCA, SVD
+   
+2. Probability (30% importance)
+   - Understanding uncertainty
+   - All ML is probabilistic
+   
+3. Calculus (25% importance)
+   - Training and optimization
+   - Gradient descent
+   
+4. Statistics (5% importance)
+   - Covered separately
+```
 
 ---
 
 ## 🎯 INTERVIEW MATH QUESTIONS
 
-> [!red] ⚠️ **Common Math Interview Questions**
+**⚠️ Common Math Interview Questions**
 
 ### Linear Algebra
 
-> [!yellow] 💎 **Q1: Explain dot product and its ML use**
-> ```
-> Perfect Answer:
-> "Dot product measures similarity between vectors.
-> 
-> Formula: a · b = |a| |b| cos(θ)
-> 
-> ML Applications:
-> 1. Neural Networks: Computing layer outputs
-> 2. Similarity: Cosine similarity in recommendations
-> 3. Projections: PCA component computation
-> 
-> Example in code:
-> similarity = np.dot(user_vector, item_vector)
-> Higher dot product = More similar"
-> ```
+**💎 Q1: Explain dot product and its ML use**
+```
+Perfect Answer:
+"Dot product measures similarity between vectors.
+
+Formula: a · b = |a| |b| cos(θ)
+
+ML Applications:
+1. Neural Networks: Computing layer outputs
+2. Similarity: Cosine similarity in recommendations
+3. Projections: PCA component computation
+
+Example in code:
+similarity = np.dot(user_vector, item_vector)
+Higher dot product = More similar"
+```
 
 ### Calculus
 
-> [!yellow] 💎 **Q2: Explain gradient descent**
-> ```
-> Perfect Answer:
-> "Gradient descent is an optimization algorithm that:
-> 
-> 1. Calculates gradient (direction of steepest ascent)
-> 2. Moves opposite direction (descend)
-> 3. Uses learning rate to control step size
-> 
-> Formula:
-> w_new = w_old - learning_rate * gradient
-> 
-> It's how neural networks learn by minimizing loss.
-> 
-> Key insight: Gradient points uphill, we go downhill."
-> ```
+**💎 Q2: Explain gradient descent**
+```
+Perfect Answer:
+"Gradient descent is an optimization algorithm that:
+
+1. Calculates gradient (direction of steepest ascent)
+2. Moves opposite direction (descend)
+3. Uses learning rate to control step size
+
+Formula:
+w_new = w_old - learning_rate * gradient
+
+It's how neural networks learn by minimizing loss.
+
+Key insight: Gradient points uphill, we go downhill."
+```
 
 ### Probability
 
-> [!yellow] 💎 **Q3: Explain Bayes' Theorem in ML context**
-> ```
-> Perfect Answer:
-> "Bayes' Theorem: P(A|B) = P(B|A) * P(A) / P(B)
-> 
-> In ML terms:
-> P(Class|Data) = P(Data|Class) * P(Class) / P(Data)
-> 
-> Posterior = Likelihood * Prior / Evidence
-> 
-> Used in:
-> 1. Naive Bayes classifier
-> 2. Spam detection
-> 3. Medical diagnosis
-> 4. Bayesian networks
-> 
-> It lets us update beliefs given new evidence."
-> ```
+**💎 Q3: Explain Bayes' Theorem in ML context**
+```
+Perfect Answer:
+"Bayes' Theorem: P(A|B) = P(B|A) * P(A) / P(B)
+
+In ML terms:
+P(Class|Data) = P(Data|Class) * P(Class) / P(Data)
+
+Posterior = Likelihood * Prior / Evidence
+
+Used in:
+1. Naive Bayes classifier
+2. Spam detection
+3. Medical diagnosis
+4. Bayesian networks
+
+It lets us update beliefs given new evidence."
+```
 
 ---
 
 ## 📚 LEARNING RESOURCES
 
-> [!blue] 💙 **Recommended Resources**
+**💙 Recommended Resources**
 
 ### Books
 - 📘 "Mathematics for Machine Learning" (Free PDF online)
@@ -463,7 +463,7 @@ graph TD
 
 ## 🔗 START YOUR JOURNEY
 
-> [!green] ✅ **Ready to Begin?**
+**✅ Ready to Begin?**
 
 **Choose your path:**
 
@@ -484,11 +484,11 @@ graph TD
 
 ---
 
-> [!yellow] 💡 **Remember**
-> "You don't need to be a mathematician to do ML,
->  but you need to understand the math ML uses!"
-> 
-> 🚀 **Start here:** [[Linear-Algebra/README|Linear Algebra Basics]]
+**💡 Remember**
+"You don't need to be a mathematician to do ML,
+ but you need to understand the math ML uses!"
+
+🚀 **Start here:** [[Linear-Algebra/README|Linear Algebra Basics]]
 
 ---
 

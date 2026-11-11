@@ -1,7 +1,7 @@
 # 🚀 Advanced NLP
 
-> [!blue] 💙 **Modern NLP with Transformers**
-> Advanced NLP techniques using transformer models, fine-tuning strategies, and state-of-the-art approaches for language understanding and generation.
+**💙 Modern NLP with Transformers**
+Advanced NLP techniques using transformer models, fine-tuning strategies, and state-of-the-art approaches for language understanding and generation.
 
 ---
 
@@ -36,8 +36,8 @@ By the end of this section, you should be able to:
 
 ### [[transfer-learning-nlp|Transfer Learning in NLP]]
 
-> [!blue] 💙 **Pre-training + Fine-tuning Paradigm**
-> Train large models on massive text data (pre-training), then adapt to specific tasks with small labeled datasets (fine-tuning).
+**💙 Pre-training + Fine-tuning Paradigm**
+Train large models on massive text data (pre-training), then adapt to specific tasks with small labeled datasets (fine-tuning).
 
 **Transfer Learning Evolution:**
 ```mermaid
@@ -54,17 +54,17 @@ graph LR
 - **Faster convergence** than training from scratch
 - **Better performance** on downstream tasks
 
-> [!yellow] 💡 **Pre-training Objectives**
-> - **Masked Language Modeling (MLM):** BERT-style, predict masked tokens
-> - **Causal Language Modeling (CLM):** GPT-style, predict next token
-> - **Span Corruption:** T5-style, predict corrupted spans
+**💡 Pre-training Objectives**
+- **Masked Language Modeling (MLM):** BERT-style, predict masked tokens
+- **Causal Language Modeling (CLM):** GPT-style, predict next token
+- **Span Corruption:** T5-style, predict corrupted spans
 
 ---
 
 ### [[bert-family|BERT and Encoder Models]]
 
-> [!blue] 💙 **Bidirectional Encoder Representations from Transformers**
-> Encoder-only transformer that reads text bidirectionally. Best for understanding tasks (classification, NER, QA).
+**💙 Bidirectional Encoder Representations from Transformers**
+Encoder-only transformer that reads text bidirectionally. Best for understanding tasks (classification, NER, QA).
 
 **BERT Architecture:**
 ```mermaid
@@ -89,18 +89,18 @@ graph TD
 - **ELECTRA:** Replaced token detection (more efficient pre-training)
 - **DeBERTa:** Disentangled attention, relative position encoding
 
-> [!green] ✅ **Best For**
-> - Text classification (sentiment, topic)
-> - Named Entity Recognition (NER)
-> - Question Answering
-> - Sentence similarity
+**✅ Best For**
+- Text classification (sentiment, topic)
+- Named Entity Recognition (NER)
+- Question Answering
+- Sentence similarity
 
 ---
 
 ### [[gpt-autoregressive|GPT and Decoder Models]]
 
-> [!blue] 💙 **Generative Pre-trained Transformer**
-> Decoder-only transformer that generates text left-to-right. Best for generation tasks.
+**💙 Generative Pre-trained Transformer**
+Decoder-only transformer that generates text left-to-right. Best for generation tasks.
 
 **Causal (Autoregressive) Modeling:**
 ```mermaid
@@ -123,19 +123,19 @@ graph LR
 - **Few-shot learning:** Can learn from examples in prompt
 - **In-context learning:** No gradient updates needed
 
-> [!green] ✅ **Best For**
-> - Text generation
-> - Creative writing
-> - Code generation
-> - Conversational AI
-> - Few-shot learning tasks
+**✅ Best For**
+- Text generation
+- Creative writing
+- Code generation
+- Conversational AI
+- Few-shot learning tasks
 
 ---
 
 ### [[encoder-decoder-models|Encoder-Decoder Models]]
 
-> [!blue] 💙 **Sequence-to-Sequence Transformers**
-> Full transformer with encoder and decoder. Best for tasks requiring input transformation (translation, summarization).
+**💙 Sequence-to-Sequence Transformers**
+Full transformer with encoder and decoder. Best for tasks requiring input transformation (translation, summarization).
 
 **Architecture:**
 ```mermaid
@@ -159,18 +159,18 @@ graph TD
 - Input: "translate English to German: Hello"
 - Output: "Hallo"
 
-> [!green] ✅ **Best For**
-> - Machine translation
-> - Text summarization
-> - Question answering (generative)
-> - Paraphrasing
+**✅ Best For**
+- Machine translation
+- Text summarization
+- Question answering (generative)
+- Paraphrasing
 
 ---
 
 ### [[fine-tuning-strategies|Fine-Tuning Strategies]]
 
-> [!blue] 💙 **Adapting Pre-trained Models**
-> Different approaches to adapt large models to specific tasks efficiently.
+**💙 Adapting Pre-trained Models**
+Different approaches to adapt large models to specific tasks efficiently.
 
 **Fine-Tuning Spectrum:**
 ```mermaid
@@ -203,18 +203,18 @@ graph LR
    - Model weights frozen
    - Very parameter-efficient
 
-> [!yellow] 💡 **Choosing Strategy**
-> - **Large dataset, compute available:** Full fine-tuning
-> - **Limited resources:** LoRA or Adapters
-> - **Very small dataset:** Prompt engineering or few-shot
-> - **Multiple tasks:** Adapters (task-specific adapters)
+**💡 Choosing Strategy**
+- **Large dataset, compute available:** Full fine-tuning
+- **Limited resources:** LoRA or Adapters
+- **Very small dataset:** Prompt engineering or few-shot
+- **Multiple tasks:** Adapters (task-specific adapters)
 
 ---
 
 ### [[multilingual-nlp|Multilingual NLP]]
 
-> [!blue] 💙 **Cross-Lingual Understanding**
-> Models and techniques for handling multiple languages, enabling zero-shot cross-lingual transfer.
+**💙 Cross-Lingual Understanding**
+Models and techniques for handling multiple languages, enabling zero-shot cross-lingual transfer.
 
 **Multilingual Models:**
 - **mBERT:** BERT trained on 104 languages
@@ -231,82 +231,82 @@ graph LR
     B --> E[Zero-shot<br/>Apply to Spanish]
 ```
 
-> [!yellow] 💡 **Cross-Lingual Strategy**
-> - Fine-tune on high-resource language (English)
-> - Apply directly to low-resource languages
-> - Works due to shared multilingual representations
-> - Performance drops with language distance
+**💡 Cross-Lingual Strategy**
+- Fine-tune on high-resource language (English)
+- Apply directly to low-resource languages
+- Works due to shared multilingual representations
+- Performance drops with language distance
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Domain Adaptation**
-> Adapting general models to specific domains (medical, legal, scientific):
-> - **Continued Pre-training:** Further pre-train on domain text
-> - **Domain-Specific Fine-tuning:** Use domain-labeled data
-> - **Hybrid:** Combine both approaches
+**🔮 Domain Adaptation**
+Adapting general models to specific domains (medical, legal, scientific):
+- **Continued Pre-training:** Further pre-train on domain text
+- **Domain-Specific Fine-tuning:** Use domain-labeled data
+- **Hybrid:** Combine both approaches
 
-> [!purple] 🔮 **Multi-Task Learning**
-> Training single model on multiple tasks simultaneously:
-> - **T5 approach:** All tasks as text-to-text
-> - **Shared representations** across tasks
-> - **Auxiliary tasks** improve main task performance
+**🔮 Multi-Task Learning**
+Training single model on multiple tasks simultaneously:
+- **T5 approach:** All tasks as text-to-text
+- **Shared representations** across tasks
+- **Auxiliary tasks** improve main task performance
 
-> [!purple] 🔮 **Knowledge Distillation**
-> Compressing large models into smaller ones:
-> - Student learns from teacher's soft predictions
-> - **DistilBERT:** 60% smaller, 95% performance
-> - Trade-off: size vs. accuracy
+**🔮 Knowledge Distillation**
+Compressing large models into smaller ones:
+- Student learns from teacher's soft predictions
+- **DistilBERT:** 60% smaller, 95% performance
+- Trade-off: size vs. accuracy
 
-> [!purple] 🔮 **Few-Shot and Zero-Shot Learning**
-> Learning with minimal or no task-specific training:
-> - **Zero-shot:** No examples, task description only
-> - **Few-shot:** 1-10 examples in prompt
-> - **In-context learning:** LLMs learn from prompt examples
+**🔮 Few-Shot and Zero-Shot Learning**
+Learning with minimal or no task-specific training:
+- **Zero-shot:** No examples, task description only
+- **Few-shot:** 1-10 examples in prompt
+- **In-context learning:** LLMs learn from prompt examples
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Catastrophic Forgetting**
-> - **Problem:** Fine-tuning causes model to forget pre-trained knowledge
-> - **Solution:** Small learning rates, fewer epochs, LoRA, monitor validation
+**⚠️ Catastrophic Forgetting**
+- **Problem:** Fine-tuning causes model to forget pre-trained knowledge
+- **Solution:** Small learning rates, fewer epochs, LoRA, monitor validation
 
-> [!red] ⚠️ **Overfitting on Small Datasets**
-> - **Problem:** Model memorizes training data
-> - **Solution:** Use LoRA, data augmentation, early stopping, larger pre-trained models
+**⚠️ Overfitting on Small Datasets**
+- **Problem:** Model memorizes training data
+- **Solution:** Use LoRA, data augmentation, early stopping, larger pre-trained models
 
-> [!red] ⚠️ **Wrong Model Choice**
-> - **Problem:** Using GPT for classification or BERT for generation
-> - **Solution:** Encoder (BERT) for understanding, Decoder (GPT) for generation
+**⚠️ Wrong Model Choice**
+- **Problem:** Using GPT for classification or BERT for generation
+- **Solution:** Encoder (BERT) for understanding, Decoder (GPT) for generation
 
-> [!red] ⚠️ **Ignoring Tokenization**
-> - **Problem:** Different models use different tokenizers (BERT WordPiece vs GPT BPE)
-> - **Solution:** Always use model's original tokenizer
+**⚠️ Ignoring Tokenization**
+- **Problem:** Different models use different tokenizers (BERT WordPiece vs GPT BPE)
+- **Solution:** Always use model's original tokenizer
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Model Selection**
-> - **Classification/NER:** BERT, RoBERTa, DeBERTa
-> - **Generation:** GPT, GPT-2, LLaMA
-> - **Summarization/Translation:** T5, BART, mT5
-> - **Multilingual:** XLM-RoBERTa, mBERT, mT5
+**💡 Model Selection**
+- **Classification/NER:** BERT, RoBERTa, DeBERTa
+- **Generation:** GPT, GPT-2, LLaMA
+- **Summarization/Translation:** T5, BART, mT5
+- **Multilingual:** XLM-RoBERTa, mBERT, mT5
 
-> [!yellow] 💡 **Fine-Tuning Tips**
-> - Start with **small learning rates** (1e-5 to 5e-5)
-> - Use **warmup** for first 10% of steps
-> - Apply **gradient clipping** (max_norm=1.0)
-> - Monitor **validation loss** for early stopping
-> - Use **mixed precision** training for speed
+**💡 Fine-Tuning Tips**
+- Start with **small learning rates** (1e-5 to 5e-5)
+- Use **warmup** for first 10% of steps
+- Apply **gradient clipping** (max_norm=1.0)
+- Monitor **validation loss** for early stopping
+- Use **mixed precision** training for speed
 
-> [!yellow] 💡 **Data Requirements**
-> - **Prompt engineering:** 0 examples (zero-shot)
-> - **Few-shot learning:** 1-100 examples
-> - **LoRA fine-tuning:** 100-1000 examples
-> - **Full fine-tuning:** 1000+ examples
+**💡 Data Requirements**
+- **Prompt engineering:** 0 examples (zero-shot)
+- **Few-shot learning:** 1-100 examples
+- **LoRA fine-tuning:** 100-1000 examples
+- **Full fine-tuning:** 1000+ examples
 
 ---
 

@@ -1,7 +1,7 @@
 # 🎓 LEARNING VAULT - MAIN NAVIGATION
 
-> [!yellow] 💡 **Your Complete Data Science & AI Learning Journey**
-> From Zero to Hero - Foundations → Machine Learning → Deep Learning → AI Systems → Interview Ready!
+**💡 Your Complete Data Science & AI Learning Journey**
+From Zero to Hero - Foundations → Machine Learning → Deep Learning → AI Systems → Interview Ready!
 
 ---
 
@@ -22,8 +22,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ## 📚 MAIN LEARNING TRACKS
 
 ### 🟦 Track 1: FOUNDATIONS (Start Here!)
-> [!blue] 💙 **Master the Basics First**
-> Build rock-solid foundation in Python, Math, and Data Manipulation
+**💙 Master the Basics First**
+Build rock-solid foundation in Python, Math, and Data Manipulation
 
 #### 📂 [01-Foundations](01-Foundations/README.md)
 
@@ -47,8 +47,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟩 Track 2: STATISTICS & DATA
-> [!green] 💚 **Learn to Analyze Data**
-> Master statistics, EDA, and visualization techniques
+**💚 Learn to Analyze Data**
+Master statistics, EDA, and visualization techniques
 
 #### 📂 [02-Statistics-and-Data](02-Statistics-and-Data/README.md)
 
@@ -67,8 +67,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟨 Track 3: MACHINE LEARNING
-> [!yellow] ⭐ **Build Your First Models**
-> Classical ML algorithms and techniques
+**⭐ Build Your First Models**
+Classical ML algorithms and techniques
 
 #### 📂 [03-Machine-Learning](03-Machine-Learning/README.md)
 
@@ -88,8 +88,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟪 Track 4: DEEP LEARNING
-> [!purple] 🔮 **Enter the Neural Network World**
-> Modern AI with Neural Networks and Transformers
+**🔮 Enter the Neural Network World**
+Modern AI with Neural Networks and Transformers
 
 #### 📂 [04-Deep-Learning](04-Deep-Learning/README.md)
 
@@ -109,8 +109,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟦 Track 5: NLP (Natural Language Processing)
-> [!blue] 💙 **Process Text Like a Pro**
-> From tokenization to state-of-the-art NLP
+**💙 Process Text Like a Pro**
+From tokenization to state-of-the-art NLP
 
 #### 📂 [05-NLP](05-NLP/README.md)
 
@@ -123,8 +123,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟣 Track 6: AI SYSTEMS
-> [!purple] 🔮 **Build Production AI Applications**
-> RAG, Agents, and Prompt Engineering
+**🔮 Build Production AI Applications**
+RAG, Agents, and Prompt Engineering
 
 #### 📂 [06-AI-Systems](06-AI-Systems/README.md)
 
@@ -137,8 +137,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🟧 Track 7: MLOps & DEPLOYMENT
-> [!yellow] 💡 **Take Models to Production**
-> Deploy, monitor, and maintain ML systems
+**💡 Take Models to Production**
+Deploy, monitor, and maintain ML systems
 
 #### 📂 [07-MLOps-Deployment](07-MLOps-Deployment/README.md)
 
@@ -151,8 +151,8 @@ START HERE → FOUNDATIONS → STATISTICS → ML → DL → AI SYSTEMS → INTER
 ---
 
 ### 🎯 Track 8: INTERVIEW PREPARATION
-> [!red] ⚠️ **THIS IS YOUR GOAL - GET HIRED!**
-> Complete interview prep for Data Science/ML roles
+**⚠️ THIS IS YOUR GOAL - GET HIRED!**
+Complete interview prep for Data Science/ML roles
 
 #### 📂 [09-Interview-Prep](09-Interview-Prep/README.md)
 
@@ -212,8 +212,8 @@ Week 9-12: Mock Interviews + Refinement
 
 ## 📊 YOUR PROGRESS TRACKER
 
-> [!yellow] 💪 **Current Status**
-> Track your journey here!
+**💪 Current Status**
+Track your journey here!
 
 ### Overall Progress: 
 ```
@@ -264,7 +264,7 @@ Interview Prep:  [░░░░░░░░░░]  0%
 
 ## 📁 PROJECT IDEAS
 
-> [!green] ✅ **Build These to Stand Out**
+**✅ Build These to Stand Out**
 
 ### Beginner Projects:
 1. 📊 Titanic Survival Prediction
@@ -305,7 +305,7 @@ Interview Prep:  [░░░░░░░░░░]  0%
 
 ## 🎨 HOW TO USE THIS VAULT
 
-> [!blue] 💙 **Navigation Tips**
+**💙 Navigation Tips**
 
 ### Using the Color System:
 - 💙 **Blue** = Concepts & Theory
@@ -333,7 +333,7 @@ Interview Prep:  [░░░░░░░░░░]  0%
 
 ## 🚨 CRITICAL TOPICS (Interview Must-Knows!)
 
-> [!red] ⚠️ **Master These First**
+**⚠️ Master These First**
 
 ### Python:
 - [[01-Foundations/Python/mutable-vs-immutable|Mutable vs Immutable]] ⭐⭐⭐
@@ -391,12 +391,12 @@ Month 9+: APPLY & INTERVIEW
 
 ---
 
-> [!yellow] 💡 **Remember**
-> "The journey of a thousand miles begins with a single step" 
-> 
-> Start with **[[01-Foundations/Python/README|Python Basics]]** and build from there!
-> 
-> 🚀 **You got this!**
+**💡 Remember**
+"The journey of a thousand miles begins with a single step" 
+
+Start with **[[01-Foundations/Python/README|Python Basics]]** and build from there!
+
+🚀 **You got this!**
 
 ---
 

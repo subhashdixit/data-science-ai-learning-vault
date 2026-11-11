@@ -1,11 +1,11 @@
 # 🐼 PANDAS - Data Manipulation Made Easy
 
-> [!yellow] ⭐ **THE #1 DATA SCIENCE TOOL!**
-> If you work with data, you MUST know Pandas. It's used in 95% of data science jobs!
-> 
-> **Time to Complete:** 2-3 weeks  
-> **Difficulty:** ⭐⭐⭐ Intermediate  
-> **Interview Weight:** ⭐⭐⭐⭐⭐ CRITICAL!
+**⭐ THE #1 DATA SCIENCE TOOL!**
+If you work with data, you MUST know Pandas. It's used in 95% of data science jobs!
+
+**Time to Complete:** 2-3 weeks  
+**Difficulty:** ⭐⭐⭐ Intermediate  
+**Interview Weight:** ⭐⭐⭐⭐⭐ CRITICAL!
 
 ---
 
@@ -48,8 +48,8 @@ graph LR
 
 ## 1. WHAT IS PANDAS?
 
-> [!blue] 💙 **What is Pandas?**
-> Pandas is Python's data manipulation library - like Excel but with code, 1000x more powerful!
+**💙 What is Pandas?**
+Pandas is Python's data manipulation library - like Excel but with code, 1000x more powerful!
 
 ### Why Pandas?
 
@@ -85,30 +85,30 @@ graph TD
     style H fill:#c8e6c9
 ```
 
-> [!yellow] 💡 **Real-World Power**
-> ```
-> Task: Clean 1 million customer records
-> 
-> Excel: 
-> - Opens slowly (if at all)
-> - Manual clicks
-> - Crashes likely
-> - Hours of work
-> 
-> Pandas:
-> - Loads in seconds
-> - Automated pipeline
-> - Never crashes
-> - Minutes of work
-> 
-> This is why data scientists LOVE Pandas!
-> ```
+**💡 Real-World Power**
+```
+Task: Clean 1 million customer records
+
+Excel: 
+- Opens slowly (if at all)
+- Manual clicks
+- Crashes likely
+- Hours of work
+
+Pandas:
+- Loads in seconds
+- Automated pipeline
+- Never crashes
+- Minutes of work
+
+This is why data scientists LOVE Pandas!
+```
 
 ---
 
 ## 2. DATA STRUCTURES
 
-> [!blue] 💙 **Two Core Structures**
+**💙 Two Core Structures**
 
 ### Series (1D)
 
@@ -175,19 +175,19 @@ Components:
 - dtypes: Data type for each column
 ```
 
-> [!yellow] 💡 **Think of it as:**
-> ```
-> Series = One Excel column
-> DataFrame = Entire Excel sheet
-> 
-> Each column in DataFrame is a Series!
-> ```
+**💡 Think of it as:**
+```
+Series = One Excel column
+DataFrame = Entire Excel sheet
+
+Each column in DataFrame is a Series!
+```
 
 ---
 
 ## 3. LOADING DATA
 
-> [!blue] 💙 **Reading Data from Anywhere**
+**💙 Reading Data from Anywhere**
 
 ### Pandas Can Read 50+ Formats
 
@@ -208,7 +208,7 @@ graph TD
 
 ### Common Read Functions
 
-> [!green] ✅ **Quick Reference**
+**✅ Quick Reference**
 
 ```
 Format          Function           Common Use
@@ -251,24 +251,24 @@ Parquet         to_parquet()       Big data (10x smaller!)
 HTML            to_html()          Reports, dashboards
 ```
 
-> [!red] ⚠️ **Common Loading Mistakes**
-> ```
-> ❌ Not specifying encoding: read_csv('file.csv')
->    Gets error on special characters
-> ✅ Specify encoding: read_csv('file.csv', encoding='utf-8')
-> 
-> ❌ Loading entire 10GB file into memory
-> ✅ Use chunks: for chunk in read_csv(..., chunksize=10000)
-> 
-> ❌ Wrong delimiter: File uses ';' but assumes ','
-> ✅ Check first: read_csv('file.csv', sep=';')
-> ```
+**⚠️ Common Loading Mistakes**
+```
+❌ Not specifying encoding: read_csv('file.csv')
+   Gets error on special characters
+✅ Specify encoding: read_csv('file.csv', encoding='utf-8')
+
+❌ Loading entire 10GB file into memory
+✅ Use chunks: for chunk in read_csv(..., chunksize=10000)
+
+❌ Wrong delimiter: File uses ';' but assumes ','
+✅ Check first: read_csv('file.csv', sep=';')
+```
 
 ---
 
 ## 4. SELECTION AND INDEXING
 
-> [!blue] 💙 **Three Ways to Select Data**
+**💙 Three Ways to Select Data**
 
 ### Selection Methods Comparison
 
@@ -333,7 +333,7 @@ graph TD
 
 ### Selection Patterns
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 Pattern 1: One column
@@ -356,23 +356,23 @@ df.loc[0, 'age'] → One number (fastest)
 df.at[0, 'age'] → Even faster for single value!
 ```
 
-> [!red] ⚠️ **Critical Difference**
-> ```
-> .loc[0:5] → Includes row 5 (INCLUSIVE)
-> .iloc[0:5] → Excludes row 5 (like Python slicing)
-> 
-> This confuses many beginners!
-> 
-> Rule: 
-> - .loc thinks like Excel (A1:C5 includes C5)
-> - .iloc thinks like Python (list[0:5] excludes 5)
-> ```
+**⚠️ Critical Difference**
+```
+.loc[0:5] → Includes row 5 (INCLUSIVE)
+.iloc[0:5] → Excludes row 5 (like Python slicing)
+
+This confuses many beginners!
+
+Rule: 
+- .loc thinks like Excel (A1:C5 includes C5)
+- .iloc thinks like Python (list[0:5] excludes 5)
+```
 
 ---
 
 ## 5. FILTERING DATA
 
-> [!blue] 💙 **Boolean Indexing - Pandas Superpower**
+**💙 Boolean Indexing - Pandas Superpower**
 
 ### Filtering Concept
 
@@ -419,7 +419,7 @@ graph TD
 
 ### Common Filters
 
-> [!green] ✅ **Essential Patterns**
+**✅ Essential Patterns**
 
 ```
 Single condition:
@@ -467,39 +467,39 @@ df[
 Build complex filters step by step!
 ```
 
-> [!yellow] 💡 **Pro Tip: Query Method**
-> ```
-> Instead of brackets, use .query() for readable code:
-> 
-> Bracket way (hard to read):
-> df[(df['age'] > 25) & (df['salary'] > 50000)]
-> 
-> Query way (easier):
-> df.query('age > 25 and salary > 50000')
-> 
-> Query is cleaner for complex conditions!
-> ```
+**💡 Pro Tip: Query Method**
+```
+Instead of brackets, use .query() for readable code:
 
-> [!red] ⚠️ **Common Mistakes**
-> ```
-> ❌ Missing parentheses:
-> df[df['age'] > 25 & df['salary'] > 50000]  # ERROR!
-> 
-> ✅ With parentheses:
-> df[(df['age'] > 25) & (df['salary'] > 50000)]
-> 
-> ❌ Using 'and' instead of '&':
-> df[(df['age'] > 25) and (df['salary'] > 50000)]  # ERROR!
-> 
-> ✅ Use & for Pandas:
-> df[(df['age'] > 25) & (df['salary'] > 50000)]
-> ```
+Bracket way (hard to read):
+df[(df['age'] > 25) & (df['salary'] > 50000)]
+
+Query way (easier):
+df.query('age > 25 and salary > 50000')
+
+Query is cleaner for complex conditions!
+```
+
+**⚠️ Common Mistakes**
+```
+❌ Missing parentheses:
+df[df['age'] > 25 & df['salary'] > 50000]  # ERROR!
+
+✅ With parentheses:
+df[(df['age'] > 25) & (df['salary'] > 50000)]
+
+❌ Using 'and' instead of '&':
+df[(df['age'] > 25) and (df['salary'] > 50000)]  # ERROR!
+
+✅ Use & for Pandas:
+df[(df['age'] > 25) & (df['salary'] > 50000)]
+```
 
 ---
 
 ## 6. DATA CLEANING
 
-> [!blue] 💙 **Real Data is Messy - Cleaning is 80% of Work!**
+**💙 Real Data is Messy - Cleaning is 80% of Work!**
 
 ### Missing Data Handling
 
@@ -520,7 +520,7 @@ graph TD
 
 ### Missing Data Strategies
 
-> [!yellow] 💡 **When to Drop vs Fill**
+**💡 When to Drop vs Fill**
 
 ```
 DECISION TREE:
@@ -604,27 +604,27 @@ Common issues:
    df['email'] = df['email'].str.lower()
 ```
 
-> [!red] ⚠️ **Cleaning Mistakes**
-> ```
-> ❌ Dropping all missing data blindly:
-> df.dropna()  # Might lose 90% of data!
-> 
-> ✅ Check first:
-> df.isnull().sum()  # See how much is missing
-> Then decide strategy per column
-> 
-> ❌ Filling numerical with 0:
-> df.fillna(0)  # 0 might be a real value!
-> 
-> ✅ Use mean/median:
-> df.fillna(df.median())
-> ```
+**⚠️ Cleaning Mistakes**
+```
+❌ Dropping all missing data blindly:
+df.dropna()  # Might lose 90% of data!
+
+✅ Check first:
+df.isnull().sum()  # See how much is missing
+Then decide strategy per column
+
+❌ Filling numerical with 0:
+df.fillna(0)  # 0 might be a real value!
+
+✅ Use mean/median:
+df.fillna(df.median())
+```
 
 ---
 
 ## 7. TRANSFORMATIONS
 
-> [!blue] 💙 **Apply Functions to Transform Data**
+**💙 Apply Functions to Transform Data**
 
 ### Transformation Methods
 
@@ -645,7 +645,7 @@ graph TD
 
 ### Common Transformations
 
-> [!green] ✅ **Everyday Operations**
+**✅ Everyday Operations**
 
 ```
 1. Create new column:
@@ -706,30 +706,30 @@ graph LR
     style F fill:#c8e6c9
 ```
 
-> [!yellow] ⭐ **When to Use Each**
-> ```
-> Vectorized operations:
-> - Simple math: df['a'] + df['b']
-> - Comparisons: df['age'] > 25
-> - Built-in functions: df.mean(), df.sum()
-> USE ALWAYS when possible!
-> 
-> .apply():
-> - Custom logic: Complex if-else
-> - Functions not vectorizable
-> - Row-wise operations
-> USE when vectorization impossible
-> 
-> Python loops:
-> - NEVER use for data transformation!
-> - Only for non-Pandas logic
-> ```
+**⭐ When to Use Each**
+```
+Vectorized operations:
+- Simple math: df['a'] + df['b']
+- Comparisons: df['age'] > 25
+- Built-in functions: df.mean(), df.sum()
+USE ALWAYS when possible!
+
+.apply():
+- Custom logic: Complex if-else
+- Functions not vectorizable
+- Row-wise operations
+USE when vectorization impossible
+
+Python loops:
+- NEVER use for data transformation!
+- Only for non-Pandas logic
+```
 
 ---
 
 ## 8. AGGREGATIONS AND GROUPBY
 
-> [!blue] 💙 **GroupBy: Split-Apply-Combine**
+**💙 GroupBy: Split-Apply-Combine**
 
 ### GroupBy Concept
 
@@ -779,7 +779,7 @@ graph LR
 
 ### Common Aggregations
 
-> [!green] ✅ **Essential Aggregations**
+**✅ Essential Aggregations**
 
 ```
 Single aggregation:
@@ -825,35 +825,35 @@ Function          What it does           Use case
 
 ### Real-World Example
 
-> [!yellow] ⭐ **Sales Analysis**
-> ```
-> Question: What is the total sales by region and product?
-> 
-> Data:
->    region  product   sales
-> 0  East    A         100
-> 1  East    B         150
-> 2  West    A         200
-> 3  West    B         180
-> 
-> Solution:
-> df.groupby(['region', 'product'])['sales'].sum()
-> 
-> Result:
-> region  product  sales
-> East    A        100
->         B        150
-> West    A        200
->         B        180
-> 
-> Now you have a pivot-table-like view!
-> ```
+**⭐ Sales Analysis**
+```
+Question: What is the total sales by region and product?
+
+Data:
+   region  product   sales
+0  East    A         100
+1  East    B         150
+2  West    A         200
+3  West    B         180
+
+Solution:
+df.groupby(['region', 'product'])['sales'].sum()
+
+Result:
+region  product  sales
+East    A        100
+        B        150
+West    A        200
+        B        180
+
+Now you have a pivot-table-like view!
+```
 
 ---
 
 ## 9. MERGING AND JOINING
 
-> [!blue] 💙 **Combining Multiple DataFrames**
+**💙 Combining Multiple DataFrames**
 
 ### Join Types Visual
 
@@ -935,7 +935,7 @@ Use: Combining similar DataFrames
 
 ### Common Merge Patterns
 
-> [!green] ✅ **Real-World Scenarios**
+**✅ Real-World Scenarios**
 
 ```
 Pattern 1: Add customer info to orders
@@ -958,44 +958,44 @@ pd.concat([jan_data, feb_data, mar_data])
 → Combine monthly data
 ```
 
-> [!red] ⚠️ **Merge Mistakes**
-> ```
-> ❌ Duplicate keys:
-> Multiple rows with same id in both tables
-> Result: Cartesian product (explosion!)
-> 
-> ✅ Check first:
-> df1['id'].duplicated().any()
-> df2['id'].duplicated().any()
-> 
-> ❌ Wrong join type:
-> Using inner when you need left
-> Result: Losing data
-> 
-> ✅ Default to LEFT:
-> Keep all from main table
-> ```
+**⚠️ Merge Mistakes**
+```
+❌ Duplicate keys:
+Multiple rows with same id in both tables
+Result: Cartesian product (explosion!)
 
-> [!yellow] 💡 **SQL to Pandas Translation**
-> ```
-> SQL:
-> SELECT *
-> FROM orders o
-> INNER JOIN customers c
->   ON o.customer_id = c.customer_id
-> 
-> Pandas:
-> pd.merge(orders, customers, 
->          on='customer_id', how='inner')
-> 
-> They're identical!
-> ```
+✅ Check first:
+df1['id'].duplicated().any()
+df2['id'].duplicated().any()
+
+❌ Wrong join type:
+Using inner when you need left
+Result: Losing data
+
+✅ Default to LEFT:
+Keep all from main table
+```
+
+**💡 SQL to Pandas Translation**
+```
+SQL:
+SELECT *
+FROM orders o
+INNER JOIN customers c
+  ON o.customer_id = c.customer_id
+
+Pandas:
+pd.merge(orders, customers, 
+         on='customer_id', how='inner')
+
+They're identical!
+```
 
 ---
 
 ## 10. TIME SERIES
 
-> [!blue] 💙 **Working with Dates and Times**
+**💙 Working with Dates and Times**
 
 ### Date Operations
 
@@ -1033,7 +1033,7 @@ graph TD
 
 ### Common Time Operations
 
-> [!green] ✅ **Time Series Recipes**
+**✅ Time Series Recipes**
 
 ```
 1. Set date as index:
@@ -1064,109 +1064,109 @@ graph TD
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: Explain GroupBy split-apply-combine**
-> 
-> **Perfect Answer:**
-> "GroupBy follows a 3-step pattern:
-> 
-> **1. Split:**
-> Break DataFrame into groups based on key(s)
-> Like: Split sales by region
-> 
-> **2. Apply:**
-> Apply aggregation to each group independently
-> Like: Calculate mean sales for each region
-> 
-> **3. Combine:**
-> Combine results into new DataFrame
-> Like: Final table with region and avg_sales
-> 
-> **Example:**
-> Sales data (1000 rows, 5 regions)
-> → GroupBy region
-> → Calculate total sales per region
-> → Get 5-row result (one per region)
-> 
-> **Why powerful:**
-> - Automates data summarization
-> - Like SQL GROUP BY but more flexible
-> - Essential for exploratory analysis
-> 
-> **Common uses:**
-> - Summary statistics by category
-> - Time-based aggregations
-> - Customer/product analytics"
+**💎 Q: Explain GroupBy split-apply-combine**
 
-> [!yellow] 💎 **Q: .loc vs .iloc - when to use each?**
-> 
-> **Perfect Answer:**
-> ".loc and .iloc both select data but use different indexing:
-> 
-> **.loc (label-based):**
-> - Uses row/column labels
-> - Inclusive slicing
-> - df.loc[0:5] includes row 5
-> - Example: df.loc['2023-01-01', 'price']
-> 
-> **.iloc (position-based):**
-> - Uses integer positions
-> - Exclusive slicing (like Python)
-> - df.iloc[0:5] excludes row 5
-> - Example: df.iloc[0, 2]
-> 
-> **When to use:**
-> 
-> Use .loc when:
-> - Working with meaningful index (dates, IDs)
-> - Column names known
-> - Most common in production code
-> 
-> Use .iloc when:
-> - Position matters (first 10 rows)
-> - Dynamic column selection
-> - Index not meaningful
-> 
-> **Key difference:**
-> .loc[0:5] → 6 rows (includes 5)
-> .iloc[0:5] → 5 rows (excludes 5)
-> 
-> This confuses beginners but critical to know!"
+**Perfect Answer:**
+"GroupBy follows a 3-step pattern:
 
-> [!yellow] 💎 **Q: How do you handle missing data?**
-> 
-> **Perfect Answer:**
-> "Missing data strategy depends on amount and context:
-> 
-> **1. Detect:**
-> - df.isnull().sum() → Count missing per column
-> - df.isnull().sum() / len(df) → Percentage missing
-> 
-> **2. Decide strategy:**
-> 
-> **< 5% missing:**
-> - Safe to drop rows: df.dropna()
-> - Minimal data loss
-> 
-> **5-30% missing:**
-> - Numerical: Fill with mean/median
->   df.fillna(df.median())
-> - Categorical: Fill with mode
->   df.fillna(df.mode()[0])
-> - Time series: Forward fill
->   df.fillna(method='ffill')
-> 
-> **> 30% missing:**
-> - Consider dropping column
-> - Or create 'missing' indicator
->   df['was_missing'] = df['col'].isnull()
-> 
-> **3. Best practices:**
-> - Check WHY data is missing (MCAR, MAR, MNAR)
-> - Never fill with 0 blindly (0 might be real value)
-> - For ML: Median > Mean (robust to outliers)
-> - Document your decision
-> 
-> **Interview tip:** Always explain your reasoning, not just the code!"
+**1. Split:**
+Break DataFrame into groups based on key(s)
+Like: Split sales by region
+
+**2. Apply:**
+Apply aggregation to each group independently
+Like: Calculate mean sales for each region
+
+**3. Combine:**
+Combine results into new DataFrame
+Like: Final table with region and avg_sales
+
+**Example:**
+Sales data (1000 rows, 5 regions)
+→ GroupBy region
+→ Calculate total sales per region
+→ Get 5-row result (one per region)
+
+**Why powerful:**
+- Automates data summarization
+- Like SQL GROUP BY but more flexible
+- Essential for exploratory analysis
+
+**Common uses:**
+- Summary statistics by category
+- Time-based aggregations
+- Customer/product analytics"
+
+**💎 Q: .loc vs .iloc - when to use each?**
+
+**Perfect Answer:**
+".loc and .iloc both select data but use different indexing:
+
+**.loc (label-based):**
+- Uses row/column labels
+- Inclusive slicing
+- df.loc[0:5] includes row 5
+- Example: df.loc['2023-01-01', 'price']
+
+**.iloc (position-based):**
+- Uses integer positions
+- Exclusive slicing (like Python)
+- df.iloc[0:5] excludes row 5
+- Example: df.iloc[0, 2]
+
+**When to use:**
+
+Use .loc when:
+- Working with meaningful index (dates, IDs)
+- Column names known
+- Most common in production code
+
+Use .iloc when:
+- Position matters (first 10 rows)
+- Dynamic column selection
+- Index not meaningful
+
+**Key difference:**
+.loc[0:5] → 6 rows (includes 5)
+.iloc[0:5] → 5 rows (excludes 5)
+
+This confuses beginners but critical to know!"
+
+**💎 Q: How do you handle missing data?**
+
+**Perfect Answer:**
+"Missing data strategy depends on amount and context:
+
+**1. Detect:**
+- df.isnull().sum() → Count missing per column
+- df.isnull().sum() / len(df) → Percentage missing
+
+**2. Decide strategy:**
+
+**< 5% missing:**
+- Safe to drop rows: df.dropna()
+- Minimal data loss
+
+**5-30% missing:**
+- Numerical: Fill with mean/median
+  df.fillna(df.median())
+- Categorical: Fill with mode
+  df.fillna(df.mode()[0])
+- Time series: Forward fill
+  df.fillna(method='ffill')
+
+**> 30% missing:**
+- Consider dropping column
+- Or create 'missing' indicator
+  df['was_missing'] = df['col'].isnull()
+
+**3. Best practices:**
+- Check WHY data is missing (MCAR, MAR, MNAR)
+- Never fill with 0 blindly (0 might be real value)
+- For ML: Median > Mean (robust to outliers)
+- Document your decision
+
+**Interview tip:** Always explain your reasoning, not just the code!"
 
 ---
 

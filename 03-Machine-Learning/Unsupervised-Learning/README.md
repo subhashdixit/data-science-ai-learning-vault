@@ -1,11 +1,11 @@
 # 🔮 UNSUPERVISED LEARNING
 
-> [!yellow] ⭐ **FIND HIDDEN PATTERNS IN DATA!**
-> "The goal is to discover the hidden patterns and structures in the data without labels."
-> 
-> **Time to Complete:** 2-3 weeks  
-> **Difficulty:** ⭐⭐⭐ Medium  
-> **Interview Weight:** ⭐⭐⭐⭐ Very Important!
+**⭐ FIND HIDDEN PATTERNS IN DATA!**
+"The goal is to discover the hidden patterns and structures in the data without labels."
+
+**Time to Complete:** 2-3 weeks  
+**Difficulty:** ⭐⭐⭐ Medium  
+**Interview Weight:** ⭐⭐⭐⭐ Very Important!
 
 ---
 
@@ -51,8 +51,8 @@ graph TD
 
 ## 1. K-MEANS CLUSTERING
 
-> [!blue] 💙 **What is K-Means?**
-> Groups data into K clusters by minimizing distance to cluster centers (centroids).
+**💙 What is K-Means?**
+Groups data into K clusters by minimizing distance to cluster centers (centroids).
 
 ### How K-Means Works
 
@@ -88,7 +88,7 @@ Step 3: Move centroids to center of clusters
 Step 4: Reassign & repeat until stable
 ```
 
-> [!yellow] 💡 **How to Choose K?**
+**💡 How to Choose K?**
 
 **The Elbow Method:**
 
@@ -117,47 +117,47 @@ WCSS
     1 2 3 4 5 6 7
 ```
 
-> [!green] ✅ **Real-World Applications**
-> ```
-> 1. CUSTOMER SEGMENTATION
->    - Group customers by behavior
->    - Target marketing campaigns
->    - Identify VIP customers
-> 
-> 2. IMAGE COMPRESSION
->    - Reduce colors in image
->    - K clusters = K colors
->    - Smaller file size
-> 
-> 3. DOCUMENT CLUSTERING
->    - Group similar articles
->    - News categorization
->    - Content recommendation
-> 
-> 4. ANOMALY DETECTION
->    - Points far from all centroids
->    - Fraud detection
->    - Quality control
-> ```
+**✅ Real-World Applications**
+```
+1. CUSTOMER SEGMENTATION
+   - Group customers by behavior
+   - Target marketing campaigns
+   - Identify VIP customers
 
-> [!red] ⚠️ **Limitations of K-Means**
-> ```
-> ❌ Must specify K in advance
-> ❌ Sensitive to outliers
-> ❌ Assumes spherical clusters
-> ❌ Sensitive to initialization
-> ❌ Doesn't work well with:
->    - Non-spherical shapes
->    - Different sized clusters
->    - Different density clusters
-> ```
+2. IMAGE COMPRESSION
+   - Reduce colors in image
+   - K clusters = K colors
+   - Smaller file size
+
+3. DOCUMENT CLUSTERING
+   - Group similar articles
+   - News categorization
+   - Content recommendation
+
+4. ANOMALY DETECTION
+   - Points far from all centroids
+   - Fraud detection
+   - Quality control
+```
+
+**⚠️ Limitations of K-Means**
+```
+❌ Must specify K in advance
+❌ Sensitive to outliers
+❌ Assumes spherical clusters
+❌ Sensitive to initialization
+❌ Doesn't work well with:
+   - Non-spherical shapes
+   - Different sized clusters
+   - Different density clusters
+```
 
 ---
 
 ## 2. HIERARCHICAL CLUSTERING
 
-> [!blue] 💙 **What is Hierarchical Clustering?**
-> Creates a tree (dendrogram) showing how clusters merge or split at different levels.
+**💙 What is Hierarchical Clustering?**
+Creates a tree (dendrogram) showing how clusters merge or split at different levels.
 
 ### Two Approaches
 
@@ -190,7 +190,7 @@ Cut here → 3 clusters: {A}, {B,C,D}
          → 4 clusters: {A}, {B}, {C}, {D}
 ```
 
-> [!yellow] 💡 **Linkage Methods**
+**💡 Linkage Methods**
 
 ```mermaid
 graph TD
@@ -207,30 +207,30 @@ graph TD
     style E fill:#c8e6c9
 ```
 
-> [!green] ✅ **Advantages over K-Means**
-> ```
-> ✅ No need to specify K upfront
-> ✅ Dendrogram shows cluster hierarchy
-> ✅ Can cut at any level
-> ✅ Deterministic (no random initialization)
-> ✅ Works with any distance metric
-> ✅ Better for non-spherical clusters
-> ```
+**✅ Advantages over K-Means**
+```
+✅ No need to specify K upfront
+✅ Dendrogram shows cluster hierarchy
+✅ Can cut at any level
+✅ Deterministic (no random initialization)
+✅ Works with any distance metric
+✅ Better for non-spherical clusters
+```
 
-> [!red] ⚠️ **Disadvantages**
-> ```
-> ❌ Computationally expensive: O(n³)
-> ❌ Not suitable for large datasets
-> ❌ Sensitive to noise and outliers
-> ❌ Once merged, cannot undo
-> ```
+**⚠️ Disadvantages**
+```
+❌ Computationally expensive: O(n³)
+❌ Not suitable for large datasets
+❌ Sensitive to noise and outliers
+❌ Once merged, cannot undo
+```
 
 ---
 
 ## 3. DBSCAN
 
-> [!blue] 💙 **What is DBSCAN?**
-> Density-Based Spatial Clustering - finds clusters based on density, not distance!
+**💙 What is DBSCAN?**
+Density-Based Spatial Clustering - finds clusters based on density, not distance!
 
 **DBSCAN = Density-Based Spatial Clustering of Applications with Noise**
 
@@ -281,48 +281,48 @@ graph TD
     style F fill:#ffcdd2
 ```
 
-> [!yellow] ⭐ **Why DBSCAN is Powerful**
-> ```
-> ✅ Doesn't require K (number of clusters)
-> ✅ Finds arbitrarily shaped clusters
-> ✅ Handles different sized clusters
-> ✅ Identifies outliers as noise
-> ✅ Robust to outliers
-> ✅ Only 2 parameters (ε, minPts)
-> ```
+**⭐ Why DBSCAN is Powerful**
+```
+✅ Doesn't require K (number of clusters)
+✅ Finds arbitrarily shaped clusters
+✅ Handles different sized clusters
+✅ Identifies outliers as noise
+✅ Robust to outliers
+✅ Only 2 parameters (ε, minPts)
+```
 
-> [!green] ✅ **Real-World Use Cases**
-> ```
-> 1. GEOGRAPHIC CLUSTERING
->    - Crime hotspots
->    - Restaurant locations
->    - Disease outbreaks
-> 
-> 2. ANOMALY DETECTION
->    - Network intrusion
->    - Fraud detection
->    - Manufacturing defects
-> 
-> 3. IMAGE SEGMENTATION
->    - Object detection
->    - Medical imaging
->    - Satellite imagery
-> ```
+**✅ Real-World Use Cases**
+```
+1. GEOGRAPHIC CLUSTERING
+   - Crime hotspots
+   - Restaurant locations
+   - Disease outbreaks
 
-> [!red] ⚠️ **When DBSCAN Struggles**
-> ```
-> ❌ Clusters with varying densities
-> ❌ High-dimensional data (curse of dimensionality)
-> ❌ Choosing ε is tricky
-> ❌ Sensitive to parameter values
-> ```
+2. ANOMALY DETECTION
+   - Network intrusion
+   - Fraud detection
+   - Manufacturing defects
+
+3. IMAGE SEGMENTATION
+   - Object detection
+   - Medical imaging
+   - Satellite imagery
+```
+
+**⚠️ When DBSCAN Struggles**
+```
+❌ Clusters with varying densities
+❌ High-dimensional data (curse of dimensionality)
+❌ Choosing ε is tricky
+❌ Sensitive to parameter values
+```
 
 ---
 
 ## 4. PCA (PRINCIPAL COMPONENT ANALYSIS)
 
-> [!blue] 💙 **What is PCA?**
-> Reduces dimensions while preserving maximum variance in data.
+**💙 What is PCA?**
+Reduces dimensions while preserving maximum variance in data.
 
 ### The Core Idea
 
@@ -363,7 +363,7 @@ Original 3D:              After PCA (2D):
 Lost 1 dimension, kept 95% variance!
 ```
 
-> [!yellow] 💡 **How Many Components to Keep?**
+**💡 How Many Components to Keep?**
 
 ```mermaid
 graph TD
@@ -391,30 +391,30 @@ Variance Explained:
     Principal Components
 ```
 
-> [!green] ✅ **When to Use PCA**
-> ```
-> ✅ High-dimensional data (100+ features)
-> ✅ Features are correlated
-> ✅ Visualization (reduce to 2D/3D)
-> ✅ Speed up training
-> ✅ Remove noise
-> ✅ Overcome curse of dimensionality
-> 
-> Real Examples:
-> - Image compression
-> - Face recognition (Eigenfaces)
-> - Gene expression analysis
-> - Stock market analysis
-> ```
+**✅ When to Use PCA**
+```
+✅ High-dimensional data (100+ features)
+✅ Features are correlated
+✅ Visualization (reduce to 2D/3D)
+✅ Speed up training
+✅ Remove noise
+✅ Overcome curse of dimensionality
 
-> [!red] ⚠️ **PCA Limitations**
-> ```
-> ❌ Linear transformation only
-> ❌ Assumes directions of max variance = important
-> ❌ Principal components hard to interpret
-> ❌ Sensitive to scale (must standardize first!)
-> ❌ May lose important info in low-variance directions
-> ```
+Real Examples:
+- Image compression
+- Face recognition (Eigenfaces)
+- Gene expression analysis
+- Stock market analysis
+```
+
+**⚠️ PCA Limitations**
+```
+❌ Linear transformation only
+❌ Assumes directions of max variance = important
+❌ Principal components hard to interpret
+❌ Sensitive to scale (must standardize first!)
+❌ May lose important info in low-variance directions
+```
 
 ### PCA vs Other Methods
 
@@ -439,8 +439,8 @@ graph TD
 
 ## 5. t-SNE AND UMAP
 
-> [!blue] 💙 **What are t-SNE and UMAP?**
-> Non-linear dimensionality reduction for **visualization** (not for modeling!)
+**💙 What are t-SNE and UMAP?**
+Non-linear dimensionality reduction for **visualization** (not for modeling!)
 
 ### t-SNE (t-Distributed Stochastic Neighbor Embedding)
 
@@ -464,7 +464,7 @@ Point C is far
       ●C
 ```
 
-> [!yellow] ⭐ **t-SNE vs UMAP**
+**⭐ t-SNE vs UMAP**
 
 | Feature | t-SNE | UMAP |
 |---------|-------|------|
@@ -475,48 +475,48 @@ Point C is far
 | **Use for modeling** | ❌ No! | ⚠️ Maybe |
 | **Best for** | Visualization | Visualization + preprocessing |
 
-> [!green] ✅ **Amazing Use Cases**
-> ```
-> 1. VISUALIZE HIGH-D DATA
->    - 1000-D word embeddings → 2D plot
->    - See clusters and patterns
->    - Explore data structure
-> 
-> 2. MNIST DIGITS
->    - 784 pixels → 2D
->    - See digit clusters
->    - Understand what model sees
-> 
-> 3. SINGLE-CELL RNA
->    - 20,000 genes → 2D
->    - Identify cell types
->    - Discover new patterns
-> 
-> 4. DOCUMENT SIMILARITY
->    - Text embeddings → 2D
->    - See topic clusters
->    - Find similar documents
-> ```
+**✅ Amazing Use Cases**
+```
+1. VISUALIZE HIGH-D DATA
+   - 1000-D word embeddings → 2D plot
+   - See clusters and patterns
+   - Explore data structure
 
-> [!red] ⚠️ **Important Warnings**
-> ```
-> ❌ DON'T use for feature engineering
-> ❌ DON'T interpret distances quantitatively
-> ❌ DON'T compare across different runs
-> ❌ DON'T use as model input (use PCA instead)
-> 
-> ✅ DO use for visualization only
-> ✅ DO try different perplexity values (t-SNE)
-> ✅ DO standardize data first
-> ✅ DO use UMAP for large datasets
-> ```
+2. MNIST DIGITS
+   - 784 pixels → 2D
+   - See digit clusters
+   - Understand what model sees
+
+3. SINGLE-CELL RNA
+   - 20,000 genes → 2D
+   - Identify cell types
+   - Discover new patterns
+
+4. DOCUMENT SIMILARITY
+   - Text embeddings → 2D
+   - See topic clusters
+   - Find similar documents
+```
+
+**⚠️ Important Warnings**
+```
+❌ DON'T use for feature engineering
+❌ DON'T interpret distances quantitatively
+❌ DON'T compare across different runs
+❌ DON'T use as model input (use PCA instead)
+
+✅ DO use for visualization only
+✅ DO try different perplexity values (t-SNE)
+✅ DO standardize data first
+✅ DO use UMAP for large datasets
+```
 
 ---
 
 ## 6. ANOMALY DETECTION
 
-> [!blue] 💙 **What is Anomaly Detection?**
-> Finding rare items, events, or observations that differ significantly from the majority.
+**💙 What is Anomaly Detection?**
+Finding rare items, events, or observations that differ significantly from the majority.
 
 ### Types of Anomalies
 
@@ -566,35 +566,35 @@ Split many times          ×  ← Easy to isolate!
 to isolate one point
 ```
 
-> [!green] ✅ **Real-World Applications**
-> ```
-> 1. FRAUD DETECTION
->    - Credit card transactions
->    - Insurance claims
->    - Account takeovers
-> 
-> 2. NETWORK SECURITY
->    - Intrusion detection
->    - DDoS attacks
->    - Malware detection
-> 
-> 3. MANUFACTURING
->    - Defect detection
->    - Equipment failure
->    - Quality control
-> 
-> 4. HEALTHCARE
->    - Disease outbreak
->    - Medical imaging
->    - Vital sign monitoring
-> 
-> 5. FINANCE
->    - Market manipulation
->    - Unusual trading patterns
->    - Money laundering
-> ```
+**✅ Real-World Applications**
+```
+1. FRAUD DETECTION
+   - Credit card transactions
+   - Insurance claims
+   - Account takeovers
 
-> [!yellow] 💡 **Choosing the Right Method**
+2. NETWORK SECURITY
+   - Intrusion detection
+   - DDoS attacks
+   - Malware detection
+
+3. MANUFACTURING
+   - Defect detection
+   - Equipment failure
+   - Quality control
+
+4. HEALTHCARE
+   - Disease outbreak
+   - Medical imaging
+   - Vital sign monitoring
+
+5. FINANCE
+   - Market manipulation
+   - Unusual trading patterns
+   - Money laundering
+```
+
+**💡 Choosing the Right Method**
 
 | Method | Best For | Pros | Cons |
 |--------|----------|------|------|
@@ -608,99 +608,99 @@ to isolate one point
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: K-Means vs Hierarchical Clustering - when to use which?**
-> 
-> **Perfect Answer:**
-> 
-> **Use K-Means when:**
-> - Large datasets (>10,000 points)
-> - Know approximate number of clusters
-> - Clusters are spherical
-> - Need fast results
-> - Example: Customer segmentation
-> 
-> **Use Hierarchical when:**
-> - Small to medium datasets
-> - Don't know number of clusters
-> - Need dendrogram visualization
-> - Want to explore different K values
-> - Clusters may have complex shapes
-> - Example: Gene expression analysis
-> 
-> **Key Differences:**
-> - K-Means: O(n) iterations | Hierarchical: O(n³)
-> - K-Means: Need K upfront | Hierarchical: Cut dendrogram later
-> - K-Means: Random start | Hierarchical: Deterministic
-> - K-Means: Spherical clusters | Hierarchical: Any shape
+**💎 Q: K-Means vs Hierarchical Clustering - when to use which?**
 
-> [!yellow] 💎 **Q: Explain curse of dimensionality**
-> 
-> **Perfect Answer:**
-> "The curse of dimensionality refers to problems that arise when working with high-dimensional data:
-> 
-> **Problems:**
-> 1. **Distance becomes meaningless**
->    - All points become equally distant
->    - Near and far lose meaning
-> 
-> 2. **Data becomes sparse**
->    - Points spread out in high-D space
->    - Need exponentially more data
-> 
-> 3. **Computation explodes**
->    - O(2^d) complexity
->    - Algorithms slow down
-> 
-> **Solutions:**
-> - Feature selection (keep important features)
-> - Dimensionality reduction (PCA, t-SNE)
-> - Regularization
-> - Domain knowledge (remove irrelevant features)
-> 
-> **Example:**
-> - 1D: 10 points cover space well
-> - 10D: Need 10^10 points for same coverage!
-> - 100D: Distances all look the same"
+**Perfect Answer:**
 
-> [!yellow] 💎 **Q: How do you evaluate clustering results?**
-> 
-> **Perfect Answer:**
-> "Evaluating clustering is tricky since we don't have labels!
-> 
-> **Internal Metrics (no labels needed):**
-> 
-> 1. **Silhouette Score** (-1 to 1)
->    - Measures cluster cohesion & separation
->    - Higher is better
->    - >0.5 is good
-> 
-> 2. **Davies-Bouldin Index**
->    - Average similarity between clusters
->    - Lower is better
-> 
-> 3. **Calinski-Harabasz Score**
->    - Ratio of between-cluster to within-cluster variance
->    - Higher is better
-> 
-> **External Metrics (if labels available):**
-> 
-> 1. **Adjusted Rand Index (ARI)**
->    - Compare to ground truth
->    - 1 = perfect match
-> 
-> 2. **Normalized Mutual Information (NMI)**
->    - Information theoretic measure
-> 
-> **Business Metrics:**
-> - Do clusters make business sense?
-> - Can we action on them?
-> - Do they align with domain knowledge?
-> 
-> **Best Practice:**
-> - Use multiple metrics
-> - Visualize clusters (t-SNE)
-> - Validate with domain experts
-> - A/B test in production"
+**Use K-Means when:**
+- Large datasets (>10,000 points)
+- Know approximate number of clusters
+- Clusters are spherical
+- Need fast results
+- Example: Customer segmentation
+
+**Use Hierarchical when:**
+- Small to medium datasets
+- Don't know number of clusters
+- Need dendrogram visualization
+- Want to explore different K values
+- Clusters may have complex shapes
+- Example: Gene expression analysis
+
+**Key Differences:**
+- K-Means: O(n) iterations | Hierarchical: O(n³)
+- K-Means: Need K upfront | Hierarchical: Cut dendrogram later
+- K-Means: Random start | Hierarchical: Deterministic
+- K-Means: Spherical clusters | Hierarchical: Any shape
+
+**💎 Q: Explain curse of dimensionality**
+
+**Perfect Answer:**
+"The curse of dimensionality refers to problems that arise when working with high-dimensional data:
+
+**Problems:**
+1. **Distance becomes meaningless**
+   - All points become equally distant
+   - Near and far lose meaning
+
+2. **Data becomes sparse**
+   - Points spread out in high-D space
+   - Need exponentially more data
+
+3. **Computation explodes**
+   - O(2^d) complexity
+   - Algorithms slow down
+
+**Solutions:**
+- Feature selection (keep important features)
+- Dimensionality reduction (PCA, t-SNE)
+- Regularization
+- Domain knowledge (remove irrelevant features)
+
+**Example:**
+- 1D: 10 points cover space well
+- 10D: Need 10^10 points for same coverage!
+- 100D: Distances all look the same"
+
+**💎 Q: How do you evaluate clustering results?**
+
+**Perfect Answer:**
+"Evaluating clustering is tricky since we don't have labels!
+
+**Internal Metrics (no labels needed):**
+
+1. **Silhouette Score** (-1 to 1)
+   - Measures cluster cohesion & separation
+   - Higher is better
+   - >0.5 is good
+
+2. **Davies-Bouldin Index**
+   - Average similarity between clusters
+   - Lower is better
+
+3. **Calinski-Harabasz Score**
+   - Ratio of between-cluster to within-cluster variance
+   - Higher is better
+
+**External Metrics (if labels available):**
+
+1. **Adjusted Rand Index (ARI)**
+   - Compare to ground truth
+   - 1 = perfect match
+
+2. **Normalized Mutual Information (NMI)**
+   - Information theoretic measure
+
+**Business Metrics:**
+- Do clusters make business sense?
+- Can we action on them?
+- Do they align with domain knowledge?
+
+**Best Practice:**
+- Use multiple metrics
+- Visualize clusters (t-SNE)
+- Validate with domain experts
+- A/B test in production"
 
 ---
 

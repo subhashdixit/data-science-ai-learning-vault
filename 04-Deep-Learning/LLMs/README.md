@@ -1,7 +1,7 @@
 # 🤖 Large Language Models (LLMs)
 
-> [!blue] 💙 **Foundation Models**
-> Large-scale pre-trained language models that exhibit emergent capabilities. Learn about GPT, BERT, T5, LLaMA, and how to work with billion-parameter models.
+**💙 Foundation Models**
+Large-scale pre-trained language models that exhibit emergent capabilities. Learn about GPT, BERT, T5, LLaMA, and how to work with billion-parameter models.
 
 ---
 
@@ -73,216 +73,216 @@ By the end of this section, you should be able to:
 
 ## 💻 Code Examples
 
-> [!green] ✅ **Using OpenAI GPT API**
-> ```python
-> import openai
-> 
-> openai.api_key = "your-api-key"
-> 
-> response = openai.ChatCompletion.create(
->     model="gpt-4",
->     messages=[
->         {"role": "system", "content": "You are a helpful assistant."},
->         {"role": "user", "content": "Explain quantum computing in simple terms."}
->     ],
->     temperature=0.7,
->     max_tokens=500
-> )
-> 
-> print(response.choices[0].message.content)
-> ```
+**✅ Using OpenAI GPT API**
+```python
+import openai
 
-> [!green] ✅ **Loading LLaMA with Hugging Face**
-> ```python
-> from transformers import AutoTokenizer, AutoModelForCausalLM
-> import torch
-> 
-> # Load model and tokenizer
-> model_name = "meta-llama/Llama-2-7b-chat-hf"
-> tokenizer = AutoTokenizer.from_pretrained(model_name)
-> model = AutoModelForCausalLM.from_pretrained(
->     model_name,
->     torch_dtype=torch.float16,
->     device_map="auto"
-> )
-> 
-> # Generate text
-> prompt = "Explain the theory of relativity:"
-> inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
-> 
-> with torch.no_grad():
->     outputs = model.generate(
->         **inputs,
->         max_new_tokens=200,
->         temperature=0.7,
->         top_p=0.9,
->         do_sample=True
->     )
-> 
-> text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-> print(text)
-> ```
+openai.api_key = "your-api-key"
 
-> [!green] ✅ **Fine-Tuning with LoRA**
-> ```python
-> from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments, Trainer
-> from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-> from datasets import load_dataset
-> 
-> # Load base model
-> model = AutoModelForCausalLM.from_pretrained(
->     "meta-llama/Llama-2-7b-hf",
->     load_in_8bit=True,
->     device_map="auto"
-> )
-> 
-> # Prepare model for training
-> model = prepare_model_for_kbit_training(model)
-> 
-> # LoRA configuration
-> lora_config = LoraConfig(
->     r=8,  # Rank
->     lora_alpha=32,
->     target_modules=["q_proj", "v_proj"],
->     lora_dropout=0.05,
->     bias="none",
->     task_type="CAUSAL_LM"
-> )
-> 
-> # Apply LoRA
-> model = get_peft_model(model, lora_config)
-> model.print_trainable_parameters()  # Shows only ~0.1% params trainable
-> 
-> # Training arguments
-> training_args = TrainingArguments(
->     output_dir="./llama-lora",
->     per_device_train_batch_size=4,
->     gradient_accumulation_steps=4,
->     learning_rate=2e-4,
->     num_train_epochs=3,
->     logging_steps=10,
->     save_strategy="epoch"
-> )
-> 
-> # Train
-> trainer = Trainer(
->     model=model,
->     args=training_args,
->     train_dataset=train_dataset,
->     data_collator=data_collator
-> )
-> 
-> trainer.train()
-> ```
+response = openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain quantum computing in simple terms."}
+    ],
+    temperature=0.7,
+    max_tokens=500
+)
 
-> [!green] ✅ **Chain-of-Thought Prompting**
-> ```python
-> # Zero-shot CoT
-> prompt = """
-> Question: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. 
-> Each can has 3 tennis balls. How many tennis balls does he have now?
-> 
-> Let's think step by step:
-> """
-> 
-> # Few-shot CoT
-> prompt = """
-> Question: Mary has 3 apples. She buys 2 more. How many does she have?
-> Answer: Let's think step by step.
-> 1. Mary starts with 3 apples
-> 2. She buys 2 more
-> 3. 3 + 2 = 5
-> Therefore, Mary has 5 apples.
-> 
-> Question: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. 
-> Each can has 3 tennis balls. How many tennis balls does he have now?
-> Answer: Let's think step by step.
-> """
-> ```
+print(response.choices[0].message.content)
+```
+
+**✅ Loading LLaMA with Hugging Face**
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+# Load model and tokenizer
+model_name = "meta-llama/Llama-2-7b-chat-hf"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.float16,
+    device_map="auto"
+)
+
+# Generate text
+prompt = "Explain the theory of relativity:"
+inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+
+with torch.no_grad():
+    outputs = model.generate(
+        **inputs,
+        max_new_tokens=200,
+        temperature=0.7,
+        top_p=0.9,
+        do_sample=True
+    )
+
+text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(text)
+```
+
+**✅ Fine-Tuning with LoRA**
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments, Trainer
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from datasets import load_dataset
+
+# Load base model
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-2-7b-hf",
+    load_in_8bit=True,
+    device_map="auto"
+)
+
+# Prepare model for training
+model = prepare_model_for_kbit_training(model)
+
+# LoRA configuration
+lora_config = LoraConfig(
+    r=8,  # Rank
+    lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM"
+)
+
+# Apply LoRA
+model = get_peft_model(model, lora_config)
+model.print_trainable_parameters()  # Shows only ~0.1% params trainable
+
+# Training arguments
+training_args = TrainingArguments(
+    output_dir="./llama-lora",
+    per_device_train_batch_size=4,
+    gradient_accumulation_steps=4,
+    learning_rate=2e-4,
+    num_train_epochs=3,
+    logging_steps=10,
+    save_strategy="epoch"
+)
+
+# Train
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+    data_collator=data_collator
+)
+
+trainer.train()
+```
+
+**✅ Chain-of-Thought Prompting**
+```python
+# Zero-shot CoT
+prompt = """
+Question: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. 
+Each can has 3 tennis balls. How many tennis balls does he have now?
+
+Let's think step by step:
+"""
+
+# Few-shot CoT
+prompt = """
+Question: Mary has 3 apples. She buys 2 more. How many does she have?
+Answer: Let's think step by step.
+1. Mary starts with 3 apples
+2. She buys 2 more
+3. 3 + 2 = 5
+Therefore, Mary has 5 apples.
+
+Question: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. 
+Each can has 3 tennis balls. How many tennis balls does he have now?
+Answer: Let's think step by step.
+"""
+```
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Not Using Prompt Templates**
-> - **Problem:** Different models expect different formats (Llama-2, ChatML, etc.)
-> - **Solution:** Use model-specific chat templates from tokenizer
+**⚠️ Not Using Prompt Templates**
+- **Problem:** Different models expect different formats (Llama-2, ChatML, etc.)
+- **Solution:** Use model-specific chat templates from tokenizer
 
-> [!red] ⚠️ **Ignoring Context Window Limits**
-> - **Problem:** Truncation or errors when input exceeds max tokens
-> - **Solution:** Track token count, implement chunking strategies
+**⚠️ Ignoring Context Window Limits**
+- **Problem:** Truncation or errors when input exceeds max tokens
+- **Solution:** Track token count, implement chunking strategies
 
-> [!red] ⚠️ **Overfitting During Fine-Tuning**
-> - **Problem:** Model memorizes training data, loses general capabilities
-> - **Solution:** Use LoRA, small learning rates, early stopping, larger datasets
+**⚠️ Overfitting During Fine-Tuning**
+- **Problem:** Model memorizes training data, loses general capabilities
+- **Solution:** Use LoRA, small learning rates, early stopping, larger datasets
 
-> [!red] ⚠️ **Not Setting Temperature/Top-p**
-> - **Problem:** Too deterministic (temp=0) or too random (temp=1)
-> - **Solution:** temperature=0.7, top_p=0.9 for balanced generation
+**⚠️ Not Setting Temperature/Top-p**
+- **Problem:** Too deterministic (temp=0) or too random (temp=1)
+- **Solution:** temperature=0.7, top_p=0.9 for balanced generation
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Choosing a Model**
-> - **API models:** GPT-4, Claude 3.5 for best performance
-> - **Open models:** LLaMA 2, Mistral 7B for deployment control
-> - **Small models:** Phi-3, Gemma 2B for edge devices
-> - **Code:** CodeLlama, StarCoder for programming tasks
+**💡 Choosing a Model**
+- **API models:** GPT-4, Claude 3.5 for best performance
+- **Open models:** LLaMA 2, Mistral 7B for deployment control
+- **Small models:** Phi-3, Gemma 2B for edge devices
+- **Code:** CodeLlama, StarCoder for programming tasks
 
-> [!yellow] 💡 **Efficient Inference**
-> - Use **quantization** (8-bit, 4-bit) to reduce memory
-> - Enable **Flash Attention 2** for faster attention
-> - Apply **KV cache** optimization
-> - Use **vLLM** or **TGI** for production serving
-> - Implement **batching** for throughput
+**💡 Efficient Inference**
+- Use **quantization** (8-bit, 4-bit) to reduce memory
+- Enable **Flash Attention 2** for faster attention
+- Apply **KV cache** optimization
+- Use **vLLM** or **TGI** for production serving
+- Implement **batching** for throughput
 
-> [!yellow] 💡 **Fine-Tuning Strategy**
-> 1. **Start with prompting** - Try zero-shot and few-shot first
-> 2. **Use LoRA/QLoRA** - Parameter-efficient, prevents catastrophic forgetting
-> 3. **Small learning rates** - 1e-5 to 1e-4
-> 4. **Monitor validation loss** - Stop early if diverging
-> 5. **Keep base model frozen** - Only train adapters unless necessary
+**💡 Fine-Tuning Strategy**
+1. **Start with prompting** - Try zero-shot and few-shot first
+2. **Use LoRA/QLoRA** - Parameter-efficient, prevents catastrophic forgetting
+3. **Small learning rates** - 1e-5 to 1e-4
+4. **Monitor validation loss** - Stop early if diverging
+5. **Keep base model frozen** - Only train adapters unless necessary
 
-> [!yellow] 💡 **Prompt Engineering**
-> - Be **specific and detailed** in instructions
-> - Use **examples** (few-shot) for complex tasks
-> - Request **step-by-step reasoning** (Chain-of-Thought)
-> - Specify **output format** (JSON, markdown, etc.)
-> - **Iterate** on prompts based on outputs
+**💡 Prompt Engineering**
+- Be **specific and detailed** in instructions
+- Use **examples** (few-shot) for complex tasks
+- Request **step-by-step reasoning** (Chain-of-Thought)
+- Specify **output format** (JSON, markdown, etc.)
+- **Iterate** on prompts based on outputs
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Scaling Laws**
-> - **Kaplan Scaling Laws:** Performance scales with model size, data, compute
-> - **Chinchilla Optimal:** More data, smaller model is better than less data, larger model
-> - **Emergent Abilities:** Capabilities appear suddenly at scale (few-shot learning, reasoning)
+**🔮 Scaling Laws**
+- **Kaplan Scaling Laws:** Performance scales with model size, data, compute
+- **Chinchilla Optimal:** More data, smaller model is better than less data, larger model
+- **Emergent Abilities:** Capabilities appear suddenly at scale (few-shot learning, reasoning)
 
-> [!purple] 🔮 **Advanced Fine-Tuning**
-> - **QLoRA:** 4-bit quantization + LoRA (fine-tune 70B on single GPU)
-> - **PEFT Methods:** Adapter layers, IA3, (IA)³
-> - **Mixture of LoRAs:** Multiple task-specific LoRA adapters
-> - **Continuous Pre-training:** Adapt to new domain with raw text
+**🔮 Advanced Fine-Tuning**
+- **QLoRA:** 4-bit quantization + LoRA (fine-tune 70B on single GPU)
+- **PEFT Methods:** Adapter layers, IA3, (IA)³
+- **Mixture of LoRAs:** Multiple task-specific LoRA adapters
+- **Continuous Pre-training:** Adapt to new domain with raw text
 
-> [!purple] 🔮 **Alignment Methods**
-> - **RLHF:** Reward model + PPO for human preference learning
-> - **DPO (Direct Preference Optimization):** Simpler alternative to RLHF
-> - **Constitutional AI:** Self-critique and refinement
-> - **RLAIF:** AI feedback instead of human feedback
+**🔮 Alignment Methods**
+- **RLHF:** Reward model + PPO for human preference learning
+- **DPO (Direct Preference Optimization):** Simpler alternative to RLHF
+- **Constitutional AI:** Self-critique and refinement
+- **RLAIF:** AI feedback instead of human feedback
 
-> [!purple] 🔮 **Inference Optimization**
-> - **Speculative Decoding:** Use small model to draft, large model to verify
-> - **Flash Attention:** Memory-efficient attention computation
-> - **Continuous Batching:** Dynamic batching for variable-length sequences
-> - **PagedAttention:** Efficient KV cache management (vLLM)
+**🔮 Inference Optimization**
+- **Speculative Decoding:** Use small model to draft, large model to verify
+- **Flash Attention:** Memory-efficient attention computation
+- **Continuous Batching:** Dynamic batching for variable-length sequences
+- **PagedAttention:** Efficient KV cache management (vLLM)
 
-> [!purple] 🔮 **Multimodal LLMs**
-> - **GPT-4V, Gemini Pro Vision:** Vision + language
-> - **CLIP:** Contrastive image-text pretraining
-> - **LLaVA:** Visual instruction tuning
-> - **Flamingo:** Few-shot visual question answering
+**🔮 Multimodal LLMs**
+- **GPT-4V, Gemini Pro Vision:** Vision + language
+- **CLIP:** Contrastive image-text pretraining
+- **LLaVA:** Visual instruction tuning
+- **Flamingo:** Few-shot visual question answering
 
 ---
 

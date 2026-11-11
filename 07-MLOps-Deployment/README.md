@@ -1,7 +1,7 @@
 # 🚀 07 - MLOps & Deployment
 
-> [!blue] 💙 **MLOps & Deployment Section**
-> Production machine learning and LLM systems. Covers MLOps practices, LLMOps, data engineering, and deploying ML models at scale.
+**💙 MLOps & Deployment Section**
+Production machine learning and LLM systems. Covers MLOps practices, LLMOps, data engineering, and deploying ML models at scale.
 
 ---
 
@@ -56,14 +56,14 @@ From [[06-AI-Systems]]:
 
 ## 💡 Key Concepts Covered
 
-> [!yellow] 💡 **Core MLOps Topics**
-> - **CI/CD for ML:** Automated training, testing, deployment
-> - **Model Versioning:** DVC, MLflow, model registry
-> - **Monitoring:** Data drift, model performance, alerts
-> - **Feature Stores:** Centralized feature management
-> - **Experiment Tracking:** MLflow, Weights & Biases
-> - **LLM Evaluation:** Prompt testing, output quality
-> - **Data Pipelines:** Apache Airflow, Prefect, Dagster
+**💡 Core MLOps Topics**
+- **CI/CD for ML:** Automated training, testing, deployment
+- **Model Versioning:** DVC, MLflow, model registry
+- **Monitoring:** Data drift, model performance, alerts
+- **Feature Stores:** Centralized feature management
+- **Experiment Tracking:** MLflow, Weights & Biases
+- **LLM Evaluation:** Prompt testing, output quality
+- **Data Pipelines:** Apache Airflow, Prefect, Dagster
 
 ---
 
@@ -135,31 +135,31 @@ From [[06-AI-Systems]]:
 
 ## 🎯 Production Checklist
 
-> [!yellow] 💡 **Deployment Readiness**
-> - ✅ Model versioning and registry set up
-> - ✅ Automated training pipeline
-> - ✅ Model evaluation and validation
-> - ✅ CI/CD pipeline configured
-> - ✅ Monitoring and alerting in place
-> - ✅ Data quality checks
-> - ✅ Rollback strategy defined
-> - ✅ API rate limiting and caching
-> - ✅ Cost monitoring
-> - ✅ Documentation complete
+**💡 Deployment Readiness**
+- ✅ Model versioning and registry set up
+- ✅ Automated training pipeline
+- ✅ Model evaluation and validation
+- ✅ CI/CD pipeline configured
+- ✅ Monitoring and alerting in place
+- ✅ Data quality checks
+- ✅ Rollback strategy defined
+- ✅ API rate limiting and caching
+- ✅ Cost monitoring
+- ✅ Documentation complete
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Production Mistakes to Avoid**
-> - Deploying without monitoring
-> - No data drift detection
-> - Missing rollback strategy
-> - Inadequate logging
-> - No cost tracking for LLM APIs
-> - Skipping prompt versioning
-> - Insufficient load testing
-> - No A/B testing framework
+**⚠️ Production Mistakes to Avoid**
+- Deploying without monitoring
+- No data drift detection
+- Missing rollback strategy
+- Inadequate logging
+- No cost tracking for LLM APIs
+- Skipping prompt versioning
+- Insufficient load testing
+- No A/B testing framework
 
 ---
 

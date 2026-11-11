@@ -1,7 +1,7 @@
 # 💬 Prompt Engineering
 
-> [!blue] 💙 **Effective Communication with LLMs**
-> The art and science of crafting prompts to get desired outputs from language models. Learn zero-shot, few-shot, chain-of-thought, and advanced prompting techniques.
+**💙 Effective Communication with LLMs**
+The art and science of crafting prompts to get desired outputs from language models. Learn zero-shot, few-shot, chain-of-thought, and advanced prompting techniques.
 
 ---
 
@@ -35,8 +35,8 @@ By the end of this section, you should be able to:
 
 ### [[prompt-fundamentals|Prompt Fundamentals]]
 
-> [!blue] 💙 **Anatomy of a Good Prompt**
-> A well-structured prompt has clear instructions, context, examples (optional), and output format specification.
+**💙 Anatomy of a Good Prompt**
+A well-structured prompt has clear instructions, context, examples (optional), and output format specification.
 
 **Prompt Structure:**
 ```mermaid
@@ -79,8 +79,8 @@ graph TD
 
 ### [[zero-shot-prompting|Zero-Shot Prompting]]
 
-> [!blue] 💙 **No Examples Needed**
-> Relying on model's pre-trained knowledge without providing examples. Works for common, well-defined tasks.
+**💙 No Examples Needed**
+Relying on model's pre-trained knowledge without providing examples. Works for common, well-defined tasks.
 
 **When Zero-Shot Works:**
 - Simple, common tasks (classification, summarization)
@@ -94,18 +94,18 @@ Review: "This product exceeded my expectations! Great quality."
 Sentiment:
 ```
 
-> [!yellow] 💡 **Zero-Shot Best Practices**
-> - Be extremely clear and specific
-> - Define all terms and categories
-> - Specify output format explicitly
-> - Test with edge cases
+**💡 Zero-Shot Best Practices**
+- Be extremely clear and specific
+- Define all terms and categories
+- Specify output format explicitly
+- Test with edge cases
 
 ---
 
 ### [[few-shot-prompting|Few-Shot Prompting]]
 
-> [!blue] 💙 **Learning from Examples**
-> Providing input-output examples to demonstrate the task pattern. Significantly improves performance on complex tasks.
+**💙 Learning from Examples**
+Providing input-output examples to demonstrate the task pattern. Significantly improves performance on complex tasks.
 
 **Few-Shot Pattern:**
 ```mermaid
@@ -136,18 +136,18 @@ Entities:
 - **Format consistency:** Keep format identical across examples
 - **Order:** Sometimes order matters (put similar examples near query)
 
-> [!green] ✅ **When to Use Few-Shot**
-> - Complex or nuanced tasks
-> - Custom output formats
-> - Domain-specific terminology
-> - When zero-shot performance is insufficient
+**✅ When to Use Few-Shot**
+- Complex or nuanced tasks
+- Custom output formats
+- Domain-specific terminology
+- When zero-shot performance is insufficient
 
 ---
 
 ### [[chain-of-thought|Chain-of-Thought (CoT)]]
 
-> [!blue] 💙 **Reasoning Step-by-Step**
-> Prompting the model to show its reasoning process before giving the final answer. Dramatically improves complex reasoning tasks.
+**💙 Reasoning Step-by-Step**
+Prompting the model to show its reasoning process before giving the final answer. Dramatically improves complex reasoning tasks.
 
 **CoT Flow:**
 ```mermaid
@@ -185,18 +185,18 @@ Answer: Let's think step by step.
 - Logic puzzles
 - Complex decision-making
 
-> [!yellow] 💡 **CoT Variants**
-> - **Zero-Shot CoT:** Add "Let's think step by step"
-> - **Few-Shot CoT:** Show reasoning in examples
-> - **Self-Consistency:** Generate multiple CoT, pick most common answer
-> - **Tree of Thoughts:** Explore multiple reasoning paths
+**💡 CoT Variants**
+- **Zero-Shot CoT:** Add "Let's think step by step"
+- **Few-Shot CoT:** Show reasoning in examples
+- **Self-Consistency:** Generate multiple CoT, pick most common answer
+- **Tree of Thoughts:** Explore multiple reasoning paths
 
 ---
 
 ### [[advanced-prompting|Advanced Prompting Techniques]]
 
-> [!blue] 💙 **Beyond Basic Prompts**
-> Sophisticated prompting strategies for complex tasks and better reliability.
+**💙 Beyond Basic Prompts**
+Sophisticated prompting strategies for complex tasks and better reliability.
 
 **Advanced Techniques:**
 
@@ -248,8 +248,8 @@ Finally, provide an improved answer based on your critique.
 
 ### [[prompt-optimization|Prompt Optimization]]
 
-> [!blue] 💙 **Iterative Improvement**
-> Systematically improving prompts through testing, analysis, and refinement.
+**💙 Iterative Improvement**
+Systematically improving prompts through testing, analysis, and refinement.
 
 **Optimization Cycle:**
 ```mermaid
@@ -288,86 +288,86 @@ graph TD
    - Track metrics (accuracy, consistency)
    - A/B test variations
 
-> [!yellow] 💡 **Optimization Tools**
-> - **Promptfoo:** Prompt testing framework
-> - **LangSmith:** LangChain evaluation
-> - **Weights & Biases:** Experiment tracking
-> - **Manual review:** Still essential
+**💡 Optimization Tools**
+- **Promptfoo:** Prompt testing framework
+- **LangSmith:** LangChain evaluation
+- **Weights & Biases:** Experiment tracking
+- **Manual review:** Still essential
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Prompt Compression**
-> Reducing token usage while maintaining quality:
-> - Remove verbose examples
-> - Use abbreviations
-> - Compress with specialized models
-> - Critical for long contexts
+**🔮 Prompt Compression**
+Reducing token usage while maintaining quality:
+- Remove verbose examples
+- Use abbreviations
+- Compress with specialized models
+- Critical for long contexts
 
-> [!purple] 🔮 **Adversarial Prompting**
-> Testing robustness against edge cases:
-> - Injection attacks
-> - Contradictory instructions
-> - Malformed inputs
-> - Safety testing
+**🔮 Adversarial Prompting**
+Testing robustness against edge cases:
+- Injection attacks
+- Contradictory instructions
+- Malformed inputs
+- Safety testing
 
-> [!purple] 🔮 **Automatic Prompt Engineering**
-> Using AI to generate/optimize prompts:
-> - **DSPy:** Programmatic prompt optimization
-> - **APE (Automatic Prompt Engineer):** LLM generates prompts
-> - **Gradient-based:** Optimize prompts like model weights
+**🔮 Automatic Prompt Engineering**
+Using AI to generate/optimize prompts:
+- **DSPy:** Programmatic prompt optimization
+- **APE (Automatic Prompt Engineer):** LLM generates prompts
+- **Gradient-based:** Optimize prompts like model weights
 
-> [!purple] 🔮 **Meta-Prompting**
-> LLM generates prompts for other LLMs:
-> - Describe task, LLM writes prompt
-> - Iterative refinement
-> - Better than manual sometimes
+**🔮 Meta-Prompting**
+LLM generates prompts for other LLMs:
+- Describe task, LLM writes prompt
+- Iterative refinement
+- Better than manual sometimes
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Vague Instructions**
-> - **Problem:** "Summarize this" - how long? what style?
-> - **Solution:** "Summarize in 3 bullet points, technical audience"
+**⚠️ Vague Instructions**
+- **Problem:** "Summarize this" - how long? what style?
+- **Solution:** "Summarize in 3 bullet points, technical audience"
 
-> [!red] ⚠️ **Too Many Instructions**
-> - **Problem:** Overloading prompt with rules
-> - **Solution:** Prioritize key instructions, use examples
+**⚠️ Too Many Instructions**
+- **Problem:** Overloading prompt with rules
+- **Solution:** Prioritize key instructions, use examples
 
-> [!red] ⚠️ **Inconsistent Examples**
-> - **Problem:** Few-shot examples vary in format
-> - **Solution:** Use identical structure across all examples
+**⚠️ Inconsistent Examples**
+- **Problem:** Few-shot examples vary in format
+- **Solution:** Use identical structure across all examples
 
-> [!red] ⚠️ **Not Testing Edge Cases**
-> - **Problem:** Prompt works on happy path only
-> - **Solution:** Test with empty input, long input, malformed data
+**⚠️ Not Testing Edge Cases**
+- **Problem:** Prompt works on happy path only
+- **Solution:** Test with empty input, long input, malformed data
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Prompt Design Principles**
-> - **Be specific:** Clear, concrete instructions
-> - **Provide context:** Background info, role, purpose
-> - **Show, don't tell:** Use examples when possible
-> - **Specify format:** JSON, bullet points, etc.
-> - **Iterate:** Test and refine continuously
+**💡 Prompt Design Principles**
+- **Be specific:** Clear, concrete instructions
+- **Provide context:** Background info, role, purpose
+- **Show, don't tell:** Use examples when possible
+- **Specify format:** JSON, bullet points, etc.
+- **Iterate:** Test and refine continuously
 
-> [!yellow] 💡 **Common Patterns**
-> - **Classification:** Few-shot with all classes shown
-> - **Extraction:** Specify output format (JSON), show examples
-> - **Generation:** Set tone/style, give constraints
-> - **Reasoning:** Use chain-of-thought
-> - **Summarization:** Specify length and key points
+**💡 Common Patterns**
+- **Classification:** Few-shot with all classes shown
+- **Extraction:** Specify output format (JSON), show examples
+- **Generation:** Set tone/style, give constraints
+- **Reasoning:** Use chain-of-thought
+- **Summarization:** Specify length and key points
 
-> [!yellow] 💡 **Testing Strategy**
-> - Create evaluation dataset (20-50 examples)
-> - Cover edge cases (empty, long, ambiguous)
-> - Measure accuracy/quality metrics
-> - Compare prompt variations (A/B test)
-> - Review failures manually
+**💡 Testing Strategy**
+- Create evaluation dataset (20-50 examples)
+- Cover edge cases (empty, long, ambiguous)
+- Measure accuracy/quality metrics
+- Compare prompt variations (A/B test)
+- Review failures manually
 
 ---
 

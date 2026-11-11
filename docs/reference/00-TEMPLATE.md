@@ -1,7 +1,7 @@
 # Topic Name
 
-> [!blue] 💙 **Quick Definition**
-> One-line explanation of what this is
+**💙 Quick Definition**
+One-line explanation of what this is
 
 ---
 

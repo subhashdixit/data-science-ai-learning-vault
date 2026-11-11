@@ -64,10 +64,10 @@ This is a ==purple advanced topic==<!--purple-->
 ```markdown
 # Lists in Python
 
-> [!blue] 💙 **What is a List?**
-> An ordered, mutable collection that can hold items of any type.
-> 
-> **Syntax:** `my_list = [1, 2, 3]`
+**💙 What is a List?**
+An ordered, mutable collection that can hold items of any type.
+
+**Syntax:** `my_list = [1, 2, 3]`
 
 > [!green] ✅ Creating Lists
 > ```python
@@ -101,8 +101,8 @@ This is a ==purple advanced topic==<!--purple-->
 ```markdown
 # Overfitting
 
-> [!blue] 💙 **Definition**
-> When a model learns the training data TOO well, including noise and random fluctuations, resulting in poor generalization to new data.
+**💙 Definition**
+When a model learns the training data TOO well, including noise and random fluctuations, resulting in poor generalization to new data.
 
 > [!yellow] ⭐ How to Recognize Overfitting
 > - ==Training accuracy: 99%==<!--green-->
@@ -141,44 +141,44 @@ This is a ==purple advanced topic==<!--purple-->
 ```markdown
 # Interview Q: Explain Mutable vs Immutable
 
-> [!blue] 💙 **Quick Definition**
-> - **Mutable:** Can be changed after creation (list, dict, set)
-> - **Immutable:** Cannot be changed (int, str, tuple)
+**💙 Quick Definition**
+- **Mutable:** Can be changed after creation (list, dict, set)
+- **Immutable:** Cannot be changed (int, str, tuple)
 
-> [!yellow] ⭐ **The One-Liner Answer**
-> "==Mutable objects can be modified in place, while immutable objects require creating a new object for any change.==<!--yellow-->"
+**⭐ The One-Liner Answer**
+"==Mutable objects can be modified in place, while immutable objects require creating a new object for any change.==<!--yellow-->"
 
-> [!green] ✅ **Show with Code**
-> ```python
-> # Immutable (string)
-> s = "hello"
-> print(id(s))      # 140234567890
-> s = s.upper()     # Creates NEW object
-> print(id(s))      # 140234567999 (different!)
-> 
-> # Mutable (list)
-> lst = [1, 2, 3]
-> print(id(lst))    # 140234568000
-> lst.append(4)     # Modifies SAME object
-> print(id(lst))    # 140234568000 (same!)
-> ```
+**✅ Show with Code**
+```python
+# Immutable (string)
+s = "hello"
+print(id(s))      # 140234567890
+s = s.upper()     # Creates NEW object
+print(id(s))      # 140234567999 (different!)
 
-> [!red] 🐛 **The Gotcha They're Testing**
-> ```python
-> # This is the bug they want you to catch!
-> def bad_function(items=[]):  # Mutable default!
->     items.append(1)
->     return items
-> 
-> print(bad_function())  # [1]
-> print(bad_function())  # [1, 1] ← Uh oh!
-> ```
+# Mutable (list)
+lst = [1, 2, 3]
+print(id(lst))    # 140234568000
+lst.append(4)     # Modifies SAME object
+print(id(lst))    # 140234568000 (same!)
+```
 
-> [!yellow] 💎 **Interview Pro Tip**
-> Always mention the ==mutable default argument bug==<!--red--> - it shows you know the gotchas!
+**🐛 The Gotcha They're Testing**
+```python
+# This is the bug they want you to catch!
+def bad_function(items=[]):  # Mutable default!
+    items.append(1)
+    return items
 
-> [!purple] 🔮 **Go Deeper (If Asked)**
-> "In Python, immutable objects are hashable and can be dictionary keys. Mutable objects cannot because their hash would change if modified. This is why `dict[list]` raises a TypeError."
+print(bad_function())  # [1]
+print(bad_function())  # [1, 1] ← Uh oh!
+```
+
+**💎 Interview Pro Tip**
+Always mention the ==mutable default argument bug==<!--red--> - it shows you know the gotchas!
+
+**🔮 Go Deeper (If Asked)**
+"In Python, immutable objects are hashable and can be dictionary keys. Mutable objects cannot because their hash would change if modified. This is why `dict[list]` raises a TypeError."
 ```
 
 ### Example 4: Daily Learning Note
@@ -192,52 +192,52 @@ This is a ==purple advanced topic==<!--purple-->
 
 ## 📚 What I Learned
 
-> [!blue] 💙 **Decorator Concept**
-> A decorator is a function that takes another function and extends its behavior without modifying it.
-> 
-> **Syntax:** `@decorator_name` above function
+**💙 Decorator Concept**
+A decorator is a function that takes another function and extends its behavior without modifying it.
 
-> [!green] ✅ **My First Working Decorator**
-> ```python
-> def timing_decorator(func):
->     def wrapper(*args, **kwargs):
->         import time
->         start = time.time()
->         result = func(*args, **kwargs)
->         end = time.time()
->         print(f"{func.__name__} took {end-start:.3f}s")
->         return result
->     return wrapper
-> 
-> @timing_decorator
-> def slow_function():
->     time.sleep(1)
->     return "Done"
-> 
-> slow_function()  # Prints: slow_function took 1.002s
-> ```
-> 
-> **It works!** 🎉
+**Syntax:** `@decorator_name` above function
 
-> [!red] ⚠️ **Mistake I Made**
-> Forgot to return the result from wrapper function - spent 30 min debugging!
+**✅ My First Working Decorator**
+```python
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        import time
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end-start:.3f}s")
+        return result
+    return wrapper
 
-> [!yellow] 💡 **Key Insight**
-> Decorators are just ==syntactic sugar==<!--yellow--> for:
-> ```python
-> func = decorator(func)
-> ```
+@timing_decorator
+def slow_function():
+    time.sleep(1)
+    return "Done"
 
-> [!purple] 🚀 **Advanced Pattern Discovered**
-> Can stack multiple decorators:
-> ```python
-> @decorator1
-> @decorator2
-> @decorator3
-> def my_function():
->     pass
-> ```
-> Applied bottom-to-top!
+slow_function()  # Prints: slow_function took 1.002s
+```
+
+**It works!** 🎉
+
+**⚠️ Mistake I Made**
+Forgot to return the result from wrapper function - spent 30 min debugging!
+
+**💡 Key Insight**
+Decorators are just ==syntactic sugar==<!--yellow--> for:
+```python
+func = decorator(func)
+```
+
+**🚀 Advanced Pattern Discovered**
+Can stack multiple decorators:
+```python
+@decorator1
+@decorator2
+@decorator3
+def my_function():
+    pass
+```
+Applied bottom-to-top!
 
 ## ✅ Tomorrow's Plan
 - [ ] Learn decorator with arguments

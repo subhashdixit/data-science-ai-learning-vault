@@ -1,11 +1,11 @@
 # 🔧 FEATURE ENGINEERING
 
-> [!yellow] ⭐ **THE SECRET SAUCE OF ML!**
-> "Coming up with features is difficult, time-consuming, requires expert knowledge. 'Applied machine learning' is basically feature engineering." - Andrew Ng
-> 
-> **Time to Complete:** 2-3 weeks  
-> **Difficulty:** ⭐⭐⭐⭐ Medium-Hard  
-> **Interview Weight:** ⭐⭐⭐⭐⭐ EXTREMELY HIGH!
+**⭐ THE SECRET SAUCE OF ML!**
+"Coming up with features is difficult, time-consuming, requires expert knowledge. 'Applied machine learning' is basically feature engineering." - Andrew Ng
+
+**Time to Complete:** 2-3 weeks  
+**Difficulty:** ⭐⭐⭐⭐ Medium-Hard  
+**Interview Weight:** ⭐⭐⭐⭐⭐ EXTREMELY HIGH!
 
 ---
 
@@ -42,7 +42,7 @@ graph TD
 
 ## 1. HANDLING MISSING DATA
 
-> [!blue] 💙 **Types of Missing Data**
+**💙 Types of Missing Data**
 
 ```mermaid
 graph TD
@@ -82,7 +82,7 @@ graph TD
 
 ### Imputation Strategies
 
-> [!yellow] 💡 **Choosing Imputation Method**
+**💡 Choosing Imputation Method**
 
 | Method | When to Use | Pros | Cons |
 |--------|-------------|------|------|
@@ -97,30 +97,30 @@ graph TD
 
 ### The Missing Indicator
 
-> [!green] ✅ **Missing as Information**
-> ```
-> Sometimes "missing" IS the signal!
-> 
-> Example: Income in job application
-> - Present: Maybe honest or high income
-> - Missing: Maybe hiding low income or privacy concern
-> 
-> Solution: Create binary indicator
-> Feature: 'income_missing' = 1 if missing, 0 otherwise
-> 
-> Now model can learn:
-> - Income amount (when present)
-> - Missing pattern (always)
-> ```
+**✅ Missing as Information**
+```
+Sometimes "missing" IS the signal!
+
+Example: Income in job application
+- Present: Maybe honest or high income
+- Missing: Maybe hiding low income or privacy concern
+
+Solution: Create binary indicator
+Feature: 'income_missing' = 1 if missing, 0 otherwise
+
+Now model can learn:
+- Income amount (when present)
+- Missing pattern (always)
+```
 
 ---
 
 ## 2. ENCODING CATEGORICAL FEATURES
 
-> [!blue] 💙 **Why Encode?**
-> Models need numbers, not text!
-> "Male/Female" → 0/1
-> "Red/Green/Blue" → ?
+**💙 Why Encode?**
+Models need numbers, not text!
+"Male/Female" → 0/1
+"Red/Green/Blue" → ?
 
 ### Encoding Methods Comparison
 
@@ -177,22 +177,22 @@ Blue      →   0    0      1
 ❌ Bad: Multicollinearity
 ```
 
-> [!red] ⚠️ **One-Hot Encoding Trap!**
-> ```
-> High Cardinality Problem:
-> 
-> Country: 195 countries
-> One-hot → 195 new features!
-> 
-> Zip Code: 43,000 zip codes
-> One-hot → 43,000 new features! ← Disaster!
-> 
-> Solutions:
-> 1. Group rare categories → "Other"
-> 2. Use Target Encoding
-> 3. Use Embedding (deep learning)
-> 4. Use Frequency Encoding
-> ```
+**⚠️ One-Hot Encoding Trap!**
+```
+High Cardinality Problem:
+
+Country: 195 countries
+One-hot → 195 new features!
+
+Zip Code: 43,000 zip codes
+One-hot → 43,000 new features! ← Disaster!
+
+Solutions:
+1. Group rare categories → "Other"
+2. Use Target Encoding
+3. Use Embedding (deep learning)
+4. Use Frequency Encoding
+```
 
 ### 3. Target Encoding
 
@@ -254,8 +254,8 @@ graph TD
 
 ## 3. FEATURE SCALING
 
-> [!blue] 💙 **Why Scale Features?**
-> Different scales = unfair influence!
+**💙 Why Scale Features?**
+Different scales = unfair influence!
 
 ```
 Without Scaling:
@@ -347,33 +347,33 @@ graph TD
     style G fill:#ffd700
 ```
 
-> [!red] ⚠️ **Important Rules**
-> ```
-> 1. FIT on training data, TRANSFORM on train AND test
->    ❌ scaler.fit(test_data)  # Wrong! Causes data leakage
->    ✅ scaler.fit(train_data)
->       scaler.transform(train_data)
->       scaler.transform(test_data)
-> 
-> 2. Tree-based models DON'T need scaling
->    - Decision Trees
->    - Random Forest
->    - XGBoost
->    - LightGBM
-> 
-> 3. Distance-based models NEED scaling
->    - KNN
->    - SVM
->    - Neural Networks
->    - Linear/Logistic Regression
->    - K-Means
-> ```
+**⚠️ Important Rules**
+```
+1. FIT on training data, TRANSFORM on train AND test
+   ❌ scaler.fit(test_data)  # Wrong! Causes data leakage
+   ✅ scaler.fit(train_data)
+      scaler.transform(train_data)
+      scaler.transform(test_data)
+
+2. Tree-based models DON'T need scaling
+   - Decision Trees
+   - Random Forest
+   - XGBoost
+   - LightGBM
+
+3. Distance-based models NEED scaling
+   - KNN
+   - SVM
+   - Neural Networks
+   - Linear/Logistic Regression
+   - K-Means
+```
 
 ---
 
 ## 4. FEATURE CREATION
 
-> [!blue] 💙 **The Art of Feature Engineering**
+**💙 The Art of Feature Engineering**
 
 ### Domain-Specific Features
 
@@ -392,99 +392,99 @@ graph TD
 
 ### Common Feature Engineering Techniques
 
-> [!yellow] ⭐ **1. Mathematical Transformations**
-> ```
-> Original Features: X, Y
-> 
-> Polynomial:
-> - X², X³
-> - Y², Y³
-> - X×Y (interaction)
-> 
-> Ratios:
-> - X/Y
-> - (X-Y)/(X+Y)
-> 
-> Aggregations:
-> - X + Y
-> - max(X, Y)
-> - √(X² + Y²)  # Distance
-> 
-> Example: House price
-> - sqft_living × sqft_lot = total_space_potential
-> - price / sqft_living = price_per_sqft
-> - bedrooms / bathrooms = bed_bath_ratio
-> ```
+**⭐ 1. Mathematical Transformations**
+```
+Original Features: X, Y
 
-> [!yellow] ⭐ **2. Datetime Features**
-> ```
-> From: '2024-03-15 14:30:00'
-> 
-> Extract:
-> ✅ Year: 2024
-> ✅ Month: 3 (or 'March')
-> ✅ Day: 15
-> ✅ Day of week: 4 (Friday)
-> ✅ Hour: 14
-> ✅ Minute: 30
-> ✅ Is weekend: 0
-> ✅ Is business hours: 1
-> ✅ Quarter: 1
-> ✅ Week of year: 11
-> ✅ Days since event: calculated
-> ✅ Season: Spring
-> 
-> Cyclical encoding:
-> Hour 23 and Hour 0 are close!
-> Use: sin(2π × hour/24), cos(2π × hour/24)
-> ```
+Polynomial:
+- X², X³
+- Y², Y³
+- X×Y (interaction)
 
-> [!yellow] ⭐ **3. Text Features**
-> ```
-> From text: "Machine Learning is Amazing!!!"
-> 
-> Simple:
-> ✅ Character count: 31
-> ✅ Word count: 4
-> ✅ Avg word length: 6.5
-> ✅ Uppercase count: 3
-> ✅ Punctuation count: 3
-> ✅ Has numbers: 0
-> ✅ Special char ratio: 0.097
-> 
-> Advanced:
-> ✅ Sentiment score: 0.8 (positive)
-> ✅ Readability score
-> ✅ TF-IDF vectors
-> ✅ Word embeddings
-> ✅ Named entity count
-> ```
+Ratios:
+- X/Y
+- (X-Y)/(X+Y)
 
-> [!yellow] ⭐ **4. Aggregation Features**
-> ```
-> Group by user, calculate:
-> 
-> Count features:
-> - Total purchases
-> - Total logins
-> - Total clicks
-> 
-> Statistical features:
-> - Avg purchase amount
-> - Max transaction
-> - Std dev of amounts
-> - Median session time
-> 
-> Time features:
-> - Days since first purchase
-> - Days since last activity
-> - Purchase frequency
-> 
-> Ratio features:
-> - Conversion rate
-> - Click-through rate
-> - Cancellation rate
-> ```
+Aggregations:
+- X + Y
+- max(X, Y)
+- √(X² + Y²)  # Distance
+
+Example: House price
+- sqft_living × sqft_lot = total_space_potential
+- price / sqft_living = price_per_sqft
+- bedrooms / bathrooms = bed_bath_ratio
+```
+
+**⭐ 2. Datetime Features**
+```
+From: '2024-03-15 14:30:00'
+
+Extract:
+✅ Year: 2024
+✅ Month: 3 (or 'March')
+✅ Day: 15
+✅ Day of week: 4 (Friday)
+✅ Hour: 14
+✅ Minute: 30
+✅ Is weekend: 0
+✅ Is business hours: 1
+✅ Quarter: 1
+✅ Week of year: 11
+✅ Days since event: calculated
+✅ Season: Spring
+
+Cyclical encoding:
+Hour 23 and Hour 0 are close!
+Use: sin(2π × hour/24), cos(2π × hour/24)
+```
+
+**⭐ 3. Text Features**
+```
+From text: "Machine Learning is Amazing!!!"
+
+Simple:
+✅ Character count: 31
+✅ Word count: 4
+✅ Avg word length: 6.5
+✅ Uppercase count: 3
+✅ Punctuation count: 3
+✅ Has numbers: 0
+✅ Special char ratio: 0.097
+
+Advanced:
+✅ Sentiment score: 0.8 (positive)
+✅ Readability score
+✅ TF-IDF vectors
+✅ Word embeddings
+✅ Named entity count
+```
+
+**⭐ 4. Aggregation Features**
+```
+Group by user, calculate:
+
+Count features:
+- Total purchases
+- Total logins
+- Total clicks
+
+Statistical features:
+- Avg purchase amount
+- Max transaction
+- Std dev of amounts
+- Median session time
+
+Time features:
+- Days since first purchase
+- Days since last activity
+- Purchase frequency
+
+Ratio features:
+- Conversion rate
+- Click-through rate
+- Cancellation rate
+```
 
 ### Feature Interaction Example
 
@@ -511,7 +511,7 @@ Right: growth = sunlight × water (interaction!)
 
 ## 5. FEATURE SELECTION
 
-> [!blue] 💙 **Why Remove Features?**
+**💙 Why Remove Features?**
 
 ```
 More features ≠ Better model!
@@ -545,72 +545,72 @@ graph TD
 
 ### 1. Filter Methods (Fast)
 
-> [!green] ✅ **Remove Before Training**
-> ```
-> Low Variance Filter:
-> Feature hardly changes → Not useful
-> Example: [1, 1, 1, 1, 1, 2, 1, 1]
-> Variance ≈ 0 → Remove!
-> 
-> Correlation Filter:
-> Two features highly correlated → Keep one
-> Feature A: [1, 2, 3, 4, 5]
-> Feature B: [2, 4, 6, 8, 10]  # B = 2×A
-> Correlation = 1.0 → Remove B!
-> 
-> Chi-Square Test:
-> Feature independent of target → Remove
-> Use for categorical features
-> 
-> Mutual Information:
-> Measures dependency with target
-> Keep high MI features
-> ```
+**✅ Remove Before Training**
+```
+Low Variance Filter:
+Feature hardly changes → Not useful
+Example: [1, 1, 1, 1, 1, 2, 1, 1]
+Variance ≈ 0 → Remove!
+
+Correlation Filter:
+Two features highly correlated → Keep one
+Feature A: [1, 2, 3, 4, 5]
+Feature B: [2, 4, 6, 8, 10]  # B = 2×A
+Correlation = 1.0 → Remove B!
+
+Chi-Square Test:
+Feature independent of target → Remove
+Use for categorical features
+
+Mutual Information:
+Measures dependency with target
+Keep high MI features
+```
 
 ### 2. Wrapper Methods (Slow but Good)
 
-> [!yellow] 💡 **Search Through Combinations**
-> ```
-> Forward Selection:
-> 1. Start with 0 features
-> 2. Add feature that improves model most
-> 3. Repeat until no improvement
-> 
-> Backward Elimination:
-> 1. Start with all features
-> 2. Remove feature that hurts model least
-> 3. Repeat until performance drops
-> 
-> Recursive Feature Elimination (RFE):
-> 1. Train model with all features
-> 2. Remove least important feature
-> 3. Repeat until desired number
-> 
-> ⚠️ Warning: Computationally expensive!
-> 1000 features → 2^1000 combinations!
-> ```
+**💡 Search Through Combinations**
+```
+Forward Selection:
+1. Start with 0 features
+2. Add feature that improves model most
+3. Repeat until no improvement
+
+Backward Elimination:
+1. Start with all features
+2. Remove feature that hurts model least
+3. Repeat until performance drops
+
+Recursive Feature Elimination (RFE):
+1. Train model with all features
+2. Remove least important feature
+3. Repeat until desired number
+
+⚠️ Warning: Computationally expensive!
+1000 features → 2^1000 combinations!
+```
 
 ### 3. Embedded Methods (Best)
 
-> [!green] ✅ **Selection During Training**
-> ```
-> L1 Regularization (Lasso):
-> Penalty forces some coefficients to exactly 0
-> Non-zero features = selected features
-> Fast and effective!
-> 
-> Tree-Based Importance:
-> Random Forest, XGBoost compute feature importance
-> Keep top N most important features
-> 
-> Example importance:
-> Feature A: 0.35  ← Very important
-> Feature B: 0.28  ← Important
-> Feature C: 0.18
-> Feature D: 0.12
-> Feature E: 0.05  ← Remove these
-> Feature F: 0.02  ← Remove these
-> ```
+**✅ Selection During Training**
+```
+L1 Regularization (Lasso):
+Penalty forces some coefficients to exactly 0
+Non-zero features = selected features
+Fast and effective!
+
+Tree-Based Importance:
+Random Forest, XGBoost compute feature importance
+Keep top N most important features
+
+Example importance:
+Feature A: 0.35  ← Very important
+Feature B: 0.28  ← Important
+Feature C: 0.18
+Feature D: 0.12
+Feature E: 0.05  ← Remove these
+Feature F: 0.02  ← Remove these
+```
 
 ### Feature Selection Decision Guide
 
@@ -630,7 +630,7 @@ graph TD
 
 ## 6. ADVANCED TECHNIQUES
 
-> [!purple] 🔮 **Advanced Feature Engineering**
+**🔮 Advanced Feature Engineering**
 
 ### 1. Polynomial Features
 
@@ -707,138 +707,138 @@ City_count
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: How to handle high cardinality categorical features?**
-> 
-> **Perfect Answer:**
-> "High cardinality (100+ categories) makes one-hot encoding impractical.
-> 
-> **Solutions:**
-> 
-> 1. **Grouping** (Best if possible)
->    - Combine rare categories into 'Other'
->    - Keep top 10-20, group rest
->    - Example: 50 cities → Keep top 10 + 'Other'
-> 
-> 2. **Target Encoding**
->    - Replace with mean of target
->    - Use CV to prevent overfitting
->    - Works with any cardinality
-> 
-> 3. **Frequency Encoding**
->    - Replace with occurrence count
->    - Simple, single column
-> 
-> 4. **Embeddings** (Deep Learning)
->    - Learn low-dimensional representation
->    - Best for very high cardinality (>1000)
-> 
-> 5. **Hash Encoding**
->    - Hash to fixed number of bins
->    - Collisions possible but controlled
-> 
-> **Example:**
-> Zip codes (40,000 unique)
-> - Group by region: 40,000 → 50 regions
-> - Or target encode: 40,000 → 1 feature
-> - Or embedding: 40,000 → 10 dimensions"
+**💎 Q: How to handle high cardinality categorical features?**
 
-> [!yellow] 💎 **Q: Explain feature scaling and when it's needed**
-> 
-> **Perfect Answer:**
-> "Feature scaling normalizes features to similar ranges.
-> 
-> **Why needed:**
-> Distance-based algorithms treat large-scale features as more important.
-> 
-> Example:
-> - Age: 20-80 (range 60)
-> - Income: 20K-200K (range 180K)
-> 
-> Without scaling: Income dominates distance calculations!
-> 
-> **Models that NEED scaling:**
-> - KNN (distance-based)
-> - SVM (distance to hyperplane)
-> - Neural Networks (gradient descent)
-> - Linear/Logistic Regression (coefficient interpretation)
-> - K-Means (distance-based)
-> - PCA (variance-based)
-> 
-> **Models that DON'T need scaling:**
-> - Decision Trees (split-based)
-> - Random Forest
-> - XGBoost/LightGBM
-> - Naive Bayes
-> 
-> **Methods:**
-> 1. **Standardization** (z-score)
->    - Mean=0, Std=1
->    - For normally distributed data
->    - Not bounded
-> 
-> 2. **Min-Max Normalization**
->    - Range [0,1]
->    - For neural networks
->    - Sensitive to outliers
-> 
-> 3. **Robust Scaler**
->    - Uses median and IQR
->    - For data with outliers
-> 
-> **Critical:** Fit on train, transform train AND test!"
+**Perfect Answer:**
+"High cardinality (100+ categories) makes one-hot encoding impractical.
 
-> [!yellow] 💎 **Q: What are the best practices for feature engineering?**
-> 
-> **Perfect Answer:**
-> 
-> **1. Understand the Data**
-> - Domain knowledge is key
-> - Talk to domain experts
-> - Understand business context
-> 
-> **2. Start Simple**
-> - Baseline with raw features
-> - Add features incrementally
-> - Measure impact of each
-> 
-> **3. Create Features Systematically**
-> - Mathematical: polynomials, ratios, logs
-> - Aggregations: group-by statistics
-> - Datetime: extract components
-> - Text: counts, sentiment
-> - Domain-specific: business rules
-> 
-> **4. Avoid Data Leakage**
-> - No future information
-> - No target information
-> - Fit on train only
-> 
-> **5. Handle Missing Smartly**
-> - Understand why missing
-> - Create missing indicators
-> - Don't always impute
-> 
-> **6. Remove Redundancy**
-> - Check correlation
-> - Remove duplicates
-> - Use feature selection
-> 
-> **7. Validate Everything**
-> - Use cross-validation
-> - Check on holdout set
-> - A/B test in production
-> 
-> **8. Document Features**
-> - Why created
-> - How computed
-> - When to update
-> 
-> **Example workflow:**
-> 1. EDA → Understand patterns
-> 2. Create features → Try ideas
-> 3. Select features → Keep best
-> 4. Validate → Cross-validation
-> 5. Iterate → Improve incrementally"
+**Solutions:**
+
+1. **Grouping** (Best if possible)
+   - Combine rare categories into 'Other'
+   - Keep top 10-20, group rest
+   - Example: 50 cities → Keep top 10 + 'Other'
+
+2. **Target Encoding**
+   - Replace with mean of target
+   - Use CV to prevent overfitting
+   - Works with any cardinality
+
+3. **Frequency Encoding**
+   - Replace with occurrence count
+   - Simple, single column
+
+4. **Embeddings** (Deep Learning)
+   - Learn low-dimensional representation
+   - Best for very high cardinality (>1000)
+
+5. **Hash Encoding**
+   - Hash to fixed number of bins
+   - Collisions possible but controlled
+
+**Example:**
+Zip codes (40,000 unique)
+- Group by region: 40,000 → 50 regions
+- Or target encode: 40,000 → 1 feature
+- Or embedding: 40,000 → 10 dimensions"
+
+**💎 Q: Explain feature scaling and when it's needed**
+
+**Perfect Answer:**
+"Feature scaling normalizes features to similar ranges.
+
+**Why needed:**
+Distance-based algorithms treat large-scale features as more important.
+
+Example:
+- Age: 20-80 (range 60)
+- Income: 20K-200K (range 180K)
+
+Without scaling: Income dominates distance calculations!
+
+**Models that NEED scaling:**
+- KNN (distance-based)
+- SVM (distance to hyperplane)
+- Neural Networks (gradient descent)
+- Linear/Logistic Regression (coefficient interpretation)
+- K-Means (distance-based)
+- PCA (variance-based)
+
+**Models that DON'T need scaling:**
+- Decision Trees (split-based)
+- Random Forest
+- XGBoost/LightGBM
+- Naive Bayes
+
+**Methods:**
+1. **Standardization** (z-score)
+   - Mean=0, Std=1
+   - For normally distributed data
+   - Not bounded
+
+2. **Min-Max Normalization**
+   - Range [0,1]
+   - For neural networks
+   - Sensitive to outliers
+
+3. **Robust Scaler**
+   - Uses median and IQR
+   - For data with outliers
+
+**Critical:** Fit on train, transform train AND test!"
+
+**💎 Q: What are the best practices for feature engineering?**
+
+**Perfect Answer:**
+
+**1. Understand the Data**
+- Domain knowledge is key
+- Talk to domain experts
+- Understand business context
+
+**2. Start Simple**
+- Baseline with raw features
+- Add features incrementally
+- Measure impact of each
+
+**3. Create Features Systematically**
+- Mathematical: polynomials, ratios, logs
+- Aggregations: group-by statistics
+- Datetime: extract components
+- Text: counts, sentiment
+- Domain-specific: business rules
+
+**4. Avoid Data Leakage**
+- No future information
+- No target information
+- Fit on train only
+
+**5. Handle Missing Smartly**
+- Understand why missing
+- Create missing indicators
+- Don't always impute
+
+**6. Remove Redundancy**
+- Check correlation
+- Remove duplicates
+- Use feature selection
+
+**7. Validate Everything**
+- Use cross-validation
+- Check on holdout set
+- A/B test in production
+
+**8. Document Features**
+- Why created
+- How computed
+- When to update
+
+**Example workflow:**
+1. EDA → Understand patterns
+2. Create features → Try ideas
+3. Select features → Keep best
+4. Validate → Cross-validation
+5. Iterate → Improve incrementally"
 
 ---
 

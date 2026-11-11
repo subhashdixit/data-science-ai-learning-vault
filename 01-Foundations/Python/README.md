@@ -1,11 +1,11 @@
 # 🐍 PYTHON - Foundation for Data Science
 
-> [!yellow] ⭐ **THE ESSENTIAL STARTING POINT!**
-> Everything in data science starts with Python. Master these fundamentals first!
-> 
-> **Time to Complete:** 2-4 weeks  
-> **Difficulty:** ⭐ Beginner-Friendly  
-> **Interview Weight:** ⭐⭐⭐⭐⭐ CRITICAL!
+**⭐ THE ESSENTIAL STARTING POINT!**
+Everything in data science starts with Python. Master these fundamentals first!
+
+**Time to Complete:** 2-4 weeks  
+**Difficulty:** ⭐ Beginner-Friendly  
+**Interview Weight:** ⭐⭐⭐⭐⭐ CRITICAL!
 
 ---
 
@@ -48,8 +48,8 @@ graph LR
 
 ## 1. DATA TYPES
 
-> [!blue] 💙 **Python's Type System**
-> Python is dynamically typed - variable types are determined at runtime. Understanding types is crucial for data manipulation and algorithm implementation.
+**💙 Python's Type System**
+Python is dynamically typed - variable types are determined at runtime. Understanding types is crucial for data manipulation and algorithm implementation.
 
 ### Core Data Types Hierarchy
 
@@ -79,8 +79,8 @@ graph TD
 
 ### 1.1 Numeric Types - Deep Dive
 
-> [!blue] 💙 **Integer (int)**
-> Whole numbers with unlimited precision in Python 3. No overflow - can be arbitrarily large.
+**💙 Integer (int)**
+Whole numbers with unlimited precision in Python 3. No overflow - can be arbitrarily large.
 
 **Properties:**
 - **Range:** Unlimited (unlike C/Java with 32/64-bit limits)
@@ -106,16 +106,16 @@ Modulo (remainder):
 10 % 3 = 1  (10 = 3*3 + 1)
 ```
 
-> [!yellow] 💡 **When to Use Integers**
-> - Discrete quantities (counts, IDs)
-> - Array indices
-> - Iteration counters
-> - Categorical variables
+**💡 When to Use Integers**
+- Discrete quantities (counts, IDs)
+- Array indices
+- Iteration counters
+- Categorical variables
 
 ---
 
-> [!blue] 💙 **Float (float)**
-> Double-precision floating point numbers (64-bit). Approximates real numbers.
+**💙 Float (float)**
+Double-precision floating point numbers (64-bit). Approximates real numbers.
 
 **Properties:**
 - **Precision:** ~15-17 decimal digits
@@ -142,18 +142,18 @@ Limitation - Cannot represent some decimals exactly:
 - Model weights: `learning_rate = 0.001`
 - Financial calculations: `price = 19.99`
 
-> [!red] ⚠️ **Float Precision Warning**
-> Never compare floats with `==`! Use tolerance:
-> ```
-> Instead of: x == 0.3
-> Use: abs(x - 0.3) < 1e-9
-> Or: math.isclose(x, 0.3)
-> ```
+**⚠️ Float Precision Warning**
+Never compare floats with `==`! Use tolerance:
+```
+Instead of: x == 0.3
+Use: abs(x - 0.3) < 1e-9
+Or: math.isclose(x, 0.3)
+```
 
 ---
 
-> [!blue] 💙 **String (str)**
-> Immutable sequence of Unicode characters. Foundation for text processing and NLP.
+**💙 String (str)**
+Immutable sequence of Unicode characters. Foundation for text processing and NLP.
 
 **Properties:**
 - **Encoding:** Unicode (UTF-8) - supports all languages
@@ -188,18 +188,18 @@ s[1:4] → 'yth'  (slice from index 1 to 3)
 - SQL queries: `query = "SELECT * FROM users"`
 - Tokenization input: `text = "Natural language processing"`
 
-> [!yellow] 💡 **String Methods to Master**
-> - `.split()` - Tokenization for NLP
-> - `.strip()` - Remove whitespace
-> - `.lower()/.upper()` - Case normalization
-> - `.replace()` - Text cleaning
-> - `.join()` - Combine tokens
-> - `.format()` / f-strings - String interpolation
+**💡 String Methods to Master**
+- `.split()` - Tokenization for NLP
+- `.strip()` - Remove whitespace
+- `.lower()/.upper()` - Case normalization
+- `.replace()` - Text cleaning
+- `.join()` - Combine tokens
+- `.format()` / f-strings - String interpolation
 
 ---
 
-> [!blue] 💙 **Boolean (bool)**
-> Logical type with two values: `True` and `False`. Subclass of int (True=1, False=0).
+**💙 Boolean (bool)**
+Logical type with two values: `True` and `False`. Subclass of int (True=1, False=0).
 
 **Boolean Algebra:**
 ```
@@ -241,12 +241,12 @@ Truthy values (evaluate to True):
 - Control flow: `if model_trained:`
 - Masking: `mask = (age > 18) & (income > 50000)`
 
-> [!purple] 🔮 **Advanced: Short-Circuit Evaluation**
-> Boolean operators stop as soon as result is known:
-> ```
-> False and expensive_function()  # expensive_function never runs
-> True or expensive_function()     # expensive_function never runs
-> ```
+**🔮 Advanced: Short-Circuit Evaluation**
+Boolean operators stop as soon as result is known:
+```
+False and expensive_function()  # expensive_function never runs
+True or expensive_function()     # expensive_function never runs
+```
 
 ### Type Checking & Conversion
 
@@ -276,27 +276,27 @@ graph LR
     style C fill:#e1f5fe
 ```
 
-> [!red] ⚠️ **Common Type Mistakes**
-> ```
-> ❌ Adding string to number:
-> "5" + 3 → ERROR!
-> 
-> ✅ Convert first:
-> int("5") + 3 → 8
-> "5" + str(3) → "53"
-> 
-> ❌ Float to int loses precision:
-> int(3.9) → 3 (not 4!)
-> 
-> ✅ Use round first if needed:
-> round(3.9) → 4
-> ```
+**⚠️ Common Type Mistakes**
+```
+❌ Adding string to number:
+"5" + 3 → ERROR!
+
+✅ Convert first:
+int("5") + 3 → 8
+"5" + str(3) → "53"
+
+❌ Float to int loses precision:
+int(3.9) → 3 (not 4!)
+
+✅ Use round first if needed:
+round(3.9) → 4
+```
 
 ---
 
 ## 2. VARIABLES
 
-> [!blue] 💙 **Containers for Data**
+**💙 Containers for Data**
 
 ### Variable Concept
 
@@ -337,7 +337,7 @@ graph TD
 
 ### Naming Conventions
 
-> [!yellow] 💡 **Best Practices**
+**💡 Best Practices**
 
 ```
 ✅ GOOD names:
@@ -374,7 +374,7 @@ a, b = b, a  # No temp variable needed!
 
 ## 3. OPERATORS
 
-> [!blue] 💙 **Operating on Data**
+**💙 Operating on Data**
 
 ### Operator Categories
 
@@ -460,30 +460,30 @@ graph TD
     style A fill:#bbdefb
 ```
 
-> [!yellow] 💡 **Real-World Logic**
-> ```
-> age = 25
-> has_license = True
-> 
-> Can drive?
-> age >= 18 and has_license → True
-> (Both conditions must be True)
-> 
-> Gets discount?
-> age < 18 or age > 65 → False
-> (At least one condition must be True)
-> 
-> Not eligible?
-> not (age >= 18) → False
-> (Flips the result)
-> ```
+**💡 Real-World Logic**
+```
+age = 25
+has_license = True
+
+Can drive?
+age >= 18 and has_license → True
+(Both conditions must be True)
+
+Gets discount?
+age < 18 or age > 65 → False
+(At least one condition must be True)
+
+Not eligible?
+not (age >= 18) → False
+(Flips the result)
+```
 
 ---
 
 ## 4. LISTS
 
-> [!blue] 💙 **Dynamic Array - The Workhorse Data Structure**
-> Lists are Python's implementation of dynamic arrays - mutable, ordered sequences that can hold any type of object. Essential for data science workflows.
+**💙 Dynamic Array - The Workhorse Data Structure**
+Lists are Python's implementation of dynamic arrays - mutable, ordered sequences that can hold any type of object. Essential for data science workflows.
 
 ### List Fundamentals
 
@@ -600,11 +600,11 @@ Palindrome check:
 s == s[::-1]  # Check if sequence reads same forwards/backwards
 ```
 
-> [!yellow] 💡 **Slicing Creates Copies**
-> - Slicing always creates a new list (shallow copy)
-> - Modifying slice doesn't affect original
-> - For large lists, consider views (NumPy arrays) instead
-> - Assignment to slice can modify original: `lst[1:3] = [10, 20]`
+**💡 Slicing Creates Copies**
+- Slicing always creates a new list (shallow copy)
+- Modifying slice doesn't affect original
+- For large lists, consider views (NumPy arrays) instead
+- Assignment to slice can modify original: `lst[1:3] = [10, 20]`
 
 ### List Operations - Complexity Analysis
 
@@ -631,27 +631,27 @@ Space used: O(n) where n = number of elements
 Extra space during resize: O(n) temporarily
 ```
 
-> [!red] ⚠️ **Performance Pitfalls**
-> ```
-> ❌ BAD: Repeatedly insert at beginning (O(n²))
-> for item in items:
->     result.insert(0, item)
-> 
-> ✅ GOOD: Append and reverse (O(n))
-> for item in items:
->     result.append(item)
-> result.reverse()
-> 
-> ❌ BAD: Growing list with concatenation (O(n²))
-> result = []
-> for item in items:
->     result = result + [item]  # Creates new list each time!
-> 
-> ✅ GOOD: Use append (O(n))
-> result = []
-> for item in items:
->     result.append(item)
-> ```
+**⚠️ Performance Pitfalls**
+```
+❌ BAD: Repeatedly insert at beginning (O(n²))
+for item in items:
+    result.insert(0, item)
+
+✅ GOOD: Append and reverse (O(n))
+for item in items:
+    result.append(item)
+result.reverse()
+
+❌ BAD: Growing list with concatenation (O(n²))
+result = []
+for item in items:
+    result = result + [item]  # Creates new list each time!
+
+✅ GOOD: Use append (O(n))
+result = []
+for item in items:
+    result.append(item)
+```
 
 ### List Operations
 
@@ -672,7 +672,7 @@ graph TD
 
 ### Common List Operations
 
-> [!green] ✅ **Essential Methods**
+**✅ Essential Methods**
 
 ```
 Create:
@@ -723,29 +723,29 @@ Method          What it does                Example
 .clear()        Remove all items           lst.clear()
 ```
 
-> [!red] ⚠️ **Common List Mistakes**
-> ```
-> ❌ Out of bounds:
-> numbers = [1, 2, 3]
-> numbers[3] → ERROR! (Index 0, 1, 2 only)
-> 
-> ✅ Check length first:
-> if len(numbers) > 3:
->     value = numbers[3]
-> 
-> ❌ Modifying while iterating:
-> for item in numbers:
->     numbers.remove(item)  # BAD!
-> 
-> ✅ Create new list:
-> numbers = [x for x in numbers if x > 5]
-> ```
+**⚠️ Common List Mistakes**
+```
+❌ Out of bounds:
+numbers = [1, 2, 3]
+numbers[3] → ERROR! (Index 0, 1, 2 only)
+
+✅ Check length first:
+if len(numbers) > 3:
+    value = numbers[3]
+
+❌ Modifying while iterating:
+for item in numbers:
+    numbers.remove(item)  # BAD!
+
+✅ Create new list:
+numbers = [x for x in numbers if x > 5]
+```
 
 ---
 
 ## 5. DICTIONARIES
 
-> [!blue] 💙 **Key-Value Pairs**
+**💙 Key-Value Pairs**
 
 ### Dictionary Concept
 
@@ -786,7 +786,7 @@ graph TD
 
 ### Dictionary Operations
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 Create:
@@ -834,31 +834,31 @@ Method           What it does              Example
 .clear()         Remove all items          person.clear()
 ```
 
-> [!yellow] ⭐ **Real-World Use Case**
-> ```
-> Student database:
-> 
-> With List (BAD):
-> alice = ["Alice", 25, "CS", 3.8]
-> → What is alice[2]? Need to remember positions!
-> 
-> With Dictionary (GOOD):
-> alice = {
->     "name": "Alice",
->     "age": 25,
->     "major": "CS",
->     "gpa": 3.8
-> }
-> → alice["major"] → "CS" (Clear and readable!)
-> 
-> Dictionaries are self-documenting!
-> ```
+**⭐ Real-World Use Case**
+```
+Student database:
+
+With List (BAD):
+alice = ["Alice", 25, "CS", 3.8]
+→ What is alice[2]? Need to remember positions!
+
+With Dictionary (GOOD):
+alice = {
+    "name": "Alice",
+    "age": 25,
+    "major": "CS",
+    "gpa": 3.8
+}
+→ alice["major"] → "CS" (Clear and readable!)
+
+Dictionaries are self-documenting!
+```
 
 ---
 
 ## 6. SETS AND TUPLES
 
-> [!blue] 💙 **Special Collections**
+**💙 Special Collections**
 
 ### Set - Unique Items Only
 
@@ -924,7 +924,7 @@ graph TD
 
 ### Set Operations
 
-> [!green] ✅ **Mathematical Set Operations**
+**✅ Mathematical Set Operations**
 
 ```
 a = {1, 2, 3, 4}
@@ -947,7 +947,7 @@ a ^ b → {1, 2, 5, 6}
 
 ## 7. CONTROL FLOW
 
-> [!blue] 💙 **Making Decisions**
+**💙 Making Decisions**
 
 ### If-Elif-Else Structure
 
@@ -968,7 +968,7 @@ graph TD
 
 ### Conditional Patterns
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 Simple if:
@@ -1028,7 +1028,7 @@ if 42:          # True
 
 ## 8. LOOPS
 
-> [!blue] 💙 **Repeating Actions**
+**💙 Repeating Actions**
 
 ### For vs While
 
@@ -1047,7 +1047,7 @@ graph TD
 
 ### For Loop Patterns
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 Iterate over list:
@@ -1113,7 +1113,7 @@ for i in range(10):
 
 ## 9. FUNCTIONS
 
-> [!blue] 💙 **Reusable Code Blocks**
+**💙 Reusable Code Blocks**
 
 ### Function Concept
 
@@ -1142,7 +1142,7 @@ graph LR
 
 ### Function Patterns
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 No parameters, no return:
@@ -1196,28 +1196,28 @@ Benefits of Functions:
    Good names make code self-documenting
 ```
 
-> [!yellow] 💡 **When to Create a Function**
-> ```
-> Create a function when:
-> 
-> 1. Code repeats 3+ times
->    → DRY (Don't Repeat Yourself)
-> 
-> 2. Logical unit of work
->    → "Calculate tax", "Validate email"
-> 
-> 3. Makes code more readable
->    → process_data() vs 50 lines inline
-> 
-> 4. Will change in future
->    → One place to update
-> ```
+**💡 When to Create a Function**
+```
+Create a function when:
+
+1. Code repeats 3+ times
+   → DRY (Don't Repeat Yourself)
+
+2. Logical unit of work
+   → "Calculate tax", "Validate email"
+
+3. Makes code more readable
+   → process_data() vs 50 lines inline
+
+4. Will change in future
+   → One place to update
+```
 
 ---
 
 ## 10. COMPREHENSIONS
 
-> [!blue] 💙 **Elegant One-Liners**
+**💙 Elegant One-Liners**
 
 ### List Comprehension
 
@@ -1252,7 +1252,7 @@ graph LR
 
 ### Comprehension Types
 
-> [!green] ✅ **All Types**
+**✅ All Types**
 
 ```
 List Comprehension:
@@ -1303,7 +1303,7 @@ for x in data:
 
 ## 11. ERROR HANDLING
 
-> [!blue] 💙 **Graceful Failure**
+**💙 Graceful Failure**
 
 ### Try-Except Structure
 
@@ -1338,7 +1338,7 @@ AttributeError     Attribute doesn't exist      "text".nonexistent()
 
 ### Error Handling Patterns
 
-> [!green] ✅ **Common Patterns**
+**✅ Common Patterns**
 
 ```
 Basic try-except:
@@ -1380,156 +1380,156 @@ else:
     print(f"You entered: {result}")
 ```
 
-> [!yellow] 💡 **Error Handling Best Practices**
-> ```
-> ✅ Be specific:
-> catch ValueError, not Exception
-> 
-> ✅ Handle expected errors:
-> User input, file operations, network calls
-> 
-> ❌ Don't hide errors:
-> except: pass  # BAD! Silently fails
-> 
-> ✅ Log or report:
-> except Exception as e:
->     log_error(e)
->     raise  # Re-raise after logging
-> ```
+**💡 Error Handling Best Practices**
+```
+✅ Be specific:
+catch ValueError, not Exception
+
+✅ Handle expected errors:
+User input, file operations, network calls
+
+❌ Don't hide errors:
+except: pass  # BAD! Silently fails
+
+✅ Log or report:
+except Exception as e:
+    log_error(e)
+    raise  # Re-raise after logging
+```
 
 ---
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: What is the difference between list and tuple?**
-> 
-> **Perfect Answer:**
-> "Lists and tuples are both ordered collections, but have key differences:
-> 
-> **List:**
-> - Mutable (can change after creation)
-> - Slower (needs more memory)
-> - Use when data will change
-> - Syntax: [1, 2, 3]
-> 
-> **Tuple:**
-> - Immutable (cannot change)
-> - Faster (less memory overhead)
-> - Use for fixed data
-> - Syntax: (1, 2, 3)
-> 
-> **When to use:**
-> 
-> List for:
-> - Shopping cart (add/remove items)
-> - User activity log (append new events)
-> - Any data that changes
-> 
-> Tuple for:
-> - Coordinates (x, y) - never change
-> - RGB colors (255, 128, 0) - fixed
-> - Function returns multiple values
-> - Dictionary keys (must be immutable)
-> 
-> **Key point for interviews:**
-> Tuples are hashable → can be dict keys
-> Lists are not hashable → cannot be dict keys"
+**💎 Q: What is the difference between list and tuple?**
 
-> [!yellow] 💎 **Q: Explain list comprehension with example**
-> 
-> **Perfect Answer:**
-> "List comprehension is a concise way to create lists in Python.
-> 
-> **Syntax:**
-> [expression for item in iterable if condition]
-> 
-> **Example:**
-> Traditional way:
-> ```
-> squares = []
-> for i in range(10):
->     if i % 2 == 0:
->         squares.append(i ** 2)
-> ```
-> 
-> Comprehension way:
-> ```
-> squares = [i ** 2 for i in range(10) if i % 2 == 0]
-> ```
-> 
-> **Benefits:**
-> 1. More concise (one line vs four)
-> 2. Faster (optimized internally)
-> 3. More Pythonic (idiomatic)
-> 
-> **When NOT to use:**
-> - Complex logic (reduces readability)
-> - Multiple statements needed
-> - Nested comprehensions (hard to read)
-> 
-> **Real-world example:**
-> Filter valid emails:
-> ```
-> valid_emails = [
->     email.lower() 
->     for email in user_emails 
->     if '@' in email and '.' in email
-> ]
-> ```
-> 
-> **Interview tip:** Mention that comprehensions work for lists, dicts, and sets!"
+**Perfect Answer:**
+"Lists and tuples are both ordered collections, but have key differences:
 
-> [!yellow] 💎 **Q: What is the difference between == and is?**
-> 
-> **Perfect Answer:**
-> "Both compare values, but in different ways:
-> 
-> **== (equality):**
-> - Compares VALUES
-> - Checks if contents are equal
-> - Most common use
-> 
-> **is (identity):**
-> - Compares IDENTITY (memory location)
-> - Checks if same object
-> - Used for None, True, False
-> 
-> **Example:**
-> ```
-> a = [1, 2, 3]
-> b = [1, 2, 3]
-> c = a
-> 
-> a == b  → True (same values)
-> a is b  → False (different objects)
-> a is c  → True (same object)
-> ```
-> 
-> **Visual:**
-> ```
-> a → [1,2,3] at memory 0x001
-> b → [1,2,3] at memory 0x002
-> c → [1,2,3] at memory 0x001 (points to same as a)
-> 
-> a == b: Compare contents ✓ same
-> a is b: Compare addresses ✗ different
-> a is c: Compare addresses ✓ same
-> ```
-> 
-> **Best practice:**
-> ```
-> ✅ Use == for values:
-> if name == 'Alice'
-> if score == 100
-> 
-> ✅ Use is for None:
-> if value is None
-> if result is not None
-> 
-> ❌ Don't use is for numbers/strings:
-> if x is 5  # Wrong!
-> if name is 'Alice'  # Wrong!
-> ```"
+**List:**
+- Mutable (can change after creation)
+- Slower (needs more memory)
+- Use when data will change
+- Syntax: [1, 2, 3]
+
+**Tuple:**
+- Immutable (cannot change)
+- Faster (less memory overhead)
+- Use for fixed data
+- Syntax: (1, 2, 3)
+
+**When to use:**
+
+List for:
+- Shopping cart (add/remove items)
+- User activity log (append new events)
+- Any data that changes
+
+Tuple for:
+- Coordinates (x, y) - never change
+- RGB colors (255, 128, 0) - fixed
+- Function returns multiple values
+- Dictionary keys (must be immutable)
+
+**Key point for interviews:**
+Tuples are hashable → can be dict keys
+Lists are not hashable → cannot be dict keys"
+
+**💎 Q: Explain list comprehension with example**
+
+**Perfect Answer:**
+"List comprehension is a concise way to create lists in Python.
+
+**Syntax:**
+[expression for item in iterable if condition]
+
+**Example:**
+Traditional way:
+```
+squares = []
+for i in range(10):
+    if i % 2 == 0:
+        squares.append(i ** 2)
+```
+
+Comprehension way:
+```
+squares = [i ** 2 for i in range(10) if i % 2 == 0]
+```
+
+**Benefits:**
+1. More concise (one line vs four)
+2. Faster (optimized internally)
+3. More Pythonic (idiomatic)
+
+**When NOT to use:**
+- Complex logic (reduces readability)
+- Multiple statements needed
+- Nested comprehensions (hard to read)
+
+**Real-world example:**
+Filter valid emails:
+```
+valid_emails = [
+    email.lower() 
+    for email in user_emails 
+    if '@' in email and '.' in email
+]
+```
+
+**Interview tip:** Mention that comprehensions work for lists, dicts, and sets!"
+
+**💎 Q: What is the difference between == and is?**
+
+**Perfect Answer:**
+"Both compare values, but in different ways:
+
+**== (equality):**
+- Compares VALUES
+- Checks if contents are equal
+- Most common use
+
+**is (identity):**
+- Compares IDENTITY (memory location)
+- Checks if same object
+- Used for None, True, False
+
+**Example:**
+```
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = a
+
+a == b  → True (same values)
+a is b  → False (different objects)
+a is c  → True (same object)
+```
+
+**Visual:**
+```
+a → [1,2,3] at memory 0x001
+b → [1,2,3] at memory 0x002
+c → [1,2,3] at memory 0x001 (points to same as a)
+
+a == b: Compare contents ✓ same
+a is b: Compare addresses ✗ different
+a is c: Compare addresses ✓ same
+```
+
+**Best practice:**
+```
+✅ Use == for values:
+if name == 'Alice'
+if score == 100
+
+✅ Use is for None:
+if value is None
+if result is not None
+
+❌ Don't use is for numbers/strings:
+if x is 5  # Wrong!
+if name is 'Alice'  # Wrong!
+```"
 
 ---
 

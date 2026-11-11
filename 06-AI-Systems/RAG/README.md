@@ -1,7 +1,7 @@
 # 🔍 RAG (Retrieval-Augmented Generation)
 
-> [!blue] 💙 **Knowledge-Enhanced LLM Systems**
-> Combining retrieval from knowledge bases with language model generation. Enable LLMs to access external knowledge and provide factual, up-to-date responses.
+**💙 Knowledge-Enhanced LLM Systems**
+Combining retrieval from knowledge bases with language model generation. Enable LLMs to access external knowledge and provide factual, up-to-date responses.
 
 ---
 
@@ -35,8 +35,8 @@ By the end of this section, you should be able to:
 
 ### [[rag-architecture|RAG Architecture]]
 
-> [!blue] 💙 **Retrieval-Augmented Generation Pipeline**
-> Retrieve relevant information from knowledge base, then use it as context for LLM generation.
+**💙 Retrieval-Augmented Generation Pipeline**
+Retrieve relevant information from knowledge base, then use it as context for LLM generation.
 
 **RAG Flow:**
 ```mermaid
@@ -59,17 +59,17 @@ graph TD
 - **Source attribution:** Cite where information came from
 - **Domain-specific:** Works with private/specialized knowledge
 
-> [!green] ✅ **RAG vs Fine-Tuning**
-> - **RAG:** External knowledge, dynamic, no training needed
-> - **Fine-tuning:** Internalized knowledge, static, requires training
-> - **Best:** Combine both for optimal performance
+**✅ RAG vs Fine-Tuning**
+- **RAG:** External knowledge, dynamic, no training needed
+- **Fine-tuning:** Internalized knowledge, static, requires training
+- **Best:** Combine both for optimal performance
 
 ---
 
 ### [[vector-embeddings|Vector Embeddings]]
 
-> [!blue] 💙 **Semantic Vector Representations**
-> Converting text into dense vectors that capture semantic meaning. Similar texts have similar vectors.
+**💙 Semantic Vector Representations**
+Converting text into dense vectors that capture semantic meaning. Similar texts have similar vectors.
 
 **Embedding Models:**
 ```mermaid
@@ -90,18 +90,18 @@ graph LR
 - **Semantic similarity:** Cosine similarity measures closeness
 - **Domain-specific:** Better to use domain-tuned embeddings
 
-> [!yellow] 💡 **Choosing Embedding Model**
-> - **General purpose:** OpenAI text-embedding-3-small
-> - **Open source:** sentence-transformers (all-mpnet-base-v2)
-> - **Multilingual:** Cohere embed-multilingual
-> - **Code:** OpenAI text-embedding-3-large, CodeBERT
+**💡 Choosing Embedding Model**
+- **General purpose:** OpenAI text-embedding-3-small
+- **Open source:** sentence-transformers (all-mpnet-base-v2)
+- **Multilingual:** Cohere embed-multilingual
+- **Code:** OpenAI text-embedding-3-large, CodeBERT
 
 ---
 
 ### [[chunking-strategies|Chunking Strategies]]
 
-> [!blue] 💙 **Breaking Documents into Retrievable Units**
-> Splitting large documents into smaller chunks for effective retrieval and context fitting.
+**💙 Breaking Documents into Retrievable Units**
+Splitting large documents into smaller chunks for effective retrieval and context fitting.
 
 **Chunking Methods:**
 ```mermaid
@@ -144,18 +144,18 @@ graph TD
 - Prevents losing context at boundaries
 - Improves retrieval recall
 
-> [!yellow] 💡 **Chunk Size Guidelines**
-> - **Typical size:** 256-512 tokens per chunk
-> - **Too small:** Lose context, many retrievals needed
-> - **Too large:** Irrelevant info, exceed LLM context
-> - **Rule of thumb:** Fit 3-5 chunks in LLM context window
+**💡 Chunk Size Guidelines**
+- **Typical size:** 256-512 tokens per chunk
+- **Too small:** Lose context, many retrievals needed
+- **Too large:** Irrelevant info, exceed LLM context
+- **Rule of thumb:** Fit 3-5 chunks in LLM context window
 
 ---
 
 ### [[vector-databases|Vector Databases]]
 
-> [!blue] 💙 **Efficient Similarity Search at Scale**
-> Specialized databases for storing vectors and performing fast similarity search (nearest neighbor).
+**💙 Efficient Similarity Search at Scale**
+Specialized databases for storing vectors and performing fast similarity search (nearest neighbor).
 
 **Vector DB Landscape:**
 ```mermaid
@@ -184,18 +184,18 @@ graph TD
 - **Hybrid search:** Combine vector + keyword search
 - **Scalability:** Handle millions to billions of vectors
 
-> [!yellow] 💡 **Choosing Vector Database**
-> - **Quick prototype:** ChromaDB (embedded)
-> - **Production, managed:** Pinecone, Weaviate Cloud
-> - **Self-hosted:** Weaviate, Qdrant, Milvus
-> - **Cost-sensitive:** FAISS (free, in-memory)
+**💡 Choosing Vector Database**
+- **Quick prototype:** ChromaDB (embedded)
+- **Production, managed:** Pinecone, Weaviate Cloud
+- **Self-hosted:** Weaviate, Qdrant, Milvus
+- **Cost-sensitive:** FAISS (free, in-memory)
 
 ---
 
 ### [[retrieval-methods|Retrieval Methods]]
 
-> [!blue] 💙 **Finding Relevant Information**
-> Techniques for retrieving the most relevant documents given a query.
+**💙 Finding Relevant Information**
+Techniques for retrieving the most relevant documents given a query.
 
 **Retrieval Approaches:**
 ```mermaid
@@ -228,18 +228,18 @@ graph TD
 1. **First stage:** Fast retrieval (get top 100)
 2. **Second stage:** Re-rank with cross-encoder (get top 5)
 
-> [!yellow] 💡 **Retrieval Strategy**
-> - **Semantic queries:** Dense retrieval
-> - **Keyword/exact match:** Sparse (BM25)
-> - **Best quality:** Hybrid + re-ranking
-> - **Speed critical:** Single-stage dense
+**💡 Retrieval Strategy**
+- **Semantic queries:** Dense retrieval
+- **Keyword/exact match:** Sparse (BM25)
+- **Best quality:** Hybrid + re-ranking
+- **Speed critical:** Single-stage dense
 
 ---
 
 ### [[rag-evaluation|RAG Evaluation]]
 
-> [!blue] 💙 **Measuring RAG System Quality**
-> Evaluating both retrieval quality and generation quality separately and together.
+**💙 Measuring RAG System Quality**
+Evaluating both retrieval quality and generation quality separately and together.
 
 **Evaluation Framework:**
 ```mermaid
@@ -274,72 +274,72 @@ graph TD
 
 ## 🔬 Advanced Techniques
 
-> [!purple] 🔮 **Query Transformation**
-> Modify queries for better retrieval:
-> - **HyDE:** Generate hypothetical document, embed, retrieve
-> - **Multi-query:** Generate multiple query variations
-> - **Query expansion:** Add synonyms and related terms
+**🔮 Query Transformation**
+Modify queries for better retrieval:
+- **HyDE:** Generate hypothetical document, embed, retrieve
+- **Multi-query:** Generate multiple query variations
+- **Query expansion:** Add synonyms and related terms
 
-> [!purple] 🔮 **Advanced Chunking**
-> - **Contextual chunks:** Add document summary to each chunk
-> - **Hierarchical chunking:** Parent-child chunk relationships
-> - **Propositionization:** Split into atomic facts
+**🔮 Advanced Chunking**
+- **Contextual chunks:** Add document summary to each chunk
+- **Hierarchical chunking:** Parent-child chunk relationships
+- **Propositionization:** Split into atomic facts
 
-> [!purple] 🔮 **Re-ranking**
-> Two-stage retrieval for better quality:
-> - First: Fast retrieval (top 100)
-> - Second: Cross-encoder re-ranking (top 5)
-> - Models: Cohere rerank, bge-reranker
+**🔮 Re-ranking**
+Two-stage retrieval for better quality:
+- First: Fast retrieval (top 100)
+- Second: Cross-encoder re-ranking (top 5)
+- Models: Cohere rerank, bge-reranker
 
-> [!purple] 🔮 **Agentic RAG**
-> LLM decides when and what to retrieve:
-> - Query planning
-> - Iterative retrieval
-> - Multi-hop reasoning
+**🔮 Agentic RAG**
+LLM decides when and what to retrieve:
+- Query planning
+- Iterative retrieval
+- Multi-hop reasoning
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Poor Chunking**
-> - **Problem:** Chunks too large/small, lose context
-> - **Solution:** Experiment with size (256-512), add overlap, preserve structure
+**⚠️ Poor Chunking**
+- **Problem:** Chunks too large/small, lose context
+- **Solution:** Experiment with size (256-512), add overlap, preserve structure
 
-> [!red] ⚠️ **Embedding Mismatch**
-> - **Problem:** Different embeddings for indexing vs retrieval
-> - **Solution:** Use same embedding model consistently
+**⚠️ Embedding Mismatch**
+- **Problem:** Different embeddings for indexing vs retrieval
+- **Solution:** Use same embedding model consistently
 
-> [!red] ⚠️ **Context Stuffing**
-> - **Problem:** Too many irrelevant chunks in context
-> - **Solution:** Use re-ranking, reduce top-K, filter by relevance score
+**⚠️ Context Stuffing**
+- **Problem:** Too many irrelevant chunks in context
+- **Solution:** Use re-ranking, reduce top-K, filter by relevance score
 
-> [!red] ⚠️ **No Evaluation**
-> - **Problem:** Don't know if system is working well
-> - **Solution:** Build evaluation set, track metrics, iterate
+**⚠️ No Evaluation**
+- **Problem:** Don't know if system is working well
+- **Solution:** Build evaluation set, track metrics, iterate
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Building RAG System**
-> 1. **Start simple:** ChromaDB + OpenAI embeddings + GPT-4
-> 2. **Chunk wisely:** 256-512 tokens with 50-token overlap
-> 3. **Evaluate early:** Create test set of Q&A pairs
-> 4. **Iterate:** Try different chunking, embeddings, retrieval
-> 5. **Add re-ranking:** For production quality
+**💡 Building RAG System**
+1. **Start simple:** ChromaDB + OpenAI embeddings + GPT-4
+2. **Chunk wisely:** 256-512 tokens with 50-token overlap
+3. **Evaluate early:** Create test set of Q&A pairs
+4. **Iterate:** Try different chunking, embeddings, retrieval
+5. **Add re-ranking:** For production quality
 
-> [!yellow] 💡 **Production Considerations**
-> - **Caching:** Cache embeddings and responses
-> - **Monitoring:** Track retrieval quality, latency, costs
-> - **Fallbacks:** Handle no-results, low-confidence scenarios
-> - **Citation:** Always include sources in response
-> - **Updates:** Plan for updating knowledge base
+**💡 Production Considerations**
+- **Caching:** Cache embeddings and responses
+- **Monitoring:** Track retrieval quality, latency, costs
+- **Fallbacks:** Handle no-results, low-confidence scenarios
+- **Citation:** Always include sources in response
+- **Updates:** Plan for updating knowledge base
 
-> [!yellow] 💡 **Optimization Tips**
-> - **Batch embedding:** Embed multiple docs at once
-> - **Index optimization:** Use HNSW, IVF for large scale
-> - **Metadata filtering:** Pre-filter by date, category
-> - **Compression:** Quantization for vector storage
+**💡 Optimization Tips**
+- **Batch embedding:** Embed multiple docs at once
+- **Index optimization:** Use HNSW, IVF for large scale
+- **Metadata filtering:** Pre-filter by date, category
+- **Compression:** Quantization for vector storage
 
 ---
 

@@ -1,7 +1,7 @@
 # 🗣️ 05 - Natural Language Processing (NLP)
 
-> [!blue] 💙 **NLP Section**
-> Natural Language Processing techniques from basics to advanced applications. Covers text preprocessing, embeddings, language models, and production NLP systems.
+**💙 NLP Section**
+Natural Language Processing techniques from basics to advanced applications. Covers text preprocessing, embeddings, language models, and production NLP systems.
 
 ---
 
@@ -49,13 +49,13 @@ From [[01-Foundations]]:
 
 ## 💡 Key Concepts Covered
 
-> [!yellow] 💡 **Core NLP Topics**
-> - **Text Preprocessing:** Tokenization, normalization, stopwords
-> - **Embeddings:** Word2Vec, GloVe, FastText, contextual embeddings
-> - **Language Models:** N-grams, RNNs, Transformers
-> - **Transfer Learning:** BERT, GPT, T5, fine-tuning strategies
-> - **Tasks:** Classification, NER, QA, summarization, translation
-> - **Evaluation:** BLEU, ROUGE, perplexity, human evaluation
+**💡 Core NLP Topics**
+- **Text Preprocessing:** Tokenization, normalization, stopwords
+- **Embeddings:** Word2Vec, GloVe, FastText, contextual embeddings
+- **Language Models:** N-grams, RNNs, Transformers
+- **Transfer Learning:** BERT, GPT, T5, fine-tuning strategies
+- **Tasks:** Classification, NER, QA, summarization, translation
+- **Evaluation:** BLEU, ROUGE, perplexity, human evaluation
 
 ---
 

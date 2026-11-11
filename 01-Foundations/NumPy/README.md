@@ -1,11 +1,11 @@
 # 🔢 NUMPY - Numerical Computing Foundation
 
-> [!yellow] ⭐ **THE BACKBONE OF DATA SCIENCE!**
-> NumPy powers everything: Pandas, Scikit-learn, TensorFlow, PyTorch - they ALL use NumPy!
-> 
-> **Time to Complete:** 1-2 weeks  
-> **Difficulty:** ⭐⭐ Beginner-Friendly  
-> **Interview Weight:** ⭐⭐⭐⭐ VERY HIGH!
+**⭐ THE BACKBONE OF DATA SCIENCE!**
+NumPy powers everything: Pandas, Scikit-learn, TensorFlow, PyTorch - they ALL use NumPy!
+
+**Time to Complete:** 1-2 weeks  
+**Difficulty:** ⭐⭐ Beginner-Friendly  
+**Interview Weight:** ⭐⭐⭐⭐ VERY HIGH!
 
 ---
 
@@ -45,8 +45,8 @@ graph LR
 
 ## 1. WHY NUMPY?
 
-> [!blue] 💙 **What is NumPy?**
-> NumPy (Numerical Python) is the fundamental package for scientific computing in Python. It provides the **ndarray** object - an N-dimensional array that is the foundation for numerical computing in the Python ecosystem.
+**💙 What is NumPy?**
+NumPy (Numerical Python) is the fundamental package for scientific computing in Python. It provides the **ndarray** object - an N-dimensional array that is the foundation for numerical computing in the Python ecosystem.
 
 **Core Philosophy:**
 - Operations on entire arrays (vectorization)
@@ -230,25 +230,25 @@ Time difference:
 4 cycles vs 200 cycles = 50x slower per element!
 ```
 
-> [!yellow] 💡 **Real-World Impact**
-> ```
-> Task: Multiply 1 million numbers by 2
-> 
-> Python List:  ~80 milliseconds
-> NumPy Array:  ~1 millisecond
-> 
-> For large datasets (millions of rows):
-> - Python: Minutes to hours
-> - NumPy: Seconds
-> 
-> This is why ALL data science libraries use NumPy!
-> ```
+**💡 Real-World Impact**
+```
+Task: Multiply 1 million numbers by 2
+
+Python List:  ~80 milliseconds
+NumPy Array:  ~1 millisecond
+
+For large datasets (millions of rows):
+- Python: Minutes to hours
+- NumPy: Seconds
+
+This is why ALL data science libraries use NumPy!
+```
 
 ---
 
 ## 2. ARRAYS VS PYTHON LISTS
 
-> [!blue] 💙 **Fundamental Differences**
+**💙 Fundamental Differences**
 
 ### Visual Comparison
 
@@ -290,20 +290,20 @@ graph TD
 | **Use Case** | General purpose | Numerical computing |
 | **Dimensions** | 1D only | Multi-dimensional |
 
-> [!red] ⚠️ **Common Misconception**
-> ```
-> ❌ WRONG: "Lists are more flexible, so better"
-> ✅ RIGHT: "Arrays are specialized for numbers, MUCH faster"
-> 
-> Use Lists for: Mixed data, small datasets, general Python
-> Use Arrays for: Numbers, large datasets, math operations
-> ```
+**⚠️ Common Misconception**
+```
+❌ WRONG: "Lists are more flexible, so better"
+✅ RIGHT: "Arrays are specialized for numbers, MUCH faster"
+
+Use Lists for: Mixed data, small datasets, general Python
+Use Arrays for: Numbers, large datasets, math operations
+```
 
 ---
 
 ## 3. CREATING ARRAYS
 
-> [!blue] 💙 **Array Dimensions**
+**💙 Array Dimensions**
 
 ```
 1D Array (Vector):
@@ -341,7 +341,7 @@ graph TD
 
 ### Common Array Types
 
-> [!yellow] 💡 **Quick Reference**
+**💡 Quick Reference**
 
 ```
 Zeros Array:
@@ -371,7 +371,7 @@ Use: Plotting, even spacing needed
 
 ## 4. INDEXING AND SLICING
 
-> [!blue] 💙 **Accessing Array Elements**
+**💙 Accessing Array Elements**
 
 ### 1D Array Indexing
 
@@ -445,27 +445,27 @@ Result: arr[arr > 20] → [25, 30, 40]
 This is POWERFUL for filtering!
 ```
 
-> [!yellow] ⭐ **Real-World Example**
-> ```
-> Student scores: [45, 78, 92, 55, 88, 61, 95]
-> 
-> Pass (≥60): scores[scores >= 60]
-> Result: [78, 92, 88, 61, 95]
-> 
-> Excellent (≥90): scores[scores >= 90]
-> Result: [92, 95]
-> 
-> This is how data filtering works in Pandas!
-> ```
+**⭐ Real-World Example**
+```
+Student scores: [45, 78, 92, 55, 88, 61, 95]
+
+Pass (≥60): scores[scores >= 60]
+Result: [78, 92, 88, 61, 95]
+
+Excellent (≥90): scores[scores >= 90]
+Result: [92, 95]
+
+This is how data filtering works in Pandas!
+```
 
 ---
 
 ## 5. BROADCASTING
 
-> [!red] ⚠️ **MOST IMPORTANT NUMPY CONCEPT FOR INTERVIEWS!**
+**⚠️ MOST IMPORTANT NUMPY CONCEPT FOR INTERVIEWS!**
 
-> [!blue] 💙 **What is Broadcasting?**
-> Broadcasting allows operations on arrays of different shapes WITHOUT explicit loops or copies.
+**💙 What is Broadcasting?**
+Broadcasting allows operations on arrays of different shapes WITHOUT explicit loops or copies.
 
 ### Simple Broadcasting
 
@@ -540,34 +540,34 @@ Result:
  [13, 23, 33, 43]]
 ```
 
-> [!yellow] 💡 **Real-World Use Case**
-> ```
-> Image Processing:
-> 
-> Image: (1920, 1080, 3)  # Height × Width × RGB
-> Brightness: [1.2, 1.1, 1.0]  # Adjust each channel
-> 
-> Result: image * brightness
-> Automatically broadcasts to all pixels!
-> 
-> Without broadcasting: Triple nested loops
-> With broadcasting: Single operation (FAST!)
-> ```
+**💡 Real-World Use Case**
+```
+Image Processing:
 
-> [!red] ⚠️ **Common Broadcasting Mistakes**
-> ```
-> ❌ (3, 4) + (4, 3)  → ERROR (shapes don't align)
-> ✅ (3, 4) + (1, 4)  → OK (broadcasts to 3×4)
-> ✅ (3, 4) + (3, 1)  → OK (broadcasts to 3×4)
-> 
-> Remember: Dimensions must match from RIGHT to LEFT
-> ```
+Image: (1920, 1080, 3)  # Height × Width × RGB
+Brightness: [1.2, 1.1, 1.0]  # Adjust each channel
+
+Result: image * brightness
+Automatically broadcasts to all pixels!
+
+Without broadcasting: Triple nested loops
+With broadcasting: Single operation (FAST!)
+```
+
+**⚠️ Common Broadcasting Mistakes**
+```
+❌ (3, 4) + (4, 3)  → ERROR (shapes don't align)
+✅ (3, 4) + (1, 4)  → OK (broadcasts to 3×4)
+✅ (3, 4) + (3, 1)  → OK (broadcasts to 3×4)
+
+Remember: Dimensions must match from RIGHT to LEFT
+```
 
 ---
 
 ## 6. VECTORIZATION
 
-> [!blue] 💙 **No Loops Needed!**
+**💙 No Loops Needed!**
 
 ### Loop vs Vectorization
 
@@ -604,7 +604,7 @@ graph TD
 
 ### Common Vectorized Operations
 
-> [!green] ✅ **Always Use Vectorization**
+**✅ Always Use Vectorization**
 
 ```
 Element-wise operations:
@@ -627,7 +627,7 @@ a.std(), a.var()
 
 ## 7. RESHAPING ARRAYS
 
-> [!blue] 💙 **Changing Array Dimensions**
+**💙 Changing Array Dimensions**
 
 ### Reshape Concept
 
@@ -679,24 +679,24 @@ Columns become rows!
 Critical for: Matrix multiplication, ML models
 ```
 
-> [!yellow] 💡 **ML Use Case**
-> ```
-> Features matrix: (1000, 50)
-> 1000 samples, 50 features
-> 
-> Some algorithms need: (50, 1000)
-> 50 features, 1000 samples
-> 
-> Solution: features.T (transpose)
-> 
-> This is VERY common in machine learning!
-> ```
+**💡 ML Use Case**
+```
+Features matrix: (1000, 50)
+1000 samples, 50 features
+
+Some algorithms need: (50, 1000)
+50 features, 1000 samples
+
+Solution: features.T (transpose)
+
+This is VERY common in machine learning!
+```
 
 ---
 
 ## 8. AGGREGATIONS
 
-> [!blue] 💙 **Summary Statistics**
+**💙 Summary Statistics**
 
 ### Common Aggregations
 
@@ -748,25 +748,25 @@ graph LR
     style A fill:#bbdefb
 ```
 
-> [!yellow] ⭐ **Real-World Example**
-> ```
-> Sales data: (365 days, 10 products)
-> 
-> Daily total sales:
-> sales.sum(axis=1) → (365,)
-> 
-> Product total sales:
-> sales.sum(axis=0) → (10,)
-> 
-> Grand total:
-> sales.sum() → single number
-> ```
+**⭐ Real-World Example**
+```
+Sales data: (365 days, 10 products)
+
+Daily total sales:
+sales.sum(axis=1) → (365,)
+
+Product total sales:
+sales.sum(axis=0) → (10,)
+
+Grand total:
+sales.sum() → single number
+```
 
 ---
 
 ## 9. LINEAR ALGEBRA FOR ML
 
-> [!blue] 💙 **Matrix Operations**
+**💙 Matrix Operations**
 
 ### Dot Product
 
@@ -835,123 +835,123 @@ Eigenvalues: np.linalg.eig(A)
 Use: PCA, understanding transformations
 ```
 
-> [!yellow] ⭐ **Neural Network Example**
-> ```
-> Input layer: (batch_size, 784)  # MNIST images
-> Weights: (784, 128)              # Hidden layer
-> 
-> Forward pass:
-> hidden = input @ weights          # Matrix multiplication!
-> Result: (batch_size, 128)
-> 
-> This is NumPy in action!
-> All deep learning frameworks use this.
-> ```
+**⭐ Neural Network Example**
+```
+Input layer: (batch_size, 784)  # MNIST images
+Weights: (784, 128)              # Hidden layer
+
+Forward pass:
+hidden = input @ weights          # Matrix multiplication!
+Result: (batch_size, 128)
+
+This is NumPy in action!
+All deep learning frameworks use this.
+```
 
 ---
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: Explain NumPy broadcasting with example**
-> 
-> **Perfect Answer:**
-> "Broadcasting allows operations on arrays of different shapes without explicit loops.
-> 
-> **How it works:**
-> NumPy automatically expands smaller arrays to match larger ones.
-> 
-> **Rules:**
-> 1. Compare dimensions from right to left
-> 2. Dimensions must be equal OR one must be 1
-> 3. Missing dimensions treated as 1
-> 
-> **Example:**
-> Shape (3, 4) + Shape (4,)
-> - Right dimension: 4 = 4 ✓
-> - Left dimension: 3 vs missing → treat as (1, 4) → broadcast to (3, 4) ✓
-> 
-> **Why important:**
-> - 100x faster than loops
-> - Cleaner code
-> - Used everywhere in ML (batch processing, normalization)
-> 
-> **Real use:**
-> Normalizing data:
-> data - mean  # mean is broadcast to all rows
-> Used in standardization, batch normalization"
+**💎 Q: Explain NumPy broadcasting with example**
 
-> [!yellow] 💎 **Q: NumPy vs Python lists - why is NumPy faster?**
-> 
-> **Perfect Answer:**
-> "NumPy is 50-100x faster due to:
-> 
-> **1. Contiguous Memory:**
-> - Lists: Store pointers, data scattered
-> - NumPy: Actual data in continuous block
-> - Result: Cache-friendly, faster access
-> 
-> **2. Written in C:**
-> - Lists: Interpreted Python code
-> - NumPy: Compiled C code
-> - Result: No interpreter overhead
-> 
-> **3. Vectorization:**
-> - Lists: One element at a time (loops)
-> - NumPy: All elements at once (SIMD)
-> - Result: Parallel processing
-> 
-> **4. Type Homogeneity:**
-> - Lists: Mixed types, type checking each operation
-> - NumPy: Same type, no checking needed
-> - Result: Faster operations
-> 
-> **Tradeoff:**
-> - Lists: Flexible, dynamic
-> - NumPy: Fast, but fixed type
-> 
-> **Use NumPy for:** Numerical data, large datasets, math operations
-> **Use Lists for:** Mixed types, small data, general purpose"
+**Perfect Answer:**
+"Broadcasting allows operations on arrays of different shapes without explicit loops.
 
-> [!yellow] 💎 **Q: What is vectorization and why does it matter?**
-> 
-> **Perfect Answer:**
-> "Vectorization means operating on entire arrays at once instead of using loops.
-> 
-> **Without vectorization:**
-> Loop through each element (slow, Python overhead)
-> 
-> **With vectorization:**
-> Single operation on all elements (fast, compiled C)
-> 
-> **Why it matters:**
-> 
-> **1. Speed:**
-> - 50-100x faster
-> - Critical for large datasets
-> 
-> **2. Readability:**
-> - a + b vs for loop
-> - More intuitive
-> 
-> **3. Memory:**
-> - No intermediate lists
-> - More efficient
-> 
-> **4. Optimization:**
-> - Compiler can parallelize
-> - SIMD instructions
-> 
-> **Real example:**
-> Normalizing 1 million values:
-> - Loop: 100ms
-> - Vectorized: 1ms
-> 
-> **In ML:**
-> - All operations vectorized
-> - Batch processing
-> - GPU acceleration possible
-> 
-> **Rule:** Always vectorize in data science!"
+**How it works:**
+NumPy automatically expands smaller arrays to match larger ones.
+
+**Rules:**
+1. Compare dimensions from right to left
+2. Dimensions must be equal OR one must be 1
+3. Missing dimensions treated as 1
+
+**Example:**
+Shape (3, 4) + Shape (4,)
+- Right dimension: 4 = 4 ✓
+- Left dimension: 3 vs missing → treat as (1, 4) → broadcast to (3, 4) ✓
+
+**Why important:**
+- 100x faster than loops
+- Cleaner code
+- Used everywhere in ML (batch processing, normalization)
+
+**Real use:**
+Normalizing data:
+data - mean  # mean is broadcast to all rows
+Used in standardization, batch normalization"
+
+**💎 Q: NumPy vs Python lists - why is NumPy faster?**
+
+**Perfect Answer:**
+"NumPy is 50-100x faster due to:
+
+**1. Contiguous Memory:**
+- Lists: Store pointers, data scattered
+- NumPy: Actual data in continuous block
+- Result: Cache-friendly, faster access
+
+**2. Written in C:**
+- Lists: Interpreted Python code
+- NumPy: Compiled C code
+- Result: No interpreter overhead
+
+**3. Vectorization:**
+- Lists: One element at a time (loops)
+- NumPy: All elements at once (SIMD)
+- Result: Parallel processing
+
+**4. Type Homogeneity:**
+- Lists: Mixed types, type checking each operation
+- NumPy: Same type, no checking needed
+- Result: Faster operations
+
+**Tradeoff:**
+- Lists: Flexible, dynamic
+- NumPy: Fast, but fixed type
+
+**Use NumPy for:** Numerical data, large datasets, math operations
+**Use Lists for:** Mixed types, small data, general purpose"
+
+**💎 Q: What is vectorization and why does it matter?**
+
+**Perfect Answer:**
+"Vectorization means operating on entire arrays at once instead of using loops.
+
+**Without vectorization:**
+Loop through each element (slow, Python overhead)
+
+**With vectorization:**
+Single operation on all elements (fast, compiled C)
+
+**Why it matters:**
+
+**1. Speed:**
+- 50-100x faster
+- Critical for large datasets
+
+**2. Readability:**
+- a + b vs for loop
+- More intuitive
+
+**3. Memory:**
+- No intermediate lists
+- More efficient
+
+**4. Optimization:**
+- Compiler can parallelize
+- SIMD instructions
+
+**Real example:**
+Normalizing 1 million values:
+- Loop: 100ms
+- Vectorized: 1ms
+
+**In ML:**
+- All operations vectorized
+- Batch processing
+- GPU acceleration possible
+
+**Rule:** Always vectorize in data science!"
 
 ---
 

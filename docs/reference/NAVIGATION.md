@@ -1,7 +1,7 @@
 # 🗺️ LEARNING VAULT - MAIN NAVIGATION
 
-> [!yellow] 💡 **YOUR COMPLETE LEARNING JOURNEY**
-> From Zero to Hero - Build your Data Science & AI skills step by step!
+**💡 YOUR COMPLETE LEARNING JOURNEY**
+From Zero to Hero - Build your Data Science & AI skills step by step!
 
 ---
 
@@ -33,7 +33,7 @@ graph LR
 
 ## 📊 YOUR CURRENT PROGRESS
 
-> [!blue] 💙 **Overall Progress: 15%**
+**💙 Overall Progress: 15%**
 
 | Track | Progress | Status | Start Here |
 |-------|----------|--------|------------|
@@ -52,7 +52,7 @@ graph LR
 
 ### Path 1️⃣: Complete Beginner (6-12 months)
 
-> [!green] ✅ **Start from zero - build everything step by step**
+**✅ Start from zero - build everything step by step**
 
 ```
 Week 1-4  → 🐍 Python Basics
@@ -70,7 +70,7 @@ Week 25+ → 🎯 Interview Prep
 
 ### Path 2️⃣: Know Programming (3-6 months)
 
-> [!yellow] ⭐ **Skip basics, focus on ML/AI**
+**⭐ Skip basics, focus on ML/AI**
 
 ```
 Week 1-2  → ➗ Math Review + 📊 Statistics
@@ -86,7 +86,7 @@ Week 13+ → 🎯 Interview Prep
 
 ### Path 3️⃣: Interview Prep Only (2-3 months)
 
-> [!red] ⚠️ **Already know ML? Prepare for interviews!**
+**⚠️ Already know ML? Prepare for interviews!**
 
 ```
 Week 1-4  → 💻 LeetCode (2-3 daily)
@@ -103,8 +103,8 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### 🟦 Track 1: FOUNDATIONS
 
-> [!blue] 💙 **BUILD YOUR BASE - Everything starts here!**
-> Time: 4-6 weeks | Priority: ⭐⭐⭐ CRITICAL
+**💙 BUILD YOUR BASE - Everything starts here!**
+Time: 4-6 weeks | Priority: ⭐⭐⭐ CRITICAL
 
 #### 📖 Topics:
 
@@ -118,19 +118,19 @@ Week 9-12 → 🎤 Mock Interviews
 | 📐 **Calculus** | 📝 To Do | 1 week | [[01-Foundations/Math/Calculus/README\|Start Learning]] |
 | 🎲 **Probability** | 📝 To Do | 1 week | [[01-Foundations/Math/Probability/README\|Start Learning]] |
 
-> [!yellow] 💡 **Key Concepts to Master:**
-> - ✅ Python: Mutable vs Immutable, List Comprehensions, OOP
-> - ✅ NumPy: Broadcasting, Vectorization, Matrix Operations
-> - ✅ Pandas: GroupBy, Merge/Join, Data Cleaning
-> - ✅ SQL: JOINs, Aggregations, Window Functions
-> - ✅ Math: Matrices, Derivatives, Distributions
+**💡 Key Concepts to Master:**
+- ✅ Python: Mutable vs Immutable, List Comprehensions, OOP
+- ✅ NumPy: Broadcasting, Vectorization, Matrix Operations
+- ✅ Pandas: GroupBy, Merge/Join, Data Cleaning
+- ✅ SQL: JOINs, Aggregations, Window Functions
+- ✅ Math: Matrices, Derivatives, Distributions
 
 ---
 
 ### 🟩 Track 2: STATISTICS & DATA
 
-> [!green] 💚 **ANALYZE DATA LIKE A PRO**
-> Time: 3-4 weeks | Priority: ⭐⭐⭐ CRITICAL
+**💚 ANALYZE DATA LIKE A PRO**
+Time: 3-4 weeks | Priority: ⭐⭐⭐ CRITICAL
 
 #### 📖 Topics:
 
@@ -141,18 +141,18 @@ Week 9-12 → 🎤 Mock Interviews
 | 📈 **Visualization** | Matplotlib, Seaborn, Plotly | [[02-Statistics-and-Data/Data-Visualization/README\|Start]] |
 | ⏱️ **Time Series** | Trends, Seasonality, Forecasting | [[02-Statistics-and-Data/Time-Series/README\|Start]] |
 
-> [!red] ⚠️ **Interview Must-Knows:**
-> - How to detect outliers (IQR, Z-score)
-> - Explain p-value in simple terms
-> - Handle missing data strategies
-> - Choose the right visualization
+**⚠️ Interview Must-Knows:**
+- How to detect outliers (IQR, Z-score)
+- Explain p-value in simple terms
+- Handle missing data strategies
+- Choose the right visualization
 
 ---
 
 ### 🟨 Track 3: MACHINE LEARNING
 
-> [!yellow] ⭐ **BUILD YOUR FIRST ML MODELS**
-> Time: 6-8 weeks | Priority: ⭐⭐⭐ CRITICAL
+**⭐ BUILD YOUR FIRST ML MODELS**
+Time: 6-8 weeks | Priority: ⭐⭐⭐ CRITICAL
 
 #### 📖 Topics:
 
@@ -163,19 +163,19 @@ Week 9-12 → 🎤 Mock Interviews
 | ✅ **Evaluation** | Accuracy, Precision, Recall, F1, ROC-AUC, Confusion Matrix | [[03-Machine-Learning/Model-Evaluation/README\|Start]] |
 | 🔧 **Features** | Scaling, Encoding, Selection, Engineering | [[03-Machine-Learning/Feature-Engineering/README\|Start]] |
 
-> [!purple] 🔮 **Deep Concepts:**
-> - Bias-Variance Tradeoff 🎯
-> - Overfitting vs Underfitting 🎯
-> - Cross-Validation 🎯
-> - Regularization (L1/L2) 🎯
-> - Feature Importance 🎯
+**🔮 Deep Concepts:**
+- Bias-Variance Tradeoff 🎯
+- Overfitting vs Underfitting 🎯
+- Cross-Validation 🎯
+- Regularization (L1/L2) 🎯
+- Feature Importance 🎯
 
 ---
 
 ### 🟪 Track 4: DEEP LEARNING
 
-> [!purple] 🔮 **NEURAL NETWORKS & MODERN AI**
-> Time: 8-10 weeks | Priority: ⭐⭐⭐ CRITICAL
+**🔮 NEURAL NETWORKS & MODERN AI**
+Time: 8-10 weeks | Priority: ⭐⭐⭐ CRITICAL
 
 #### 📖 Topics:
 
@@ -187,18 +187,18 @@ Week 9-12 → 🎤 Mock Interviews
 | 🤖 **Transformers** | Attention Mechanism, BERT, GPT Architecture | [[04-Deep-Learning/Transformers/README\|Start]] |
 | 📚 **LLMs** | Large Language Models, Fine-tuning, Prompting | [[04-Deep-Learning/LLMs/README\|Start]] |
 
-> [!red] 🔥 **Hot Interview Topics:**
-> - Explain attention mechanism
-> - Vanishing gradient problem
-> - Batch normalization vs Layer normalization
-> - Transfer learning strategies
+**🔥 Hot Interview Topics:**
+- Explain attention mechanism
+- Vanishing gradient problem
+- Batch normalization vs Layer normalization
+- Transfer learning strategies
 
 ---
 
 ### 🟦 Track 5: NLP
 
-> [!blue] 💙 **PROCESS TEXT LIKE A HUMAN**
-> Time: 4-6 weeks | Priority: ⭐⭐ IMPORTANT
+**💙 PROCESS TEXT LIKE A HUMAN**
+Time: 4-6 weeks | Priority: ⭐⭐ IMPORTANT
 
 #### 📖 Topics:
 
@@ -212,8 +212,8 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### 🟣 Track 6: AI SYSTEMS
 
-> [!purple] 🔮 **BUILD PRODUCTION AI APPS**
-> Time: 4-5 weeks | Priority: 🔥🔥🔥 VERY HOT
+**🔮 BUILD PRODUCTION AI APPS**
+Time: 4-5 weeks | Priority: 🔥🔥🔥 VERY HOT
 
 #### 📖 Topics:
 
@@ -223,17 +223,17 @@ Week 9-12 → 🎤 Mock Interviews
 | 🤖 **Agents** | Autonomous AI that can use tools and make decisions | [[06-AI-Systems/Agents/README\|Start]] |
 | 💬 **Prompting** | Optimize LLM responses with better prompts | [[06-AI-Systems/Prompt-Engineering/README\|Start]] |
 
-> [!yellow] 💡 **Why These Are Hot:**
-> - RAG: Every company wants Q&A over their docs
-> - Agents: Future of AI automation
-> - Prompting: Essential skill for LLM era
+**💡 Why These Are Hot:**
+- RAG: Every company wants Q&A over their docs
+- Agents: Future of AI automation
+- Prompting: Essential skill for LLM era
 
 ---
 
 ### 🟧 Track 7: MLOps & DEPLOYMENT
 
-> [!yellow] 💡 **TAKE MODELS TO PRODUCTION**
-> Time: 3-4 weeks | Priority: ⭐⭐ IMPORTANT
+**💡 TAKE MODELS TO PRODUCTION**
+Time: 3-4 weeks | Priority: ⭐⭐ IMPORTANT
 
 #### 📖 Topics:
 
@@ -247,8 +247,8 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### 🟥 Track 8: INTERVIEW PREPARATION
 
-> [!red] ⚠️ **THIS IS YOUR GOAL - GET HIRED!**
-> Time: Ongoing | Priority: 🔥🔥🔥 CRITICAL
+**⚠️ THIS IS YOUR GOAL - GET HIRED!**
+Time: Ongoing | Priority: 🔥🔥🔥 CRITICAL
 
 #### 📖 Categories:
 
@@ -259,12 +259,12 @@ Week 9-12 → 🎤 Mock Interviews
 | 🏗️ **System Design** | Design ML systems at scale | ⭐⭐⭐ CRITICAL | [[09-Interview-Prep/System-Design/README\|Start]] |
 | 💬 **Behavioral** | STAR method, past experiences | ⭐⭐ IMPORTANT | [[09-Interview-Prep/Behavioral/README\|Start]] |
 
-> [!yellow] 💎 **Interview Readiness Checklist:**
-> - [ ] Solved 100+ LeetCode problems
-> - [ ] Can explain all ML algorithms
-> - [ ] Designed 5+ ML systems
-> - [ ] Prepared 10+ behavioral stories
-> - [ ] Built 3+ projects in portfolio
+**💎 Interview Readiness Checklist:**
+- [ ] Solved 100+ LeetCode problems
+- [ ] Can explain all ML algorithms
+- [ ] Designed 5+ ML systems
+- [ ] Prepared 10+ behavioral stories
+- [ ] Built 3+ projects in portfolio
 
 ---
 
@@ -272,7 +272,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### Morning Routine (1-2 hours)
 
-> [!blue] 💙 **Start Your Day Right**
+**💙 Start Your Day Right**
 
 1. 📅 Open [[10-Daily-Notes/README|Daily Notes]] and create today's note
 2. 📖 Review yesterday's learnings (5 min)
@@ -280,7 +280,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### Learning Session (3-4 hours)
 
-> [!green] ✅ **Deep Dive Time**
+**✅ Deep Dive Time**
 
 1. 📚 Pick ONE topic from your current track
 2. 💻 Code along with ALL examples
@@ -289,7 +289,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### Practice Session (2-3 hours)
 
-> [!yellow] ⭐ **Apply What You Learned**
+**⭐ Apply What You Learned**
 
 1. 💻 Solve 2-3 coding problems
 2. 🤔 Review ML concepts
@@ -297,7 +297,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ### Evening Review (30 mins)
 
-> [!purple] 🔮 **Reflect & Plan**
+**🔮 Reflect & Plan**
 
 1. ✅ Update progress tracker
 2. 📝 Write daily summary in [[10-Daily-Notes/README|Daily Notes]]
@@ -307,7 +307,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ## 📈 WEEKLY GOALS
 
-> [!yellow] ⭐ **This Week's Focus**
+**⭐ This Week's Focus**
 
 ### Goals:
 - [ ] Complete Python functions & OOP
@@ -324,7 +324,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ## 📊 QUICK STATS
 
-> [!blue] 💙 **Your Learning Journey**
+**💙 Your Learning Journey**
 
 | Metric | Count |
 |--------|-------|
@@ -339,7 +339,7 @@ Week 9-12 → 🎤 Mock Interviews
 
 ## 🎯 CRITICAL TOPICS (Review Weekly!)
 
-> [!red] ⚠️ **MASTER THESE - They appear in EVERY interview!**
+**⚠️ MASTER THESE - They appear in EVERY interview!**
 
 ### Python:
 - [[01-Foundations/Python/mutable-vs-immutable|Mutable vs Immutable]] ⭐⭐⭐
@@ -423,12 +423,12 @@ gantt
 
 ---
 
-> [!green] ✅ **Remember:**
-> "The expert in anything was once a beginner"
-> 
-> 🚀 **Start with:** [[01-Foundations/Python/README|Python Basics]]
-> 
-> 💪 **You got this!**
+**✅ Remember:**
+"The expert in anything was once a beginner"
+
+🚀 **Start with:** [[01-Foundations/Python/README|Python Basics]]
+
+💪 **You got this!**
 
 ---
 

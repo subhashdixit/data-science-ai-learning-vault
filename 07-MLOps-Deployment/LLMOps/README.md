@@ -1,7 +1,7 @@
 # 🚀 LLMOps (Large Language Model Operations)
 
-> [!blue] 💙 **Production LLM Systems**
-> Specialized MLOps practices for Large Language Models. Learn prompt management, LLM evaluation, monitoring, cost optimization, and deployment strategies.
+**💙 Production LLM Systems**
+Specialized MLOps practices for Large Language Models. Learn prompt management, LLM evaluation, monitoring, cost optimization, and deployment strategies.
 
 ---
 
@@ -35,8 +35,8 @@ By the end of this section, you should be able to:
 
 ### [[prompt-management|Prompt Management]]
 
-> [!blue] 💙 **Version Control for Prompts**
-> Systematic management of prompts with versioning, testing, and deployment tracking.
+**💙 Version Control for Prompts**
+Systematic management of prompts with versioning, testing, and deployment tracking.
 
 **Prompt Lifecycle:**
 ```mermaid
@@ -68,18 +68,18 @@ graph TD
 - Regression testing (ensure old cases still work)
 - Edge case coverage
 
-> [!yellow] 💡 **Prompt Management Tools**
-> - **LangSmith:** LangChain's prompt management
-> - **Promptfoo:** Open-source prompt testing
-> - **Humanloop:** Prompt IDE and versioning
-> - **PromptLayer:** Prompt tracking and analytics
+**💡 Prompt Management Tools**
+- **LangSmith:** LangChain's prompt management
+- **Promptfoo:** Open-source prompt testing
+- **Humanloop:** Prompt IDE and versioning
+- **PromptLayer:** Prompt tracking and analytics
 
 ---
 
 ### [[llm-evaluation|LLM Evaluation]]
 
-> [!blue] 💙 **Measuring LLM Quality**
-> Assessing LLM outputs when ground truth is unavailable or subjective.
+**💙 Measuring LLM Quality**
+Assessing LLM outputs when ground truth is unavailable or subjective.
 
 **Evaluation Approaches:**
 ```mermaid
@@ -119,19 +119,19 @@ graph TD
 - For summarization: ROUGE score
 - For classification: Accuracy
 
-> [!green] ✅ **LLM-as-Judge Pattern**
-> Use powerful LLM (GPT-4) to evaluate outputs:
-> - Define evaluation criteria
-> - Provide scoring rubric (1-5 scale)
-> - Request justification for scores
-> - Aggregate across multiple evaluators
+**✅ LLM-as-Judge Pattern**
+Use powerful LLM (GPT-4) to evaluate outputs:
+- Define evaluation criteria
+- Provide scoring rubric (1-5 scale)
+- Request justification for scores
+- Aggregate across multiple evaluators
 
 ---
 
 ### [[cost-optimization|Cost Monitoring & Optimization]]
 
-> [!blue] 💙 **Managing LLM Expenses**
-> Tracking and reducing token usage costs for API-based and self-hosted LLMs.
+**💙 Managing LLM Expenses**
+Tracking and reducing token usage costs for API-based and self-hosted LLMs.
 
 **Cost Structure:**
 ```mermaid
@@ -176,18 +176,18 @@ graph TD
 - Use max_tokens wisely
 - Detect repetition and stop
 
-> [!yellow] 💡 **Cost Monitoring**
-> - Track tokens per user, per feature
-> - Set budget alerts
-> - Monitor cost per successful request
-> - Analyze cost trends over time
+**💡 Cost Monitoring**
+- Track tokens per user, per feature
+- Set budget alerts
+- Monitor cost per successful request
+- Analyze cost trends over time
 
 ---
 
 ### [[llm-caching|Caching Strategies]]
 
-> [!blue] 💙 **Reducing Redundant LLM Calls**
-> Intelligent caching to improve latency and reduce costs without sacrificing quality.
+**💙 Reducing Redundant LLM Calls**
+Intelligent caching to improve latency and reduce costs without sacrificing quality.
 
 **Caching Layers:**
 ```mermaid
@@ -224,18 +224,18 @@ graph TD
 - Version-based (prompt/model change)
 - Manual purge
 
-> [!red] ⚠️ **Caching Considerations**
-> - Don't cache personalized responses
-> - Handle cache misses gracefully
-> - Monitor cache hit rate
-> - Balance freshness vs cost
+**⚠️ Caching Considerations**
+- Don't cache personalized responses
+- Handle cache misses gracefully
+- Monitor cache hit rate
+- Balance freshness vs cost
 
 ---
 
 ### [[llm-observability|Observability & Debugging]]
 
-> [!blue] 💙 **Understanding LLM Behavior**
-> Logging, tracing, and debugging LLM applications to identify and fix issues.
+**💙 Understanding LLM Behavior**
+Logging, tracing, and debugging LLM applications to identify and fix issues.
 
 **Observability Stack:**
 ```mermaid
@@ -272,19 +272,19 @@ graph TD
 - **Phoenix (Arize):** Open-source monitoring
 - **Datadog / New Relic:** General APM
 
-> [!yellow] 💡 **Debugging Workflow**
-> 1. Identify failing cases from logs
-> 2. Reproduce locally with exact prompt
-> 3. Analyze LLM reasoning (if available)
-> 4. Iterate on prompt or add examples
-> 5. Test fix, deploy, monitor
+**💡 Debugging Workflow**
+1. Identify failing cases from logs
+2. Reproduce locally with exact prompt
+3. Analyze LLM reasoning (if available)
+4. Iterate on prompt or add examples
+5. Test fix, deploy, monitor
 
 ---
 
 ### [[safety-guardrails|Safety & Guardrails]]
 
-> [!blue] 💙 **Ensuring Safe LLM Outputs**
-> Preventing harmful, inappropriate, or incorrect outputs through moderation and validation.
+**💙 Ensuring Safe LLM Outputs**
+Preventing harmful, inappropriate, or incorrect outputs through moderation and validation.
 
 **Safety Layers:**
 ```mermaid
@@ -327,92 +327,92 @@ graph TD
 - **NeMo Guardrails:** Programmable guardrails
 - **Guardrails AI:** Validation framework
 
-> [!red] ⚠️ **Safety Challenges**
-> - Adversarial users (jailbreaking)
-> - Context-dependent appropriateness
-> - False positives (blocking legitimate content)
-> - Evolving attack methods
+**⚠️ Safety Challenges**
+- Adversarial users (jailbreaking)
+- Context-dependent appropriateness
+- False positives (blocking legitimate content)
+- Evolving attack methods
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Continuous Evaluation**
-> Monitor LLM quality in production:
-> - Sample predictions regularly
-> - Run automated evals on live traffic
-> - Track quality metrics over time
-> - Detect regressions early
+**🔮 Continuous Evaluation**
+Monitor LLM quality in production:
+- Sample predictions regularly
+- Run automated evals on live traffic
+- Track quality metrics over time
+- Detect regressions early
 
-> [!purple] 🔮 **Prompt Optimization Pipelines**
-> Automatically improve prompts:
-> - DSPy: Programmatic optimization
-> - Genetic algorithms for prompt evolution
-> - A/B test variations continuously
+**🔮 Prompt Optimization Pipelines**
+Automatically improve prompts:
+- DSPy: Programmatic optimization
+- Genetic algorithms for prompt evolution
+- A/B test variations continuously
 
-> [!purple] 🔮 **Multi-Model Routing**
-> Route requests to optimal model:
-> - Simple queries → small/cheap model
-> - Complex queries → large/expensive model
-> - Classifier predicts complexity
-> - Balance cost and quality
+**🔮 Multi-Model Routing**
+Route requests to optimal model:
+- Simple queries → small/cheap model
+- Complex queries → large/expensive model
+- Classifier predicts complexity
+- Balance cost and quality
 
-> [!purple] 🔮 **Feedback Loops**
-> Learn from production usage:
-> - Collect user corrections
-> - Add to few-shot examples
-> - Retrain classifiers
-> - Update retrieval systems
+**🔮 Feedback Loops**
+Learn from production usage:
+- Collect user corrections
+- Add to few-shot examples
+- Retrain classifiers
+- Update retrieval systems
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Not Versioning Prompts**
-> - **Problem:** Can't reproduce issues or roll back
-> - **Solution:** Git for prompts, version with model updates
+**⚠️ Not Versioning Prompts**
+- **Problem:** Can't reproduce issues or roll back
+- **Solution:** Git for prompts, version with model updates
 
-> [!red] ⚠️ **Ignoring Costs**
-> - **Problem:** Unexpected bills, inefficient usage
-> - **Solution:** Monitor spending, set alerts, optimize aggressively
+**⚠️ Ignoring Costs**
+- **Problem:** Unexpected bills, inefficient usage
+- **Solution:** Monitor spending, set alerts, optimize aggressively
 
-> [!red] ⚠️ **Insufficient Logging**
-> - **Problem:** Can't debug failures
-> - **Solution:** Log everything (prompts, responses, errors)
+**⚠️ Insufficient Logging**
+- **Problem:** Can't debug failures
+- **Solution:** Log everything (prompts, responses, errors)
 
-> [!red] ⚠️ **No Evaluation Process**
-> - **Problem:** Don't know if prompt changes help
-> - **Solution:** Build eval set, automated testing
+**⚠️ No Evaluation Process**
+- **Problem:** Don't know if prompt changes help
+- **Solution:** Build eval set, automated testing
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **LLMOps Checklist**
-> - ✅ Version control for prompts
-> - ✅ Automated evaluation pipeline
-> - ✅ Comprehensive logging and tracing
-> - ✅ Cost monitoring and alerts
-> - ✅ Caching strategy implemented
-> - ✅ Safety guardrails in place
-> - ✅ Rollback plan for failures
-> - ✅ User feedback collection
+**💡 LLMOps Checklist**
+- ✅ Version control for prompts
+- ✅ Automated evaluation pipeline
+- ✅ Comprehensive logging and tracing
+- ✅ Cost monitoring and alerts
+- ✅ Caching strategy implemented
+- ✅ Safety guardrails in place
+- ✅ Rollback plan for failures
+- ✅ User feedback collection
 
-> [!yellow] 💡 **Starting LLMOps**
-> 1. Add logging (LangSmith, Helicone)
-> 2. Build evaluation dataset (20-50 examples)
-> 3. Version prompts in Git
-> 4. Monitor costs and set budgets
-> 5. Implement caching
-> 6. Add safety checks
-> 7. Set up continuous evaluation
+**💡 Starting LLMOps**
+1. Add logging (LangSmith, Helicone)
+2. Build evaluation dataset (20-50 examples)
+3. Version prompts in Git
+4. Monitor costs and set budgets
+5. Implement caching
+6. Add safety checks
+7. Set up continuous evaluation
 
-> [!yellow] 💡 **Production Deployment**
-> - Start with staging environment
-> - Gradual rollout (10% → 50% → 100%)
-> - Monitor closely for issues
-> - Have rollback plan ready
-> - Collect user feedback
+**💡 Production Deployment**
+- Start with staging environment
+- Gradual rollout (10% → 50% → 100%)
+- Monitor closely for issues
+- Have rollback plan ready
+- Collect user feedback
 
 ---
 

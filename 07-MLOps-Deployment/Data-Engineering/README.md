@@ -1,7 +1,7 @@
 # 🔄 Data Engineering
 
-> [!blue] 💙 **Building Data Infrastructure**
-> Designing and building systems for data collection, storage, processing, and delivery. Foundation for machine learning and analytics pipelines.
+**💙 Building Data Infrastructure**
+Designing and building systems for data collection, storage, processing, and delivery. Foundation for machine learning and analytics pipelines.
 
 ---
 
@@ -35,8 +35,8 @@ By the end of this section, you should be able to:
 
 ### [[data-pipelines|Data Pipelines]]
 
-> [!blue] 💙 **Automated Data Workflows**
-> End-to-end systems that extract, transform, and load data from sources to destinations.
+**💙 Automated Data Workflows**
+End-to-end systems that extract, transform, and load data from sources to destinations.
 
 **Pipeline Architecture:**
 ```mermaid
@@ -64,18 +64,18 @@ graph LR
 - Leverage warehouse compute power
 - Example: Load to BigQuery → Transform with SQL
 
-> [!yellow] 💡 **Pipeline Design Principles**
-> - **Idempotency:** Re-running produces same result
-> - **Incrementality:** Only process new/changed data
-> - **Monitoring:** Track success, failures, data quality
-> - **Error handling:** Retry transient errors, alert on persistent failures
+**💡 Pipeline Design Principles**
+- **Idempotency:** Re-running produces same result
+- **Incrementality:** Only process new/changed data
+- **Monitoring:** Track success, failures, data quality
+- **Error handling:** Retry transient errors, alert on persistent failures
 
 ---
 
 ### [[batch-vs-streaming|Batch vs Streaming Processing]]
 
-> [!blue] 💙 **Data Processing Paradigms**
-> Two fundamental approaches to processing data - periodic batches vs continuous streams.
+**💙 Data Processing Paradigms**
+Two fundamental approaches to processing data - periodic batches vs continuous streams.
 
 **Processing Comparison:**
 ```mermaid
@@ -108,17 +108,17 @@ graph TD
 - Speed layer: Real-time processing
 - Serving layer: Merge results
 
-> [!green] ✅ **Choosing Batch vs Streaming**
-> - **Batch:** Reports, analytics, model training, cost-sensitive
-> - **Streaming:** Real-time alerts, live dashboards, fraud detection
-> - **Hybrid:** Most systems use both
+**✅ Choosing Batch vs Streaming**
+- **Batch:** Reports, analytics, model training, cost-sensitive
+- **Streaming:** Real-time alerts, live dashboards, fraud detection
+- **Hybrid:** Most systems use both
 
 ---
 
 ### [[data-storage|Data Storage Solutions]]
 
-> [!blue] 💙 **Where to Store Data**
-> Different storage systems optimized for different access patterns and use cases.
+**💙 Where to Store Data**
+Different storage systems optimized for different access patterns and use cases.
 
 **Storage Landscape:**
 ```mermaid
@@ -156,18 +156,18 @@ graph TD
 - **Examples:** Databricks (Delta Lake), Apache Iceberg
 - **Benefits:** ACID transactions on lake data
 
-> [!yellow] 💡 **Storage Strategy**
-> - **OLTP:** Application databases
-> - **Lake:** Raw data dump from all sources
-> - **Warehouse:** Cleaned, modeled data for analytics
-> - **Lakehouse:** Emerging unified approach
+**💡 Storage Strategy**
+- **OLTP:** Application databases
+- **Lake:** Raw data dump from all sources
+- **Warehouse:** Cleaned, modeled data for analytics
+- **Lakehouse:** Emerging unified approach
 
 ---
 
 ### [[orchestration|Workflow Orchestration]]
 
-> [!blue] 💙 **Managing Pipeline Execution**
-> Tools for scheduling, monitoring, and coordinating data pipeline tasks with dependencies.
+**💙 Managing Pipeline Execution**
+Tools for scheduling, monitoring, and coordinating data pipeline tasks with dependencies.
 
 **Orchestrator Role:**
 ```mermaid
@@ -207,19 +207,19 @@ graph TD
 - **Google Cloud Composer:** Managed Airflow
 - **Azure Data Factory:** No-code pipelines
 
-> [!yellow] 💡 **Orchestration Best Practices**
-> - Define task dependencies explicitly
-> - Make tasks idempotent
-> - Set appropriate retries and timeouts
-> - Monitor task duration and failures
-> - Use sensors for external dependencies
+**💡 Orchestration Best Practices**
+- Define task dependencies explicitly
+- Make tasks idempotent
+- Set appropriate retries and timeouts
+- Monitor task duration and failures
+- Use sensors for external dependencies
 
 ---
 
 ### [[data-quality|Data Quality]]
 
-> [!blue] 💙 **Ensuring Data Reliability**
-> Validating, testing, and monitoring data to catch issues early and maintain trust.
+**💙 Ensuring Data Reliability**
+Validating, testing, and monitoring data to catch issues early and maintain trust.
 
 **Data Quality Dimensions:**
 ```mermaid
@@ -259,18 +259,18 @@ graph TD
 - **Soda:** Data quality platform
 - **Monte Carlo:** Data observability
 
-> [!red] ⚠️ **Data Quality Anti-Patterns**
-> - No validation until production breaks
-> - Manual quality checks (automate!)
-> - Catching issues too late in pipeline
-> - No alerts on quality degradation
+**⚠️ Data Quality Anti-Patterns**
+- No validation until production breaks
+- Manual quality checks (automate!)
+- Catching issues too late in pipeline
+- No alerts on quality degradation
 
 ---
 
 ### [[data-modeling|Data Modeling]]
 
-> [!blue] 💙 **Structuring Data for Use**
-> Designing schemas and tables optimized for analytics and machine learning.
+**💙 Structuring Data for Use**
+Designing schemas and tables optimized for analytics and machine learning.
 
 **Modeling Approaches:**
 ```mermaid
@@ -299,84 +299,84 @@ graph TD
 - Type 2: Keep history with version/timestamp
 - Type 3: Keep old and new in separate columns
 
-> [!yellow] 💡 **Modeling Guidelines**
-> - **OLTP:** Normalize for updates
-> - **Analytics:** Denormalize for query speed
-> - **ML:** One big table with all features
-> - **Use dbt** for transformation logic
+**💡 Modeling Guidelines**
+- **OLTP:** Normalize for updates
+- **Analytics:** Denormalize for query speed
+- **ML:** One big table with all features
+- **Use dbt** for transformation logic
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Change Data Capture (CDC)**
-> Capture changes from databases in real-time:
-> - Debezium for streaming DB changes
-> - Keep warehouse in sync with operational DB
-> - Enables real-time analytics
+**🔮 Change Data Capture (CDC)**
+Capture changes from databases in real-time:
+- Debezium for streaming DB changes
+- Keep warehouse in sync with operational DB
+- Enables real-time analytics
 
-> [!purple] 🔮 **Data Versioning**
-> Version control for datasets:
-> - DVC (Data Version Control)
-> - Track dataset changes like code
-> - Reproducibility for ML experiments
+**🔮 Data Versioning**
+Version control for datasets:
+- DVC (Data Version Control)
+- Track dataset changes like code
+- Reproducibility for ML experiments
 
-> [!purple] 🔮 **Feature Engineering Pipelines**
-> Automated feature computation:
-> - Feature stores (Feast, Tecton)
-> - Consistent features across training/serving
-> - Reusable features across teams
+**🔮 Feature Engineering Pipelines**
+Automated feature computation:
+- Feature stores (Feast, Tecton)
+- Consistent features across training/serving
+- Reusable features across teams
 
-> [!purple] 🔮 **Data Mesh**
-> Decentralized data architecture:
-> - Domain-oriented ownership
-> - Data as a product
-> - Self-serve infrastructure
+**🔮 Data Mesh**
+Decentralized data architecture:
+- Domain-oriented ownership
+- Data as a product
+- Self-serve infrastructure
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **No Incremental Processing**
-> - **Problem:** Reprocessing all data every time (slow, expensive)
-> - **Solution:** Track watermarks, process only new data
+**⚠️ No Incremental Processing**
+- **Problem:** Reprocessing all data every time (slow, expensive)
+- **Solution:** Track watermarks, process only new data
 
-> [!red] ⚠️ **Ignoring Data Quality**
-> - **Problem:** Bad data breaks ML models and analytics
-> - **Solution:** Validation checks, automated testing, monitoring
+**⚠️ Ignoring Data Quality**
+- **Problem:** Bad data breaks ML models and analytics
+- **Solution:** Validation checks, automated testing, monitoring
 
-> [!red] ⚠️ **Not Handling Failures**
-> - **Problem:** Pipeline breaks, no retry, manual intervention
-> - **Solution:** Idempotent operations, retries, alerts
+**⚠️ Not Handling Failures**
+- **Problem:** Pipeline breaks, no retry, manual intervention
+- **Solution:** Idempotent operations, retries, alerts
 
-> [!red] ⚠️ **Over-Engineering**
-> - **Problem:** Building complex systems before needed
-> - **Solution:** Start simple (cron + SQL), add complexity as needed
+**⚠️ Over-Engineering**
+- **Problem:** Building complex systems before needed
+- **Solution:** Start simple (cron + SQL), add complexity as needed
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Pipeline Design**
-> - Make operations idempotent
-> - Process data incrementally
-> - Fail fast with clear errors
-> - Log everything for debugging
-> - Monitor data quality
+**💡 Pipeline Design**
+- Make operations idempotent
+- Process data incrementally
+- Fail fast with clear errors
+- Log everything for debugging
+- Monitor data quality
 
-> [!yellow] 💡 **Starting Simple**
-> 1. **Day 1:** Cron + SQL scripts
-> 2. **Scale:** Airflow for orchestration
-> 3. **More scale:** Spark for big data
-> 4. **Streaming:** Kafka for real-time
-> 5. **Don't over-engineer early**
+**💡 Starting Simple**
+1. **Day 1:** Cron + SQL scripts
+2. **Scale:** Airflow for orchestration
+3. **More scale:** Spark for big data
+4. **Streaming:** Kafka for real-time
+5. **Don't over-engineer early**
 
-> [!yellow] 💡 **Data Engineer Mindset**
-> - Data quality is paramount
-> - Build for reliability, not just features
-> - Monitor everything
-> - Document data lineage
-> - Make data discoverable
+**💡 Data Engineer Mindset**
+- Data quality is paramount
+- Build for reliability, not just features
+- Monitor everything
+- Document data lineage
+- Make data discoverable
 
 ---
 

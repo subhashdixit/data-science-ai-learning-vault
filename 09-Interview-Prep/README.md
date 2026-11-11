@@ -76,30 +76,30 @@ Complete interview prep for Data Science & ML Engineering roles
 
 ## 🚀 Priority Topics
 
-> [!red] **Must-Know Coding**
-> - Arrays & Strings
-> - Hash Tables
-> - Two Pointers
-> - Sliding Window
-> - Binary Search
-> - Trees (BFS, DFS)
-> - Dynamic Programming (basics)
+** Must-Know Coding**
+- Arrays & Strings
+- Hash Tables
+- Two Pointers
+- Sliding Window
+- Binary Search
+- Trees (BFS, DFS)
+- Dynamic Programming (basics)
 
-> [!red] **Must-Know ML**
-> - Linear/Logistic Regression
-> - Decision Trees & Random Forests
-> - Gradient Descent
-> - Bias-Variance Tradeoff
-> - Cross-Validation
-> - Regularization (L1, L2)
-> - Neural Networks (basics)
+** Must-Know ML**
+- Linear/Logistic Regression
+- Decision Trees & Random Forests
+- Gradient Descent
+- Bias-Variance Tradeoff
+- Cross-Validation
+- Regularization (L1, L2)
+- Neural Networks (basics)
 
-> [!red] **Must-Know System Design**
-> - Recommendation System
-> - Search Ranking
-> - Fraud Detection
-> - Ad Click Prediction
-> - Image Classification at Scale
+** Must-Know System Design**
+- Recommendation System
+- Search Ranking
+- Fraud Detection
+- Ad Click Prediction
+- Image Classification at Scale
 
 ---
 

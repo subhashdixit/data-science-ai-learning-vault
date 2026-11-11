@@ -1,7 +1,7 @@
 # 🧠 Neural Networks
 
-> [!blue] 💙 **Neural Networks Fundamentals**
-> Foundation of deep learning - feed-forward neural networks, backpropagation, activation functions, and optimization techniques.
+**💙 Neural Networks Fundamentals**
+Foundation of deep learning - feed-forward neural networks, backpropagation, activation functions, and optimization techniques.
 
 ---
 
@@ -63,99 +63,99 @@ By the end of this section, you should be able to:
 
 ## 💻 Code Examples
 
-> [!green] ✅ **Simple Neural Network in PyTorch**
-> ```python
-> import torch
-> import torch.nn as nn
-> import torch.optim as optim
-> 
-> class SimpleNN(nn.Module):
->     def __init__(self, input_size, hidden_size, output_size):
->         super(SimpleNN, self).__init__()
->         self.fc1 = nn.Linear(input_size, hidden_size)
->         self.relu = nn.ReLU()
->         self.fc2 = nn.Linear(hidden_size, output_size)
->         
->     def forward(self, x):
->         x = self.fc1(x)
->         x = self.relu(x)
->         x = self.fc2(x)
->         return x
-> 
-> # Initialize model
-> model = SimpleNN(input_size=784, hidden_size=128, output_size=10)
-> 
-> # Loss and optimizer
-> criterion = nn.CrossEntropyLoss()
-> optimizer = optim.Adam(model.parameters(), lr=0.001)
-> 
-> # Training loop
-> for epoch in range(num_epochs):
->     # Forward pass
->     outputs = model(inputs)
->     loss = criterion(outputs, labels)
->     
->     # Backward pass and optimization
->     optimizer.zero_grad()
->     loss.backward()
->     optimizer.step()
-> ```
+**✅ Simple Neural Network in PyTorch**
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+class SimpleNN(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(hidden_size, output_size)
+        
+    def forward(self, x):
+        x = self.fc1(x)
+        x = self.relu(x)
+        x = self.fc2(x)
+        return x
+
+# Initialize model
+model = SimpleNN(input_size=784, hidden_size=128, output_size=10)
+
+# Loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# Training loop
+for epoch in range(num_epochs):
+    # Forward pass
+    outputs = model(inputs)
+    loss = criterion(outputs, labels)
+    
+    # Backward pass and optimization
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+```
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Vanishing/Exploding Gradients**
-> - **Problem:** Gradients become too small or too large during backpropagation
-> - **Solution:** Use ReLU activation, batch normalization, gradient clipping, proper weight initialization
+**⚠️ Vanishing/Exploding Gradients**
+- **Problem:** Gradients become too small or too large during backpropagation
+- **Solution:** Use ReLU activation, batch normalization, gradient clipping, proper weight initialization
 
-> [!red] ⚠️ **Overfitting**
-> - **Problem:** Model memorizes training data instead of learning patterns
-> - **Solution:** Use dropout, L2 regularization, data augmentation, early stopping
+**⚠️ Overfitting**
+- **Problem:** Model memorizes training data instead of learning patterns
+- **Solution:** Use dropout, L2 regularization, data augmentation, early stopping
 
-> [!red] ⚠️ **Dead ReLU Neurons**
-> - **Problem:** ReLU neurons output zero for all inputs
-> - **Solution:** Use Leaky ReLU, adjust learning rate, check weight initialization
+**⚠️ Dead ReLU Neurons**
+- **Problem:** ReLU neurons output zero for all inputs
+- **Solution:** Use Leaky ReLU, adjust learning rate, check weight initialization
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Activation Function Selection**
-> - Use **ReLU** for hidden layers (default choice)
-> - Use **Softmax** for multi-class classification output
-> - Use **Sigmoid** for binary classification output
-> - Try **Leaky ReLU** or **ELU** if experiencing dying ReLU
+**💡 Activation Function Selection**
+- Use **ReLU** for hidden layers (default choice)
+- Use **Softmax** for multi-class classification output
+- Use **Sigmoid** for binary classification output
+- Try **Leaky ReLU** or **ELU** if experiencing dying ReLU
 
-> [!yellow] 💡 **Optimization Tips**
-> - Start with **Adam optimizer** (adaptive learning rate)
-> - Use **learning rate scheduling** to improve convergence
-> - Monitor **training and validation loss** to detect overfitting
-> - Implement **gradient clipping** for stability
+**💡 Optimization Tips**
+- Start with **Adam optimizer** (adaptive learning rate)
+- Use **learning rate scheduling** to improve convergence
+- Monitor **training and validation loss** to detect overfitting
+- Implement **gradient clipping** for stability
 
-> [!yellow] 💡 **Weight Initialization**
-> - Use **Xavier/Glorot** initialization for sigmoid/tanh
-> - Use **He initialization** for ReLU activation
-> - Never initialize all weights to zero (symmetry breaking)
+**💡 Weight Initialization**
+- Use **Xavier/Glorot** initialization for sigmoid/tanh
+- Use **He initialization** for ReLU activation
+- Never initialize all weights to zero (symmetry breaking)
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **Advanced Architectures**
-> - **Residual Connections** (ResNet) - Skip connections to enable deeper networks
-> - **Highway Networks** - Gated connections for gradient flow
-> - **DenseNet** - Dense connections between layers
+**🔮 Advanced Architectures**
+- **Residual Connections** (ResNet) - Skip connections to enable deeper networks
+- **Highway Networks** - Gated connections for gradient flow
+- **DenseNet** - Dense connections between layers
 
-> [!purple] 🔮 **Advanced Optimization**
-> - **AdamW** - Adam with decoupled weight decay
-> - **Lookahead Optimizer** - Maintains slow and fast weights
-> - **LAMB** - Layer-wise Adaptive Moments (for large batch training)
+**🔮 Advanced Optimization**
+- **AdamW** - Adam with decoupled weight decay
+- **Lookahead Optimizer** - Maintains slow and fast weights
+- **LAMB** - Layer-wise Adaptive Moments (for large batch training)
 
-> [!purple] 🔮 **Normalization Techniques**
-> - **Layer Normalization** - Alternative to batch norm
-> - **Group Normalization** - For small batch sizes
-> - **Instance Normalization** - For style transfer
+**🔮 Normalization Techniques**
+- **Layer Normalization** - Alternative to batch norm
+- **Group Normalization** - For small batch sizes
+- **Instance Normalization** - For style transfer
 
 ---
 

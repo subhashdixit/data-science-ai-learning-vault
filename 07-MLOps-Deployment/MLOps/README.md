@@ -1,7 +1,7 @@
 # 🔧 MLOps (Machine Learning Operations)
 
-> [!blue] 💙 **Production ML Lifecycle**
-> Engineering practices for deploying, monitoring, and maintaining machine learning models in production. Learn CI/CD for ML, experiment tracking, model versioning, and monitoring.
+**💙 Production ML Lifecycle**
+Engineering practices for deploying, monitoring, and maintaining machine learning models in production. Learn CI/CD for ML, experiment tracking, model versioning, and monitoring.
 
 ---
 
@@ -35,8 +35,8 @@ By the end of this section, you should be able to:
 
 ### [[mlops-lifecycle|MLOps Lifecycle]]
 
-> [!blue] 💙 **End-to-End ML Pipeline**
-> Complete lifecycle from data to production, with automation and monitoring at every stage.
+**💙 End-to-End ML Pipeline**
+Complete lifecycle from data to production, with automation and monitoring at every stage.
 
 **MLOps Pipeline:**
 ```mermaid
@@ -66,8 +66,8 @@ graph LR
 
 ### [[experiment-tracking|Experiment Tracking]]
 
-> [!blue] 💙 **Systematic Experiment Management**
-> Logging parameters, metrics, artifacts for every experiment to enable reproducibility and comparison.
+**💙 Systematic Experiment Management**
+Logging parameters, metrics, artifacts for every experiment to enable reproducibility and comparison.
 
 **What to Track:**
 ```mermaid
@@ -92,8 +92,8 @@ graph TD
 - **Neptune.ai:** Enterprise-grade tracking
 - **TensorBoard:** Deep learning visualization
 
-> [!yellow] 💡 **Tracking Best Practices**
-> - Track every experiment, even failed ones
+**💡 Tracking Best Practices**
+- Track every experiment, even failed ones
 - Use descriptive experiment names
 > - Tag experiments by project/iteration
 > - Compare experiments side-by-side
@@ -103,8 +103,8 @@ graph TD
 
 ### [[model-versioning|Model Versioning & Registry]]
 
-> [!blue] 💙 **Managing Model Lifecycle**
-> Systematic versioning of models with metadata, enabling rollback and model governance.
+**💙 Managing Model Lifecycle**
+Systematic versioning of models with metadata, enabling rollback and model governance.
 
 **Model Registry Flow:**
 ```mermaid
@@ -137,18 +137,18 @@ graph TD
 - Training data version
 - Approval status and reviewer
 
-> [!green] ✅ **Benefits**
-> - Quick rollback if issues arise
-> - Audit trail for compliance
-> - A/B test different model versions
-> - Reproduce any past model
+**✅ Benefits**
+- Quick rollback if issues arise
+- Audit trail for compliance
+- A/B test different model versions
+- Reproduce any past model
 
 ---
 
 ### [[cicd-ml|CI/CD for Machine Learning]]
 
-> [!blue] 💙 **Automated ML Pipelines**
-> Continuous Integration and Deployment adapted for machine learning workflows.
+**💙 Automated ML Pipelines**
+Continuous Integration and Deployment adapted for machine learning workflows.
 
 **ML CI/CD Pipeline:**
 ```mermaid
@@ -187,18 +187,18 @@ graph TD
 - **Model tests:** Performance thresholds
 - **Data tests:** Schema, distribution checks
 
-> [!yellow] 💡 **CI/CD Tools**
-> - **GitHub Actions / GitLab CI:** General CI/CD
-> - **Jenkins:** Traditional CI/CD
-> - **Kubeflow Pipelines:** Kubernetes-native ML
-> - **Apache Airflow:** Workflow orchestration
+**💡 CI/CD Tools**
+- **GitHub Actions / GitLab CI:** General CI/CD
+- **Jenkins:** Traditional CI/CD
+- **Kubeflow Pipelines:** Kubernetes-native ML
+- **Apache Airflow:** Workflow orchestration
 
 ---
 
 ### [[model-monitoring|Model Monitoring]]
 
-> [!blue] 💙 **Production Model Health**
-> Continuously tracking model performance, detecting issues, and triggering retraining when needed.
+**💙 Production Model Health**
+Continuously tracking model performance, detecting issues, and triggering retraining when needed.
 
 **Monitoring Dashboard:**
 ```mermaid
@@ -238,17 +238,17 @@ graph TD
 - Error rates
 - Resource utilization
 
-> [!red] ⚠️ **Drift Detection**
-> - **Data drift:** Input distribution changes (weather patterns shift)
-> - **Concept drift:** Target relationship changes (customer behavior evolves)
-> - **Solution:** Automated retraining pipelines, champion/challenger setup
+**⚠️ Drift Detection**
+- **Data drift:** Input distribution changes (weather patterns shift)
+- **Concept drift:** Target relationship changes (customer behavior evolves)
+- **Solution:** Automated retraining pipelines, champion/challenger setup
 
 ---
 
 ### [[feature-stores|Feature Stores]]
 
-> [!blue] 💙 **Centralized Feature Management**
-> Repository for storing, versioning, and serving features consistently across training and serving.
+**💙 Centralized Feature Management**
+Repository for storing, versioning, and serving features consistently across training and serving.
 
 **Feature Store Architecture:**
 ```mermaid
@@ -281,83 +281,83 @@ graph TD
 - **Hopsworks:** ML platform with feature store
 - **AWS SageMaker Feature Store**
 
-> [!yellow] 💡 **When to Use Feature Stores**
-> - Multiple models using same features
-> - Training-serving skew issues
-> - Real-time prediction requirements
-> - Team collaboration on features
+**💡 When to Use Feature Stores**
+- Multiple models using same features
+- Training-serving skew issues
+- Real-time prediction requirements
+- Team collaboration on features
 
 ---
 
 ## 🔬 Advanced Topics
 
-> [!purple] 🔮 **A/B Testing for Models**
-> Deploy multiple model versions, route traffic, compare metrics:
-> - Champion (current) vs Challenger (new)
-> - Statistical significance testing
-> - Gradual rollout based on performance
+**🔮 A/B Testing for Models**
+Deploy multiple model versions, route traffic, compare metrics:
+- Champion (current) vs Challenger (new)
+- Statistical significance testing
+- Gradual rollout based on performance
 
-> [!purple] 🔮 **Model Explainability in Production**
-> Providing interpretations for predictions:
-> - SHAP values for feature importance
-> - Logging explanations with predictions
-> - Debugging individual predictions
+**🔮 Model Explainability in Production**
+Providing interpretations for predictions:
+- SHAP values for feature importance
+- Logging explanations with predictions
+- Debugging individual predictions
 
-> [!purple] 🔮 **Shadow Mode Deployment**
-> New model runs alongside production without affecting users:
-> - Compare predictions offline
-> - Detect issues before full deployment
-> - Build confidence in new model
+**🔮 Shadow Mode Deployment**
+New model runs alongside production without affecting users:
+- Compare predictions offline
+- Detect issues before full deployment
+- Build confidence in new model
 
-> [!purple] 🔮 **Auto-Retraining Pipelines**
-> Automatically retrain when triggers fire:
-> - Performance degradation detected
-> - New data available (daily, weekly)
-> - Manual trigger by data scientist
+**🔮 Auto-Retraining Pipelines**
+Automatically retrain when triggers fire:
+- Performance degradation detected
+- New data available (daily, weekly)
+- Manual trigger by data scientist
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Training-Serving Skew**
-> - **Problem:** Features computed differently in training vs serving
-> - **Solution:** Feature stores, shared preprocessing code, integration tests
+**⚠️ Training-Serving Skew**
+- **Problem:** Features computed differently in training vs serving
+- **Solution:** Feature stores, shared preprocessing code, integration tests
 
-> [!red] ⚠️ **Not Monitoring Enough**
-> - **Problem:** Model degrades silently in production
-> - **Solution:** Comprehensive monitoring, alerts, automated checks
+**⚠️ Not Monitoring Enough**
+- **Problem:** Model degrades silently in production
+- **Solution:** Comprehensive monitoring, alerts, automated checks
 
-> [!red] ⚠️ **Manual Deployment Process**
-> - **Problem:** Slow, error-prone, not repeatable
-> - **Solution:** Automate with CI/CD, infrastructure as code
+**⚠️ Manual Deployment Process**
+- **Problem:** Slow, error-prone, not repeatable
+- **Solution:** Automate with CI/CD, infrastructure as code
 
-> [!red] ⚠️ **Ignoring Model Lineage**
-> - **Problem:** Can't reproduce model or trace back to training data
-> - **Solution:** Track everything - data version, code, parameters
+**⚠️ Ignoring Model Lineage**
+- **Problem:** Can't reproduce model or trace back to training data
+- **Solution:** Track everything - data version, code, parameters
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **MLOps Maturity**
-> - **Level 0:** Manual process, notebooks
-> - **Level 1:** Automated training pipeline
-> - **Level 2:** Automated deployment with CI/CD
-> - **Level 3:** Full automation with monitoring & retraining
+**💡 MLOps Maturity**
+- **Level 0:** Manual process, notebooks
+- **Level 1:** Automated training pipeline
+- **Level 2:** Automated deployment with CI/CD
+- **Level 3:** Full automation with monitoring & retraining
 
-> [!yellow] 💡 **Getting Started**
-> 1. Start with experiment tracking (MLflow)
-> 2. Add model registry and versioning
-> 3. Automate training pipeline
-> 4. Implement monitoring
-> 5. Add CI/CD for deployment
-> 6. Consider feature store for scale
+**💡 Getting Started**
+1. Start with experiment tracking (MLflow)
+2. Add model registry and versioning
+3. Automate training pipeline
+4. Implement monitoring
+5. Add CI/CD for deployment
+6. Consider feature store for scale
 
-> [!yellow] 💡 **Key Metrics to Track**
-> - Model performance (accuracy, latency)
-> - Data quality (completeness, freshness)
-> - System health (uptime, throughput)
-> - Business impact (revenue, conversions)
+**💡 Key Metrics to Track**
+- Model performance (accuracy, latency)
+- Data quality (completeness, freshness)
+- System health (uptime, throughput)
+- Business impact (revenue, conversions)
 
 ---
 

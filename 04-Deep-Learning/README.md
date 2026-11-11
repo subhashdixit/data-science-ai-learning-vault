@@ -1,7 +1,7 @@
 # 🧠 04 - Deep Learning
 
-> [!blue] 💙 **Deep Learning Section**
-> Neural networks and deep learning architectures from fundamentals to state-of-the-art models. Covers feed-forward networks, CNNs, RNNs, Transformers, and Large Language Models.
+**💙 Deep Learning Section**
+Neural networks and deep learning architectures from fundamentals to state-of-the-art models. Covers feed-forward networks, CNNs, RNNs, Transformers, and Large Language Models.
 
 ---
 
@@ -62,15 +62,15 @@ From [[03-Machine-Learning]]:
 
 ## 💡 Key Concepts Covered
 
-> [!yellow] 💡 **Core Deep Learning Topics**
-> - Backpropagation and gradient descent
-> - Activation functions (ReLU, sigmoid, tanh)
-> - Regularization techniques (dropout, batch normalization)
-> - Convolutional layers and pooling
-> - Recurrent connections and gating mechanisms
-> - Attention mechanisms and self-attention
-> - Transfer learning and fine-tuning
-> - Pre-training strategies
+**💡 Core Deep Learning Topics**
+- Backpropagation and gradient descent
+- Activation functions (ReLU, sigmoid, tanh)
+- Regularization techniques (dropout, batch normalization)
+- Convolutional layers and pooling
+- Recurrent connections and gating mechanisms
+- Attention mechanisms and self-attention
+- Transfer learning and fine-tuning
+- Pre-training strategies
 
 ---
 

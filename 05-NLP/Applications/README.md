@@ -1,7 +1,7 @@
 # 🎯 NLP Applications
 
-> [!blue] 💙 **Real-World NLP Systems**
-> Production NLP applications and use cases. Learn to build chatbots, sentiment analysis systems, question answering, text summarization, and machine translation systems.
+**💙 Real-World NLP Systems**
+Production NLP applications and use cases. Learn to build chatbots, sentiment analysis systems, question answering, text summarization, and machine translation systems.
 
 ---
 
@@ -36,8 +36,8 @@ By the end of this section, you should be able to:
 
 ### [[text-classification|Text Classification]]
 
-> [!blue] 💙 **Categorizing Text into Classes**
-> Assigning predefined categories to text documents. Foundation for many NLP applications.
+**💙 Categorizing Text into Classes**
+Assigning predefined categories to text documents. Foundation for many NLP applications.
 
 **Common Tasks:**
 ```mermaid
@@ -61,18 +61,18 @@ graph TD
 - Product review classification
 - Email spam filtering
 
-> [!yellow] 💡 **Approach Selection**
-> - **Small dataset:** Pre-trained BERT + fine-tuning
-> - **Large dataset:** Train from scratch or use GPT with prompts
-> - **Real-time:** DistilBERT or smaller models
-> - **Multilingual:** XLM-RoBERTa
+**💡 Approach Selection**
+- **Small dataset:** Pre-trained BERT + fine-tuning
+- **Large dataset:** Train from scratch or use GPT with prompts
+- **Real-time:** DistilBERT or smaller models
+- **Multilingual:** XLM-RoBERTa
 
 ---
 
 ### [[question-answering|Question Answering (QA)]]
 
-> [!blue] 💙 **Automatic Answer Extraction**
-> Systems that answer questions from text passages or knowledge bases.
+**💙 Automatic Answer Extraction**
+Systems that answer questions from text passages or knowledge bases.
 
 **QA Types:**
 ```mermaid
@@ -98,18 +98,18 @@ graph LR
 - Retrieve relevant documents first (RAG)
 - Then extract/generate answer
 
-> [!green] ✅ **Building QA System**
-> 1. **Retrieval:** Find relevant documents (BM25, dense retrieval)
-> 2. **Reader:** Extract answer from documents (BERT QA)
-> 3. **Re-ranking:** Score and rank answers
-> 4. **Generation:** Optionally reformulate answer
+**✅ Building QA System**
+1. **Retrieval:** Find relevant documents (BM25, dense retrieval)
+2. **Reader:** Extract answer from documents (BERT QA)
+3. **Re-ranking:** Score and rank answers
+4. **Generation:** Optionally reformulate answer
 
 ---
 
 ### [[text-summarization|Text Summarization]]
 
-> [!blue] 💙 **Condensing Text into Key Points**
-> Automatically generating shorter versions of documents while preserving key information.
+**💙 Condensing Text into Key Points**
+Automatically generating shorter versions of documents while preserving key information.
 
 **Summarization Types:**
 ```mermaid
@@ -138,17 +138,17 @@ graph TD
 - **BERTScore:** Semantic similarity
 - **Human evaluation:** Gold standard
 
-> [!yellow] 💡 **When to Use Each**
-> - **Extractive:** News articles, reports, when accuracy is critical
-> - **Abstractive:** Creative summaries, different style needed
-> - **Hybrid:** Combine both for best results
+**💡 When to Use Each**
+- **Extractive:** News articles, reports, when accuracy is critical
+- **Abstractive:** Creative summaries, different style needed
+- **Hybrid:** Combine both for best results
 
 ---
 
 ### [[machine-translation|Machine Translation]]
 
-> [!blue] 💙 **Automatic Language Translation**
-> Translating text from one language to another using neural networks.
+**💙 Automatic Language Translation**
+Translating text from one language to another using neural networks.
 
 **Translation Evolution:**
 ```mermaid
@@ -174,18 +174,18 @@ graph LR
 - Cultural context and idioms
 - Maintaining formality/tone
 
-> [!red] ⚠️ **Translation Pitfalls**
-> - Word-by-word translation loses meaning
-> - Gender and formality handling
-> - Named entities (don't translate)
-> - Cultural references may not transfer
+**⚠️ Translation Pitfalls**
+- Word-by-word translation loses meaning
+- Gender and formality handling
+- Named entities (don't translate)
+- Cultural references may not transfer
 
 ---
 
 ### [[conversational-ai|Conversational AI & Chatbots]]
 
-> [!blue] 💙 **Building Dialogue Systems**
-> Creating AI systems that can have natural conversations with users.
+**💙 Building Dialogue Systems**
+Creating AI systems that can have natural conversations with users.
 
 **Chatbot Architecture:**
 ```mermaid
@@ -212,18 +212,18 @@ graph TD
 - **Generative:** Generate responses (GPT, T5)
 - **Hybrid:** Combine approaches
 
-> [!green] ✅ **Modern Approach**
-> - Use LLMs (GPT-4, Claude) as backbone
-> - Add retrieval (RAG) for knowledge
-> - Intent recognition for routing
-> - Function calling for actions
+**✅ Modern Approach**
+- Use LLMs (GPT-4, Claude) as backbone
+- Add retrieval (RAG) for knowledge
+- Intent recognition for routing
+- Function calling for actions
 
 ---
 
 ### [[information-extraction|Information Extraction]]
 
-> [!blue] 💙 **Structured Data from Unstructured Text**
-> Extracting structured information (entities, relationships, events) from raw text.
+**💙 Structured Data from Unstructured Text**
+Extracting structured information (entities, relationships, events) from raw text.
 
 **Extraction Tasks:**
 ```mermaid
@@ -250,74 +250,74 @@ graph TD
 
 ## 🔬 Advanced Applications
 
-> [!purple] 🔮 **Semantic Search**
-> Search based on meaning rather than keywords:
-> - Encode queries and documents as vectors
-> - Find most similar using cosine similarity
-> - Better than keyword matching for complex queries
+**🔮 Semantic Search**
+Search based on meaning rather than keywords:
+- Encode queries and documents as vectors
+- Find most similar using cosine similarity
+- Better than keyword matching for complex queries
 
-> [!purple] 🔮 **Text-to-SQL**
-> Convert natural language to database queries:
-> - "Show me sales from last quarter" → SQL query
-> - Models: T5, CodeX, GPT-4
-> - Enables non-technical users to query databases
+**🔮 Text-to-SQL**
+Convert natural language to database queries:
+- "Show me sales from last quarter" → SQL query
+- Models: T5, CodeX, GPT-4
+- Enables non-technical users to query databases
 
-> [!purple] 🔮 **Document Understanding**
-> Analyze document structure and extract information:
-> - Layout analysis (PDFs, scanned documents)
-> - Table extraction
-> - Form understanding
-> - Models: LayoutLM, Donut
+**🔮 Document Understanding**
+Analyze document structure and extract information:
+- Layout analysis (PDFs, scanned documents)
+- Table extraction
+- Form understanding
+- Models: LayoutLM, Donut
 
-> [!purple] 🔮 **Content Moderation**
-> Automatically detect harmful content:
-> - Hate speech detection
-> - Toxicity classification
-> - Sensitive content filtering
-> - Challenges: Context, sarcasm, evolving language
+**🔮 Content Moderation**
+Automatically detect harmful content:
+- Hate speech detection
+- Toxicity classification
+- Sensitive content filtering
+- Challenges: Context, sarcasm, evolving language
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Not Handling Edge Cases**
-> - **Problem:** Model fails on unusual inputs, typos, slang
-> - **Solution:** Test on diverse data, add fallback responses, handle out-of-vocabulary
+**⚠️ Not Handling Edge Cases**
+- **Problem:** Model fails on unusual inputs, typos, slang
+- **Solution:** Test on diverse data, add fallback responses, handle out-of-vocabulary
 
-> [!red] ⚠️ **Ignoring Latency Requirements**
-> - **Problem:** Large models too slow for production
-> - **Solution:** Use distilled models, caching, batch processing
+**⚠️ Ignoring Latency Requirements**
+- **Problem:** Large models too slow for production
+- **Solution:** Use distilled models, caching, batch processing
 
-> [!red] ⚠️ **Poor Error Handling**
-> - **Problem:** System crashes on unexpected input
-> - **Solution:** Input validation, graceful degradation, logging
+**⚠️ Poor Error Handling**
+- **Problem:** System crashes on unexpected input
+- **Solution:** Input validation, graceful degradation, logging
 
-> [!red] ⚠️ **Bias in Models**
-> - **Problem:** Models reflect biases from training data
-> - **Solution:** Test on diverse examples, use debiasing techniques, human oversight
+**⚠️ Bias in Models**
+- **Problem:** Models reflect biases from training data
+- **Solution:** Test on diverse examples, use debiasing techniques, human oversight
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Production NLP System**
-> - **Start simple:** Rule-based or simple ML before complex models
-> - **Monitor performance:** Track accuracy, latency, user satisfaction
-> - **Version control:** Track model versions and data
-> - **A/B testing:** Compare models in production
-> - **Human in the loop:** Allow human override/review
+**💡 Production NLP System**
+- **Start simple:** Rule-based or simple ML before complex models
+- **Monitor performance:** Track accuracy, latency, user satisfaction
+- **Version control:** Track model versions and data
+- **A/B testing:** Compare models in production
+- **Human in the loop:** Allow human override/review
 
-> [!yellow] 💡 **Evaluation Strategy**
-> - **Offline metrics:** Accuracy, F1, ROUGE (during development)
-> - **Online metrics:** User satisfaction, task completion (in production)
-> - **Error analysis:** Manually review failures
-> - **Continuous evaluation:** Monitor drift over time
+**💡 Evaluation Strategy**
+- **Offline metrics:** Accuracy, F1, ROUGE (during development)
+- **Online metrics:** User satisfaction, task completion (in production)
+- **Error analysis:** Manually review failures
+- **Continuous evaluation:** Monitor drift over time
 
-> [!yellow] 💡 **Handling Failures**
-> - **Confidence thresholds:** Only answer when confident
-> - **Fallback responses:** "I don't know" is better than wrong answer
-> - **Escalation:** Route to human agent when needed
-> - **Learning from failures:** Log and analyze mistakes
+**💡 Handling Failures**
+- **Confidence thresholds:** Only answer when confident
+- **Fallback responses:** "I don't know" is better than wrong answer
+- **Escalation:** Route to human agent when needed
+- **Learning from failures:** Log and analyze mistakes
 
 ---
 

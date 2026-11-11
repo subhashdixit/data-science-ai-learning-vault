@@ -1,7 +1,7 @@
 # 📝 NLP Basics
 
-> [!blue] 💙 **Natural Language Processing Foundations**
-> Fundamental concepts and techniques for processing and understanding human language. Learn text preprocessing, tokenization, embeddings, and classical NLP approaches.
+**💙 Natural Language Processing Foundations**
+Fundamental concepts and techniques for processing and understanding human language. Learn text preprocessing, tokenization, embeddings, and classical NLP approaches.
 
 ---
 
@@ -37,8 +37,8 @@ By the end of this section, you should be able to:
 
 ### [[tokenization|Tokenization]]
 
-> [!blue] 💙 **What is Tokenization?**
-> Breaking text into smaller units (tokens) - words, subwords, or characters. Foundation for all NLP tasks.
+**💙 What is Tokenization?**
+Breaking text into smaller units (tokens) - words, subwords, or characters. Foundation for all NLP tasks.
 
 **Tokenization Hierarchy:**
 ```mermaid
@@ -54,17 +54,17 @@ graph TD
 - **Subword (BPE):** "unhappiness" → ["un", "happiness"]
 - **Character:** "cat" → ["c", "a", "t"]
 
-> [!yellow] 💡 **When to Use Each**
-> - **Word:** Simple tasks, small vocabulary
-> - **Subword:** LLMs, handles unknown words, morphology
-> - **Character:** Very robust, any language, long sequences
+**💡 When to Use Each**
+- **Word:** Simple tasks, small vocabulary
+- **Subword:** LLMs, handles unknown words, morphology
+- **Character:** Very robust, any language, long sequences
 
 ---
 
 ### [[word-embeddings|Word Embeddings]]
 
-> [!blue] 💙 **Semantic Vector Representations**
-> Dense vector representations that capture semantic meaning. Words with similar meanings have similar vectors.
+**💙 Semantic Vector Representations**
+Dense vector representations that capture semantic meaning. Words with similar meanings have similar vectors.
 
 **Evolution of Word Representations:**
 ```mermaid
@@ -80,17 +80,17 @@ graph LR
 - **Similar words cluster together** in vector space
 - **Dimensionality:** Typically 100-300 dimensions
 
-> [!red] ⚠️ **Limitation of Static Embeddings**
-> - Same word always has same embedding regardless of context
-> - "bank" (river) vs "bank" (financial) → same vector
-> - **Solution:** Contextual embeddings (BERT, ELMo)
+**⚠️ Limitation of Static Embeddings**
+- Same word always has same embedding regardless of context
+- "bank" (river) vs "bank" (financial) → same vector
+- **Solution:** Contextual embeddings (BERT, ELMo)
 
 ---
 
 ### [[text-preprocessing|Text Preprocessing]]
 
-> [!blue] 💙 **Cleaning Raw Text**
-> Transforming raw text into a clean, standardized format for analysis.
+**💙 Cleaning Raw Text**
+Transforming raw text into a clean, standardized format for analysis.
 
 **Preprocessing Pipeline:**
 ```mermaid
@@ -111,17 +111,17 @@ graph LR
 5. **Stemming:** "running" → "run"
 6. **Lemmatization:** "better" → "good"
 
-> [!yellow] 💡 **Stemming vs Lemmatization**
-> - **Stemming:** Fast, crude chopping ("studies" → "studi")
-> - **Lemmatization:** Proper words, slower ("studies" → "study")
-> - Use lemmatization for accuracy, stemming for speed
+**💡 Stemming vs Lemmatization**
+- **Stemming:** Fast, crude chopping ("studies" → "studi")
+- **Lemmatization:** Proper words, slower ("studies" → "study")
+- Use lemmatization for accuracy, stemming for speed
 
 ---
 
 ### [[tfidf|TF-IDF (Term Frequency-Inverse Document Frequency)]]
 
-> [!blue] 💙 **Importance-Weighted Text Representation**
-> Statistical measure of how important a word is to a document in a corpus.
+**💙 Importance-Weighted Text Representation**
+Statistical measure of how important a word is to a document in a corpus.
 
 **Formula:**
 - **TF (Term Frequency):** How often term appears in document
@@ -134,18 +134,18 @@ graph LR
 - Common words ("the", "is") → Low TF-IDF
 - Distinctive words → High TF-IDF
 
-> [!green] ✅ **Use Cases**
-> - Document similarity
-> - Search engines
-> - Keyword extraction
-> - Document classification
+**✅ Use Cases**
+- Document similarity
+- Search engines
+- Keyword extraction
+- Document classification
 
 ---
 
 ### [[named-entity-recognition|Named Entity Recognition (NER)]]
 
-> [!blue] 💙 **Extracting Entities from Text**
-> Identifying and classifying named entities (people, organizations, locations, dates) in text.
+**💙 Extracting Entities from Text**
+Identifying and classifying named entities (people, organizations, locations, dates) in text.
 
 **Common Entity Types:**
 ```mermaid
@@ -166,18 +166,18 @@ graph TD
   - **LOCATION:** Cupertino
   - **DATE:** April 1, 1976
 
-> [!yellow] 💡 **Applications**
-> - Information extraction from documents
-> - Building knowledge graphs
-> - Customer support automation
-> - Resume parsing
+**💡 Applications**
+- Information extraction from documents
+- Building knowledge graphs
+- Customer support automation
+- Resume parsing
 
 ---
 
 ### [[pos-tagging|Part-of-Speech (POS) Tagging]]
 
-> [!blue] 💙 **Grammatical Role Identification**
-> Assigning grammatical categories (noun, verb, adjective) to each word.
+**💙 Grammatical Role Identification**
+Assigning grammatical categories (noun, verb, adjective) to each word.
 
 **Common POS Tags:**
 - **NN:** Noun (cat, dog)
@@ -195,66 +195,66 @@ graph TD
 
 ## 🔬 Advanced Concepts
 
-> [!purple] 🔮 **N-gram Language Models**
-> Predicting next word based on previous N words. Foundation for pre-transformer language modeling.
-> - **Unigram:** P(word) - no context
-> - **Bigram:** P(word | previous word)
-> - **Trigram:** P(word | previous 2 words)
+**🔮 N-gram Language Models**
+Predicting next word based on previous N words. Foundation for pre-transformer language modeling.
+- **Unigram:** P(word) - no context
+- **Bigram:** P(word | previous word)
+- **Trigram:** P(word | previous 2 words)
 
-> [!purple] 🔮 **Contextual Embeddings**
-> Modern embeddings that change based on context:
-> - **ELMo (2018):** Bidirectional LSTM embeddings
-> - **BERT (2018):** Transformer-based contextual representations
-> - Each word gets different embedding based on surrounding words
+**🔮 Contextual Embeddings**
+Modern embeddings that change based on context:
+- **ELMo (2018):** Bidirectional LSTM embeddings
+- **BERT (2018):** Transformer-based contextual representations
+- Each word gets different embedding based on surrounding words
 
-> [!purple] 🔮 **Subword Tokenization Methods**
-> - **Byte Pair Encoding (BPE):** Merge most frequent pairs iteratively
-> - **WordPiece:** Used by BERT, similar to BPE
-> - **SentencePiece:** Language-agnostic tokenization
-> - **Handles:** Unknown words, morphology, multilingual text
+**🔮 Subword Tokenization Methods**
+- **Byte Pair Encoding (BPE):** Merge most frequent pairs iteratively
+- **WordPiece:** Used by BERT, similar to BPE
+- **SentencePiece:** Language-agnostic tokenization
+- **Handles:** Unknown words, morphology, multilingual text
 
 ---
 
 ## ⚠️ Common Pitfalls
 
-> [!red] ⚠️ **Over-Preprocessing**
-> - **Problem:** Removing too much information (punctuation can be meaningful)
-> - **Solution:** Experiment with minimal preprocessing, especially for deep learning
+**⚠️ Over-Preprocessing**
+- **Problem:** Removing too much information (punctuation can be meaningful)
+- **Solution:** Experiment with minimal preprocessing, especially for deep learning
 
-> [!red] ⚠️ **Ignoring Context**
-> - **Problem:** Static embeddings miss word sense disambiguation
-> - **Solution:** Use contextual embeddings (BERT) for modern applications
+**⚠️ Ignoring Context**
+- **Problem:** Static embeddings miss word sense disambiguation
+- **Solution:** Use contextual embeddings (BERT) for modern applications
 
-> [!red] ⚠️ **Language Assumptions**
-> - **Problem:** Techniques designed for English may fail for other languages
-> - **Solution:** Use language-specific models or multilingual approaches
+**⚠️ Language Assumptions**
+- **Problem:** Techniques designed for English may fail for other languages
+- **Solution:** Use language-specific models or multilingual approaches
 
-> [!red] ⚠️ **Vocabulary Size Issues**
-> - **Problem:** Huge vocabulary with word-level tokenization
-> - **Solution:** Use subword tokenization (BPE, WordPiece)
+**⚠️ Vocabulary Size Issues**
+- **Problem:** Huge vocabulary with word-level tokenization
+- **Solution:** Use subword tokenization (BPE, WordPiece)
 
 ---
 
 ## 💡 Best Practices
 
-> [!yellow] 💡 **Preprocessing Strategy**
-> - Start with **minimal preprocessing** for neural models
-> - Use **aggressive preprocessing** for classical ML (Naive Bayes, SVM)
-> - Always **lowercase** for case-insensitive tasks
-> - **Keep punctuation** for sentiment analysis
-> - Remove **stopwords** only for topic modeling, keyword extraction
+**💡 Preprocessing Strategy**
+- Start with **minimal preprocessing** for neural models
+- Use **aggressive preprocessing** for classical ML (Naive Bayes, SVM)
+- Always **lowercase** for case-insensitive tasks
+- **Keep punctuation** for sentiment analysis
+- Remove **stopwords** only for topic modeling, keyword extraction
 
-> [!yellow] 💡 **Choosing Tokenization**
-> - **Classical ML:** Word tokenization + stopword removal
-> - **Deep Learning:** Subword tokenization (BPE, WordPiece)
-> - **Multilingual:** SentencePiece
-> - **Character-level:** Rare for modern NLP
+**💡 Choosing Tokenization**
+- **Classical ML:** Word tokenization + stopword removal
+- **Deep Learning:** Subword tokenization (BPE, WordPiece)
+- **Multilingual:** SentencePiece
+- **Character-level:** Rare for modern NLP
 
-> [!yellow] 💡 **Word Embeddings Selection**
-> - **Small datasets:** Pre-trained Word2Vec/GloVe
-> - **Large datasets:** Train custom embeddings
-> - **Modern NLP:** Use BERT/RoBERTa contextual embeddings
-> - **Dimension:** 100-300 for static, 768-1024 for contextual
+**💡 Word Embeddings Selection**
+- **Small datasets:** Pre-trained Word2Vec/GloVe
+- **Large datasets:** Train custom embeddings
+- **Modern NLP:** Use BERT/RoBERTa contextual embeddings
+- **Dimension:** 100-300 for static, 768-1024 for contextual
 
 ---
 

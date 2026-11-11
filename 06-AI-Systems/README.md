@@ -1,7 +1,7 @@
 # 🤖 06 - AI Systems
 
-> [!blue] 💙 **AI Systems Section**
-> Building production AI systems using Large Language Models. Covers RAG, AI Agents, Prompt Engineering, and advanced LLM application patterns.
+**💙 AI Systems Section**
+Building production AI systems using Large Language Models. Covers RAG, AI Agents, Prompt Engineering, and advanced LLM application patterns.
 
 ---
 
@@ -51,13 +51,13 @@ From [[05-NLP]]:
 
 ## 💡 Key Concepts Covered
 
-> [!yellow] 💡 **Core AI Systems Topics**
-> - **Prompt Engineering:** Few-shot, chain-of-thought, role prompting
-> - **RAG Architecture:** Chunking, embedding, retrieval, generation
-> - **Vector Databases:** Pinecone, Weaviate, ChromaDB, FAISS
-> - **Agent Design:** ReAct, tool use, memory systems
-> - **Evaluation:** Answer relevance, faithfulness, retrieval quality
-> - **Production Patterns:** Caching, streaming, error handling
+**💡 Core AI Systems Topics**
+- **Prompt Engineering:** Few-shot, chain-of-thought, role prompting
+- **RAG Architecture:** Chunking, embedding, retrieval, generation
+- **Vector Databases:** Pinecone, Weaviate, ChromaDB, FAISS
+- **Agent Design:** ReAct, tool use, memory systems
+- **Evaluation:** Answer relevance, faithfulness, retrieval quality
+- **Production Patterns:** Caching, streaming, error handling
 
 ---
 
@@ -125,13 +125,13 @@ From [[05-NLP]]:
 
 ## 🎯 Real-World Applications
 
-> [!green] ✅ **Production Use Cases**
-> - **Customer Support:** AI chatbots with knowledge bases
-> - **Document Q&A:** Question answering over private documents
-> - **Code Assistant:** AI-powered code generation and explanation
-> - **Research Assistant:** Automated literature review and summarization
-> - **Data Analysis:** Natural language to SQL/Python
-> - **Content Generation:** Blog posts, marketing copy, summaries
+**✅ Production Use Cases**
+- **Customer Support:** AI chatbots with knowledge bases
+- **Document Q&A:** Question answering over private documents
+- **Code Assistant:** AI-powered code generation and explanation
+- **Research Assistant:** Automated literature review and summarization
+- **Data Analysis:** Natural language to SQL/Python
+- **Content Generation:** Blog posts, marketing copy, summaries
 
 ---
 

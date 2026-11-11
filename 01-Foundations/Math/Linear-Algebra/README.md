@@ -1,11 +1,11 @@
 # ➗ LINEAR ALGEBRA - The Language of ML
 
-> [!yellow] ⭐ **MOST IMPORTANT MATH FOR ML!**
-> 40% of ML math is Linear Algebra. Master this and you'll understand most of ML!
-> 
-> **Time to Complete:** 2 weeks  
-> **Difficulty:** ⭐⭐⭐ Medium  
-> **Interview Weight:** ⭐⭐⭐⭐ CRITICAL!
+**⭐ MOST IMPORTANT MATH FOR ML!**
+40% of ML math is Linear Algebra. Master this and you'll understand most of ML!
+
+**Time to Complete:** 2 weeks  
+**Difficulty:** ⭐⭐⭐ Medium  
+**Interview Weight:** ⭐⭐⭐⭐ CRITICAL!
 
 ---
 
@@ -46,8 +46,8 @@ graph LR
 
 ## 1. VECTORS
 
-> [!blue] 💙 **What is a Vector?**
-> A vector is an ordered list of numbers. In ML, vectors represent data points!
+**💙 What is a Vector?**
+A vector is an ordered list of numbers. In ML, vectors represent data points!
 
 ### Visual Understanding
 
@@ -94,7 +94,7 @@ graph TD
 
 ### Real-World Examples
 
-> [!green] ✅ **Vectors Everywhere**
+**✅ Vectors Everywhere**
 
 ```
 House as Vector:
@@ -165,8 +165,8 @@ ML Use:
 
 ## 2. MATRICES
 
-> [!blue] 💙 **What is a Matrix?**
-> A matrix is a 2D grid of numbers. In ML, matrices represent entire datasets!
+**💙 What is a Matrix?**
+A matrix is a 2D grid of numbers. In ML, matrices represent entire datasets!
 
 ### Visual Understanding
 
@@ -243,7 +243,7 @@ Shape: (1000, 50)
 
 ## 3. VECTOR OPERATIONS
 
-> [!blue] 💙 **Operating on Vectors**
+**💙 Operating on Vectors**
 
 ### Vector Addition
 
@@ -326,7 +326,7 @@ ML Use: Learning rate scaling, weight updates
 
 ## 4. DOT PRODUCT
 
-> [!blue] 💙 **Most Important Vector Operation!**
+**💙 Most Important Vector Operation!**
 
 ### What is Dot Product?
 
@@ -389,7 +389,7 @@ cos(180°) = -1 → Large negative dot product
 
 ### Dot Product Applications
 
-> [!yellow] ⭐ **Critical for ML!**
+**⭐ Critical for ML!**
 
 ```
 1. Similarity Measurement:
@@ -424,7 +424,7 @@ cos(180°) = -1 → Large negative dot product
 
 ## 5. MATRIX MULTIPLICATION
 
-> [!blue] 💙 **The Heart of Neural Networks**
+**💙 The Heart of Neural Networks**
 
 ### Matrix Multiplication Rules
 
@@ -484,7 +484,7 @@ graph LR
 
 ### Neural Network Example
 
-> [!yellow] ⭐ **This is how neural networks work!**
+**⭐ This is how neural networks work!**
 
 ```
 Forward Pass in Neural Network:
@@ -514,7 +514,7 @@ One matrix multiplication processes entire batch!
 
 ## 6. MATRIX INVERSE
 
-> [!blue] 💙 **Solving Equations**
+**💙 Solving Equations**
 
 ### Inverse Concept
 
@@ -568,7 +568,7 @@ Compute A⁻¹ and multiply by b to get x, y
 
 ### ML Applications
 
-> [!yellow] 💡 **Where Used**
+**💡 Where Used**
 
 ```
 1. Linear Regression (Closed Form):
@@ -594,7 +594,7 @@ Note:
 
 ## 7. EIGENVALUES & EIGENVECTORS
 
-> [!blue] 💙 **Special Vectors for Transformations**
+**💙 Special Vectors for Transformations**
 
 ### What are Eigenvectors?
 
@@ -652,7 +652,7 @@ graph TD
 
 ### Real-World Example
 
-> [!green] ✅ **PCA for Dimensionality Reduction**
+**✅ PCA for Dimensionality Reduction**
 
 ```
 Original Data: 1000 features
@@ -698,7 +698,7 @@ These directions contain most information
 
 ## 8. SVD (Singular Value Decomposition)
 
-> [!blue] 💙 **The Ultimate Matrix Factorization**
+**💙 The Ultimate Matrix Factorization**
 
 ### What is SVD?
 
@@ -757,7 +757,7 @@ graph TD
 
 ### Recommendation System Example
 
-> [!yellow] ⭐ **Netflix-style Recommendations**
+**⭐ Netflix-style Recommendations**
 
 ```
 User-Movie Rating Matrix:
@@ -820,148 +820,148 @@ Factor 3: Hollywood vs Independent
 
 ## 💎 INTERVIEW QUESTIONS
 
-> [!yellow] 💎 **Q: Explain dot product and its ML applications**
-> 
-> **Perfect Answer:**
-> "Dot product is a fundamental operation that takes two vectors and returns a scalar.
-> 
-> **Definition:**
-> v₁ · v₂ = v₁[0]×v₂[0] + v₁[1]×v₂[1] + ... + v₁[n]×v₂[n]
-> 
-> **Geometric meaning:**
-> Measures similarity and angle between vectors.
-> - Large positive: Same direction
-> - Zero: Perpendicular
-> - Large negative: Opposite direction
-> 
-> **Formula:** v₁ · v₂ = ||v₁|| × ||v₂|| × cos(θ)
-> 
-> **ML Applications:**
-> 
-> **1. Neural Networks:**
-> Every neuron computes weighted sum = dot product
-> Input × Weights = x₁w₁ + x₂w₂ + ... + xₙwₙ
-> 
-> **2. Similarity Measures:**
-> Cosine similarity for:
-> - Recommendation systems
-> - Document comparison
-> - Face recognition
-> 
-> **3. Linear Models:**
-> Prediction = features · weights
-> Linear regression, logistic regression, SVM
-> 
-> **4. Attention Mechanism:**
-> Transformer models use dot product attention
-> Query · Key = attention score
-> 
-> **Why important:**
-> Single most-used operation in deep learning!"
+**💎 Q: Explain dot product and its ML applications**
 
-> [!yellow] 💎 **Q: How does PCA use eigenvalues/eigenvectors?**
-> 
-> **Perfect Answer:**
-> "PCA finds principal components using eigen-decomposition.
-> 
-> **Process:**
-> 
-> **1. Compute covariance matrix:**
-> Σ = (1/n) × XᵀX
-> Captures feature relationships
-> 
-> **2. Find eigenvalues and eigenvectors:**
-> Solve: Σv = λv
-> - Eigenvectors (v): Directions of variance
-> - Eigenvalues (λ): Amount of variance
-> 
-> **3. Sort by eigenvalue:**
-> Largest eigenvalue → Most important direction
-> Keep top k eigenvectors
-> 
-> **4. Project data:**
-> X_new = X × V_k
-> Transform to new coordinate system
-> 
-> **Intuition:**
-> Original data (1000 features):
-> - Features correlated
-> - Redundant information
-> 
-> PCA finds:
-> - Independent directions (eigenvectors)
-> - Ranked by importance (eigenvalues)
-> - Top 50 might explain 95% of variance
-> 
-> **Real example:**
-> Image dataset (784 pixels):
-> - Eigenvalue 1: 25% variance (brightness)
-> - Eigenvalue 2: 15% variance (edges)
-> - Eigenvalue 3: 10% variance (texture)
-> - Eigenvalues 4-50: 45% variance
-> - Eigenvalues 51-784: Only 5% variance
-> 
-> Keep top 50 → Reduce 784 to 50 dimensions!
-> 
-> **Why it works:**
-> Eigenvectors ARE the principal components
-> Eigenvalues tell us which ones matter"
+**Perfect Answer:**
+"Dot product is a fundamental operation that takes two vectors and returns a scalar.
 
-> [!yellow] 💎 **Q: Explain matrix multiplication in neural networks**
-> 
-> **Perfect Answer:**
-> "Matrix multiplication is how data flows through neural networks.
-> 
-> **Single Layer:**
-> Input (batch × features) × Weights (features × neurons) = Output (batch × neurons)
-> 
-> **Example:**
-> ```
-> Batch of 100 samples, 784 features (28×28 images):
-> X: (100 × 784)
-> 
-> First hidden layer with 128 neurons:
-> W1: (784 × 128)
-> 
-> Matrix multiplication:
-> H1 = X × W1
-> H1: (100 × 128)
-> 
-> Each of 100 samples now has 128 hidden features!
-> ```
-> 
-> **Why matrix multiplication?**
-> 
-> **1. Batch processing:**
-> Process 100 samples at once
-> Parallelizes on GPU
-> Much faster than loops
-> 
-> **2. Linear transformation:**
-> Each neuron computes weighted sum of inputs
-> Weight matrix encodes all connections
-> 
-> **3. Dimension matching:**
-> (m×n) × (n×p) = (m×p)
-> Inner dimension must match!
-> 
-> **Deep network example:**
-> ```
-> Input: (100×784)
-> 
-> Layer 1: (100×784) × (784×128) = (100×128)
-> Layer 2: (100×128) × (128×64) = (100×64)
-> Layer 3: (100×64) × (64×10) = (100×10)
-> 
-> Output: (100×10) - 10 classes for each sample
-> ```
-> 
-> **Key insight:**
-> One matrix multiplication = Entire layer forward pass
-> This is why GPUs (optimized for matrix ops) are critical!
-> 
-> **Interview tip:**
-> Always mention shapes! Shows deep understanding."
+**Definition:**
+v₁ · v₂ = v₁[0]×v₂[0] + v₁[1]×v₂[1] + ... + v₁[n]×v₂[n]
+
+**Geometric meaning:**
+Measures similarity and angle between vectors.
+- Large positive: Same direction
+- Zero: Perpendicular
+- Large negative: Opposite direction
+
+**Formula:** v₁ · v₂ = ||v₁|| × ||v₂|| × cos(θ)
+
+**ML Applications:**
+
+**1. Neural Networks:**
+Every neuron computes weighted sum = dot product
+Input × Weights = x₁w₁ + x₂w₂ + ... + xₙwₙ
+
+**2. Similarity Measures:**
+Cosine similarity for:
+- Recommendation systems
+- Document comparison
+- Face recognition
+
+**3. Linear Models:**
+Prediction = features · weights
+Linear regression, logistic regression, SVM
+
+**4. Attention Mechanism:**
+Transformer models use dot product attention
+Query · Key = attention score
+
+**Why important:**
+Single most-used operation in deep learning!"
+
+**💎 Q: How does PCA use eigenvalues/eigenvectors?**
+
+**Perfect Answer:**
+"PCA finds principal components using eigen-decomposition.
+
+**Process:**
+
+**1. Compute covariance matrix:**
+Σ = (1/n) × XᵀX
+Captures feature relationships
+
+**2. Find eigenvalues and eigenvectors:**
+Solve: Σv = λv
+- Eigenvectors (v): Directions of variance
+- Eigenvalues (λ): Amount of variance
+
+**3. Sort by eigenvalue:**
+Largest eigenvalue → Most important direction
+Keep top k eigenvectors
+
+**4. Project data:**
+X_new = X × V_k
+Transform to new coordinate system
+
+**Intuition:**
+Original data (1000 features):
+- Features correlated
+- Redundant information
+
+PCA finds:
+- Independent directions (eigenvectors)
+- Ranked by importance (eigenvalues)
+- Top 50 might explain 95% of variance
+
+**Real example:**
+Image dataset (784 pixels):
+- Eigenvalue 1: 25% variance (brightness)
+- Eigenvalue 2: 15% variance (edges)
+- Eigenvalue 3: 10% variance (texture)
+- Eigenvalues 4-50: 45% variance
+- Eigenvalues 51-784: Only 5% variance
+
+Keep top 50 → Reduce 784 to 50 dimensions!
+
+**Why it works:**
+Eigenvectors ARE the principal components
+Eigenvalues tell us which ones matter"
+
+**💎 Q: Explain matrix multiplication in neural networks**
+
+**Perfect Answer:**
+"Matrix multiplication is how data flows through neural networks.
+
+**Single Layer:**
+Input (batch × features) × Weights (features × neurons) = Output (batch × neurons)
+
+**Example:**
+```
+Batch of 100 samples, 784 features (28×28 images):
+X: (100 × 784)
+
+First hidden layer with 128 neurons:
+W1: (784 × 128)
+
+Matrix multiplication:
+H1 = X × W1
+H1: (100 × 128)
+
+Each of 100 samples now has 128 hidden features!
+```
+
+**Why matrix multiplication?**
+
+**1. Batch processing:**
+Process 100 samples at once
+Parallelizes on GPU
+Much faster than loops
+
+**2. Linear transformation:**
+Each neuron computes weighted sum of inputs
+Weight matrix encodes all connections
+
+**3. Dimension matching:**
+(m×n) × (n×p) = (m×p)
+Inner dimension must match!
+
+**Deep network example:**
+```
+Input: (100×784)
+
+Layer 1: (100×784) × (784×128) = (100×128)
+Layer 2: (100×128) × (128×64) = (100×64)
+Layer 3: (100×64) × (64×10) = (100×10)
+
+Output: (100×10) - 10 classes for each sample
+```
+
+**Key insight:**
+One matrix multiplication = Entire layer forward pass
+This is why GPUs (optimized for matrix ops) are critical!
+
+**Interview tip:**
+Always mention shapes! Shows deep understanding."
 
 ---
 
