@@ -567,7 +567,7 @@ Total MSE = (1/m) × sum of all squared errors
 Goal: Find w and b that minimize MSE
 ```
 
-![Mean Squared Error Visualization](../../../images/linear-regression/02-mse-visualization.png)
+![Mean Squared Error Visualization](../../images/linear-regression/02-mse-visualization.png)
 
 *Figure 2: MSE measures the average squared vertical distance from actual points to predicted line. The goal of training is to find weights that minimize this error.*
 
@@ -591,7 +591,7 @@ Price ($)
 Prediction: Price = 150 × Size + 50,000
 ```
 
-![Linear Regression - Best Fit Line](../../../images/linear-regression/01-basic-fit.png)
+![Linear Regression - Best Fit Line](../../images/linear-regression/01-basic-fit.png)
 
 *Figure 1: Linear regression finds the best-fit line through data points by minimizing the sum of squared errors (vertical distances from points to line)*
 
@@ -703,7 +703,7 @@ Comparison:
 └────────────────────────────────────────┘
 ```
 
-![Gradient Descent Optimization](../../../images/linear-regression/03-gradient-descent.png)
+![Gradient Descent Optimization](../../images/linear-regression/03-gradient-descent.png)
 
 *Figure 3: Gradient descent iteratively updates weights by moving in the opposite direction of the gradient. The learning rate controls step size.*
 
@@ -1218,7 +1218,7 @@ Choosing λ (cross-validation):
 λ = 10.0: Very strong (underfitting risk)
 ```
 
-![Regularization - Ridge vs Lasso](../../../images/linear-regression/04-regularization.png)
+![Regularization - Ridge vs Lasso](../../images/linear-regression/04-regularization.png)
 
 *Figure 4: Ridge (L2) shrinks all weights smoothly, while Lasso (L1) can set some weights to exactly zero, performing automatic feature selection. The regularization parameter λ controls the trade-off between fitting the training data and keeping the model simple.*
 
@@ -1445,7 +1445,7 @@ Interpretation as probability:
 - z large & negative → σ(z) ≈ 0 → Strong confidence Class 0
 ```
 
-![Sigmoid Function](../../../images/logistic-regression/01-sigmoid-function.png)
+![Sigmoid Function](../../images/logistic-regression/01-sigmoid-function.png)
 
 *Figure 5: The sigmoid function maps any real number to the range (0,1), making it perfect for probability estimation. The S-curve transitions smoothly from 0 to 1, with the midpoint at z=0 corresponding to 50% probability.*
 
@@ -1682,7 +1682,7 @@ Add polynomial features: x₁², x₁x₂, x₂², etc.
 Decision boundary becomes curved (still linear in transformed space)
 ```
 
-![Logistic Regression Decision Boundary](../../../images/logistic-regression/02-decision-boundary.png)
+![Logistic Regression Decision Boundary](../../images/logistic-regression/02-decision-boundary.png)
 
 *Figure 6: The decision boundary is the line where P(y=1) = 0.5 (z=0). Points on one side are classified as class 1, points on the other as class 0. The distance from the boundary indicates confidence.*
 
@@ -1811,7 +1811,7 @@ FP = 10 (false alarm - healthy called sick)
 FN = 5 (missed - sick called healthy)
 ```
 
-![Confusion Matrix](../../../images/logistic-regression/03-confusion-matrix.png)
+![Confusion Matrix](../../images/logistic-regression/03-confusion-matrix.png)
 
 *Figure 7: The confusion matrix shows the four possible outcomes of binary classification. All evaluation metrics (precision, recall, F1, accuracy) are derived from these four numbers.*
 
@@ -1970,7 +1970,7 @@ Limitations:
 ✗ Treats FP and FN equally (may not match business cost)
 ```
 
-![ROC Curve](../../../images/logistic-regression/04-roc-curve.png)
+![ROC Curve](../../images/logistic-regression/04-roc-curve.png)
 
 *Figure 8: The ROC curve plots TPR vs FPR at different classification thresholds. AUC (Area Under Curve) measures overall model performance - higher is better. The diagonal represents random guessing (AUC=0.5).*
 
@@ -2388,7 +2388,7 @@ Leaves: 4 predictions
 Decision Rules: 4 paths from root to leaves
 ```
 
-![Decision Tree Structure](../../../images/decision-trees/01-tree-structure.png)
+![Decision Tree Structure](../../images/decision-trees/01-tree-structure.png)
 
 *Figure 9: Anatomy of a decision tree showing root node, internal nodes with split conditions, and leaf nodes with predictions. Each path from root to leaf represents a decision rule.*
 
@@ -2615,7 +2615,7 @@ In practice: Gini and Entropy give very similar results
 Gini is default in scikit-learn (faster)
 ```
 
-![Gini vs Entropy Comparison](../../../images/decision-trees/02-gini-vs-entropy.png)
+![Gini vs Entropy Comparison](../../images/decision-trees/02-gini-vs-entropy.png)
 
 *Figure 10: Comparison of Gini impurity and Entropy as splitting criteria. Both measure node purity - lower values indicate more homogeneous nodes. Gini is computationally faster while Entropy is more theoretically grounded.*
 
@@ -2727,7 +2727,7 @@ Depth = 20+            Depth = 5
 60% test accuracy      85% test accuracy ✓
 ```
 
-![Decision Tree Overfitting](../../../images/decision-trees/03-overfitting.png)
+![Decision Tree Overfitting](../../images/decision-trees/03-overfitting.png)
 
 *Figure 11: Overfitting in decision trees. An unconstrained tree (left) grows too deep and memorizes training data, achieving 100% training accuracy but poor test performance. A properly constrained tree (right) generalizes better by limiting depth.*
 
